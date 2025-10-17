@@ -4,53 +4,414 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Robinson Vidva - Computational Biologist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fb;
+      color: #1b1d29;
+    }
+
+    .navbar {
+      background: rgba(18, 18, 28, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #1f4b99, #0f172a 60%);
+      color: #f8fafc;
+      padding: 6rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: -10rem;
+      width: 24rem;
+      height: 24rem;
+      background: rgba(96, 165, 250, 0.25);
+      filter: blur(80px);
+      border-radius: 50%;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-title {
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .badge-soft {
+      background: rgba(37, 99, 235, 0.08);
+      color: #1d4ed8;
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .timeline {
+      border-left: 2px solid rgba(15, 23, 42, 0.12);
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.65rem;
+      top: 0.3rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      background: #2563eb;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+
+    .card-highlight {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      height: 100%;
+    }
+
+    .card-highlight .card-body {
+      padding: 2rem;
+    }
+
+    .stats-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5f5;
+    }
+
+    a.btn-primary {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      border: none;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+    }
+
+    a.btn-outline-primary {
+      color: #2563eb;
+      border-color: rgba(37, 99, 235, 0.5);
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding: 4rem 0 3rem;
+      }
+
+      .hero-card {
+        padding: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Robinson Vidva</a>
+<nav class="navbar navbar-expand-lg navbar-dark py-3">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="index.html">Robinson Vidva</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
         <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
         <li class="nav-item"><a class="nav-link" href="abstracts.html">Presentations</a></li>
         <li class="nav-item"><a class="nav-link" href="patents.html">Patents</a></li>
         <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary btn-sm" href="resume.html">Download CV</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<header class="bg-primary text-white text-center py-5">
+
+<header class="hero">
   <div class="container">
-    <h1 class="display-4">Robinson Vidva</h1>
-    <p class="lead">Computational Biologist</p>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="hero-card">
+          <div class="d-inline-flex align-items-center gap-2 mb-3">
+            <span class="badge-soft">Computational Biologist</span>
+            <span class="text-secondary">18+ years in bioinformatics</span>
+          </div>
+          <h1 class="display-4 fw-semibold mb-3">Building predictive biology models that translate data into therapies.</h1>
+          <p class="lead text-light opacity-75 mb-4">I integrate multi-omics signals, clinical data, and machine learning to inform high-impact decisions across immunology, neuroscience, and oncology programs.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="resume.html" class="btn btn-primary btn-lg">View Full Resume</a>
+            <a href="mailto:robinson.vidva@gmail.com" class="btn btn-outline-light btn-lg">Let’s Collaborate</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="stats-card">
+          <h2 class="h4 fw-semibold mb-4">Quick Snapshot</h2>
+          <div class="row g-3">
+            <div class="col-6">
+              <div>
+                <p class="text-muted mb-1">Peer Citations</p>
+                <p class="h3 fw-semibold mb-0">130+</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div>
+                <p class="text-muted mb-1">Publications</p>
+                <p class="h3 fw-semibold mb-0">7</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div>
+                <p class="text-muted mb-1">Conference Abstracts</p>
+                <p class="h3 fw-semibold mb-0">12</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div>
+                <p class="text-muted mb-1">Patent Grants</p>
+                <p class="h3 fw-semibold mb-0">2</p>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <div>
+            <p class="text-muted mb-1">Current Location</p>
+            <p class="mb-1">Washington, DC, USA</p>
+            <p class="text-muted mb-1">Contact</p>
+            <a class="text-decoration-none" href="mailto:robinson.vidva@gmail.com">robinson.vidva@gmail.com</a>
+            <div class="mt-2"><a class="text-decoration-none" href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" rel="noopener">linkedin.com/in/robinson-vidva</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
-<div class="container my-4">
-  <section class="mb-4">
-    <h2>Contact</h2>
-    <ul class="list-unstyled">
-      <li><strong>Email:</strong> <a href="mailto:robinson.vidva@gmail.com">robinson.vidva@gmail.com</a></li>
-      <li><strong>Phone:</strong> (551) 247-2805</li>
-      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/robinson-vidva/">linkedin.com/in/robinson-vidva</a></li>
-      <li><strong>Location:</strong> Washington, DC, USA</li>
-    </ul>
-  </section>
-  <section class="mb-4">
-    <h2>Summary</h2>
-    <p>Computational Biologist with over 18 years of experience in bioinformatics, immunology, neuroscience, oncology, and drug discovery, specializing in computational biomodel development and biological data analytics. Extensive expertise in big data analytics has contributed to 7 publications, 12 abstracts, 2 patent grants, and 130+ citations. Proficient in various programming languages and tools, including Python, R, SQL, MATLAB, Tableau, C, C++, HTML/CSS/JS, PHP, and Unix shell. Skilled in data modeling, machine learning, and deep learning algorithms, with a strong foundation in implementing innovative solutions. Proven track record in team management, collaboration, problem-solving, and decision-making to advance computational biology and biological data analysis innovation.</p>
-  </section>
-  <section>
-    <a href="resume.html" class="btn btn-primary">View Full Resume</a>
-  </section>
-</div>
-<footer class="bg-light text-center py-3">
-  &copy; 2025 Robinson Vidva
+
+<main class="py-5">
+  <div class="container">
+    <section class="mb-5">
+      <p class="section-title">About</p>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <h2 class="section-heading mb-3">Driving data-to-discovery pipelines for precision medicine.</h2>
+          <p class="mb-3">I have led computational biology programs that translate systems biology into clinical insight for biotech, hospital, and research teams. My work spans predictive analytics, biomarker discovery, and decision-support tools that accelerate go/no-go calls in drug development and patient stratification.</p>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="badge-soft w-100 text-center">Multi-omics integration</div>
+            </div>
+            <div class="col-md-4">
+              <div class="badge-soft w-100 text-center">Machine learning &amp; AI</div>
+            </div>
+            <div class="col-md-4">
+              <div class="badge-soft w-100 text-center">Cross-functional leadership</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card card-highlight">
+            <div class="card-body">
+              <h3 class="h5 fw-semibold">Core Toolkit</h3>
+              <ul class="list-unstyled mt-3 mb-0">
+                <li class="mb-2">Python, R, MATLAB, SQL</li>
+                <li class="mb-2">TensorFlow, scikit-learn, PyTorch</li>
+                <li class="mb-2">Tableau, Power BI, Looker</li>
+                <li class="mb-0">AWS, GCP, Docker, Git</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <p class="section-title">Experience</p>
+      <h2 class="section-heading mb-4">Highlights from 18 years of scientific impact</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h5">Children's National Hospital</h3>
+              <p class="text-muted mb-1">Research Technician · 2025 – Present</p>
+              <p class="mb-3">Advancing neonatal neurodevelopment research by harmonizing longitudinal brain imaging, transcriptomics, and clinical metrics to pinpoint biomarkers for preterm infants.</p>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">• Built predictive ML models to forecast neurodevelopmental outcomes.</li>
+                <li class="mb-2">• Deployed data pipelines that integrate NICU, imaging, and genomic data.</li>
+                <li>• Collaborate with clinicians to surface actionable risk indicators.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h5">Digirobi Solutions</h3>
+              <p class="text-muted mb-1">Founder &amp; Computational Biologist · 2019 – 2022</p>
+              <p class="mb-3">Delivered bespoke computational models and decision support for oncology and precision nutrition ventures.</p>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">• Architected a patented nutraceutical platform targeting cancer metabolism.</li>
+                <li class="mb-2">• Led end-to-end biomarker discovery engagements for biotech partners.</li>
+                <li>• Mentored multidisciplinary teams on experimental design and analytics.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 mt-1">
+        <div class="col-lg-6">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h5">Cellworks Research India</h3>
+              <p class="text-muted mb-1">Senior Lead Scientist · 2007 – 2019</p>
+              <p class="mb-3">Guided development of AI-driven in silico disease models that inform clinical trial design for autoimmune and oncology indications.</p>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">• Managed teams delivering 20+ mechanism-of-action simulations annually.</li>
+                <li class="mb-2">• Introduced reproducible modeling workflows adopted across the org.</li>
+                <li>• Co-authored key publications and regulatory submissions.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h5">Earlier Roles</h3>
+              <p class="text-muted mb-3">Biotech &amp; research roles in systems biology, immunology, and discovery platforms (2004 – 2007)</p>
+              <p class="mb-0">Contributed to translational research teams across academia and industry with a focus on data curation, algorithm development, and lab-to-data workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <p class="section-title">Education</p>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3 class="h5 mb-1">MS, Data Analytics</h3>
+              <p class="text-muted mb-1">Western Governors University · 2024 – 2025</p>
+              <p class="mb-0">Capstone in predictive analytics focused on multi-modal biomedical data integration and real-time dashboards.</p>
+            </div>
+            <div class="timeline-item">
+              <h3 class="h5 mb-1">MBA, Project Management</h3>
+              <p class="text-muted mb-1">Sikkim Manipal University · 2012 – 2020</p>
+              <p class="mb-0">Specialization in strategic portfolio management for global clinical development teams.</p>
+            </div>
+            <div class="timeline-item">
+              <h3 class="h5 mb-1">B.Tech., Biotechnology</h3>
+              <p class="text-muted mb-1">Bharathidasan University · 2003 – 2007</p>
+              <p class="mb-0">Graduated with distinction; research emphasis on molecular biology and cellular engineering.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h5">Certifications &amp; Professional Development</h3>
+              <ul class="list-unstyled mt-3 mb-0">
+                <li class="mb-2">• Coursera Machine Learning Specialization</li>
+                <li class="mb-2">• AWS Certified Cloud Practitioner</li>
+                <li class="mb-2">• Tableau Desktop Specialist</li>
+                <li class="mb-0">• HarvardX Data Science Professional Certificate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <p class="section-title">Selected Impact</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-muted">Biomarker Discovery</h3>
+              <p class="h5">Reduced time-to-insight by 40% through automated feature engineering pipelines for oncology cohorts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-muted">Clinical Decision Support</h3>
+              <p class="h5">Delivered dashboards that guided 25+ physician case reviews with risk stratification recommendations.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-highlight h-100">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-muted">Innovation</h3>
+              <p class="h5">Co-invented two granted patents and multiple filings translating computational discoveries into products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <p class="section-title">Stay Connected</p>
+      <div class="card card-highlight">
+        <div class="card-body d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+          <div>
+            <h3 class="h4 fw-semibold mb-2">Let’s build the next breakthrough together.</h3>
+            <p class="mb-0">Open to collaborations in translational research, precision medicine, and data-driven life science ventures.</p>
+          </div>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="mailto:robinson.vidva@gmail.com" class="btn btn-primary">Start a Conversation</a>
+            <a href="https://www.linkedin.com/in/robinson-vidva/" class="btn btn-outline-primary" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="py-4">
+  <div class="container text-center">
+    <p class="mb-1">&copy; <span id="year"></span> Robinson Vidva. All rights reserved.</p>
+    <small class="text-muted">Crafted with data, empathy, and a passion for advancing human health.</small>
+  </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
