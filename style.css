@@ -1,0 +1,219 @@
+/* Custom Blue & White Theme for Robinson Vidva Portfolio */
+
+:root {
+  --primary-blue: #1e3a8a;
+  --secondary-blue: #2563eb;
+  --light-blue: #3b82f6;
+  --lighter-blue: #dbeafe;
+  --accent-blue: #60a5fa;
+  --dark-text: #1e293b;
+  --light-text: #64748b;
+  --white: #ffffff;
+  --light-gray: #f8fafc;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  background-color: var(--light-gray);
+}
+
+/* Navigation Bar */
+.navbar-dark {
+  background-color: var(--primary-blue) !important;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-blue) !important;
+}
+
+/* Header */
+.bg-primary {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%) !important;
+}
+
+.bg-secondary {
+  background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--light-blue) 100%) !important;
+}
+
+header h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header .lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--white);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.15);
+}
+
+.card-title {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.card-subtitle {
+  color: var(--light-text);
+}
+
+/* Sections */
+section h2 {
+  color: var(--primary-blue);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--lighter-blue);
+}
+
+section h3 {
+  color: var(--secondary-blue);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+section h4 {
+  color: var(--light-blue);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--secondary-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--light-blue);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+/* List Groups */
+.list-group-item {
+  border-left: 3px solid var(--lighter-blue);
+  border-right: none;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+  border-left-color: var(--secondary-blue);
+  background-color: var(--lighter-blue);
+  transform: translateX(4px);
+}
+
+/* Container */
+.container {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(30, 58, 138, 0.08);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-blue) !important;
+  color: var(--white) !important;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+/* Lists */
+ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+ul li strong {
+  color: var(--primary-blue);
+}
+
+/* Contact Section */
+.list-unstyled li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* Publications, Patents, Abstracts */
+section ul li {
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--lighter-blue);
+  transition: all 0.3s ease;
+}
+
+section ul li:hover {
+  background-color: var(--lighter-blue);
+  border-left-color: var(--secondary-blue);
+  transform: translateX(4px);
+}
+
+/* Work Experience emphasis */
+section p em {
+  color: var(--light-text);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header .lead {
+    font-size: 1.2rem;
+  }
+}
