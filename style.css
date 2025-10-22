@@ -38,12 +38,18 @@ body {
 }
 
 /* Header */
-.bg-primary {
+header.bg-primary {
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%) !important;
+  color: white !important;
 }
 
-.bg-secondary {
+header.bg-secondary {
   background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--light-blue) 100%) !important;
+  color: white !important;
+}
+
+header h1, header .lead, header p {
+  color: white !important;
 }
 
 header h1 {
