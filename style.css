@@ -154,13 +154,20 @@ a:hover {
 }
 
 /* Container */
-.container {
+body > .container, div.container.my-4 {
   background-color: var(--white);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(30, 58, 138, 0.08);
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+/* Ensure header and navbar containers don't get white background */
+header .container, nav .container-fluid {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 /* Footer */
