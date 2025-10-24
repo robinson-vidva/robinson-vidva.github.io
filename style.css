@@ -178,6 +178,21 @@ footer {
   margin-top: 3rem;
 }
 
+footer p {
+  color: var(--white) !important;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: var(--accent-blue) !important;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--lighter-blue) !important;
+  text-decoration: underline;
+}
+
 /* Lists */
 ul li {
   margin-bottom: 0.75rem;
