@@ -62,11 +62,11 @@ p, li {
 
 /* Navbar Logo */
 .navbar-logo {
-  height: 36px;
+  height: 50px;
   width: auto;
   background-color: white;
-  padding: 0.5rem;
-  border-radius: 8px;
+  padding: 0.6rem;
+  border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -468,7 +468,7 @@ section .btn-lg i {
   }
 
   .navbar-logo {
-    height: 28px;
-    padding: 0.4rem;
+    height: 40px;
+    padding: 0.5rem;
   }
 }
