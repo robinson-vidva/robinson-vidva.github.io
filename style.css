@@ -12,7 +12,7 @@
   --light-gray: #f8fafc;
 }
 
-/* Typography - Simplified for symmetry and readability */
+/* Typography - Standardized for all pages */
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--dark-text);
@@ -21,12 +21,12 @@ body {
   line-height: 1.65;
 }
 
+/* Global heading styles - consistent everywhere */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.4;
 }
 
-/* Simplified font size hierarchy - only 3 levels for better symmetry */
 h1, .display-4 {
   font-size: 2.25rem;
 }
@@ -82,7 +82,6 @@ header h1, header .lead, header p {
 
 header h1 {
   font-weight: 700;
-  font-size: 2.5rem;
   letter-spacing: -0.5px;
 }
 
@@ -109,7 +108,7 @@ header h1 {
   color: var(--light-text);
 }
 
-/* Sections - Standardized spacing and typography */
+/* Sections - Standardized spacing */
 section {
   margin-bottom: 3rem;
 }
@@ -117,7 +116,6 @@ section {
 section h2 {
   color: var(--primary-blue);
   font-weight: 700;
-  font-size: 1.75rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid var(--lighter-blue);
@@ -134,13 +132,6 @@ section h4, section h5 {
   color: var(--light-blue);
   font-weight: 600;
   margin-top: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-section h5 {
-  color: var(--primary-blue);
-  font-weight: 600;
-  font-size: 1rem;
   margin-bottom: 0.75rem;
 }
 
@@ -218,7 +209,6 @@ body > .container, div.container.my-4 {
   margin-bottom: 2rem;
 }
 
-/* Ensure header and navbar containers don't get white background */
 header .container, nav .container-fluid {
   background-color: transparent !important;
   box-shadow: none !important;
@@ -255,7 +245,7 @@ ul {
 
 ul li {
   margin-bottom: 0.75rem;
-  line-height: 1.7;
+  line-height: 1.65;
   font-size: 1rem;
 }
 
@@ -289,37 +279,29 @@ section ul li:hover {
   display: none;
 }
 
-.badge-publication {
-  background-color: #2563eb !important;
-  color: white !important;
-  padding: 0.25rem 0.75rem;
+/* Badges for research page */
+.badge, .badge-publication, .badge-presentation, .badge-patent {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 500;
   margin-right: 0.5rem;
-  display: inline-block;
+}
+
+.badge-publication {
+  background-color: #2563eb !important;
+  color: white !important;
 }
 
 .badge-presentation {
   background-color: #059669 !important;
   color: white !important;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-right: 0.5rem;
-  display: inline-block;
 }
 
 .badge-patent {
   background-color: #dc2626 !important;
   color: white !important;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-right: 0.5rem;
-  display: inline-block;
 }
 
 .filter-buttons .btn {
@@ -347,7 +329,7 @@ section ul li:hover {
   margin-bottom: 0.5rem;
 }
 
-/* Skills Section - Tag/Pill Layout */
+/* Skills Section - Circular Chip Layout */
 .skill-category {
   margin-bottom: 2rem;
 }
@@ -356,7 +338,6 @@ section ul li:hover {
   color: var(--primary-blue);
   font-weight: 600;
   margin-bottom: 1rem;
-  font-size: 1.125rem;
 }
 
 .skill-tags {
@@ -368,19 +349,21 @@ section ul li:hover {
 .skill-tag {
   background-color: var(--lighter-blue);
   color: var(--primary-blue);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s ease;
   display: inline-block;
+  border: 2px solid var(--lighter-blue);
 }
 
 .skill-tag:hover {
   background-color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.4);
 }
 
 /* Work Experience emphasis */
@@ -464,14 +447,11 @@ section .btn-lg i {
 
   .skill-tag {
     font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
   }
 
-  .social-links {
-    gap: 1rem;
-  }
-
-  .social-icon i {
-    font-size: 1.5rem;
+  .badge, .badge-publication, .badge-presentation, .badge-patent {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
   }
 }
