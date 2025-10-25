@@ -12,24 +12,42 @@
   --light-gray: #f8fafc;
 }
 
-/* Typography */
+/* Typography - Simplified for symmetry and readability */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--dark-text);
   background-color: var(--light-gray);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
-p {
+/* Simplified font size hierarchy - only 3 levels for better symmetry */
+h1, .display-4 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3, h4, h5 {
+  font-size: 1.125rem;
+}
+
+p, li {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.65;
   margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 
 /* Navigation Bar */
@@ -64,17 +82,7 @@ header h1, header .lead, header p {
 
 header h1 {
   font-weight: 700;
-  font-size: 2.5rem;
   letter-spacing: -0.5px;
-}
-
-header .lead {
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
-header.display-4 {
-  font-size: 2.5rem;
 }
 
 /* Cards */
@@ -108,7 +116,6 @@ section {
 section h2 {
   color: var(--primary-blue);
   font-weight: 700;
-  font-size: 1.75rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid var(--lighter-blue);
@@ -117,23 +124,14 @@ section h2 {
 section h3 {
   color: var(--secondary-blue);
   font-weight: 600;
-  font-size: 1.35rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-section h4 {
-  color: var(--light-blue);
-  font-weight: 600;
-  font-size: 1.15rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
-section h5 {
-  color: var(--primary-blue);
+section h4, section h5 {
+  color: var(--light-blue);
   font-weight: 600;
-  font-size: 1rem;
+  margin-top: 1rem;
   margin-bottom: 0.75rem;
 }
 
@@ -154,6 +152,7 @@ a:hover {
   background-color: var(--secondary-blue);
   border-color: var(--secondary-blue);
   font-weight: 500;
+  font-size: 1rem;
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -164,6 +163,24 @@ a:hover {
   border-color: var(--primary-blue);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.btn-outline-primary {
+  color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
 }
 
 /* List Groups */
@@ -264,33 +281,36 @@ section ul li:hover {
 }
 
 .badge-publication {
-  background-color: #2563eb;
-  color: white;
+  background-color: #2563eb !important;
+  color: white !important;
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 500;
   margin-right: 0.5rem;
+  display: inline-block;
 }
 
 .badge-presentation {
-  background-color: #059669;
-  color: white;
+  background-color: #059669 !important;
+  color: white !important;
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 500;
   margin-right: 0.5rem;
+  display: inline-block;
 }
 
 .badge-patent {
-  background-color: #dc2626;
-  color: white;
+  background-color: #dc2626 !important;
+  color: white !important;
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 500;
   margin-right: 0.5rem;
+  display: inline-block;
 }
 
 .filter-buttons .btn {
@@ -314,9 +334,44 @@ section ul li:hover {
 
 .sort-controls h5 {
   color: var(--primary-blue);
-  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+
+/* Skills Section - Tag/Pill Layout */
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background-color: var(--lighter-blue);
+  color: var(--primary-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.skill-tag:hover {
+  background-color: var(--secondary-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 /* Work Experience emphasis */
@@ -374,24 +429,20 @@ section .btn-lg i {
     padding: 1rem;
   }
 
-  header h1 {
-    font-size: 2rem;
+  h1, .display-4 {
+    font-size: 1.75rem;
   }
 
-  header .lead {
-    font-size: 1.1rem;
+  h2 {
+    font-size: 1.35rem;
   }
 
-  section h2 {
-    font-size: 1.5rem;
+  h3, h4, h5 {
+    font-size: 1.05rem;
   }
 
-  section h3 {
-    font-size: 1.25rem;
-  }
-
-  section h4 {
-    font-size: 1.1rem;
+  .lead {
+    font-size: 1.05rem;
   }
 
   .social-links {
@@ -402,9 +453,9 @@ section .btn-lg i {
     font-size: 1.5rem;
   }
 
-  .btn-lg {
-    font-size: 1rem;
-    padding: 0.5rem 1.5rem;
+  .skill-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .social-links {
