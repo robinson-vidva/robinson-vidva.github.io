@@ -54,7 +54,7 @@ p, li {
 }
 
 /* Navigation Bar */
-.navbar-dark {
+.navbar-light {
   background-color: var(--white) !important;
   box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
   border-bottom: 1px solid var(--border-color);
@@ -121,7 +121,6 @@ header h1 {
 
 /* Cards */
 .card {
-  border: none;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

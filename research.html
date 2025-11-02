@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Robinson Vidva - Research</title>
+  <meta name="description" content="Robinson Vidva's research publications, conference presentations, and patents in computational biology, immunology, cancer research, and neurodevelopmental studies.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/Preview.png">
@@ -26,9 +27,21 @@
 
     gtag('config', 'G-5FRPNE4J9N');
   </script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Robinson Vidva",
+    "jobTitle": "Computational Biologist",
+    "url": "https://robinsonvidva.com",
+    "email": "robinson.vidva@gmail.com"
+  }
+  </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img src="images/Original.png" alt="Robinson Vidva" class="navbar-logo">
@@ -59,10 +72,10 @@
       <div class="col-md-8">
         <h5 class="mb-2">Filter by Type:</h5>
         <div class="filter-buttons">
-          <button class="btn btn-primary btn-sm" onclick="filterItems('all')">All</button>
-          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('publication')">Publications</button>
-          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation')">Presentations</button>
-          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent')">Patents</button>
+          <button class="btn btn-primary btn-sm" onclick="filterItems('all', event)">All</button>
+          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('publication', event)">Publications</button>
+          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation', event)">Presentations</button>
+          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent', event)">Patents</button>
         </div>
       </div>
       <div class="col-md-4 text-end">
@@ -209,33 +222,33 @@
   <!-- Page Navigation -->
   <div class="text-center mt-5 mb-4">
     <a href="certifications.html" class="btn btn-outline-primary">
-      View My Certifications <i class="fas fa-arrow-right ms-2"></i>
+      View My Certifications <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
     </a>
   </div>
 </div>
 <footer class="text-center py-4">
   <div class="container">
     <div class="social-links mb-3">
-      <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" title="LinkedIn" class="social-icon">
-        <i class="fab fa-linkedin fa-2x"></i>
+      <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" title="LinkedIn" aria-label="Visit Robinson Vidva on LinkedIn" class="social-icon">
+        <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
       </a>
-      <a href="https://github.com/robinson-vidva" target="_blank" title="GitHub" class="social-icon">
-        <i class="fab fa-github fa-2x"></i>
+      <a href="https://github.com/robinson-vidva" target="_blank" title="GitHub" aria-label="Visit Robinson Vidva on GitHub" class="social-icon">
+        <i class="fab fa-github fa-2x" aria-hidden="true"></i>
       </a>
-      <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" title="Google Scholar" class="social-icon">
-        <i class="fab fa-google-scholar fa-2x"></i>
+      <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" title="Google Scholar" aria-label="View Robinson Vidva on Google Scholar" class="social-icon">
+        <i class="fab fa-google-scholar fa-2x" aria-hidden="true"></i>
       </a>
-      <a href="https://www.researchgate.net/profile/Robinson-Vidva" target="_blank" title="ResearchGate" class="social-icon">
-        <i class="fab fa-researchgate fa-2x"></i>
+      <a href="https://www.researchgate.net/profile/Robinson-Vidva" target="_blank" title="ResearchGate" aria-label="Visit Robinson Vidva on ResearchGate" class="social-icon">
+        <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
       </a>
-      <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" title="ORCID" class="social-icon">
-        <i class="fab fa-orcid fa-2x"></i>
+      <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" title="ORCID" aria-label="View Robinson Vidva ORCID profile" class="social-icon">
+        <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
       </a>
-      <a href="https://pubmed.ncbi.nlm.nih.gov/?sort=pubdate&term=Vidva+R&cauthor_id=35351004" target="_blank" title="PubMed" class="social-icon">
-        <i class="fas fa-book-medical fa-2x"></i>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/?sort=pubdate&term=Vidva+R&cauthor_id=35351004" target="_blank" title="PubMed" aria-label="View Robinson Vidva publications on PubMed" class="social-icon">
+        <i class="fas fa-book-medical fa-2x" aria-hidden="true"></i>
       </a>
-      <a href="https://robinsonvidva.academia.edu/" target="_blank" title="Academia.edu" class="social-icon">
-        <i class="fas fa-graduation-cap fa-2x"></i>
+      <a href="https://robinsonvidva.academia.edu/" target="_blank" title="Academia.edu" aria-label="Visit Robinson Vidva on Academia.edu" class="social-icon">
+        <i class="fas fa-graduation-cap fa-2x" aria-hidden="true"></i>
       </a>
     </div>
     <p class="mb-1">Email: <a href="mailto:robinson.vidva@gmail.com">robinson.vidva@gmail.com</a></p>
@@ -247,7 +260,7 @@
   let currentFilter = 'all';
   let currentSort = 'newest';
 
-  function filterItems(type) {
+  function filterItems(type, event) {
     currentFilter = type;
     const items = document.querySelectorAll('.research-item');
 
@@ -256,8 +269,12 @@
       btn.classList.remove('btn-primary');
       btn.classList.add('btn-outline-primary');
     });
-    event.target.classList.remove('btn-outline-primary');
-    event.target.classList.add('btn-primary');
+
+    // Use event.currentTarget for reliability
+    if (event && event.currentTarget) {
+      event.currentTarget.classList.remove('btn-outline-primary');
+      event.currentTarget.classList.add('btn-primary');
+    }
 
     // Filter items
     items.forEach(item => {
