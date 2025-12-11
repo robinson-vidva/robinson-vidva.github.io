@@ -350,11 +350,11 @@ section ul li:hover {
   padding: 0.25rem 0.65rem;
   border-radius: 3px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-left: 0.25rem;
-  background-color: #f3f4f6;
-  color: #374151;
-  border: 1px solid #d1d5db;
+  background-color: #64748b;
+  color: #ffffff;
+  border: none;
 }
 
 .filter-buttons .btn {
