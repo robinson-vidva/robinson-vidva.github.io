@@ -315,7 +315,7 @@ section ul li:hover {
 }
 
 /* Badges for research page */
-.badge, .badge-publication, .badge-presentation, .badge-patent {
+.badge, .badge-publication, .badge-presentation, .badge-patent, .badge-preprint {
   display: inline-block;
   padding: 0.35rem 0.85rem;
   border-radius: 4px;
@@ -326,6 +326,11 @@ section ul li:hover {
 
 .badge-publication {
   background-color: #2563eb !important;
+  color: white !important;
+}
+
+.badge-preprint {
+  background-color: #9333ea !important;
   color: white !important;
 }
 
@@ -486,7 +491,7 @@ section .btn-lg i {
     padding: 0.5rem 1rem;
   }
 
-  .badge, .badge-publication, .badge-presentation, .badge-patent {
+  .badge, .badge-publication, .badge-presentation, .badge-patent, .badge-preprint {
     font-size: 0.8rem;
     padding: 0.3rem 0.7rem;
   }
