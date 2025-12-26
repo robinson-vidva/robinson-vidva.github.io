@@ -240,19 +240,48 @@
   <section class="mb-5">
     <h2>Download Resume</h2>
     <div class="pdf-container">
-      <div class="text-center mb-3">
-        <a href="documents/Robinson_Vidva_Resume.pdf" class="btn btn-primary" download>
+      <div class="text-center mb-3" id="pdf-buttons">
+        <a href="documents/Robinson_Vidva_Resume.pdf" class="btn btn-primary" download id="download-btn">
           <i class="fas fa-download me-2" aria-hidden="true"></i> Download PDF Resume
         </a>
-        <a href="documents/Robinson_Vidva_Resume.pdf" class="btn btn-outline-primary ms-2" target="_blank">
+        <a href="documents/Robinson_Vidva_Resume.pdf" class="btn btn-outline-primary ms-2" target="_blank" id="open-btn">
           <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i> Open in New Tab
         </a>
       </div>
-      <div class="pdf-viewer-wrapper">
-        <iframe src="documents/Robinson_Vidva_Resume.pdf" class="pdf-viewer" title="Robinson Vidva Resume PDF"></iframe>
+      <div class="pdf-viewer-wrapper" id="pdf-wrapper">
+        <iframe src="documents/Robinson_Vidva_Resume.pdf" class="pdf-viewer" title="Robinson Vidva Resume PDF" id="pdf-frame"></iframe>
+      </div>
+      <!-- Placeholder shown when PDF is not available -->
+      <div class="pdf-placeholder text-center py-5" id="pdf-placeholder" style="display: none;">
+        <i class="fas fa-file-pdf fa-4x text-muted mb-3" aria-hidden="true"></i>
+        <h4 class="text-muted">PDF Resume Coming Soon</h4>
+        <p class="text-muted">The downloadable PDF version will be available shortly.</p>
       </div>
     </div>
   </section>
+  <script>
+    // Check if PDF is available
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('documents/Robinson_Vidva_Resume.pdf', { method: 'HEAD' })
+        .then(response => {
+          if (!response.ok) {
+            showPlaceholder();
+          }
+        })
+        .catch(() => {
+          showPlaceholder();
+        });
+    });
+
+    function showPlaceholder() {
+      document.getElementById('pdf-wrapper').style.display = 'none';
+      document.getElementById('pdf-placeholder').style.display = 'block';
+      document.getElementById('download-btn').classList.add('disabled');
+      document.getElementById('download-btn').style.pointerEvents = 'none';
+      document.getElementById('open-btn').classList.add('disabled');
+      document.getElementById('open-btn').style.pointerEvents = 'none';
+    }
+  </script>
 
   <!-- Page Navigation -->
   <div class="text-center mt-5 mb-4">
