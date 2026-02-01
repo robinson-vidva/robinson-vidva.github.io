@@ -17,41 +17,44 @@
 
 /* Typography - Standardized for all pages */
 body {
-  font-family: 'Source Sans 3', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'DM Sans', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--dark-text);
   background-color: var(--light-gray);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Global heading styles - consistent everywhere */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans 3', 'Inter', sans-serif;
-  font-weight: 600;
-  line-height: 1.4;
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 h1, .display-4 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
 }
 
 h3, h4, h5 {
-  font-size: 1.125rem;
+  font-size: 1.2rem;
 }
 
 p, li {
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.75;
   margin-bottom: 1rem;
 }
 
 .lead {
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.65;
 }
 
 /* Navigation Bar */
@@ -91,9 +94,10 @@ p, li {
 
 .nav-link {
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--secondary-dark) !important;
   transition: color 0.3s ease;
+  letter-spacing: 0.01em;
 }
 
 .nav-link:hover {
@@ -160,9 +164,10 @@ section {
 section h2 {
   color: var(--secondary-dark);
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid var(--border-color);
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--primary-accent);
+  border-image: linear-gradient(to right, var(--primary-accent), var(--border-color)) 1;
 }
 
 section h3 {
@@ -469,7 +474,7 @@ ul li strong {
 /* Job meta line - date, location inline */
 .job-meta {
   color: var(--light-text);
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -593,18 +598,18 @@ section p em {
 }
 
 .metric-number {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--primary-accent);
   line-height: 1.2;
 }
 
 .metric-label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--light-text);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .metric-divider {
@@ -615,8 +620,8 @@ section p em {
 
 /* Lead text - slightly larger first paragraph */
 .lead-text {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.75;
   color: var(--dark-text);
 }
 
@@ -654,27 +659,27 @@ section p em {
 }
 
 .highlight-card h5 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
   color: var(--secondary-dark);
 }
 
 .highlight-card p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--light-text);
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Recent Publications */
 .recent-pub {
-  padding: 0.85rem 1rem;
+  padding: 1rem 1.25rem;
   border-left: 3px solid var(--border-color);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   transition: border-color 0.2s ease;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .recent-pub:hover {
@@ -690,7 +695,7 @@ section p em {
 
 /* Article Items */
 .article-item {
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 1.75rem;
   background-color: var(--subtle-bg);
   border-radius: 10px;
   border: 1px solid var(--border-color);
@@ -708,7 +713,7 @@ section p em {
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .article-item h3 {
@@ -748,13 +753,13 @@ section p em {
 
 .education-item .collapse p {
   color: var(--light-text);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .container {
@@ -762,19 +767,19 @@ section p em {
   }
 
   h1, .display-4 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
   }
 
   h2 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 
   h3, h4, h5 {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .lead {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .hero-subtitle {
@@ -799,7 +804,7 @@ section p em {
   }
 
   .metric-number {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
 
   .metric-divider {
@@ -821,7 +826,7 @@ section p em {
   }
 
   .recent-pub {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .social-links {
@@ -936,7 +941,7 @@ section p em {
 .curriculum-toggle {
   cursor: pointer;
   color: var(--primary-accent);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
