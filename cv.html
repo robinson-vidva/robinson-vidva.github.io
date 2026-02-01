@@ -133,8 +133,8 @@
         <p>This M.S. program integrates the application of data analysis techniques with real-world problem-solving skills. It focuses on developing advanced expertise in data acquisition, cleaning, and exploratory analysis, along with predictive modeling and data mining. The program emphasizes translating data into actionable insights through reporting and representation.</p>
         <p><strong>Curriculum:</strong> Data Analytics Journey, Data Acquisition, Data Cleaning, Exploratory Data Analysis, Predictive Modeling, Data Mining I & II, Representation and Reporting, Advanced Data Acquisition, Advanced Data Analytics, and Data Analytics Graduate Capstone.</p>
       </div>
-      <button class="btn btn-sm btn-outline-secondary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#edu-wgu" aria-expanded="false" aria-controls="edu-wgu">
-        <i class="fas fa-chevron-down me-1" aria-hidden="true"></i> View program details & curriculum
+      <button class="curriculum-toggle mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#edu-wgu" aria-expanded="false" aria-controls="edu-wgu">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i> <span>View program details & curriculum</span>
       </button>
       <div class="skill-tags mt-2">
         <span class="skill-tag">Data Analysis</span>
@@ -156,8 +156,8 @@
         <p>This MBA program helped bring together the technological problem-solving ability of engineering with the organizational, administrative, legal, and planning abilities of management.</p>
         <p><strong>Curriculum:</strong> Management Process and Organization Behavior, Business Communication, Statistics for Management, Human Resource Management, Production and Operation Management, Financial Management, Marketing Management, Management Information Systems, Operations Research, Project Management, Research Methodology, Project Planning and Scheduling, Project Finance and Budgeting, Managing Human Resource in Projects, Strategic Management and Business Policy, International Business Management, Project Risk Management, Project Quality Management, and Contracts Management in Projects.</p>
       </div>
-      <button class="btn btn-sm btn-outline-secondary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#edu-smu" aria-expanded="false" aria-controls="edu-smu">
-        <i class="fas fa-chevron-down me-1" aria-hidden="true"></i> View program details & curriculum
+      <button class="curriculum-toggle mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#edu-smu" aria-expanded="false" aria-controls="edu-smu">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i> <span>View program details & curriculum</span>
       </button>
       <div class="skill-tags mt-2">
         <span class="skill-tag">Team Leadership</span>
@@ -175,8 +175,8 @@
         <p>This educational experience facilitated using mathematical and computational tools to comprehend and manipulate biological systems, focusing on practical applications in biotechnology and environmental management.</p>
         <p><strong>Curriculum:</strong> Mathematical modeling to various areas of biology and related fields, including biochemistry, cell biology, molecular biology and genetics, microbiology, biochemical and bioprocess engineering, enzyme engineering, genetic engineering, immunology, plant and animal biotechnology, bio-physics, bio-ethics and bio-safety, bio-informatics, protein engineering, and environmental engineering. Also covers Programming in C & C++, Numerical Techniques & Probability Theory, Chemical Reaction Engineering, and Instrumentation Laboratory.</p>
       </div>
-      <button class="btn btn-sm btn-outline-secondary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#edu-bdu" aria-expanded="false" aria-controls="edu-bdu">
-        <i class="fas fa-chevron-down me-1" aria-hidden="true"></i> View program details & curriculum
+      <button class="curriculum-toggle mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#edu-bdu" aria-expanded="false" aria-controls="edu-bdu">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i> <span>View program details & curriculum</span>
       </button>
       <div class="skill-tags mt-2">
         <span class="skill-tag">Bioinformatics</span>
@@ -355,5 +355,18 @@
   </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.curriculum-toggle').forEach(function(btn) {
+    var collapseEl = document.querySelector(btn.getAttribute('data-bs-target'));
+    if (collapseEl) {
+      collapseEl.addEventListener('shown.bs.collapse', function() {
+        btn.querySelector('span').textContent = 'Hide program details & curriculum';
+      });
+      collapseEl.addEventListener('hidden.bs.collapse', function() {
+        btn.querySelector('span').textContent = 'View program details & curriculum';
+      });
+    }
+  });
+</script>
 </body>
 </html>
