@@ -252,7 +252,7 @@ body > .container, div.container.my-4 {
   margin-bottom: 2rem;
 }
 
-header .container, nav .container-fluid {
+header .container, nav .container-fluid, .stats-bar .container {
   background-color: transparent !important;
   box-shadow: none !important;
   border-radius: 0 !important;
@@ -464,6 +464,101 @@ section p em {
   transform: scale(1.2);
 }
 
+/* Hero Section Enhancements */
+.hero-subtitle {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.hero-buttons .btn {
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+}
+
+/* Stats Bar */
+.stats-bar {
+  background-color: var(--secondary-dark);
+  padding: 1.5rem 0;
+  border-bottom: 3px solid var(--primary-accent);
+}
+
+.stats-item {
+  padding: 0.75rem 0.5rem;
+}
+
+.stats-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--light-accent);
+  line-height: 1.2;
+}
+
+.stats-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Research Focus Tags */
+.research-focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.focus-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  color: white;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.focus-tag i {
+  font-size: 0.8rem;
+}
+
+/* Achievement Cards */
+.achievement-card .card-body {
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+}
+
+.achievement-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.achievement-icon i {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.achievement-card .card-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.achievement-card .card-text {
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+
 /* Featured LinkedIn Section on Home */
 section .btn-lg {
   padding: 0.75rem 2rem;
@@ -472,6 +567,39 @@ section .btn-lg {
 
 section .btn-lg i {
   margin-right: 0.5rem;
+}
+
+/* Certification Provider Icons */
+.cert-provider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--light-text);
+  font-size: 0.95rem;
+}
+
+.cert-provider-icon {
+  color: var(--primary-accent);
+  font-size: 1.1rem;
+}
+
+/* Education Collapse Toggle */
+.education-item .btn-outline-secondary {
+  font-size: 0.85rem;
+  color: var(--light-text);
+  border-color: var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.education-item .btn-outline-secondary:hover {
+  color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  background-color: transparent;
+}
+
+.education-item .collapse p {
+  color: var(--light-text);
+  font-size: 0.95rem;
 }
 
 /* Responsive adjustments */
@@ -498,6 +626,32 @@ section .btn-lg i {
 
   .lead {
     font-size: 1.05rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .stats-number {
+    font-size: 1.5rem;
+  }
+
+  .stats-label {
+    font-size: 0.75rem;
+  }
+
+  .focus-tag {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .achievement-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .achievement-icon i {
+    font-size: 1.2rem;
   }
 
   .social-links {
