@@ -242,7 +242,7 @@
     <h2>Download CV</h2>
     <div class="pdf-container">
       <div class="text-center mb-3" id="pdf-buttons">
-        <a href="documents/Robinson_Vidva_CV.pdf" class="btn btn-primary" download id="download-btn">
+        <a href="documents/Robinson_Vidva_CV.pdf" class="btn btn-primary" download="Robinson_Vidva_CV.pdf" id="download-btn">
           <i class="fas fa-download me-2" aria-hidden="true"></i> Download CV
         </a>
         <a href="documents/Robinson_Vidva_CV.pdf" class="btn btn-outline-primary ms-2" target="_blank" id="open-btn">
@@ -250,7 +250,7 @@
         </a>
       </div>
       <div class="pdf-viewer-wrapper" id="pdf-wrapper">
-        <iframe src="documents/Robinson_Vidva_CV.pdf" class="pdf-viewer" title="Robinson Vidva CV" id="pdf-frame"></iframe>
+        <iframe src="" class="pdf-viewer" title="Robinson Vidva CV" id="pdf-frame"></iframe>
       </div>
       <!-- Placeholder shown when PDF is not available -->
       <div class="pdf-placeholder text-center py-5" id="pdf-placeholder" style="display: none;">
@@ -261,15 +261,23 @@
     </div>
   </section>
   <script>
-    // Check if PDF is available
+    // Cache-busting: append timestamp so browser always fetches latest PDF
+    var pdfUrl = 'documents/Robinson_Vidva_CV.pdf';
+    var cacheBuster = '?v=' + Date.now();
+
     document.addEventListener('DOMContentLoaded', function() {
-      fetch('documents/Robinson_Vidva_CV.pdf', { method: 'HEAD' })
-        .then(response => {
-          if (!response.ok) {
+      fetch(pdfUrl + cacheBuster, { method: 'HEAD' })
+        .then(function(response) {
+          if (response.ok) {
+            // PDF exists - load it with cache buster
+            document.getElementById('pdf-frame').src = pdfUrl + cacheBuster;
+            document.getElementById('download-btn').href = pdfUrl + cacheBuster;
+            document.getElementById('open-btn').href = pdfUrl + cacheBuster;
+          } else {
             showPlaceholder();
           }
         })
-        .catch(() => {
+        .catch(function() {
           showPlaceholder();
         });
     });
