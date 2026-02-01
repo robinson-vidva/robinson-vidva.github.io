@@ -245,7 +245,7 @@
         <a href="documents/Robinson_Vidva_Resume.pdf" class="btn btn-primary" download id="download-btn">
           <i class="fas fa-download me-2" aria-hidden="true"></i> Download CV
         </a>
-        <a href="documents/Robinson_Vidva_Resume.pdf" class="btn btn-outline-primary ms-2" target="_blank" id="open-btn">
+        <a href="documents/Robinson_Vidva_CV.pdf" class="btn btn-outline-primary ms-2" target="_blank" id="open-btn">
           <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i> Open in New Tab
         </a>
       </div>
@@ -263,7 +263,7 @@
   <script>
     // Check if PDF is available
     document.addEventListener('DOMContentLoaded', function() {
-      fetch('documents/Robinson_Vidva_Resume.pdf', { method: 'HEAD' })
+      fetch('documents/Robinson_Vidva_CV.pdf', { method: 'HEAD' })
         .then(response => {
           if (!response.ok) {
             showPlaceholder();
