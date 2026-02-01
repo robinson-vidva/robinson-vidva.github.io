@@ -30,10 +30,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="style.css?v=3" rel="stylesheet">
+  <link href="style.css?v=4" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
@@ -86,25 +86,22 @@
 <div class="container my-4">
   <section class="mb-5">
     <div class="sort-controls">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        <h5 class="mb-2">Filter by Type:</h5>
+      <div class="toolbar-row">
         <div class="filter-buttons">
           <button class="btn btn-primary btn-sm" onclick="filterItems('all', event)">All</button>
           <button class="btn btn-outline-primary btn-sm" onclick="filterItems('publication', event)">Publications</button>
           <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation', event)">Presentations</button>
           <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent', event)">Patents</button>
         </div>
-      </div>
-      <div class="col-md-4 text-end">
-        <h5 class="mb-2">Sort:</h5>
-        <select class="form-select form-select-sm" onchange="sortItems(this.value)">
-          <option value="newest">Newest First</option>
-          <option value="oldest">Oldest First</option>
-        </select>
+        <div class="sort-select">
+          <label for="sort-order">Sort:</label>
+          <select class="form-select form-select-sm" id="sort-order" onchange="sortItems(this.value)">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+        </div>
       </div>
     </div>
-  </div>
 
   <div id="research-list">
     <div class="pagination-info mb-3">

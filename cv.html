@@ -30,10 +30,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="style.css?v=3" rel="stylesheet">
+  <link href="style.css?v=4" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
@@ -86,48 +86,66 @@
   <section class="mb-5">
     <h2>Work Experience</h2>
     <div class="timeline-section">
+
       <div class="timeline-item">
-        <h3>Research Technician, <a href="https://www.childrensnational.org" target="_blank">Children's National Hospital <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a> (Mar 2025 - Ongoing)</h3>
-        <p><em>United States</em></p>
-        <ul>
-          <li>Performed multi-omics analyses (RNA-seq, metabolomics, genomics) on mouse/human datasets using Python, R, SQL. Identified DEGs, pathways, GO terms linked to neurodevelopmental deficits, NEC, SIDS.</li>
-          <li>Applied DeepLabCut, BSOID, and custom Python scripts to analyze 3-chamber behavioral assays in mouse models, quantifying how physical therapy and environmental enrichment (EE) interventions impact neurodevelopmental outcomes in preterm birth research.</li>
-          <li>Built ML and statistical models to analyze Erasmus Ladder motor coordination data, identifying significant gait and cerebellar deficits in preterm models. Created visualizations to highlight motor learning impairments and sensorimotor integration patterns.</li>
-          <li>Analyzed neonatal growth data using Fenton charts, performing statistical analysis and data cleaning to track developmental and neurodevelopmental trajectories in preterm infants with and without NEC. Created visualizations to communicate growth patterns and clinical findings.</li>
-        </ul>
+        <h3>Research Technician, <a href="https://www.childrensnational.org" target="_blank">Children's National Hospital <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></h3>
+        <p class="job-meta">Mar 2025 - Ongoing &middot; United States</p>
+        <div class="collapse show" id="job-cnh">
+          <ul>
+            <li>Performed multi-omics analyses (RNA-seq, metabolomics, genomics) on mouse/human datasets using Python, R, SQL. Identified DEGs, pathways, GO terms linked to neurodevelopmental deficits, NEC, SIDS.</li>
+            <li>Applied DeepLabCut, BSOID, and custom Python scripts to analyze 3-chamber behavioral assays in mouse models, quantifying how physical therapy and environmental enrichment (EE) interventions impact neurodevelopmental outcomes in preterm birth research.</li>
+            <li>Built ML and statistical models to analyze Erasmus Ladder motor coordination data, identifying significant gait and cerebellar deficits in preterm models.</li>
+            <li>Analyzed neonatal growth data using Fenton charts, performing statistical analysis and data cleaning to track developmental trajectories in preterm infants with and without NEC.</li>
+          </ul>
+        </div>
+        <button class="curriculum-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#job-cnh" aria-expanded="true">
+          <i class="fas fa-chevron-down" aria-hidden="true"></i> <span>Hide details</span>
+        </button>
       </div>
+
       <div class="timeline-item">
-        <h3>Founder and Computational Biologist, <a href="https://robinsonmax.wixsite.com/digirobi" target="_blank">Digirobi Solutions <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a> (Oct 2019 - Jun 2022)</h3>
-        <p><em>India</em></p>
-        <ul>
-          <li>Developed a computational biology model for neuropathway analysis using MATLAB, leading to 1 publication on the data and enhanced understanding of molecular mechanisms.</li>
-          <li>Analyzed cancer genomics data and developed a web-based workflow, securing 1 patent for a nutraceutical combination aimed at enhancing cancer therapies.</li>
-          <li>Co-developed MyVivarium, an open-source cloud app for affordable, real-time research animal colony management, resulting in 1 first-author publication.</li>
-          <li>Provided project-to-product management support and implemented business intelligence strategies to improve business performance for 3+ businesses.</li>
-        </ul>
+        <h3>Founder & Computational Biologist, <a href="https://robinsonmax.wixsite.com/digirobi" target="_blank">Digirobi Solutions <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></h3>
+        <p class="job-meta">Oct 2019 - Jun 2022 &middot; India</p>
+        <div class="collapse" id="job-digirobi">
+          <ul>
+            <li>Developed a computational biology model for neuropathway analysis using MATLAB, leading to 1 publication on the data and enhanced understanding of molecular mechanisms.</li>
+            <li>Analyzed cancer genomics data and developed a web-based workflow, securing 1 patent for a nutraceutical combination aimed at enhancing cancer therapies.</li>
+            <li>Co-developed MyVivarium, an open-source cloud app for affordable, real-time research animal colony management, resulting in 1 first-author publication.</li>
+            <li>Provided project-to-product management support and implemented business intelligence strategies to improve business performance for 3+ businesses.</li>
+          </ul>
+        </div>
+        <button class="curriculum-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#job-digirobi" aria-expanded="false">
+          <i class="fas fa-chevron-down" aria-hidden="true"></i> <span>Show details</span>
+        </button>
       </div>
+
       <div class="timeline-item">
-        <h3>Senior Lead Scientist, <a href="https://cellworks.life/" target="_blank">Cellworks Research India Private Limited <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a> (Jun 2007 - Sep 2019)</h3>
-        <p><em>India</em></p>
-        <ul>
-          <li>Developed molecular biology and cell signaling models, including TNF, Interleukin, and metabolism pathways, improving understanding of disease mechanisms.</li>
-          <li>Specialized in computational modeling in immunology, focusing on cell signaling and pathway models for autoimmune diseases, including rheumatoid arthritis.</li>
-          <li>Developed a comprehensive autoimmune disease model involving 8 cell types, validated with in vivo data, contributing to 3 publications and 5 conference abstracts on immunology and skin related autoimmune diseases.</li>
-          <li>Managed teams of 10+ members, leading projects in data analytics, computational biology, and research development to improve decision-making through advanced analytics.</li>
-          <li>Built cancer drug/therapeutic models and developed a genomics database with 500+ cancer cell lines and TCGA and MSK datasets. This work contributed to 1 publication on leukemia genomics and 7 ASH abstracts, enhancing precision medicine by aligning drug responses with cancer genomics.</li>
-          <li>Secured 1 approved patent on cancer drug repurposing, 2 patent applications for novel repurposed drugs for RA, and 1 process patent application on drug repurposing methodology.</li>
-          <li>Led 25+ training sessions for team development, focusing on enhancing computational biology & data analytics in research data.</li>
-        </ul>
+        <h3>Senior Lead Scientist, <a href="https://cellworks.life/" target="_blank">Cellworks Research India Pvt. Ltd. <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></h3>
+        <p class="job-meta">Jun 2007 - Sep 2019 &middot; India</p>
+        <div class="collapse" id="job-cellworks">
+          <ul>
+            <li>Developed molecular biology and cell signaling models, including TNF, Interleukin, and metabolism pathways, improving understanding of disease mechanisms.</li>
+            <li>Specialized in computational modeling in immunology, focusing on cell signaling and pathway models for autoimmune diseases, including rheumatoid arthritis.</li>
+            <li>Developed a comprehensive autoimmune disease model involving 8 cell types, validated with in vivo data, contributing to 3 publications and 5 conference abstracts.</li>
+            <li>Managed teams of 10+ members, leading projects in data analytics, computational biology, and research development.</li>
+            <li>Built cancer drug/therapeutic models and developed a genomics database with 500+ cancer cell lines and TCGA and MSK datasets. Contributed to 1 publication on leukemia genomics and 7 ASH abstracts.</li>
+            <li>Secured 1 approved patent on cancer drug repurposing, 2 patent applications for novel repurposed drugs for RA, and 1 process patent application.</li>
+          </ul>
+        </div>
+        <button class="curriculum-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#job-cellworks" aria-expanded="false">
+          <i class="fas fa-chevron-down" aria-hidden="true"></i> <span>Show details</span>
+        </button>
       </div>
+
     </div>
   </section>
+
   <section class="mb-5">
     <h2>Education</h2>
 
     <div class="education-item mb-4">
       <h3><a href="https://www.wgu.edu/" target="_blank">Western Governors University <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></h3>
-      <p><strong>Master of Science (MS) - Data Analytics</strong> (Jul 2024 - Jan 2025)</p>
-      <p><em>United States</em></p>
+      <p class="job-meta"><strong>Master of Science (MS) - Data Analytics</strong> &middot; Jul 2024 - Jan 2025 &middot; United States</p>
       <p><strong>Capstone Project:</strong> Regression and Clustering Analysis of Seoul Bike Sharing Demand</p>
       <div class="collapse" id="edu-wgu">
         <p>This M.S. program integrates the application of data analysis techniques with real-world problem-solving skills. It focuses on developing advanced expertise in data acquisition, cleaning, and exploratory analysis, along with predictive modeling and data mining. The program emphasizes translating data into actionable insights through reporting and representation.</p>
@@ -149,8 +167,7 @@
 
     <div class="education-item mb-4">
       <h3><a href="https://www.manipal.edu/" target="_blank">Sikkim Manipal University <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></h3>
-      <p><strong>Master of Business Administration (MBA) - Project Management</strong> (Nov 2012 - Feb 2020)</p>
-      <p><em>India</em></p>
+      <p class="job-meta"><strong>Master of Business Administration (MBA) - Project Management</strong> &middot; Nov 2012 - Feb 2020 &middot; India</p>
       <p><strong>Project:</strong> Study on the Importance of HRM in Project Management at Pathfinder Global Solutions.</p>
       <div class="collapse" id="edu-smu">
         <p>This MBA program helped bring together the technological problem-solving ability of engineering with the organizational, administrative, legal, and planning abilities of management.</p>
@@ -168,8 +185,7 @@
 
     <div class="education-item mb-4">
       <h3><a href="https://www.bdu.ac.in/" target="_blank">Bharathidasan University <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></h3>
-      <p><strong>Bachelor of Technology (B.Tech.) - Biotechnology</strong> (Jul 2003 - Apr 2007)</p>
-      <p><em>India</em> | <strong>Grade:</strong> First Class with Distinction</p>
+      <p class="job-meta"><strong>Bachelor of Technology (B.Tech.) - Biotechnology</strong> &middot; Jul 2003 - Apr 2007 &middot; India &middot; First Class with Distinction</p>
       <p><strong>Project:</strong> Biochemical and Microbiological Analysis of Effluent from Dairy Milk Plant [Environmental Engineering]</p>
       <div class="collapse" id="edu-bdu">
         <p>This educational experience facilitated using mathematical and computational tools to comprehend and manipulate biological systems, focusing on practical applications in biotechnology and environmental management.</p>
@@ -188,6 +204,7 @@
       </div>
     </div>
   </section>
+
   <section class="mb-5">
     <h2>Skills</h2>
 
@@ -356,14 +373,25 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+  // Toggle text for all collapsible sections (education + work)
   document.querySelectorAll('.curriculum-toggle').forEach(function(btn) {
     var collapseEl = document.querySelector(btn.getAttribute('data-bs-target'));
     if (collapseEl) {
       collapseEl.addEventListener('shown.bs.collapse', function() {
-        btn.querySelector('span').textContent = 'Hide program details & curriculum';
+        var span = btn.querySelector('span');
+        if (span.textContent.includes('program details')) {
+          span.textContent = 'Hide program details & curriculum';
+        } else {
+          span.textContent = 'Hide details';
+        }
       });
       collapseEl.addEventListener('hidden.bs.collapse', function() {
-        btn.querySelector('span').textContent = 'View program details & curriculum';
+        var span = btn.querySelector('span');
+        if (span.textContent.includes('program details')) {
+          span.textContent = 'View program details & curriculum';
+        } else {
+          span.textContent = 'Show details';
+        }
       });
     }
   });
