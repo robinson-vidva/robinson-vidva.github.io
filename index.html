@@ -28,6 +28,9 @@
   <meta name="twitter:description" content="Computational biologist with 18+ years of experience in bioinformatics, multi-omics data analysis, and drug discovery.">
   <meta name="twitter:image" content="https://robinsonvidva.com/images/Preview.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="style.css" rel="stylesheet">
@@ -78,7 +81,7 @@
   </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img src="images/Original.png" alt="Robinson Vidva" class="navbar-logo">
@@ -115,12 +118,47 @@
       <p>Work has contributed to 7 peer-reviewed publications, 2 preprints under review, 14 conference presentations, 2 granted patents, and 145+ citations. Research spans from immune-mediated cancer therapies and autoimmune disease modeling to current work on neurodevelopmental disorders, applying RNA-seq, metabolomics, and behavioral analysis to study how preterm birth affects brain development and treatment responses.</p>
       <p>Proficient in Python, R, SQL, and MATLAB, with expertise in specialized tools like DeepLabCut and BSOID for behavioral analysis. Experience includes managing research teams and translating complex computational findings into biological insights that advance disease understanding and therapeutic development.</p>
     </section>
+    <!-- Stats Banner -->
+    <section class="mb-5">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md-3">
+          <div class="stat-card p-3">
+            <i class="fas fa-book-open fa-2x mb-2 text-primary-accent" aria-hidden="true"></i>
+            <div class="stat-number">7</div>
+            <div class="stat-label">Publications</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card p-3">
+            <i class="fas fa-chalkboard-teacher fa-2x mb-2 text-primary-accent" aria-hidden="true"></i>
+            <div class="stat-number">14</div>
+            <div class="stat-label">Presentations</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card p-3">
+            <i class="fas fa-award fa-2x mb-2 text-primary-accent" aria-hidden="true"></i>
+            <div class="stat-number">2</div>
+            <div class="stat-label">Patents</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card p-3">
+            <i class="fas fa-quote-right fa-2x mb-2 text-primary-accent" aria-hidden="true"></i>
+            <div class="stat-number">145+</div>
+            <div class="stat-label">Citations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="mb-5">
       <h2>Key Achievements</h2>
       <div class="row">
         <div class="col-md-6 mb-3">
           <div class="card h-100">
             <div class="card-body">
+              <div class="card-icon mb-2"><i class="fas fa-brain fa-lg" aria-hidden="true"></i></div>
               <h5 class="card-title">Neurodevelopmental Data Analysis</h5>
               <p class="card-text">Applied multi-omics approaches to study preterm birth effects on brain development and quantified behavioral deficits in mouse models.</p>
             </div>
@@ -129,6 +167,7 @@
         <div class="col-md-6 mb-3">
           <div class="card h-100">
             <div class="card-body">
+              <div class="card-icon mb-2"><i class="fas fa-shield-virus fa-lg" aria-hidden="true"></i></div>
               <h5 class="card-title">Immuno-Oncology Research</h5>
               <p class="card-text">Analyzed cancer genomics data and immune pathway interactions to identify therapeutic targets, contributing to precision medicine advances.</p>
             </div>
@@ -137,6 +176,7 @@
         <div class="col-md-6 mb-3">
           <div class="card h-100">
             <div class="card-body">
+              <div class="card-icon mb-2"><i class="fas fa-project-diagram fa-lg" aria-hidden="true"></i></div>
               <h5 class="card-title">Predictive Disease Modeling</h5>
               <p class="card-text">Developed pathway models for autoimmune diseases and cancer therapeutics, validated against patient datasets to improve treatment selection.</p>
             </div>
@@ -145,6 +185,7 @@
         <div class="col-md-6 mb-3">
           <div class="card h-100">
             <div class="card-body">
+              <div class="card-icon mb-2"><i class="fas fa-cogs fa-lg" aria-hidden="true"></i></div>
               <h5 class="card-title">Automated Pipeline Development</h5>
               <p class="card-text">Built scalable workflows for large biological datasets, significantly reducing analysis time and improving research reproducibility.</p>
             </div>
@@ -153,6 +194,7 @@
         <div class="col-md-6 mb-3">
           <div class="card h-100">
             <div class="card-body">
+              <div class="card-icon mb-2"><i class="fas fa-capsules fa-lg" aria-hidden="true"></i></div>
               <h5 class="card-title">Drug Discovery Innovation</h5>
               <p class="card-text">Developed novel therapeutic combinations through computational analysis, securing 2 patents for cancer and autoimmune treatments.</p>
             </div>
@@ -161,6 +203,7 @@
         <div class="col-md-6 mb-3">
           <div class="card h-100">
             <div class="card-body">
+              <div class="card-icon mb-2"><i class="fas fa-users fa-lg" aria-hidden="true"></i></div>
               <h5 class="card-title">Team Leadership</h5>
               <p class="card-text">Led research teams and trained scientists in computational methods, connecting experimental work with data analysis.</p>
             </div>
