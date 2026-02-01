@@ -569,19 +569,7 @@ section .btn-lg i {
   margin-right: 0.5rem;
 }
 
-/* Certification Provider Icons */
-.cert-provider {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--light-text);
-  font-size: 0.95rem;
-}
-
-.cert-provider-icon {
-  color: var(--primary-accent);
-  font-size: 1.1rem;
-}
+/* Certification Provider Icons - see .cert-provider below in Certification Cards section */
 
 /* Education Collapse Toggle */
 .education-item .btn-outline-secondary {
