@@ -33,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="style.css?v=2" rel="stylesheet">
+  <link href="style.css?v=3" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
@@ -117,10 +117,40 @@
 </header>
 
 <div class="container my-4">
+
+    <!-- Quick metrics - compact inline row -->
+    <div class="metrics-row mb-4">
+      <div class="metric-item">
+        <span class="metric-number">18+</span>
+        <span class="metric-label">Years</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-number">7</span>
+        <span class="metric-label">Publications</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-number">6</span>
+        <span class="metric-label">Patents</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-number">14</span>
+        <span class="metric-label">Presentations</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-number">145+</span>
+        <span class="metric-label">Citations</span>
+      </div>
+    </div>
+
     <section class="mb-5">
-      <h2>About</h2>
-      <p>Computational biologist with 18+ years of experience in bioinformatics, multi-omics data analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Research focuses on integrating transcriptomics, metabolomics, and genomics data to understand disease mechanisms and evaluate therapeutic interventions, with direct applications to improving pediatric health outcomes.</p>
+      <p class="lead-text">Computational biologist with 18+ years of experience in bioinformatics, multi-omics data analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Research focuses on integrating transcriptomics, metabolomics, and genomics data to understand disease mechanisms and evaluate therapeutic interventions, with direct applications to improving pediatric health outcomes.</p>
+
       <p>Proficient in Python, R, SQL, and MATLAB, with expertise in specialized tools like DeepLabCut and BSOID for behavioral analysis. Experience includes managing research teams and translating complex computational findings into biological insights that advance disease understanding and therapeutic development.</p>
+
       <div class="research-focus-tags mt-3">
         <span class="focus-tag"><i class="fas fa-dna" aria-hidden="true"></i> Multi-omics</span>
         <span class="focus-tag"><i class="fas fa-brain" aria-hidden="true"></i> Neurodevelopment</span>
@@ -129,97 +159,77 @@
         <span class="focus-tag"><i class="fas fa-chart-line" aria-hidden="true"></i> Data Science</span>
         <span class="focus-tag"><i class="fas fa-project-diagram" aria-hidden="true"></i> Systems Biology</span>
       </div>
+    </section>
 
-      <div class="row text-center g-3 mt-4">
-        <div class="col-6 col-md-3">
-          <div class="stat-card p-3">
-            <div class="stat-number">18+</div>
-            <div class="stat-label">Years Experience</div>
+    <section class="mb-5">
+      <h2>Research Highlights</h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+            <div>
+              <h5>Neurodevelopmental Data Analysis</h5>
+              <p>Applied multi-omics approaches to study preterm birth effects on brain development and quantified behavioral deficits using DeepLabCut and BSOID in mouse models.</p>
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-card p-3">
-            <div class="stat-number">7</div>
-            <div class="stat-label">Publications</div>
+        <div class="col-md-6">
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-shield-virus" aria-hidden="true"></i></div>
+            <div>
+              <h5>Immuno-Oncology & Precision Medicine</h5>
+              <p>Analyzed cancer genomics data across 500+ cell lines and immune pathway interactions to identify therapeutic targets, contributing to precision medicine advances.</p>
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-card p-3">
-            <div class="stat-number">2</div>
-            <div class="stat-label">Patents</div>
+        <div class="col-md-6">
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+            <div>
+              <h5>Predictive Disease Modeling</h5>
+              <p>Developed pathway models for autoimmune diseases and cancer therapeutics, validated against patient datasets. Secured 2 granted patents for drug repurposing.</p>
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-card p-3">
-            <div class="stat-number">145+</div>
-            <div class="stat-label">Citations</div>
+        <div class="col-md-6">
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-capsules" aria-hidden="true"></i></div>
+            <div>
+              <h5>Drug Discovery Innovation</h5>
+              <p>Developed novel therapeutic combinations through computational analysis and co-developed MyVivarium, an open-source cloud app for research animal colony management.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Recent publications highlight -->
     <section class="mb-5">
-      <h2>Key Achievements</h2>
-      <div class="row">
-        <div class="col-md-6 col-lg-4 mb-3">
-          <div class="card h-100 achievement-card">
-            <div class="card-body">
-              <div class="achievement-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
-              <h5 class="card-title">Neurodevelopmental Data Analysis</h5>
-              <p class="card-text">Applied multi-omics approaches to study preterm birth effects on brain development and quantified behavioral deficits in mouse models.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-          <div class="card h-100 achievement-card">
-            <div class="card-body">
-              <div class="achievement-icon"><i class="fas fa-shield-virus" aria-hidden="true"></i></div>
-              <h5 class="card-title">Immuno-Oncology Research</h5>
-              <p class="card-text">Analyzed cancer genomics data and immune pathway interactions to identify therapeutic targets, contributing to precision medicine advances.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-          <div class="card h-100 achievement-card">
-            <div class="card-body">
-              <div class="achievement-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-              <h5 class="card-title">Predictive Disease Modeling</h5>
-              <p class="card-text">Developed pathway models for autoimmune diseases and cancer therapeutics, validated against patient datasets to improve treatment selection.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-          <div class="card h-100 achievement-card">
-            <div class="card-body">
-              <div class="achievement-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
-              <h5 class="card-title">Automated Pipeline Development</h5>
-              <p class="card-text">Built scalable workflows for large biological datasets, significantly reducing analysis time and improving research reproducibility.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-          <div class="card h-100 achievement-card">
-            <div class="card-body">
-              <div class="achievement-icon"><i class="fas fa-capsules" aria-hidden="true"></i></div>
-              <h5 class="card-title">Drug Discovery Innovation</h5>
-              <p class="card-text">Developed novel therapeutic combinations through computational analysis, securing 2 patents for cancer and autoimmune treatments.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-          <div class="card h-100 achievement-card">
-            <div class="card-body">
-              <div class="achievement-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-              <h5 class="card-title">Team Leadership</h5>
-              <p class="card-text">Led research teams and trained scientists in computational methods, connecting experimental work with data analysis.</p>
-            </div>
-          </div>
-        </div>
+      <h2>Recent Work</h2>
+      <div class="recent-pub">
+        <span class="badge badge-publication">2025</span>
+        <strong>Intrinsic Gestational Timing Governs Human Cerebellar Development After Preterm Birth.</strong>
+        <span class="text-muted">Sanidas, G., ..., <span class="author-highlight">Vidva, R.</span>, ..., Kratimenos, P.</span>
+        <a href="https://doi.org/10.1101/2025.09.01.673244" target="_blank" class="ms-1"><i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a>
+      </div>
+      <div class="recent-pub">
+        <span class="badge badge-publication">2025</span>
+        <strong>MyVivarium: A cloud-based lab animal colony management application with real-time ambient sensing.</strong>
+        <span class="text-muted"><span class="author-highlight">Vidva, R.</span>, Raza, M.A., et al.</span>
+        <a href="https://doi.org/10.1016/j.csbj.2025.01.025" target="_blank" class="ms-1"><i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a>
+      </div>
+      <div class="recent-pub">
+        <span class="badge badge-presentation">2025</span>
+        <strong>Early postnatal rehabilitation mitigates motor, growth, and social deficits in perinatal brain injury.</strong>
+        <span class="text-muted">Simonti, G., <span class="author-highlight">Vidva, R.</span>, et al. Society for Neuroscience, San Diego.</span>
+      </div>
+      <div class="text-end mt-3">
+        <a href="research.html" class="btn btn-sm btn-outline-primary">View all publications <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
       </div>
     </section>
 
     <!-- Page Navigation -->
-    <div class="text-center mt-5 mb-4">
+    <div class="text-center mt-4 mb-4 page-nav-buttons">
       <a href="cv.html" class="btn btn-outline-primary me-2">
         View My CV <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
       </a>
