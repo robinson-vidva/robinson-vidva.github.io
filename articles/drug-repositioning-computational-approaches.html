@@ -98,7 +98,7 @@
       <span class="badge bg-light text-dark">Drug Discovery</span>
       <span class="badge bg-light text-dark">Computational Biology</span>
       <span class="text-white-50 ms-3"><i class="far fa-calendar" aria-hidden="true"></i> February 1, 2026</span>
-      <span class="text-white-50 ms-3"><i class="far fa-clock" aria-hidden="true"></i> 10 min read</span>
+      <span class="text-white-50 ms-3"><i class="far fa-clock" aria-hidden="true"></i> 8 min read</span>
     </div>
   </div>
 </header>
@@ -108,106 +108,190 @@
     <div class="col-lg-8 mx-auto">
 
       <section class="mb-5">
-        <p class="lead">Developing a new drug from scratch typically takes over a decade and costs billions of dollars, with a high rate of failure. Drug repositioning &mdash; the strategy of finding new therapeutic uses for existing, approved medications &mdash; offers a compelling alternative that can dramatically reduce both timelines and costs. The underlying logic is powerful: reuse what we already know about a drug's effects and strategically target the relevant disease pathways to enhance therapeutic efficacy, improve outcomes over the standard of care, overcome treatment resistance, and ultimately improve patients' quality of life.</p>
+        <p class="lead">Developing a new drug from scratch typically takes over a decade and costs billions of dollars, with roughly 90% of candidates failing in clinical trials. Drug repositioning &mdash; finding new therapeutic uses for existing, approved medications &mdash; offers a faster, cheaper alternative. The logic is straightforward: reuse what is already known about a drug's effects, strategically target the disease-relevant pathways, improve outcomes over the standard of care, overcome treatment resistance, and improve patients' quality of life.</p>
 
-        <p>Having spent over 18 years working at the intersection of computational biology and drug discovery, I have seen this logic play out across very different disease areas. In this article, I trace that journey &mdash; from inflammatory disease to oncology to natural compound integration &mdash; and share how computational modeling has been central to each step.</p>
+        <p>This article traces how computational modeling enables that logic &mdash; from inflammatory disease to oncology to natural compound integration.</p>
+      </section>
+
+      <!-- Illustration: Drug Repositioning Logic -->
+      <section class="mb-5">
+        <div class="text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" style="max-width:100%; height:auto;" role="img" aria-label="Drug Repositioning Through Computational Modeling - Workflow Illustration">
+            <defs>
+              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#0891b2" />
+                <stop offset="100%" style="stop-color:#0369a1" />
+              </linearGradient>
+              <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0891b2" flood-opacity="0.15"/>
+              </filter>
+            </defs>
+
+            <!-- Background -->
+            <rect width="800" height="420" rx="16" fill="url(#bgGrad)" stroke="#cbd5e1" stroke-width="1"/>
+
+            <!-- Title -->
+            <text x="400" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="16" font-weight="700" fill="#0f172a">The Computational Drug Repositioning Workflow</text>
+
+            <!-- Row 1: Three Input Sources -->
+            <!-- Approved Drugs -->
+            <rect x="30" y="60" width="220" height="80" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="140" y="90" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#0891b2">Approved Drugs</text>
+            <text x="140" y="108" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Known safety, PK &amp; mechanisms</text>
+            <text x="140" y="123" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">e.g. nelfinavir, metformin, statins</text>
+
+            <!-- Disease Model -->
+            <rect x="290" y="60" width="220" height="80" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="400" y="90" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#0891b2">Computational Disease Model</text>
+            <text x="400" y="108" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Genomic + proteomic + pathway data</text>
+            <text x="400" y="123" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Virtual disease simulation</text>
+
+            <!-- Natural Compounds -->
+            <rect x="550" y="60" width="220" height="80" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="660" y="90" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#0891b2">Natural Compounds</text>
+            <text x="660" y="108" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Plant-derived molecules with</text>
+            <text x="660" y="123" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">characterized mechanisms</text>
+
+            <!-- Arrows down to center process -->
+            <path d="M140,140 L140,165 L370,165 L370,175" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M400,140 L400,175" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M660,140 L660,165 L430,165 L430,175" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
+
+            <!-- Center: Strategic Pathway Targeting -->
+            <rect x="180" y="178" width="440" height="70" rx="14" fill="url(#accentGrad)" filter="url(#shadow)"/>
+            <text x="400" y="205" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Strategic Pathway Targeting</text>
+            <text x="400" y="224" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#e0f2fe">Simulate drug-pathway interactions &bull; Predict synergistic combinations</text>
+            <text x="400" y="239" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#e0f2fe">Design rational multi-drug therapies</text>
+
+            <!-- Arrow down -->
+            <path d="M400,248 L400,275" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+
+            <!-- Row 3: Disease Applications Timeline -->
+            <!-- RA -->
+            <rect x="30" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="145" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#059669">Inflammatory Disease</text>
+            <text x="145" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">RA combination therapies (2008&ndash;2015)</text>
+            <text x="145" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Overcome SOC resistance</text>
+
+            <!-- Oncology -->
+            <rect x="285" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="400" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#2563eb">Oncology</text>
+            <text x="400" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Beat AML &amp; cancer combinations (2016&ndash;2019)</text>
+            <text x="400" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Precision drug response prediction</text>
+
+            <!-- Natural + Chemo -->
+            <rect x="540" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#9333ea" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="655" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#9333ea">Natural + Antineoplastic</text>
+            <text x="655" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Matched supplements + chemo (2022)</text>
+            <text x="655" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Expand repositioning toolkit</text>
+
+            <!-- Connecting arrows from center to three boxes -->
+            <path d="M300,248 L145,275" stroke="#94a3b8" stroke-width="1.2" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M500,248 L655,275" stroke="#94a3b8" stroke-width="1.2" fill="none" marker-end="url(#arrowhead)"/>
+
+            <!-- Bottom: Outcome bar -->
+            <rect x="30" y="362" width="740" height="46" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+            <text x="400" y="383" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#0f172a">
+              <tspan fill="#059669">Improve vs SOC</tspan>
+              <tspan dx="14" fill="#94a3b8">&bull;</tspan>
+              <tspan dx="14" fill="#dc2626">Overcome Resistance</tspan>
+              <tspan dx="14" fill="#94a3b8">&bull;</tspan>
+              <tspan dx="14" fill="#2563eb">Improve QoL</tspan>
+              <tspan dx="14" fill="#94a3b8">&bull;</tspan>
+              <tspan dx="14" fill="#9333ea">Reduce Cost &amp; Time</tspan>
+              <tspan dx="14" fill="#94a3b8">&bull;</tspan>
+              <tspan dx="14" fill="#0891b2">Reuse Known Effects</tspan>
+            </text>
+            <text x="400" y="399" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#64748b">Consistent logic across all disease areas and compound types</text>
+          </svg>
+        </div>
+        <p class="text-center text-muted mt-2" style="font-size: 0.85rem;"><em>Figure 1: The computational drug repositioning workflow &mdash; from inputs to strategic pathway targeting to disease-specific applications.</em></p>
       </section>
 
       <section class="mb-5">
         <h2>Why Drug Repositioning Matters</h2>
-        <p>Traditional drug development follows a long, costly path: target identification, lead compound screening, preclinical testing, and multi-phase clinical trials. The attrition rate is staggering &mdash; roughly 90% of candidates that enter clinical trials never reach patients. The financial and human cost of each failure compounds over time.</p>
+        <p>Traditional drug development follows a long, costly path with roughly 90% of candidates failing in clinical trials. Repositioned drugs already have established safety profiles, pharmacokinetic data, and manufacturing processes &mdash; they can move to clinical evaluation far more quickly, dramatically reducing research spend and timelines.</p>
 
-        <p>Drug repositioning sidesteps much of this risk. Because repositioned drugs already have established safety profiles, pharmacokinetic data, and manufacturing processes, they can move to clinical evaluation far more quickly &mdash; dramatically reducing research spend and development timelines. The key challenge shifts from safety validation to efficacy prediction: <em>which existing drugs might work for a different disease, and why?</em></p>
-
-        <p>This is precisely where computational methods become indispensable. Rather than relying solely on serendipitous clinical observations (as was historically the case), we can now systematically screen thousands of approved compounds against disease-specific molecular signatures. By strategically targeting the pathways that drive a disease, we identify candidates whose known pharmacological effects can be reused in a new therapeutic context &mdash; improving outcomes against the current standard of care while keeping development costs manageable.</p>
+        <p>The challenge shifts to efficacy prediction: <em>which existing drugs might work for a different disease, and why?</em> Computational methods address this by systematically screening approved compounds against disease-specific molecular signatures, strategically targeting the pathways that drive a disease to identify candidates that can improve on the current standard of care.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Computational Biology Modeling: Building a Virtual Disease</h2>
-        <p>One of the most powerful approaches I have worked with involves constructing detailed computational models of disease biology. Rather than viewing a disease through a single pathway or target, these models integrate multiple layers of biological data &mdash; genomic, proteomic, and signaling pathway information &mdash; to create a comprehensive representation of the disease state.</p>
+        <h2>The Approach: Building a Virtual Disease</h2>
+        <p>The core method involves constructing computational models that integrate genomic, proteomic, and signaling pathway data to represent a disease state comprehensively. By simulating how drugs interact with proteins, alter signaling cascades, and affect cellular behavior, the model can strategically assess which pathway targets offer the greatest therapeutic effect &mdash; and design combinations that enhance efficacy through complementary mechanisms.</p>
 
-        <p>The principle is straightforward: if you can accurately simulate the molecular machinery driving a disease, you can computationally test how different drugs (alone or in combination) might disrupt that machinery. The model predicts drug responses by simulating how a compound interacts with proteins, alters signaling cascades, and ultimately affects cellular behavior. Critically, this allows us to strategically assess which pathway targets offer the greatest therapeutic effect and to design combinations that enhance efficacy through complementary mechanisms.</p>
-
-        <p>This approach carries a consistent logic across disease areas: model the disease, identify the vulnerable pathways, reuse the known effects of existing drugs to target those pathways, and predict combinations that improve on the standard of care. The application of this logic began, in my experience, with inflammatory disease.</p>
+        <p>The logic is consistent across disease areas: model the disease, identify vulnerable pathways, reuse existing drugs to target those pathways, and predict combinations that improve on the standard of care.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Starting with Inflammatory Disease: Rheumatoid Arthritis</h2>
-        <p>My earliest work in computational drug repositioning focused on inflammatory diseases, where the standard of care often involves immunosuppressive agents with significant side effects and incomplete efficacy. Patients with rheumatoid arthritis, for example, frequently face treatment resistance, progressive joint damage, and a diminished quality of life despite being on therapy.</p>
+        <h2>Phase 1: Inflammatory Disease &mdash; Rheumatoid Arthritis</h2>
+        <p>The standard of care for rheumatoid arthritis often involves immunosuppressive agents with significant side effects and incomplete efficacy. Patients frequently face treatment resistance and diminished quality of life despite being on therapy.</p>
 
-        <p>Beginning in 2008, we applied systems biology-based in silico modeling to understand anti-inflammatory mechanisms, studying how compounds like soluble epoxide hydrolase inhibitors modulate inflammatory signaling cascades. This foundational work established the approach: build a computational model of the inflammatory response, then use it to identify how existing compounds can be repositioned to target the disease more effectively.</p>
+        <p>Beginning in 2008, systems biology-based in silico modeling was applied to understand anti-inflammatory mechanisms &mdash; how compounds like soluble epoxide hydrolase inhibitors modulate inflammatory signaling. This foundational work established the approach: model the inflammatory response, then identify how existing compounds can be repositioned more effectively.</p>
 
-        <p>This evolved into our work on rheumatoid arthritis, where we used predictive software-based mathematical modeling to design novel combination therapies from existing repurposed drugs. The goal was explicit: improve upon the standard of care by combining drugs whose individual mechanisms of action converge on the inflammatory pathways driving disease, thereby overcoming the resistance that patients develop to single-agent therapies. These computationally designed combinations were validated in murine collagen-induced arthritis models, where they showed profound impact on disease progression.</p>
+        <p>This evolved into predictive modeling for rheumatoid arthritis, designing combination therapies from repurposed drugs whose mechanisms converge on the inflammatory pathways driving disease &mdash; overcoming resistance to single-agent therapies. These combinations were validated in murine collagen-induced arthritis models, showing profound impact on disease progression. Parallel work on oral inflammatory responses demonstrated that bidirectional immune regulation could be computationally predicted, providing a path to repurpose compounds for chronic inflammatory conditions.</p>
 
-        <p>In parallel, our research on oral inflammatory responses involved building computational models that accurately predicted how the immune system responds to bacterial challenges and how antimicrobial peptides and other compounds modulate those responses. These models demonstrated that bidirectional immune regulation could be computationally predicted &mdash; providing insights into how existing compounds might be repurposed to manage chronic inflammatory conditions while reducing the side-effect burden and improving patient quality of life.</p>
-
-        <p>The inflammatory disease work also led to patent filings for compositions designed to treat inflammatory diseases (US20140127295A1, US20150098993A1), establishing that computationally designed repositioned drug combinations could be both therapeutically meaningful and commercially protectable. This work proved the concept: computational modeling could reduce the time and cost of identifying effective repositioned therapies while delivering combinations that outperform existing treatments.</p>
+        <p>This phase resulted in patent filings (US20140127295A1, US20150098993A1) and proved the concept: computational modeling can reduce the time and cost of finding effective repositioned therapies while delivering combinations that outperform existing treatments.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Advancing into Oncology: The Beat AML Project and Cancer Combination Therapy</h2>
-        <p>With the inflammatory disease framework established, the same computational logic extended naturally into oncology &mdash; a field where the need for better-than-standard-of-care therapies, resistance-overcoming strategies, and reduced treatment burden is even more acute.</p>
+        <h2>Phase 2: Oncology &mdash; The Beat AML Project</h2>
+        <p>Cancer rarely responds durably to single-agent therapies. Tumor cells adapt, compensatory pathways activate, and resistance emerges. Through the Beat AML project, computational biology models predicted patient responses to BET inhibitors, CDK4/6 inhibitors, dasatinib, venetoclax, and IDH inhibitors &mdash; validated against actual patient-derived drug sensitivity data.</p>
 
-        <p>Cancer rarely responds durably to single-agent therapies. Tumor cells adapt, compensatory pathways activate, and resistance emerges. Through the Beat AML project, we applied computational biology models to predict patient responses to a range of targeted therapies &mdash; including BET inhibitors, CDK4/6 inhibitors, dasatinib, venetoclax, and IDH inhibitors. The models simulated how each drug interacted with the molecular pathways driving individual patients' leukemia, and these predictions were validated against actual patient-derived drug sensitivity data.</p>
+        <p>The approach predicted not just whether a drug works, but <em>for whom</em> and <em>why</em>, based on strategically targeted pathway analysis &mdash; matching patients to drugs most likely to overcome resistance to the standard of care.</p>
 
-        <p>The approach allowed us to go beyond simply testing whether a drug works &mdash; we could predict <em>for whom</em> it would work and <em>why</em>, based on strategically targeted pathway analysis. By identifying which molecular signatures correlated with sensitivity to repositioned therapies, we could match patients to drugs most likely to overcome resistance to the standard of care.</p>
-
-        <p>This work also demonstrated the power of rational combination design for cancer. By modeling the molecular effects of nelfinavir (an HIV protease inhibitor), metformin (a diabetes medication), and rosuvastatin (a cholesterol-lowering statin) on cancer cells with specific genetic aberrations in PTEN and TP53 tumor suppressor pathways, we showed that three already-approved drugs &mdash; each designed for a completely different condition &mdash; could target cancer through mechanisms entirely different from their original therapeutic purpose. Computational modeling identified how these drugs' known effects converge on cancer cell survival pathways, predicting synergy that would be extraordinarily difficult to discover through traditional screening. This work resulted in a granted US patent (US10098880B2).</p>
-
-        <p>The key insight is consistent with the inflammatory disease work: reuse what is known about each drug's pharmacological effects, strategically target the pathways that matter, and design combinations that enhance efficacy beyond what any single agent achieves &mdash; all while leveraging existing safety data to reduce development timelines and cost.</p>
+        <p>Rational combination design demonstrated this further: modeling how nelfinavir (an HIV drug), metformin (a diabetes drug), and rosuvastatin (a statin) converge on cancer cell survival pathways in tumors with PTEN/TP53 aberrations. Three drugs designed for completely different conditions could target cancer through entirely new mechanisms (US patent US10098880B2). The logic remained the same: reuse known effects, strategically target pathways, design combinations that enhance efficacy beyond single agents.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Integrating Natural Compounds: Expanding the Repositioning Toolkit</h2>
-        <p>The logical next step in this evolution was to extend the same computational framework beyond conventional pharmaceuticals to include natural compounds. Many plant-derived molecules have well-characterized mechanisms of action, but they have rarely been rigorously evaluated in combination with standard cancer therapeutics using the same quantitative, pathway-targeted approach.</p>
+        <h2>Phase 3: Natural Compounds &mdash; Expanding the Toolkit</h2>
+        <p>Many plant-derived molecules have well-characterized mechanisms but have rarely been rigorously evaluated alongside standard cancer therapeutics using quantitative pathway-targeted methods.</p>
 
-        <p>Our work on scientifically matched plant supplements combined with antineoplastic compounds for hematological malignancies (US patent US11478444B2) applied this principle. Rather than treating natural products as alternative medicine, we used computational modeling to identify specific plant-derived compounds whose mechanisms of action could complement or enhance standard cancer therapies. The computational framework strategically assessed which natural compounds targeted pathways that would synergize with conventional drugs &mdash; enhancing the therapeutic effect, helping overcome resistance mechanisms, and potentially reducing the side-effect burden that impacts patients' quality of life.</p>
+        <p>Computational modeling was applied to identify plant-derived compounds whose mechanisms complement or enhance standard cancer therapies for hematological malignancies (US patent US11478444B2). The framework strategically assessed which natural compounds targeted pathways that synergize with conventional drugs &mdash; enhancing therapeutic effect, overcoming resistance, and reducing side-effect burden.</p>
 
-        <p>This approach opens a vast, underexplored space for drug repositioning: the systematic, evidence-based combination of approved drugs with characterized natural compounds. The same logic applies &mdash; reuse known pharmacological effects, target the disease-relevant pathways, and design combinations that improve on current treatment approaches &mdash; but with a dramatically expanded pool of candidate compounds.</p>
+        <p>This opens the same repositioning logic to a vastly expanded pool of candidate compounds.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Precision Medicine: Personalizing the Repositioning Strategy</h2>
-        <p>Across all of these applications, the most impactful evolution has been the shift from population-level repositioning to patient-specific predictions. Traditional repositioning asks, "What disease could this drug treat?" Precision medicine asks, "Which of these available drugs would work best for <em>this specific patient</em>?"</p>
+        <h2>Precision Medicine: Patient-Specific Repositioning</h2>
+        <p>The most impactful evolution has been the shift from population-level to patient-specific predictions. Rather than asking "What disease could this drug treat?", precision repositioning asks "Which available drugs work best for <em>this specific patient</em>?"</p>
 
-        <p>In the Beat AML project, we worked with patient-specific genomic data to generate individualized drug response predictions. The workflow involved: (1) characterizing each patient's molecular profile, (2) simulating how their specific tumor biology would respond to different drugs and combinations, and (3) comparing these predictions with actual ex vivo drug sensitivity testing results. This patient-by-patient approach transforms drug repositioning from a one-size-fits-all strategy into a personalized therapeutic tool.</p>
-
-        <p>The practical impact is significant: by matching the right repositioned drug or combination to the right patient, we reduce unnecessary treatment exposure, minimize side effects, overcome individual resistance patterns, and improve overall treatment outcomes &mdash; all while reusing drugs with established safety profiles.</p>
+        <p>In the Beat AML project, patient-specific genomic data drove individualized drug response predictions: characterize the molecular profile, simulate tumor response to different drugs and combinations, and compare against ex vivo drug sensitivity results. By matching the right drug to the right patient, unnecessary treatment exposure is reduced, resistance patterns are overcome, and outcomes improve.</p>
       </section>
 
       <section class="mb-5">
         <h2>The Unifying Logic</h2>
-        <p>Looking back across this journey &mdash; from rheumatoid arthritis to acute myeloid leukemia to natural compound integration &mdash; the underlying logic has remained remarkably consistent:</p>
+        <p>Across all three phases &mdash; from rheumatoid arthritis to AML to natural compound integration &mdash; the underlying logic remains consistent:</p>
 
         <ul>
-          <li><strong>Improve against the standard of care.</strong> Every repositioning effort starts with the question: can we do better than what patients currently receive? Computational models allow us to systematically compare repositioned combinations against existing treatments.</li>
-          <li><strong>Overcome resistance.</strong> Single-agent therapies frequently fail because diseases adapt. By targeting multiple pathways simultaneously through rational combinations, we design therapies that anticipate and preempt resistance mechanisms.</li>
-          <li><strong>Improve quality of life.</strong> Repositioned drugs with known safety profiles, and combinations that achieve efficacy at lower doses, reduce the treatment burden on patients. Computational optimization helps find the balance between maximum efficacy and minimum toxicity.</li>
-          <li><strong>Reduce research spend and time.</strong> By reusing drugs with established safety, pharmacokinetic, and manufacturing data, repositioning compresses the development timeline from a decade to potentially just a few years, at a fraction of the cost.</li>
-          <li><strong>Reuse known drug effects.</strong> Every approved drug has a wealth of pharmacological data. Computational models leverage this existing knowledge to predict how those effects translate to new disease contexts.</li>
-          <li><strong>Strategically target pathways to enhance effect.</strong> Computational modeling enables rigorous, quantitative pathway analysis &mdash; identifying not just which pathways to target, but which combinations of pathway interventions produce the greatest synergistic benefit.</li>
+          <li><strong>Improve against the standard of care.</strong> Can we do better than what patients currently receive? Computational models compare repositioned combinations against existing treatments.</li>
+          <li><strong>Overcome resistance.</strong> Diseases adapt to single agents. Rational combinations target multiple pathways to preempt resistance.</li>
+          <li><strong>Improve quality of life.</strong> Known safety profiles and optimized dosing reduce treatment burden. Computational optimization balances efficacy with toxicity.</li>
+          <li><strong>Reduce research spend and time.</strong> Established safety and manufacturing data compress timelines from a decade to years, at a fraction of the cost.</li>
+          <li><strong>Reuse known drug effects.</strong> Existing pharmacological data predicts how effects translate to new disease contexts.</li>
+          <li><strong>Strategically target pathways to enhance effect.</strong> Quantitative pathway analysis identifies which combinations produce the greatest synergistic benefit.</li>
         </ul>
       </section>
 
       <section class="mb-5">
-        <h2>Challenges and Practical Considerations</h2>
-        <p>While computational drug repositioning holds enormous promise, several challenges remain:</p>
-
+        <h2>Challenges</h2>
         <ul>
-          <li><strong>Model validation is essential.</strong> Computational predictions are only as reliable as the models generating them. Every prediction must be validated experimentally &mdash; first in cell lines or patient-derived samples, then in animal models, and ultimately in clinical settings. My experience has reinforced that the most impactful computational work is tightly integrated with experimental validation.</li>
-          <li><strong>Data quality and availability.</strong> The accuracy of predictive models depends on the quality and breadth of the underlying biological data. Genomic, proteomic, and clinical datasets are improving rapidly, but gaps remain, particularly for rare diseases and underrepresented populations.</li>
-          <li><strong>Regulatory and intellectual property pathways.</strong> Repositioning existing drugs introduces unique regulatory considerations. New combinations of approved drugs may require novel clinical trial designs, and intellectual property protection for repositioned uses can be complex. My experience navigating the patent landscape for drug combinations has highlighted the importance of early IP strategy in repositioning programs.</li>
-          <li><strong>Translating from model to clinic.</strong> A computationally predicted drug response must ultimately work in a living patient. Pharmacokinetics, drug-drug interactions, tissue penetration, and patient compliance all introduce variables that computational models may not fully capture. Close collaboration between computational scientists and clinicians is critical.</li>
+          <li><strong>Model validation.</strong> Predictions must be validated experimentally &mdash; in cell lines, animal models, and clinical settings. The most impactful computational work is tightly integrated with experimental validation.</li>
+          <li><strong>Data quality.</strong> Model accuracy depends on the breadth of underlying biological data. Gaps remain for rare diseases and underrepresented populations.</li>
+          <li><strong>Regulatory and IP complexity.</strong> New combinations require novel trial designs, and IP protection for repositioned uses can be complex. Early IP strategy is critical.</li>
+          <li><strong>Clinical translation.</strong> Pharmacokinetics, drug-drug interactions, and patient compliance introduce variables beyond computational models. Close collaboration between computational scientists and clinicians is essential.</li>
         </ul>
       </section>
 
       <section class="mb-5">
         <h2>Looking Ahead</h2>
-        <p>The convergence of several trends is accelerating the impact of computational drug repositioning. Large-scale patient genomic databases, improvements in machine learning for drug-target interaction prediction, multi-omics data integration, and increasing availability of real-world clinical data are all expanding what computational models can achieve.</p>
+        <p>Large-scale genomic databases, machine learning for drug-target prediction, multi-omics integration, and real-world clinical data are expanding what computational models can achieve. The core principle endures: build rigorous models of disease, strategically target the pathways that matter, and bring effective, affordable therapies to patients faster.</p>
 
-        <p>In my current work, I continue to apply computational approaches to understand disease biology and identify therapeutic opportunities. The tools and methods have evolved significantly since I began this work over 18 years ago, but the core principle remains: by building rigorous computational models of disease, we can systematically discover new uses for existing drugs, strategically target the pathways that matter, and bring effective, affordable therapies to patients faster.</p>
-
-        <p>Drug repositioning will not replace traditional drug development, but it represents an increasingly important complement &mdash; one where computational biology plays a central, driving role in improving treatment outcomes, overcoming resistance, and making drug discovery more efficient for the benefit of patients worldwide.</p>
+        <p>Drug repositioning will not replace traditional drug development, but it is an increasingly important complement &mdash; one where computational biology plays a central role in improving outcomes, overcoming resistance, and making drug discovery more efficient.</p>
       </section>
 
       <section class="mb-5">
