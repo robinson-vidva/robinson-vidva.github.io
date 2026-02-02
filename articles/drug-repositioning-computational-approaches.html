@@ -129,6 +129,9 @@
               <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
                 <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0891b2" flood-opacity="0.15"/>
               </filter>
+              <marker id="arrowhead" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+                <path d="M0,0 L12,5 L0,10 L3,5 Z" fill="#64748b"/>
+              </marker>
             </defs>
 
             <!-- Background -->
@@ -157,10 +160,9 @@
             <text x="660" y="123" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">characterized mechanisms</text>
 
             <!-- Arrows down to center process -->
-            <path d="M140,140 L140,165 L370,165 L370,175" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
-            <path d="M400,140 L400,175" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
-            <path d="M660,140 L660,165 L430,165 L430,175" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
-            <defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
+            <path d="M140,140 L140,165 L370,165 L370,175" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M400,140 L400,175" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M660,140 L660,165 L430,165 L430,175" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
 
             <!-- Center: Strategic Pathway Targeting -->
             <rect x="180" y="178" width="440" height="70" rx="14" fill="url(#accentGrad)" filter="url(#shadow)"/>
@@ -168,31 +170,29 @@
             <text x="400" y="224" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#e0f2fe">Simulate drug-pathway interactions &bull; Predict synergistic combinations</text>
             <text x="400" y="239" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#e0f2fe">Design rational multi-drug therapies</text>
 
-            <!-- Arrow down -->
-            <path d="M400,248 L400,275" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <!-- Arrows down to disease boxes -->
+            <path d="M300,248 L145,275" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M400,248 L400,275" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M500,248 L655,275" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
 
-            <!-- Row 3: Disease Applications Timeline -->
+            <!-- Row 3: Disease Applications -->
             <!-- RA -->
             <rect x="30" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5" filter="url(#shadow)"/>
             <text x="145" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#059669">Inflammatory Disease</text>
-            <text x="145" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">RA combination therapies (2008&ndash;2015)</text>
+            <text x="145" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">RA combination therapies</text>
             <text x="145" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Overcome SOC resistance</text>
 
             <!-- Oncology -->
             <rect x="285" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)"/>
             <text x="400" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#2563eb">Oncology</text>
-            <text x="400" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Beat AML &amp; cancer combinations (2016&ndash;2019)</text>
+            <text x="400" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Cancer drug combinations</text>
             <text x="400" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Precision drug response prediction</text>
 
             <!-- Natural + Chemo -->
             <rect x="540" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#9333ea" stroke-width="1.5" filter="url(#shadow)"/>
             <text x="655" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#9333ea">Natural + Antineoplastic</text>
-            <text x="655" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Matched supplements + chemo (2022)</text>
+            <text x="655" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Matched supplements + chemo</text>
             <text x="655" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Expand repositioning toolkit</text>
-
-            <!-- Connecting arrows from center to three boxes -->
-            <path d="M300,248 L145,275" stroke="#94a3b8" stroke-width="1.2" fill="none" marker-end="url(#arrowhead)"/>
-            <path d="M500,248 L655,275" stroke="#94a3b8" stroke-width="1.2" fill="none" marker-end="url(#arrowhead)"/>
 
             <!-- Bottom: Outcome bar -->
             <rect x="30" y="362" width="740" height="46" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
@@ -228,30 +228,30 @@
       </section>
 
       <section class="mb-5">
-        <h2>Phase 1: Inflammatory Disease &mdash; Rheumatoid Arthritis</h2>
+        <h2>Inflammatory Disease: Rheumatoid Arthritis</h2>
         <p>The standard of care for rheumatoid arthritis often involves immunosuppressive agents with significant side effects and incomplete efficacy. Patients frequently face treatment resistance and diminished quality of life despite being on therapy.</p>
 
-        <p>Beginning in 2008, systems biology-based in silico modeling was applied to understand anti-inflammatory mechanisms &mdash; how compounds like soluble epoxide hydrolase inhibitors modulate inflammatory signaling. This foundational work established the approach: model the inflammatory response, then identify how existing compounds can be repositioned more effectively.</p>
+        <p>Systems biology-based in silico modeling was applied to understand anti-inflammatory mechanisms &mdash; how compounds like soluble epoxide hydrolase inhibitors modulate inflammatory signaling <sup>[1]</sup>. This established the approach: model the inflammatory response, then identify how existing compounds can be repositioned more effectively.</p>
 
-        <p>This evolved into predictive modeling for rheumatoid arthritis, designing combination therapies from repurposed drugs whose mechanisms converge on the inflammatory pathways driving disease &mdash; overcoming resistance to single-agent therapies. These combinations were validated in murine collagen-induced arthritis models, showing profound impact on disease progression. Parallel work on oral inflammatory responses demonstrated that bidirectional immune regulation could be computationally predicted, providing a path to repurpose compounds for chronic inflammatory conditions.</p>
+        <p>This evolved into predictive modeling for rheumatoid arthritis, designing combination therapies from repurposed drugs whose mechanisms converge on the inflammatory pathways driving disease &mdash; overcoming resistance to single-agent therapies. These combinations were validated in murine collagen-induced arthritis models, showing profound impact on disease progression <sup>[2]</sup>. Parallel work on oral inflammatory responses demonstrated that bidirectional immune regulation could be computationally predicted <sup>[3, 4]</sup>, providing a path to repurpose compounds for chronic inflammatory conditions.</p>
 
-        <p>This phase resulted in patent filings (US20140127295A1, US20150098993A1) and proved the concept: computational modeling can reduce the time and cost of finding effective repositioned therapies while delivering combinations that outperform existing treatments.</p>
+        <p>This work resulted in patent filings <sup>[5, 6]</sup> and proved the concept: computational modeling can reduce the time and cost of finding effective repositioned therapies while delivering combinations that outperform existing treatments.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Phase 2: Oncology &mdash; The Beat AML Project</h2>
-        <p>Cancer rarely responds durably to single-agent therapies. Tumor cells adapt, compensatory pathways activate, and resistance emerges. Through the Beat AML project, computational biology models predicted patient responses to BET inhibitors, CDK4/6 inhibitors, dasatinib, venetoclax, and IDH inhibitors &mdash; validated against actual patient-derived drug sensitivity data.</p>
+        <h2>Oncology: Cancer Combination Therapy</h2>
+        <p>Cancer rarely responds durably to single-agent therapies. Tumor cells adapt, compensatory pathways activate, and resistance emerges. Through the Beat AML project, computational biology models predicted patient responses to BET inhibitors, CDK4/6 inhibitors, dasatinib, venetoclax, and IDH inhibitors &mdash; validated against actual patient-derived drug sensitivity data <sup>[7]</sup>.</p>
 
-        <p>The approach predicted not just whether a drug works, but <em>for whom</em> and <em>why</em>, based on strategically targeted pathway analysis &mdash; matching patients to drugs most likely to overcome resistance to the standard of care.</p>
+        <p>The approach predicted not just whether a drug works, but <em>for whom</em> and <em>why</em>, based on strategically targeted pathway analysis &mdash; matching patients to drugs most likely to overcome resistance to the standard of care. Computational models also accurately predicted multi-cell biomarker profiles in inflammation and cancer <sup>[8]</sup>.</p>
 
-        <p>Rational combination design demonstrated this further: modeling how nelfinavir (an HIV drug), metformin (a diabetes drug), and rosuvastatin (a statin) converge on cancer cell survival pathways in tumors with PTEN/TP53 aberrations. Three drugs designed for completely different conditions could target cancer through entirely new mechanisms (US patent US10098880B2). The logic remained the same: reuse known effects, strategically target pathways, design combinations that enhance efficacy beyond single agents.</p>
+        <p>Rational combination design demonstrated this further: modeling how nelfinavir (an HIV drug), metformin (a diabetes drug), and rosuvastatin (a statin) converge on cancer cell survival pathways in tumors with PTEN/TP53 aberrations. Three drugs designed for completely different conditions could target cancer through entirely new mechanisms <sup>[9]</sup>. The logic remained the same: reuse known effects, strategically target pathways, design combinations that enhance efficacy beyond single agents.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Phase 3: Natural Compounds &mdash; Expanding the Toolkit</h2>
+        <h2>Natural Compounds: Expanding the Toolkit</h2>
         <p>Many plant-derived molecules have well-characterized mechanisms but have rarely been rigorously evaluated alongside standard cancer therapeutics using quantitative pathway-targeted methods.</p>
 
-        <p>Computational modeling was applied to identify plant-derived compounds whose mechanisms complement or enhance standard cancer therapies for hematological malignancies (US patent US11478444B2). The framework strategically assessed which natural compounds targeted pathways that synergize with conventional drugs &mdash; enhancing therapeutic effect, overcoming resistance, and reducing side-effect burden.</p>
+        <p>Computational modeling was applied to identify plant-derived compounds whose mechanisms complement or enhance standard cancer therapies for hematological malignancies <sup>[10]</sup>. The framework strategically assessed which natural compounds targeted pathways that synergize with conventional drugs &mdash; enhancing therapeutic effect, overcoming resistance, and reducing side-effect burden.</p>
 
         <p>This opens the same repositioning logic to a vastly expanded pool of candidate compounds.</p>
       </section>
@@ -260,12 +260,12 @@
         <h2>Precision Medicine: Patient-Specific Repositioning</h2>
         <p>The most impactful evolution has been the shift from population-level to patient-specific predictions. Rather than asking "What disease could this drug treat?", precision repositioning asks "Which available drugs work best for <em>this specific patient</em>?"</p>
 
-        <p>In the Beat AML project, patient-specific genomic data drove individualized drug response predictions: characterize the molecular profile, simulate tumor response to different drugs and combinations, and compare against ex vivo drug sensitivity results. By matching the right drug to the right patient, unnecessary treatment exposure is reduced, resistance patterns are overcome, and outcomes improve.</p>
+        <p>In the Beat AML project, patient-specific genomic data drove individualized drug response predictions: characterize the molecular profile, simulate tumor response to different drugs and combinations, and compare against ex vivo drug sensitivity results <sup>[7]</sup>. By matching the right drug to the right patient, unnecessary treatment exposure is reduced, resistance patterns are overcome, and outcomes improve.</p>
       </section>
 
       <section class="mb-5">
         <h2>The Unifying Logic</h2>
-        <p>Across all three phases &mdash; from rheumatoid arthritis to AML to natural compound integration &mdash; the underlying logic remains consistent:</p>
+        <p>Across inflammatory disease, oncology, and natural compound integration &mdash; the underlying logic remains consistent:</p>
 
         <ul>
           <li><strong>Improve against the standard of care.</strong> Can we do better than what patients currently receive? Computational models compare repositioned combinations against existing treatments.</li>
@@ -295,18 +295,24 @@
       </section>
 
       <section class="mb-5">
-        <div class="card bg-light">
-          <div class="card-body">
-            <h3 class="h5"><i class="fas fa-link me-2" aria-hidden="true"></i> Related Work &amp; Resources</h3>
-            <ul class="mb-0">
-              <li><strong>Patent:</strong> Compositions for treating inflammatory diseases &mdash; <a href="https://patents.google.com/patent/US20150098993A1/" target="_blank">US20150098993A1 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li><strong>Patent:</strong> Combination of nelfinavir, metformin and rosuvastatin for treating cancer &mdash; <a href="https://patents.google.com/patent/US10098880B2/" target="_blank">US10098880B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li><strong>Patent:</strong> Plant supplements with antineoplastic compounds for hematological malignancies &mdash; <a href="https://patents.google.com/patent/US11478444B2/" target="_blank">US11478444B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li><strong>Publication:</strong> Predicting response to BET inhibitors (Beat AML) &mdash; <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank">doi:10.1016/j.leukres.2018.11.010 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li><strong>Publication:</strong> Computational models predict multi-cell biomarker profiles &mdash; <a href="https://doi.org/10.1038/s41598-019-47381-4" target="_blank">doi:10.1038/s41598-019-47381-4 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li><strong>Presentation:</strong> Novel combination therapy of repurposed therapies for RA &mdash; <a href="https://doi.org/10.1002/art.37735" target="_blank">doi:10.1002/art.37735 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li><strong>My Research:</strong> <a href="../research.html">View all publications, presentations &amp; patents <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-            </ul>
+        <div class="card border-primary">
+          <div class="card-header bg-primary text-white">
+            <h3 class="h5 mb-0"><i class="fas fa-book me-2" aria-hidden="true"></i> References</h3>
+          </div>
+          <div class="card-body" style="font-size: 0.92rem;">
+            <ol class="mb-0" style="padding-left: 1.2rem;">
+              <li class="mb-2">Vali, S., Hegedus, C., Bhattacharjee, C., <strong>Vidva, R.</strong>, Schmelzer, K., Inceoglu, B., &amp; Hammock, B. D. (2008). Insights into the Anti-inflammatory Action of the Soluble Epoxide Hydrolase Inhibitor through Systems Biology based in silico Modeling Approach. <em>FASEB J.</em> <a href="https://doi.org/10.1096/fasebj.22.1_supplement.479.13" target="_blank">doi:10.1096/fasebj.22.1_supplement.479.13 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Vali, S., Refino, C., Cruz, J. D., <strong>Vidva, R.</strong>, Nair, P., Radhakrishnan, S., Fernandes, P., Abbasi, T., &amp; Singh, G. (2012). Novel Combination Therapy of Existing Repurposed Therapies Designed by Predictive Software Modeling. <em>ACR/ARHP Annual Meeting.</em> <a href="https://doi.org/10.1002/art.37735" target="_blank">doi:10.1002/art.37735 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Harvey, L. E., et al. &amp; <strong>Vidva, R.</strong> (2013). Defensin DEFB103 bidirectionally regulates chemokine and cytokine responses to a pro-inflammatory stimulus. <em>Scientific Reports, 3</em>, 1232. <a href="https://doi.org/10.1038/srep01232" target="_blank">doi:10.1038/srep01232 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Borgwardt, D. S., et al. &amp; <strong>Vidva, R.</strong> (2014). Histatin 5 binds to Porphyromonas gingivalis hemagglutinin B (HagB) and alters HagB-induced chemokine responses. <em>Scientific Reports, 4</em>, 3904. <a href="https://doi.org/10.1038/srep03904" target="_blank">doi:10.1038/srep03904 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Vali, S., <strong>Vidva, R.</strong>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. (2014). Compositions, process of preparation of said compositions and method of treating inflammatory diseases. US Patent <a href="https://patents.google.com/patent/US20140127295A1/" target="_blank">US20140127295A1 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Vali, S., <strong>Vidva, R.</strong>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. (2015). Compositions, process of preparation of said compositions and method of treating inflammatory diseases. US Patent <a href="https://patents.google.com/patent/US20150098993A1/" target="_blank">US20150098993A1 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Drusbosky, L. M., <strong>Vidva, R.</strong>, Gera, S., et al. (2019). Predicting response to BET inhibitors using computational modeling: A BEAT AML project study. <em>Leukemia Research, 77</em>, 42&ndash;49. <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank">doi:10.1016/j.leukres.2018.11.010 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Fischer, C. L., et al. &amp; <strong>Vidva, R.</strong> (2019). Computational Models Accurately Predict Multi-Cell Biomarker Profiles in Inflammation and Cancer. <em>Scientific Reports, 9</em>, 10877. <a href="https://doi.org/10.1038/s41598-019-47381-4" target="_blank">doi:10.1038/s41598-019-47381-4 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Vali, S., Usmani, S., Sultana, Z., Kumar, A., Abbasi, T., &amp; <strong>Vidva, R.</strong> (2018). Combination of nelfinavir, metformin and rosuvastatin for treating cancer caused by aberrations in PTEN/TP53. US Patent <a href="https://patents.google.com/patent/US10098880B2/" target="_blank">US10098880B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li class="mb-2">Vali, S., Abbasi, T., Stopka, T., et al. &amp; <strong>Vidva, R.</strong> (2022). Use of scientifically matched plant supplements combined with antineoplastic compounds for the treatment of hematological malignancies. US Patent <a href="https://patents.google.com/patent/US11478444B2/" target="_blank">US11478444B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+            </ol>
+            <p class="mt-3 mb-0 text-muted" style="font-size: 0.88rem;"><a href="../research.html">View all publications, presentations &amp; patents <i class="fas fa-arrow-right fa-xs" aria-hidden="true"></i></a></p>
           </div>
         </div>
       </section>
