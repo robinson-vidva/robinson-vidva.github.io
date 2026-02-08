@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drug Repositioning Through Computational Modeling: A Practitioner's Perspective - Robinson Vidva</title>
   <meta name="description" content="Exploring computational approaches to drug repositioning — how predictive modeling and network-based methods are accelerating the discovery of new therapeutic uses for existing drugs.">
+  <meta name="keywords" content="drug repositioning, drug repurposing, computational biology, predictive modeling, systems biology, rheumatoid arthritis, cancer, AML, precision medicine, pathway analysis, combination therapy, natural compounds, antineoplastic">
+  <meta name="author" content="Robinson Vidva">
+  <meta property="article:published_time" content="2026-02-01">
+  <meta property="article:modified_time" content="2026-02-08">
+  <meta property="article:author" content="Robinson Vidva">
+  <meta property="article:section" content="Computational Biology">
+  <meta property="article:tag" content="drug repositioning">
+  <meta property="article:tag" content="computational biology">
+  <meta property="article:tag" content="precision medicine">
+  <meta property="article:tag" content="drug repurposing">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="../images/Preview.png">
@@ -16,7 +26,7 @@
 
   <!-- Open Graph / Social Media Preview -->
   <meta property="og:title" content="Drug Repositioning Through Computational Modeling: A Practitioner's Perspective">
-  <meta property="og:description" content="Exploring computational approaches to drug repositioning — how predictive modeling and network-based methods are accelerating the discovery of new therapeutic uses for existing drugs.">
+  <meta property="og:description" content="How computational modeling enables drug repositioning — from autoimmune disease to oncology to integrating natural compounds for enhanced cancer therapy. A bottom-up approach from genes to pathways to systemic disease.">
   <meta property="og:image" content="https://robinsonvidva.com/images/Preview.png">
   <link rel="canonical" href="https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html">
   <meta property="og:url" content="https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html">
@@ -25,7 +35,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Drug Repositioning Through Computational Modeling: A Practitioner's Perspective">
-  <meta name="twitter:description" content="Exploring computational approaches to drug repositioning — how predictive modeling and network-based methods are accelerating the discovery of new therapeutic uses for existing drugs.">
+  <meta name="twitter:description" content="How computational modeling enables drug repositioning — from autoimmune disease to oncology to integrating natural compounds for enhanced cancer therapy.">
   <meta name="twitter:image" content="https://robinsonvidva.com/images/Preview.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,21 +59,51 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "ScholarlyArticle",
     "headline": "Drug Repositioning Through Computational Modeling: A Practitioner's Perspective",
+    "alternativeHeadline": "How computational modeling accelerates drug repurposing from autoimmune disease to oncology",
     "author": {
       "@type": "Person",
       "name": "Robinson Vidva",
-      "url": "https://robinsonvidva.com"
+      "url": "https://robinsonvidva.com",
+      "jobTitle": "Computational Biologist",
+      "sameAs": [
+        "https://orcid.org/0000-0002-2604-5448",
+        "https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en",
+        "https://www.linkedin.com/in/robinson-vidva/"
+      ]
     },
     "datePublished": "2026-02-01",
-    "dateModified": "2026-02-01",
+    "dateModified": "2026-02-08",
     "publisher": {
       "@type": "Person",
       "name": "Robinson Vidva"
     },
     "description": "Exploring computational approaches to drug repositioning — how predictive modeling and network-based methods are accelerating the discovery of new therapeutic uses for existing drugs.",
-    "keywords": "drug repositioning, drug repurposing, computational biology, predictive modeling, cancer, AML, precision medicine"
+    "keywords": ["drug repositioning", "drug repurposing", "computational biology", "predictive modeling", "systems biology", "rheumatoid arthritis", "cancer", "AML", "precision medicine", "pathway analysis", "combination therapy"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html"
+    },
+    "image": "https://robinsonvidva.com/images/Preview.png",
+    "inLanguage": "en",
+    "about": [
+      {"@type": "Thing", "name": "Drug repositioning"},
+      {"@type": "Thing", "name": "Computational biology"},
+      {"@type": "Thing", "name": "Precision medicine"}
+    ],
+    "citation": [
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Predicting response to BET inhibitors using computational modeling: A BEAT AML project study",
+        "url": "https://doi.org/10.1016/j.leukres.2018.11.010"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Computational Models Accurately Predict Multi-Cell Biomarker Profiles in Inflammation and Cancer",
+        "url": "https://doi.org/10.1038/s41598-019-47381-4"
+      }
+    ]
   }
   </script>
 </head>
@@ -215,43 +255,47 @@
 
       <section class="mb-5">
         <h2>Why Drug Repositioning Matters</h2>
-        <p>Traditional drug development follows a long, costly path with roughly 90% of candidates failing in clinical trials. Repositioned drugs already have established safety profiles, pharmacokinetic data, and manufacturing processes &mdash; they can move to clinical evaluation far more quickly, dramatically reducing research spend and timelines.</p>
+        <p>The advantage of repositioned drugs is clear: they already have established safety profiles, pharmacokinetic data, and manufacturing processes &mdash; they can move to clinical evaluation far more quickly, dramatically reducing both cost and timelines.</p>
 
         <p>The challenge shifts to efficacy prediction: <em>which existing drugs might work for a different disease, and why?</em> Computational methods address this by systematically screening approved compounds against disease-specific molecular signatures, strategically targeting the pathways that drive a disease to identify candidates that can improve on the current standard of care.</p>
       </section>
 
       <section class="mb-5">
         <h2>The Approach: Building a Virtual Disease</h2>
-        <p>The core method involves constructing computational models that integrate genomic, proteomic, and signaling pathway data to represent a disease state comprehensively. By simulating how drugs interact with proteins, alter signaling cascades, and affect cellular behavior, the model can strategically assess which pathway targets offer the greatest therapeutic effect &mdash; and design combinations that enhance efficacy through complementary mechanisms.</p>
+        <p>The core method builds disease models from the bottom up. It starts at the gene level &mdash; cataloguing which genes are active, mutated, or differentially expressed in a disease state. These genes map onto signaling pathways, and the interactions between pathways reveal how cellular behavior emerges: proliferation, apoptosis, inflammatory response, immune evasion.</p>
 
-        <p>The logic is consistent across disease areas: model the disease, identify vulnerable pathways, reuse existing drugs to target those pathways, and predict combinations that improve on the standard of care.</p>
+        <p>From individual cell-type behavior, the model builds upward to cell-type interactions &mdash; how immune cells, stromal cells, and disease cells communicate within a tissue microenvironment. Finally, the tissue-level model extends to the systemic level, capturing how local pathology manifests as clinical disease.</p>
+
+        <p>This bottom-up architecture is what makes the approach versatile. The same gene-to-pathway-to-cell-to-tissue framework can be quickly reprogrammed to mimic a different disease &mdash; by modifying which genes are perturbed, which cell types dominate, and which microenvironment signals are active. A model built for rheumatoid arthritis can be adapted for cancer by reconfiguring the same pathway machinery with different disease drivers.</p>
+
+        <p>The human body is remarkably versatile yet fragile &mdash; small perturbations in a signaling pathway can cascade into entirely different disease states. The model leverages available genomic, proteomic, and clinical data to find the best therapeutic fit: which existing drugs, at which targets, in which combinations, offer the greatest chance of restoring balance.</p>
       </section>
 
       <section class="mb-5">
         <h2>Autoimmune Disease: Rheumatoid Arthritis</h2>
         <p>The standard of care for rheumatoid arthritis often involves immunosuppressive agents with significant side effects and incomplete efficacy. Patients frequently face treatment resistance and diminished quality of life despite being on therapy.</p>
 
-        <p>Systems biology-based in silico modeling was applied to understand anti-inflammatory mechanisms &mdash; how compounds like soluble epoxide hydrolase inhibitors modulate inflammatory signaling <sup>[1]</sup>. This established the approach: model the inflammatory response, then identify how existing compounds can be repositioned more effectively.</p>
+        <p>Systems biology-based in silico modeling was applied to understand anti-inflammatory mechanisms &mdash; how compounds like soluble epoxide hydrolase inhibitors modulate inflammatory signaling <sup><a href="#ref-1">[1]</a></sup>. This established the approach: model the inflammatory response, then identify how existing compounds can be repositioned more effectively.</p>
 
-        <p>This evolved into predictive modeling for rheumatoid arthritis, designing combination therapies from repurposed drugs whose mechanisms converge on the inflammatory pathways driving disease &mdash; overcoming resistance to single-agent therapies. These combinations were validated in murine collagen-induced arthritis models, showing profound impact on disease progression <sup>[2]</sup>. Parallel work on oral inflammatory responses demonstrated that bidirectional immune regulation could be computationally predicted <sup>[3, 4]</sup>, providing a path to repurpose compounds for chronic inflammatory conditions.</p>
+        <p>This evolved into predictive software-based mathematical modeling for rheumatoid arthritis &mdash; a novel approach that used computational models to design oral combination therapies from repurposed drugs whose mechanisms converge on the inflammatory pathways driving disease <sup><a href="#ref-2">[2]</a></sup>. These combinations were validated in murine collagen-induced arthritis models, showing profound impact on disease progression and overcoming resistance to single-agent therapies <sup><a href="#ref-3">[3]</a></sup>. Parallel work on oral inflammatory responses demonstrated that bidirectional immune regulation could be computationally predicted <sup><a href="#ref-4">[4]</a>, <a href="#ref-5">[5]</a></sup>, providing a path to repurpose compounds for chronic inflammatory conditions.</p>
 
-        <p>This work resulted in patent filings <sup>[5, 6]</sup> and proved the concept: computational modeling can reduce the time and cost of finding effective repositioned therapies while delivering combinations that outperform existing treatments.</p>
+        <p>This work resulted in patent filings <sup><a href="#ref-6">[6]</a>, <a href="#ref-7">[7]</a></sup> and proved the concept: computational modeling can reduce the time and cost of finding effective repositioned therapies while delivering combinations that outperform existing treatments.</p>
       </section>
 
       <section class="mb-5">
         <h2>Oncology: Cancer Combination Therapy</h2>
-        <p>Cancer rarely responds durably to single-agent therapies. Tumor cells adapt, compensatory pathways activate, and resistance emerges. Through the Beat AML project, computational biology models predicted patient responses to BET inhibitors, CDK4/6 inhibitors, dasatinib, venetoclax, and IDH inhibitors &mdash; validated against actual patient-derived drug sensitivity data <sup>[7]</sup>.</p>
+        <p>Cancer rarely responds durably to single-agent therapies. Tumor cells adapt, compensatory pathways activate, and resistance emerges. Through the Beat AML project, computational biology models predicted patient responses to BET inhibitors, CDK4/6 inhibitors, dasatinib, venetoclax, and IDH inhibitors &mdash; validated against actual patient-derived drug sensitivity data <sup><a href="#ref-8">[8]</a></sup>.</p>
 
-        <p>The approach predicted not just whether a drug works, but <em>for whom</em> and <em>why</em>, based on strategically targeted pathway analysis &mdash; matching patients to drugs most likely to overcome resistance to the standard of care. Computational models also accurately predicted multi-cell biomarker profiles in inflammation and cancer <sup>[8]</sup>.</p>
+        <p>The approach predicted not just whether a drug works, but <em>for whom</em> and <em>why</em>, based on strategically targeted pathway analysis &mdash; matching patients to drugs most likely to overcome resistance to the standard of care. Computational models also accurately predicted multi-cell biomarker profiles in inflammation and cancer <sup><a href="#ref-9">[9]</a></sup>.</p>
 
-        <p>Rational combination design demonstrated this further: modeling how nelfinavir (an HIV drug), metformin (a diabetes drug), and rosuvastatin (a statin) converge on cancer cell survival pathways in tumors with PTEN/TP53 aberrations. Three drugs designed for completely different conditions could target cancer through entirely new mechanisms <sup>[9]</sup>. The logic remained the same: reuse known effects, strategically target pathways, design combinations that enhance efficacy beyond single agents.</p>
+        <p>Rational combination design demonstrated this further: modeling how nelfinavir (an HIV drug), metformin (a diabetes drug), and rosuvastatin (a statin) converge on cancer cell survival pathways in tumors with PTEN/TP53 aberrations. Three drugs designed for completely different conditions could target cancer through entirely new mechanisms <sup><a href="#ref-10">[10]</a></sup>. The logic remained the same: reuse known effects, strategically target pathways, design combinations that enhance efficacy beyond single agents.</p>
       </section>
 
       <section class="mb-5">
         <h2>Natural Compounds: Expanding the Toolkit</h2>
         <p>Many plant-derived molecules have well-characterized mechanisms but have rarely been rigorously evaluated alongside standard cancer therapeutics using quantitative pathway-targeted methods.</p>
 
-        <p>Computational modeling was applied to identify plant-derived compounds whose mechanisms complement or enhance standard cancer therapies for hematological malignancies <sup>[10]</sup>. The framework strategically assessed which natural compounds targeted pathways that synergize with conventional drugs &mdash; enhancing therapeutic effect, overcoming resistance, and reducing side-effect burden.</p>
+        <p>Computational modeling was applied to identify plant-derived compounds whose mechanisms complement or enhance standard cancer therapies for hematological malignancies <sup><a href="#ref-11">[11]</a></sup>. The framework strategically assessed which natural compounds targeted pathways that synergize with conventional drugs &mdash; enhancing therapeutic effect, overcoming resistance, and reducing side-effect burden.</p>
 
         <p>This opens the same repositioning logic to a vastly expanded pool of candidate compounds.</p>
       </section>
@@ -260,12 +304,12 @@
         <h2>Precision Medicine: Patient-Specific Repositioning</h2>
         <p>The most impactful evolution has been the shift from population-level to patient-specific predictions. Rather than asking "What disease could this drug treat?", precision repositioning asks "Which available drugs work best for <em>this specific patient</em>?"</p>
 
-        <p>In the Beat AML project, patient-specific genomic data drove individualized drug response predictions: characterize the molecular profile, simulate tumor response to different drugs and combinations, and compare against ex vivo drug sensitivity results <sup>[7]</sup>. By matching the right drug to the right patient, unnecessary treatment exposure is reduced, resistance patterns are overcome, and outcomes improve.</p>
+        <p>In the Beat AML project, patient-specific genomic data drove individualized drug response predictions: characterize the molecular profile, simulate tumor response to different drugs and combinations, and compare against ex vivo drug sensitivity results <sup><a href="#ref-8">[8]</a></sup>. By matching the right drug to the right patient, unnecessary treatment exposure is reduced, resistance patterns are overcome, and outcomes improve.</p>
       </section>
 
       <section class="mb-5">
         <h2>The Unifying Logic</h2>
-        <p>Across inflammatory disease, oncology, and natural compound integration &mdash; the underlying logic remains consistent:</p>
+        <p>Across autoimmune disease, oncology, and natural compound integration &mdash; the underlying logic remains consistent:</p>
 
         <ul>
           <li><strong>Improve against the standard of care.</strong> Can we do better than what patients currently receive? Computational models compare repositioned combinations against existing treatments.</li>
@@ -301,18 +345,32 @@
           </div>
           <div class="card-body" style="font-size: 0.92rem;">
             <ol class="mb-0" style="padding-left: 1.2rem;">
-              <li class="mb-2">Vali, S., Hegedus, C., Bhattacharjee, C., <strong>Vidva, R.</strong>, Schmelzer, K., Inceoglu, B., &amp; Hammock, B. D. (2008). Insights into the Anti-inflammatory Action of the Soluble Epoxide Hydrolase Inhibitor through Systems Biology based in silico Modeling Approach. <em>FASEB J.</em> <a href="https://doi.org/10.1096/fasebj.22.1_supplement.479.13" target="_blank">doi:10.1096/fasebj.22.1_supplement.479.13 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Vali, S., Refino, C., Cruz, J. D., <strong>Vidva, R.</strong>, Nair, P., Radhakrishnan, S., Fernandes, P., Abbasi, T., &amp; Singh, G. (2012). Novel Combination Therapy of Existing Repurposed Therapies Designed by Predictive Software Modeling. <em>ACR/ARHP Annual Meeting.</em> <a href="https://doi.org/10.1002/art.37735" target="_blank">doi:10.1002/art.37735 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Harvey, L. E., et al. &amp; <strong>Vidva, R.</strong> (2013). Defensin DEFB103 bidirectionally regulates chemokine and cytokine responses to a pro-inflammatory stimulus. <em>Scientific Reports, 3</em>, 1232. <a href="https://doi.org/10.1038/srep01232" target="_blank">doi:10.1038/srep01232 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Borgwardt, D. S., et al. &amp; <strong>Vidva, R.</strong> (2014). Histatin 5 binds to Porphyromonas gingivalis hemagglutinin B (HagB) and alters HagB-induced chemokine responses. <em>Scientific Reports, 4</em>, 3904. <a href="https://doi.org/10.1038/srep03904" target="_blank">doi:10.1038/srep03904 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Vali, S., <strong>Vidva, R.</strong>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. (2014). Compositions, process of preparation of said compositions and method of treating inflammatory diseases. US Patent <a href="https://patents.google.com/patent/US20140127295A1/" target="_blank">US20140127295A1 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Vali, S., <strong>Vidva, R.</strong>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. (2015). Compositions, process of preparation of said compositions and method of treating inflammatory diseases. US Patent <a href="https://patents.google.com/patent/US20150098993A1/" target="_blank">US20150098993A1 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Drusbosky, L. M., <strong>Vidva, R.</strong>, Gera, S., et al. (2019). Predicting response to BET inhibitors using computational modeling: A BEAT AML project study. <em>Leukemia Research, 77</em>, 42&ndash;49. <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank">doi:10.1016/j.leukres.2018.11.010 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Fischer, C. L., et al. &amp; <strong>Vidva, R.</strong> (2019). Computational Models Accurately Predict Multi-Cell Biomarker Profiles in Inflammation and Cancer. <em>Scientific Reports, 9</em>, 10877. <a href="https://doi.org/10.1038/s41598-019-47381-4" target="_blank">doi:10.1038/s41598-019-47381-4 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Vali, S., Usmani, S., Sultana, Z., Kumar, A., Abbasi, T., &amp; <strong>Vidva, R.</strong> (2018). Combination of nelfinavir, metformin and rosuvastatin for treating cancer caused by aberrations in PTEN/TP53. US Patent <a href="https://patents.google.com/patent/US10098880B2/" target="_blank">US10098880B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li class="mb-2">Vali, S., Abbasi, T., Stopka, T., et al. &amp; <strong>Vidva, R.</strong> (2022). Use of scientifically matched plant supplements combined with antineoplastic compounds for the treatment of hematological malignancies. US Patent <a href="https://patents.google.com/patent/US11478444B2/" target="_blank">US11478444B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-1" class="mb-2">Vali, S., Hegedus, C., Bhattacharjee, C., <strong>Vidva, R.</strong>, Schmelzer, K., Inceoglu, B., &amp; Hammock, B. D. (2008). Insights into the Anti-inflammatory Action of the Soluble Epoxide Hydrolase Inhibitor through Systems Biology based in silico Modeling Approach. <em>FASEB J.</em> <a href="https://doi.org/10.1096/fasebj.22.1_supplement.479.13" target="_blank">doi:10.1096/fasebj.22.1_supplement.479.13 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-2" class="mb-2">Singh, G., <strong>Vidva, R.</strong>, Nair, P., Radhakrishnan, S., Fernandes, P., Abbasi, T., Refino, C., Cruz, J. D., &amp; Vali, S. (2012). Predictive Software-Based Mathematical Modeling: A Novel Approach to Development of Oral Therapies for Rheumatoid Arthritis &ndash; Validation in a Murine Collagen Induced Arthritis Model. <em>ACR/ARHP Annual Meeting.</em> <a href="https://acrabstracts.org/abstract/predictive-software-based-mathematical-modeling-a-novel-approach-to-development-of-oral-therapies-for-rheumatoid-arthritis-validation-in-a-murine-collagen-induced-arthritis-model/" target="_blank">View abstract <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-3" class="mb-2">Vali, S., Refino, C., Cruz, J. D., <strong>Vidva, R.</strong>, Nair, P., Radhakrishnan, S., Fernandes, P., Abbasi, T., &amp; Singh, G. (2012). Novel Combination Therapy of Existing Repurposed Therapies Designed by Predictive Software Modeling Shows Profound Impact on Disease Progression in a Murine Collagen Induced Arthritis Model. <em>ACR/ARHP Annual Meeting.</em> <a href="https://acrabstracts.org/abstract/novel-combination-therapy-of-existing-repurposed-therapies-designed-by-predictive-software-modeling-shows-profound-impact-on-disease-progression-in-a-murine-collagen-induced-arthritis-model/" target="_blank">View abstract <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-4" class="mb-2">Harvey, L. E., et al. &amp; <strong>Vidva, R.</strong> (2013). Defensin DEFB103 bidirectionally regulates chemokine and cytokine responses to a pro-inflammatory stimulus. <em>Scientific Reports, 3</em>, 1232. <a href="https://doi.org/10.1038/srep01232" target="_blank">doi:10.1038/srep01232 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-5" class="mb-2">Borgwardt, D. S., et al. &amp; <strong>Vidva, R.</strong> (2014). Histatin 5 binds to Porphyromonas gingivalis hemagglutinin B (HagB) and alters HagB-induced chemokine responses. <em>Scientific Reports, 4</em>, 3904. <a href="https://doi.org/10.1038/srep03904" target="_blank">doi:10.1038/srep03904 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-6" class="mb-2">Vali, S., <strong>Vidva, R.</strong>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. (2014). Compositions, process of preparation of said compositions and method of treating inflammatory diseases. US Patent <a href="https://patents.google.com/patent/US20140127295A1/" target="_blank">US20140127295A1 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-7" class="mb-2">Vali, S., <strong>Vidva, R.</strong>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. (2015). Compositions, process of preparation of said compositions and method of treating inflammatory diseases. US Patent <a href="https://patents.google.com/patent/US20150098993A1/" target="_blank">US20150098993A1 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-8" class="mb-2">Drusbosky, L. M., <strong>Vidva, R.</strong>, Gera, S., et al. (2019). Predicting response to BET inhibitors using computational modeling: A BEAT AML project study. <em>Leukemia Research, 77</em>, 42&ndash;49. <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank">doi:10.1016/j.leukres.2018.11.010 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-9" class="mb-2">Fischer, C. L., et al. &amp; <strong>Vidva, R.</strong> (2019). Computational Models Accurately Predict Multi-Cell Biomarker Profiles in Inflammation and Cancer. <em>Scientific Reports, 9</em>, 10877. <a href="https://doi.org/10.1038/s41598-019-47381-4" target="_blank">doi:10.1038/s41598-019-47381-4 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-10" class="mb-2">Vali, S., Usmani, S., Sultana, Z., Kumar, A., Abbasi, T., &amp; <strong>Vidva, R.</strong> (2018). Combination of nelfinavir, metformin and rosuvastatin for treating cancer caused by aberrations in PTEN/TP53. US Patent <a href="https://patents.google.com/patent/US10098880B2/" target="_blank">US10098880B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-11" class="mb-2">Vali, S., Abbasi, T., Stopka, T., et al. &amp; <strong>Vidva, R.</strong> (2022). Use of scientifically matched plant supplements combined with antineoplastic compounds for the treatment of hematological malignancies. US Patent <a href="https://patents.google.com/patent/US11478444B2/" target="_blank">US11478444B2 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
             </ol>
             <p class="mt-3 mb-0 text-muted" style="font-size: 0.88rem;"><a href="../research.html">View all publications, presentations &amp; patents <i class="fas fa-arrow-right fa-xs" aria-hidden="true"></i></a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cite this article -->
+      <section class="mb-5">
+        <div class="card" style="border-color: var(--border-color);">
+          <div class="card-body" style="font-size: 0.9rem;">
+            <h4 class="h6 mb-2"><i class="fas fa-quote-left me-2" aria-hidden="true" style="color: var(--primary-accent);"></i> Cite this article</h4>
+            <p class="mb-2" style="color: var(--light-text); line-height: 1.6;">Vidva, R. (2026). Drug Repositioning Through Computational Modeling: A Practitioner&rsquo;s Perspective. <em>Robinson Vidva</em>. <a href="https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html">https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html</a></p>
+            <button class="btn btn-sm btn-outline-secondary" onclick="navigator.clipboard.writeText('Vidva, R. (2026). Drug Repositioning Through Computational Modeling: A Practitioner\'s Perspective. Robinson Vidva. https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html'); this.innerHTML='<i class=\'fas fa-check me-1\'></i> Copied!'; setTimeout(() => this.innerHTML='<i class=\'fas fa-copy me-1\'></i> Copy citation', 2000);">
+              <i class="fas fa-copy me-1" aria-hidden="true"></i> Copy citation
+            </button>
           </div>
         </div>
       </section>
