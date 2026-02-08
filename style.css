@@ -166,7 +166,7 @@ section h2 {
   font-weight: 700;
   margin-bottom: 1.75rem;
   padding-bottom: 0.6rem;
-  border-bottom: 3px solid var(--primary-accent);
+  border-bottom: 3px solid;
   border-image: linear-gradient(to right, var(--primary-accent), var(--border-color)) 1;
 }
 
@@ -738,14 +738,14 @@ section p em {
 /* Certification Provider Icons - see .cert-provider below in Certification Cards section */
 
 /* Education Collapse Toggle */
-.education-item .btn-outline-secondary {
+.btn-outline-secondary {
   font-size: 0.85rem;
   color: var(--light-text);
   border-color: var(--border-color);
   transition: all 0.2s ease;
 }
 
-.education-item .btn-outline-secondary:hover {
+.btn-outline-secondary:hover {
   color: var(--primary-accent);
   border-color: var(--primary-accent);
   background-color: transparent;
