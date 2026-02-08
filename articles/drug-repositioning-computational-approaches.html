@@ -110,13 +110,13 @@
       <section class="mb-5">
         <p class="lead">Developing a new drug from scratch typically takes over a decade and costs billions of dollars, with roughly 90% of candidates failing in clinical trials. Drug repositioning &mdash; finding new therapeutic uses for existing, approved medications &mdash; offers a faster, cheaper alternative. The logic is straightforward: reuse what is already known about a drug's effects, strategically target the disease-relevant pathways, improve outcomes over the standard of care, overcome treatment resistance, and improve patients' quality of life.</p>
 
-        <p>This article traces how computational modeling enables that logic &mdash; from inflammatory disease to oncology to natural compound integration.</p>
+        <p>This article traces how computational modeling enables that logic &mdash; from autoimmune disease, to oncology drug repurposing, to integrating the knowledge of natural compounds to enhance cancer therapy.</p>
       </section>
 
       <!-- Illustration: Drug Repositioning Logic -->
       <section class="mb-5">
         <div class="text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" style="max-width:100%; height:auto;" role="img" aria-label="Drug Repositioning Through Computational Modeling - Workflow Illustration">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" style="max-width:100%; height:auto;" role="img" aria-label="Drug Repositioning Through Computational Modeling - Workflow Illustration">
             <defs>
               <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
@@ -129,74 +129,74 @@
               <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
                 <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0891b2" flood-opacity="0.15"/>
               </filter>
-              <marker id="arrowhead" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
-                <path d="M0,0 L12,5 L0,10 L3,5 Z" fill="#64748b"/>
+              <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="none" stroke="#64748b" stroke-width="1.5" stroke-linejoin="round"/>
               </marker>
             </defs>
 
             <!-- Background -->
-            <rect width="800" height="420" rx="16" fill="url(#bgGrad)" stroke="#cbd5e1" stroke-width="1"/>
+            <rect width="800" height="460" rx="16" fill="url(#bgGrad)" stroke="#cbd5e1" stroke-width="1"/>
 
             <!-- Title -->
-            <text x="400" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="16" font-weight="700" fill="#0f172a">The Computational Drug Repositioning Workflow</text>
+            <text x="400" y="40" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="19" font-weight="700" fill="#0f172a">The Computational Drug Repositioning Workflow</text>
 
             <!-- Row 1: Three Input Sources -->
             <!-- Approved Drugs -->
-            <rect x="30" y="60" width="220" height="80" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
-            <text x="140" y="90" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#0891b2">Approved Drugs</text>
-            <text x="140" y="108" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Known safety, PK &amp; mechanisms</text>
-            <text x="140" y="123" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">e.g. nelfinavir, metformin, statins</text>
+            <rect x="25" y="62" width="230" height="88" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="140" y="92" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#0891b2">Approved Drugs</text>
+            <text x="140" y="112" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#475569">Known safety, PK &amp; mechanisms</text>
+            <text x="140" y="129" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#475569">e.g. nelfinavir, metformin, statins</text>
 
             <!-- Disease Model -->
-            <rect x="290" y="60" width="220" height="80" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
-            <text x="400" y="90" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#0891b2">Computational Disease Model</text>
-            <text x="400" y="108" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Genomic + proteomic + pathway data</text>
-            <text x="400" y="123" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Virtual disease simulation</text>
+            <rect x="285" y="62" width="230" height="88" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="400" y="92" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#0891b2">Computational Disease Model</text>
+            <text x="400" y="112" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#475569">Genomic + proteomic + pathway data</text>
+            <text x="400" y="129" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#475569">Virtual disease simulation</text>
 
             <!-- Natural Compounds -->
-            <rect x="550" y="60" width="220" height="80" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
-            <text x="660" y="90" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#0891b2">Natural Compounds</text>
-            <text x="660" y="108" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">Plant-derived molecules with</text>
-            <text x="660" y="123" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#475569">characterized mechanisms</text>
+            <rect x="545" y="62" width="230" height="88" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="660" y="92" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#0891b2">Natural Compounds</text>
+            <text x="660" y="112" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#475569">Plant-derived molecules with</text>
+            <text x="660" y="129" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#475569">characterized mechanisms</text>
 
             <!-- Arrows down to center process -->
-            <path d="M140,140 L140,165 L370,165 L370,175" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-            <path d="M400,140 L400,175" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-            <path d="M660,140 L660,165 L430,165 L430,175" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M140,150 L140,172 L370,172 L370,185" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M400,150 L400,185" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M660,150 L660,172 L430,172 L430,185" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
 
             <!-- Center: Strategic Pathway Targeting -->
-            <rect x="180" y="178" width="440" height="70" rx="14" fill="url(#accentGrad)" filter="url(#shadow)"/>
-            <text x="400" y="205" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Strategic Pathway Targeting</text>
-            <text x="400" y="224" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#e0f2fe">Simulate drug-pathway interactions &bull; Predict synergistic combinations</text>
-            <text x="400" y="239" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#e0f2fe">Design rational multi-drug therapies</text>
+            <rect x="170" y="188" width="460" height="78" rx="14" fill="url(#accentGrad)" filter="url(#shadow)"/>
+            <text x="400" y="216" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="16" font-weight="700" fill="#ffffff">Strategic Pathway Targeting</text>
+            <text x="400" y="237" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" fill="#e0f2fe">Simulate drug-pathway interactions &bull; Predict synergistic combinations</text>
+            <text x="400" y="254" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" fill="#e0f2fe">Design rational multi-drug therapies</text>
 
             <!-- Arrows down to disease boxes -->
-            <path d="M300,248 L145,275" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-            <path d="M400,248 L400,275" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-            <path d="M500,248 L655,275" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M300,266 L150,295" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M400,266 L400,295" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+            <path d="M500,266 L650,295" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
 
             <!-- Row 3: Disease Applications -->
             <!-- RA -->
-            <rect x="30" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5" filter="url(#shadow)"/>
-            <text x="145" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#059669">Inflammatory Disease</text>
-            <text x="145" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">RA combination therapies</text>
-            <text x="145" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Overcome SOC resistance</text>
+            <rect x="25" y="298" width="240" height="72" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="145" y="322" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#059669">Autoimmune Disease</text>
+            <text x="145" y="340" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#475569">RA combination therapies</text>
+            <text x="145" y="356" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#475569">Overcome SOC resistance</text>
 
             <!-- Oncology -->
-            <rect x="285" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)"/>
-            <text x="400" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#2563eb">Oncology</text>
-            <text x="400" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Cancer drug combinations</text>
-            <text x="400" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Precision drug response prediction</text>
+            <rect x="285" y="298" width="230" height="72" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="400" y="322" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#2563eb">Oncology</text>
+            <text x="400" y="340" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#475569">Cancer drug combinations</text>
+            <text x="400" y="356" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#475569">Precision drug response prediction</text>
 
             <!-- Natural + Chemo -->
-            <rect x="540" y="278" width="230" height="65" rx="10" fill="#ffffff" stroke="#9333ea" stroke-width="1.5" filter="url(#shadow)"/>
-            <text x="655" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#9333ea">Natural + Antineoplastic</text>
-            <text x="655" y="316" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Matched supplements + chemo</text>
-            <text x="655" y="330" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#475569">Expand repositioning toolkit</text>
+            <rect x="535" y="298" width="240" height="72" rx="10" fill="#ffffff" stroke="#9333ea" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="655" y="322" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#9333ea">Natural + Antineoplastic</text>
+            <text x="655" y="340" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#475569">Matched supplements + chemo</text>
+            <text x="655" y="356" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#475569">Enhance cancer therapy</text>
 
             <!-- Bottom: Outcome bar -->
-            <rect x="30" y="362" width="740" height="46" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-            <text x="400" y="383" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#0f172a">
+            <rect x="25" y="392" width="750" height="52" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+            <text x="400" y="415" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#0f172a">
               <tspan fill="#059669">Improve vs SOC</tspan>
               <tspan dx="14" fill="#94a3b8">&bull;</tspan>
               <tspan dx="14" fill="#dc2626">Overcome Resistance</tspan>
@@ -207,7 +207,7 @@
               <tspan dx="14" fill="#94a3b8">&bull;</tspan>
               <tspan dx="14" fill="#0891b2">Reuse Known Effects</tspan>
             </text>
-            <text x="400" y="399" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#64748b">Consistent logic across all disease areas and compound types</text>
+            <text x="400" y="434" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#64748b">Consistent logic across all disease areas and compound types</text>
           </svg>
         </div>
         <p class="text-center text-muted mt-2" style="font-size: 0.85rem;"><em>Figure 1: The computational drug repositioning workflow &mdash; from inputs to strategic pathway targeting to disease-specific applications.</em></p>
@@ -228,7 +228,7 @@
       </section>
 
       <section class="mb-5">
-        <h2>Inflammatory Disease: Rheumatoid Arthritis</h2>
+        <h2>Autoimmune Disease: Rheumatoid Arthritis</h2>
         <p>The standard of care for rheumatoid arthritis often involves immunosuppressive agents with significant side effects and incomplete efficacy. Patients frequently face treatment resistance and diminished quality of life despite being on therapy.</p>
 
         <p>Systems biology-based in silico modeling was applied to understand anti-inflammatory mechanisms &mdash; how compounds like soluble epoxide hydrolase inhibitors modulate inflammatory signaling <sup>[1]</sup>. This established the approach: model the inflammatory response, then identify how existing compounds can be repositioned more effectively.</p>
