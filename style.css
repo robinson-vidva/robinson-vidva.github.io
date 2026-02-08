@@ -733,6 +733,10 @@ section p em {
 .page-nav-buttons {
   padding-top: 1rem;
   border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 /* Certification Provider Icons - see .cert-provider below in Certification Cards section */
