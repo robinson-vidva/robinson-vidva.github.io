@@ -562,6 +562,7 @@ section p em {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .focus-tag {
