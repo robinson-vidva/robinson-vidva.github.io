@@ -761,6 +761,22 @@ section p em {
   font-size: 1rem;
 }
 
+/* Mobile navbar menu - add padding so items aren't flush left */
+@media (max-width: 991.98px) {
+  .navbar-collapse .navbar-nav {
+    padding: 0.75rem 0 0.5rem 1rem;
+  }
+
+  .navbar-collapse .nav-link {
+    padding: 0.6rem 1rem !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navbar-collapse .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   body {
@@ -789,6 +805,20 @@ section p em {
 
   .hero-subtitle {
     font-size: 0.9rem;
+  }
+
+  /* Hero buttons - stack vertically with proper spacing on mobile */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 !important;
   }
 
   .stats-number {
@@ -861,6 +891,18 @@ section p em {
     height: 36px;
     padding: 0;
     margin-left: 0;
+  }
+
+  /* Page nav buttons - stack on mobile */
+  .page-nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-nav-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 !important;
   }
 }
 
@@ -1029,17 +1071,26 @@ section p em {
 }
 
 @media (max-width: 768px) {
-  .pdf-viewer {
-    height: 500px;
+  /* Hide embedded PDF on mobile - most mobile browsers (especially Safari) can't render it well */
+  .pdf-viewer-wrapper {
+    display: none !important;
   }
 
   .pdf-container .btn {
     display: block;
     width: 100%;
-    margin-bottom: 0.5rem;
+    max-width: 320px;
+    margin: 0 auto 0.75rem auto;
   }
 
   .pdf-container .btn.ms-2 {
-    margin-left: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .pdf-container #pdf-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
