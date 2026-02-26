@@ -1047,6 +1047,16 @@ section p em {
 .cert-provider-icon.wipo { background-color: #1a73e8; }
 .cert-provider-icon.edx { background-color: #02262B; }
 
+/* View count styles */
+.view-count {
+  font-size: 0.9em;
+}
+
+.site-views-footer {
+  font-size: 0.85rem;
+  color: var(--light-text, #64748b);
+}
+
 /* Sticky navbar shadow on scroll */
 .navbar.sticky-top {
   z-index: 1030;
