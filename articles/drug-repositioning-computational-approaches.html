@@ -139,6 +139,7 @@
       <span class="badge bg-light text-dark">Computational Biology</span>
       <span class="text-white-50 ms-3"><i class="far fa-calendar" aria-hidden="true"></i> February 1, 2026</span>
       <span class="text-white-50 ms-3"><i class="far fa-clock" aria-hidden="true"></i> 8 min read</span>
+      <span class="text-white-50 ms-3 view-count" id="article-views"><i class="far fa-eye" aria-hidden="true"></i> <span class="view-number">—</span> views</span>
     </div>
   </div>
 </header>
@@ -416,5 +417,12 @@
   </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+fetch('../views.json').then(r => r.json()).then(data => {
+  const path = location.pathname.replace(/\/$/, '') || '/';
+  const views = data.pages[path];
+  if (views > 0) document.querySelector('#article-views .view-number').textContent = views.toLocaleString();
+}).catch(() => {});
+</script>
 </body>
 </html>
