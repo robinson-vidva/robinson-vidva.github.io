@@ -1,16 +1,14 @@
 {
-  "lastUpdated": "2026-02-26T21:36:37Z",
-  "totalViews": 973,
+  "lastUpdated": "2026-02-26T00:00:00Z",
+  "totalViews": 0,
   "pages": {
-    "/research.html": 163,
-    "/cv.html": 106,
-    "/articles.html": 89,
-    "/resume.html": 82,
-    "/certifications.html": 56,
-    "/articles/drug-repositioning-computational-approaches.html": 27,
-    "/articles/myvivarium-lab-animal-management.html": 26,
-    "/terms.html": 4,
-    "/": 420,
-    "/index.html": 420
+    "/": 0,
+    "/index.html": 0,
+    "/articles.html": 0,
+    "/articles/drug-repositioning-computational-approaches.html": 0,
+    "/articles/myvivarium-lab-animal-management.html": 0,
+    "/research.html": 0,
+    "/cv.html": 0,
+    "/certifications.html": 0
   }
 }
