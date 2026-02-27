@@ -30,6 +30,8 @@
   <meta name="twitter:description" content="Articles by Robinson Vidva on drug repositioning through computational modeling and MyVivarium open-source lab animal colony management.">
   <meta name="twitter:image" content="https://robinsonvidva.com/images/Preview.png">
 
+  <link rel="alternate" type="application/rss+xml" title="Robinson Vidva - Articles" href="https://robinsonvidva.com/feed.xml">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -181,6 +183,10 @@ fetch('views.json?v=' + Date.now()).then(r => r.json()).then(data => {
     if (views > 0) el.querySelector('.view-number').textContent = views.toLocaleString();
   });
 }).catch(() => {});
+</script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>300)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 </script>
 </body>
 </html>

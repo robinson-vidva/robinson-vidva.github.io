@@ -103,12 +103,15 @@
           <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation', event)">Presentations</button>
           <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent', event)">Patents</button>
         </div>
-        <div class="sort-select">
-          <label for="sort-order">Sort:</label>
-          <select class="form-select form-select-sm" id="sort-order" onchange="sortItems(this.value)">
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-          </select>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <input type="text" class="search-input" id="search-input" placeholder="Search by keyword..." aria-label="Search publications">
+          <div class="sort-select">
+            <label for="sort-order">Sort:</label>
+            <select class="form-select form-select-sm" id="sort-order" onchange="sortItems(this.value)">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
@@ -297,11 +300,16 @@
   let currentFilter = 'all';
   let currentSort = 'newest';
   let currentPage = 1;
+  let currentSearch = '';
   const itemsPerPage = 10;
 
   function getFilteredItems() {
     const items = Array.from(document.querySelectorAll('.research-item'));
-    return items.filter(item => currentFilter === 'all' || item.dataset.type === currentFilter);
+    return items.filter(item => {
+      const matchesType = currentFilter === 'all' || item.dataset.type === currentFilter;
+      const matchesSearch = !currentSearch || item.textContent.toLowerCase().includes(currentSearch);
+      return matchesType && matchesSearch;
+    });
   }
 
   function sortItemsArray(items) {
@@ -407,7 +415,16 @@
   // Initialize on page load
   document.addEventListener('DOMContentLoaded', function() {
     updateDisplay();
+    document.getElementById('search-input').addEventListener('input', function() {
+      currentSearch = this.value.toLowerCase().trim();
+      currentPage = 1;
+      updateDisplay();
+    });
   });
+</script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>300)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 </script>
 </body>
 </html>
