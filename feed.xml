@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Robinson Vidva - Articles</title>
+    <link>https://robinsonvidva.com/articles.html</link>
+    <description>Articles on computational biology, drug repositioning, research tools, and scientific innovation by Robinson Vidva.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://robinsonvidva.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Drug Repositioning Through Computational Modeling: A Practitioner's Perspective</title>
+      <link>https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html</link>
+      <guid>https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <description>Exploring how computational modeling and network-based methods accelerate the discovery of new therapeutic uses for existing drugs — from cancer combination therapies to inflammatory disease treatment.</description>
+      <category>Drug Discovery</category>
+      <category>Computational Biology</category>
+    </item>
+
+    <item>
+      <title>MyVivarium: Streamlining Lab Animal Colony Management</title>
+      <link>https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html</link>
+      <guid>https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html</guid>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <description>An open-source, cloud-based application for managing research animal colonies with IoT-based environmental monitoring. Published in Computational and Structural Biotechnology Journal.</description>
+      <category>Research Tools</category>
+      <category>Open Source</category>
+    </item>
+
+  </channel>
+</rss>

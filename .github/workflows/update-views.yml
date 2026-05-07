@@ -1,0 +1,42 @@
+name: Update Page View Counts
+
+on:
+  schedule:
+    # Runs daily at midnight EST (5:00 AM UTC)
+    - cron: "0 5 * * *"
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  update-views:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install google-analytics-data
+
+      - name: Fetch GA4 page views
+        env:
+          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+        run: python scripts/fetch_ga_views.py
+
+      - name: Commit and push updated views
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f views.json
+          git diff --staged --quiet || git commit -m "Update page view counts [automated]"
+          git push

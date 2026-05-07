@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robinson Vidva - Research</title>
+  <meta name="description" content="Robinson Vidva's research publications, conference presentations, and patents in computational biology, immunology, cancer research, and neurodevelopmental studies.">
+  <meta name="keywords" content="Robinson Vidva, publications, patents, presentations, computational biology, immunology, cancer research, AML, rheumatoid arthritis, neuroscience, drug repositioning">
+  <meta name="author" content="Robinson Vidva">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Preview.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/Preview.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/Preview.png">
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:title" content="Robinson Vidva - Research & Publications">
+  <meta property="og:description" content="Research publications, conference presentations, and patents by Robinson Vidva in computational biology, immunology, cancer research, and neurodevelopmental studies.">
+  <meta property="og:image" content="https://robinsonvidva.com/images/Preview.png">
+  <link rel="canonical" href="https://robinsonvidva.com/research.html">
+  <meta property="og:url" content="https://robinsonvidva.com/research.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robinson Vidva - Research & Publications">
+  <meta name="twitter:description" content="Research publications, conference presentations, and patents by Robinson Vidva in computational biology, immunology, cancer research, and neurodevelopmental studies.">
+  <meta name="twitter:image" content="https://robinsonvidva.com/images/Preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="style.css?v=7" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5FRPNE4J9N');
+  </script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Robinson Vidva",
+    "jobTitle": "Computational Biologist",
+    "url": "https://robinsonvidva.com",
+    "email": "hello@robinsonvidva.com",
+    "image": "https://robinsonvidva.com/images/Preview.png",
+    "sameAs": [
+      "https://orcid.org/0000-0002-2604-5448",
+      "https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en",
+      "https://www.linkedin.com/in/robinson-vidva/",
+      "https://github.com/robinson-vidva",
+      "https://www.researchgate.net/profile/Robinson-Vidva"
+    ]
+  }
+  </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/Original.png" alt="Robinson Vidva" class="navbar-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+        <li class="nav-item"><a class="nav-link active" href="research.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="bg-secondary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Research & Publications</h1>
+    <p class="lead">Publications, Conference Presentations & Patents</p>
+  </div>
+</header>
+<div class="container my-4">
+  <section class="mb-5">
+    <div class="sort-controls">
+      <div class="toolbar-row">
+        <div class="filter-buttons">
+          <button class="btn btn-primary btn-sm" onclick="filterItems('all', event)">All</button>
+          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('publication', event)">Publications</button>
+          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation', event)">Presentations</button>
+          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent', event)">Patents</button>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <input type="text" class="search-input" id="search-input" placeholder="Search by keyword..." aria-label="Search publications">
+          <div class="sort-select">
+            <label for="sort-order">Sort:</label>
+            <select class="form-select form-select-sm" id="sort-order" onchange="sortItems(this.value)">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div id="research-list">
+    <div class="pagination-info mb-3">
+      <span id="showing-info" style="visibility: hidden;">Showing 1-10 of 28 items</span>
+    </div>
+    <ul>
+      <!-- 2025 Presentations -->
+      <li class="research-item" data-type="presentation" data-year="2025" data-date="2025-11-15">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Early postnatal rehabilitation mitigates motor, growth, and social deficits in perinatal brain injury.</strong> Nov 15, 2025. Simonti, G., <span class="author-highlight">Vidva, R.</span>, Sanidas, G., Byrd, C., Lowe, C., Triantafyllou, M., Wolff, N., Chandereng, T., Koutroulis, I., Gallo, V., &amp; Kratimenos, P. Program No. PSTR019.10. 2025 Neuroscience Meeting Planner. San Diego, CA: Society for Neuroscience, 2025. <a href="https://www.abstractsonline.com/pp8/#!/21171/presentation/31850" target="_blank">View abstract</a>
+      </li>
+      <li class="research-item" data-type="presentation" data-year="2025" data-date="2025-11-16">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Necrotizing Enterocolitis Selectively Disrupts Pontine Development in the Preterm Brain.</strong> Nov 16, 2025. Sanidas, G., Lowe, C., Byrd, C., <span class="author-highlight">Vidva, R.</span>, Simonti, G., Chandereng, T., Gallo, V., &amp; Kratimenos, P. Program No. PSTR103.21. 2025 Neuroscience Meeting Planner. San Diego, CA: Society for Neuroscience, 2025. <a href="https://www.abstractsonline.com/pp8/#!/21171/presentation/30651" target="_blank">View abstract</a>
+      </li>
+
+      <!-- 2025 Publications -->
+      <li class="research-item" data-type="publication" data-year="2025" data-date="2025-09-02">
+        <span class="badge badge-publication">Publication</span>
+        <span class="tag-secondary">Preprint</span>
+        <strong>Intrinsic Gestational Timing Governs Human Cerebellar Development After Preterm Birth.</strong> September 2, 2025. Sanidas, G., Simonti, G., Ghaemmaghami, J., Woyshner, K., <span class="author-highlight">Vidva, R.</span>, Wolff, N., Triantafyllou, M., Lowe, C., Vij, A., Sahlin Pettersen, H., Chandereng, T., Koutroulis, I., Stein-O'Brien, G., Sidiropoulos, D. N., Gallo, V. and Kratimenos, P. <a href="https://doi.org/10.1101/2025.09.01.673244" target="_blank">doi:10.1101/2025.09.01.673244</a>
+      </li>
+      <li class="research-item" data-type="publication" data-year="2025" data-date="2025-12-16">
+        <span class="badge badge-publication">Publication</span>
+        <span class="tag-secondary">Preprint</span>
+        <strong>Prematurity Insults Remodel Cerebellar Development and Behavior.</strong> December 16, 2025. Sanidas, G., Simonti, G., Ghaemmaghami, J., Woyshner, K., Wolff, N., Byrd, C., Triantafyllou, M., Lowe, C., Salisbury, H., Goldstein, E., Sathyanesan, A., <span class="author-highlight">Vidva, R.</span>, Koutroulis, I., Stein-O'Brien, G., Sidiropoulos, D. N., Gallo, V. and Kratimenos, P. <a href="https://doi.org/10.1101/2025.07.22.664624" target="_blank">doi:10.1101/2025.07.22.664624</a>
+      </li>
+      <li class="research-item" data-type="publication" data-year="2025" data-date="2025-04-21">
+        <span class="badge badge-publication">Publication</span>
+        <span class="tag-secondary">Review</span>
+        <strong>Eph/Ephrin-Mediated Immune Modulation: A Potential Therapeutic Target for Skin Cancer.</strong> April 21, 2025. Giannopoulos, K., Karikis, I., Byrd, C., Sanidas, G., Wolff, N., Triantafyllou, M., Simonti, G., <span class="author-highlight">Vidva, R.</span>, Koutroulis, I., Theocharis, S. and Kratimenos, P. <a href="https://doi.org/10.3389/fimmu.2025.1539567" target="_blank">doi:10.3389/fimmu.2025.1539567</a>
+      </li>
+      <li class="research-item" data-type="publication" data-year="2025" data-date="2025-02-01">
+        <span class="badge badge-publication">Publication</span>
+        <strong>MyVivarium: A cloud-based lab animal colony management application with real-time ambient sensing.</strong> Feb 1, 2025. <span class="author-highlight">Vidva, R.</span>, Raza, M.A., Prabhakaran, J., Sheikh, A., Sharp, A., Ott, H., Moore, A., Fleisher, C., Netherton, H., Goldstein, E. and Pitychoutis, P.M. <a href="https://doi.org/10.1016/j.csbj.2025.01.025" target="_blank">doi:10.1016/j.csbj.2025.01.025</a>
+      </li>
+
+      <!-- 2022 Publications & Patents -->
+      <li class="research-item" data-type="patent" data-year="2022" data-date="2022-10-25">
+        <span class="badge badge-patent">Patent</span>
+        <strong>Use of scientifically matched plant supplements combined with antineoplastic compounds for the treatment of hematological malignancies.</strong> Patent No. US11478444B2 [Granted] - Oct 25, 2022. Vali, S., Abbasi, T., Stopka, T., Minarik, L., Singh, N. K., Usmani, S., Radhakrishnan, S., Sikora, H., <span class="author-highlight">Vidva, R.</span>, &amp; Pimkova, K. <a href="https://patents.google.com/patent/US11478444B2/" target="_blank">View patent</a>
+      </li>
+      <li class="research-item" data-type="publication" data-year="2022" data-date="2022-03-29">
+        <span class="badge badge-publication">Publication</span>
+        <strong>Computational analysis of cortical neuronal excitotoxicity in a large animal model of neonatal brain injury.</strong> Mar 29, 2022. Kratimenos, P., Vij, A., <span class="author-highlight">Vidva, R.</span>, Koutroulis, I., Delivoria-Papadopoulos, M., Gallo, V., &amp; Sathyanesan, A. <a href="https://doi.org/10.1186/s11689-022-09431-3" target="_blank">doi:10.1186/s11689-022-09431-3</a>
+      </li>
+
+      <!-- 2019 Publications -->
+      <li class="research-item" data-type="publication" data-year="2019" data-date="2019-07-26">
+        <span class="badge badge-publication">Publication</span>
+        <strong>Computational Models Accurately Predict Multi-Cell Biomarker Profiles in Inflammation and Cancer.</strong> Jul 26, 2019. Fischer, C. L., Bates, A. M., Lanzel, E. A., Guthmiller, J. M., Johnson, G. K., Singh, N. K., Kumar, A., <span class="author-highlight">Vidva, R.</span>, Abbasi, T., Vali, S., Xie, X. J., Zeng, E., &amp; Brogden, K. A. <a href="https://doi.org/10.1038/s41598-019-47381-4" target="_blank">doi:10.1038/s41598-019-47381-4</a>
+      </li>
+      <li class="research-item" data-type="publication" data-year="2019" data-date="2019-01-07">
+        <span class="badge badge-publication">Publication</span>
+        <strong>Predicting response to BET inhibitors using computational modeling: A BEAT AML project study.</strong> Jan 7, 2019. Drusbosky, L. M., <span class="author-highlight">Vidva, R.</span>, Gera, S., Lakshminarayana, A. V., Shyamasundar, V. P., Agrawal, A. K., Talawdekar, A., Abbasi, T., Vali, S., Tognon, C. E., Kurtz, S. E., Tyner, J. W., McWeeney, S. K., Druker, B. J., &amp; Cogle, C. R. <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank">doi:10.1016/j.leukres.2018.11.010</a>
+      </li>
+
+      <!-- 2018 Presentations & Patents -->
+      <li class="research-item" data-type="presentation" data-year="2018" data-date="2018-11-29">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>AraC-Daunorubicin-Etoposide (ADE) Response Prediction in Pediatric AML Patients Using a Computational Biology Modeling (CBM) Based Precision Medicine Workflow.</strong> Nov 29, 2018. Cogle, C. R., Abbasi, T., Singh, N. K., Sauban, M., Raman, R. K., <span class="author-highlight">Vidva, R.</span>, Tyagi, A., Talawdekar, A. A., Das, A., Kornblau, S. M., Hoff, F. W., Horton, T. M., &amp; Vali, S. <a href="https://doi.org/10.1182/blood-2018-99-115775" target="_blank">doi:10.1182/blood-2018-99-115775</a>
+      </li>
+      <li class="research-item" data-type="presentation" data-year="2018" data-date="2018-11-29">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Predicting Response to Dasatinib Using a Computational Model and Its Validation: A Beat AML Project Study.</strong> Nov 29, 2018. Tyner, J. W., Druker, B. J., Tognon, C. E., Kurtz, S. E., Drusbosky, L. M., Sahu, D., <span class="author-highlight">Vidva, R.</span>, Kapoor, S., Azam, H., Kumar, R., Chickdipatti, P. G., Raveendaran, N. T., Gopi, R. P., Abbasi, T., Vali, S., &amp; Cogle, C. R. <a href="https://doi.org/10.1182/blood-2018-99-115678" target="_blank">doi:10.1182/blood-2018-99-115678</a>
+      </li>
+      <li class="research-item" data-type="presentation" data-year="2018" data-date="2018-11-29">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Predicting Response to BET Inhibitor in Combination with Palbociclib/Sorafenib Using a Computational Model and Its Validation: A Beat AML Project Study.</strong> Nov 29, 2018. Tyner, J. W., Druker, B. J., Kurtz, S. E., Tognon, C. E., Drusbosky, L. M., <span class="author-highlight">Vidva, R.</span>, Narvekar, Y., Agrawal, A. K., Gera, S., Prasad, S. A., Shyamasundar, V. P., Tunwer, G. S., Abbasi, T., Vali, S., &amp; Cogle, C. R. <a href="https://doi.org/10.1182/blood-2018-99-115284" target="_blank">doi:10.1182/blood-2018-99-115284</a>
+      </li>
+      <li class="research-item" data-type="patent" data-year="2018" data-date="2018-10-16">
+        <span class="badge badge-patent">Patent</span>
+        <strong>Combination of nelfinavir, metformin and rosuvastatin for treating cancer caused by aberrations in PTEN/TP53.</strong> Patent No. US10098880B2 [Granted] - Oct 16, 2018. Vali, S., Usmani, S., Sultana, Z., Kumar, A., Abbasi, T., &amp; <span class="author-highlight">Vidva, R.</span> <a href="https://patents.google.com/patent/US10098880B2/" target="_blank">View patent</a>
+      </li>
+
+      <!-- 2017 Presentations -->
+      <li class="research-item" data-type="presentation" data-year="2017" data-date="2017-12-07">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Predicting Response to CDK4/6 Inhibitors and Combinations Using a Computational Biology Model and Its Validation: A Beat AML Project Study.</strong> Dec 7, 2017. Drusbosky, L. M., Turcotte, M., Castillo, P., <span class="author-highlight">Vidva, R.</span>, Gera, S., Sauban, M., Bhargav, P., Deep, P., Kapoor, S., Abbasi, T., Vali, S., Tognon, C. E., Kurtz, S. E., Tyner, J. W., Druker, B. J., &amp; Cogle, C. R. <a href="https://www.sciencedirect.com/science/article/pii/S0006497119844257" target="_blank">View abstract</a>
+      </li>
+      <li class="research-item" data-type="presentation" data-year="2017" data-date="2017-12-07">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Predicting Response to BET Inhibitors Using a Computational Model and Its Validation: A Beat AML Project Study.</strong> Dec 7, 2017. Drusbosky, L. M., <span class="author-highlight">Vidva, R.</span>, Gera, S., Lakshminarayana, A. V., Shyamasundar, V. P., Agrawal, A. K., Talawdekar, A., Abbasi, T., Vali, S., Tognon, C. E., Kurtz, S. E., Tyner, J. W., Druker, B. J., &amp; Cogle, C. R. <a href="https://www.sciencedirect.com/science/article/pii/S0006497119844245" target="_blank">View abstract</a>
+      </li>
+      <li class="research-item" data-type="presentation" data-year="2017" data-date="2017-12-07">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Predicting Response to IDH1/IDH2 Inhibitors Beyond IDH Mutations Using a Computational Model and Its Validation: A Beat AML Project Study.</strong> Dec 7, 2017. Drusbosky, L. M., <span class="author-highlight">Vidva, R.</span>, Gera, S., Das, A., Tiwari, K. K., Joseph, V., Mohapatra, S., Lunkad, N., Abbasi, T., Vali, S., Tognon, C. E., Kurtz, S. E., Tyner, J. W., Druker, B. J., &amp; Cogle, C. R. <a href="https://www.sciencedirect.com/science/article/pii/S0006497119844233" target="_blank">View abstract</a>
+      </li>
+
+      <!-- 2016 Presentations -->
+      <li class="research-item" data-type="presentation" data-year="2016" data-date="2016-12-02">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>A Genomic Signature Predicting Venetoclax Treatment Response in AML Identified By Protein Network Mapping and Validated By Ex Vivo Drug Sensitivity Testing: A Beat AML Project Study.</strong> Dec 2, 2016. Drusbosky, L., Abbasi, T., Vali, S., Radhakrishnan, S., Kumar Singh, N., Usmani, S., Parashar, D., <span class="author-highlight">Vidva, R.</span>, Druker, B. J., Tognon, C. E., Lo, P., Tyner, J. W., &amp; Cogle, C. R. <a href="https://doi.org/10.1182/blood.V128.22.1713.1713" target="_blank">doi:10.1182/blood.V128.22.1713.1713</a>
+      </li>
+
+      <!-- 2015 Patents -->
+      <li class="research-item" data-type="patent" data-year="2015" data-date="2015-10-22">
+        <span class="badge badge-patent">Patent</span>
+        <strong>System and method for development of therapeutic solutions.</strong> Patent No. US20150302167A1 [Published] - Oct 22, 2015. Vali, S., Abbasi, T., Fernandes, P., Rajagopalan, S., Alam, A., <span class="author-highlight">Vidva, R.</span>, Nair, P. R., Kapoor, S., Radhakrishnan, S., Sultana, Z., Ramanujan, K. S., Tiwari, K. K., Kumar, A., Singh, N. K., Agrawal, A. K., Talawdekar, A. A., Usmani, S., &amp; Singh, R. <a href="https://patents.google.com/patent/US20150302167A1/" target="_blank">View patent</a>
+      </li>
+      <li class="research-item" data-type="patent" data-year="2015" data-date="2015-04-09">
+        <span class="badge badge-patent">Patent</span>
+        <strong>Compositions, process of preparation of said compositions and method of treating inflammatory diseases.</strong> Patent No. US20150098993A1 [Published] - Apr 9, 2015. Vali, S., <span class="author-highlight">Vidva, R.</span>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. <a href="https://patents.google.com/patent/US20150098993A1/" target="_blank">View patent</a>
+      </li>
+
+      <!-- 2014 Publications & Patents -->
+      <li class="research-item" data-type="patent" data-year="2014" data-date="2014-05-08">
+        <span class="badge badge-patent">Patent</span>
+        <strong>Compositions, process of preparation of said compositions and method of treating inflammatory diseases.</strong> Patent No. US20140127295A1 [Published] - May 8, 2014. Vali, S., <span class="author-highlight">Vidva, R.</span>, Nair, P. R., Fernandes, P., Abbasi, T., &amp; Radhakrishnan, S. <a href="https://patents.google.com/patent/US20140127295A1/" target="_blank">View patent</a>
+      </li>
+      <li class="research-item" data-type="presentation" data-year="2014" data-date="2014-03-22">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>A Predictive Model of an Oral Inflammatory Response.</strong> Mar 22, 2014. Fischer, C., Abbasi, T., Vali, S., Nair, P., <span class="author-highlight">Vidva, R.</span>, Tiwari, K., &amp; Brogden, K. A. <a href="https://iadr.abstractarchives.com/abstract/43am-184905/a-predictive-model-of-an-oral-inflammatory-response" target="_blank">View abstract</a>
+      </li>
+      <li class="research-item" data-type="publication" data-year="2014" data-date="2014-01-29">
+        <span class="badge badge-publication">Publication</span>
+        <strong>Histatin 5 binds to Porphyromonas gingivalis hemagglutinin B (HagB) and alters HagB-induced chemokine responses.</strong> Jan 29, 2014. Borgwardt, D. S., Martin, A. D., Van Hemert, J. R., Yang, J., Fischer, C. L., Recker, E. N., Nair, P. R., <span class="author-highlight">Vidva, R.</span>, Chandrashekaraiah, S., Progulske-Fox, A., Drake, D., Cavanaugh, J. E., Vali, S., Zhang, Y., &amp; Brogden, K. A. <a href="https://doi.org/10.1038/srep03904" target="_blank">doi:10.1038/srep03904</a>
+      </li>
+
+      <!-- 2013 Publications & Presentations -->
+      <li class="research-item" data-type="presentation" data-year="2013" data-date="2013-03-23">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>HBD3 Both Enhances, Attenuates Dendritic Cell MAPK Responses to HagB.</strong> Mar 23, 2013. Harvey, L., Recker, E., Raina, M., Radhakrishnan, S., Prasad, S., <span class="author-highlight">Vidva, R.</span>, Cavanaugh, J., Vali, S., &amp; Brogden, K. A. <a href="https://iadr.abstractarchives.com/abstract/13iags-173181/hbd3-both-enhances-attenuates-dendritic-cell-mapk-responses-to-hagb" target="_blank">View abstract</a>
+      </li>
+      <li class="research-item" data-type="publication" data-year="2013" data-date="2013-02-06">
+        <span class="badge badge-publication">Publication</span>
+        <strong>Defensin DEFB103 bidirectionally regulates chemokine and cytokine responses to a pro-inflammatory stimulus.</strong> Feb 6, 2013. Harvey, L. E., Kohlgraf, K. G., Mehalick, L. A., Raina, M., Recker, E. N., Radhakrishnan, S., Prasad, S. A., <span class="author-highlight">Vidva, R.</span>, Progulske-Fox, A., Cavanaugh, J. E., Vali, S., &amp; Brogden, K. A. <a href="https://doi.org/10.1038/srep01232" target="_blank">doi:10.1038/srep01232</a>
+      </li>
+
+      <!-- 2012 Presentations -->
+      <li class="research-item" data-type="presentation" data-year="2012" data-date="2012-11-12">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Predictive Software-Based Mathematical Modeling: A Novel Approach to Development of Oral Therapies for Rheumatoid Arthritis – Validation in a Murine Collagen Induced Arthritis Model.</strong> Nov 12, 2012. Singh, G., <span class="author-highlight">Vidva, R.</span>, Nair, P., Radhakrishnan, S., Fernandes, P., Abbasi, T., Refino, C., Cruz, J. D., &amp; Vali, S. <a href="https://acrabstracts.org/abstract/predictive-software-based-mathematical-modeling-a-novel-approach-to-development-of-oral-therapies-for-rheumatoid-arthritis-validation-in-a-murine-collagen-induced-arthritis-model/" target="_blank">View abstract</a> | <a href="https://doi.org/10.1002/art.37735" target="_blank">doi:10.1002/art.37735</a>
+      </li>
+      <li class="research-item" data-type="presentation" data-year="2012" data-date="2012-11-12">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Novel Combination Therapy of Existing Repurposed Therapies Designed by Predictive Software Modeling Shows Profound Impact on Disease Progression in a Murine Collagen Induced Arthritis Model.</strong> Nov 12, 2012. Vali, S., Refino, C., Cruz, J. D., <span class="author-highlight">Vidva, R.</span>, Nair, P., Radhakrishnan, S., Fernandes, P., Abbasi, T., &amp; Singh, G. <a href="https://acrabstracts.org/abstract/novel-combination-therapy-of-existing-repurposed-therapies-designed-by-predictive-software-modeling-shows-profound-impact-on-disease-progression-in-a-murine-collagen-induced-arthritis-model/" target="_blank">View abstract</a> | <a href="https://doi.org/10.1002/art.37735" target="_blank">doi:10.1002/art.37735</a>
+      </li>
+
+      <!-- 2008 Presentations -->
+      <li class="research-item" data-type="presentation" data-year="2008" data-date="2008-03-01">
+        <span class="badge badge-presentation">Presentation</span>
+        <strong>Insights into the Anti-inflammatory Action of the Soluble Epoxide Hydrolase Inhibitor through Systems Biology based in silico Modeling Approach.</strong> Mar 1, 2008. Vali, S., Hegedus, C., Bhattacharjee, C., <span class="author-highlight">Vidva, R.</span>, Schmelzer, K., Inceoglu, B., &amp; Hammock, B. D. <a href="https://doi.org/10.1096/fasebj.22.1_supplement.479.13" target="_blank">doi:10.1096/fasebj.22.1_supplement.479.13</a>
+      </li>
+    </ul>
+    <nav aria-label="Research pagination" class="mt-4">
+      <ul class="pagination justify-content-center" id="pagination-controls">
+        <!-- Pagination buttons will be generated by JavaScript -->
+      </ul>
+    </nav>
+  </div>
+  </section>
+
+  <!-- Page Navigation -->
+  <div class="text-center mt-5 mb-4">
+    <a href="certifications.html" class="btn btn-outline-primary">
+      View my certifications <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>
+<footer class="text-center py-4">
+  <div class="container">
+    <div class="social-links mb-3">
+      <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" title="LinkedIn" aria-label="Visit Robinson Vidva on LinkedIn" class="social-icon">
+        <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/robinson-vidva" target="_blank" title="GitHub" aria-label="Visit Robinson Vidva on GitHub" class="social-icon">
+        <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" title="Google Scholar" aria-label="View Robinson Vidva on Google Scholar" class="social-icon">
+        <i class="fab fa-google-scholar fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" title="ORCID" aria-label="View Robinson Vidva ORCID profile" class="social-icon">
+        <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+    <p class="mb-1">Email: <a href="mailto:hello@robinsonvidva.com">hello@robinsonvidva.com</a></p>
+    <p class="mb-0">&copy; 2025-2026 Robinson Vidva. All rights reserved. | <a href="terms.html" style="color: inherit;">Terms & Privacy</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let currentFilter = 'all';
+  let currentSort = 'newest';
+  let currentPage = 1;
+  let currentSearch = '';
+  const itemsPerPage = 10;
+
+  function getFilteredItems() {
+    const items = Array.from(document.querySelectorAll('.research-item'));
+    return items.filter(item => {
+      const matchesType = currentFilter === 'all' || item.dataset.type === currentFilter;
+      const matchesSearch = !currentSearch || item.textContent.toLowerCase().includes(currentSearch);
+      return matchesType && matchesSearch;
+    });
+  }
+
+  function sortItemsArray(items) {
+    return items.sort((a, b) => {
+      const dateA = new Date(a.dataset.date);
+      const dateB = new Date(b.dataset.date);
+      return currentSort === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+  }
+
+  function updateDisplay() {
+    const allItems = document.querySelectorAll('.research-item');
+    const filteredItems = sortItemsArray(getFilteredItems());
+    const totalItems = filteredItems.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    // Ensure current page is valid
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+
+    // Hide all items first
+    allItems.forEach(item => item.classList.add('hidden'));
+
+    // Show only items for current page
+    filteredItems.slice(startIndex, endIndex).forEach(item => {
+      item.classList.remove('hidden');
+    });
+
+    // Update showing info
+    const showingInfo = document.getElementById('showing-info');
+    if (totalItems === 0) {
+      showingInfo.textContent = 'No items found';
+    } else {
+      showingInfo.textContent = `Showing ${startIndex + 1}-${endIndex} of ${totalItems} items`;
+    }
+    showingInfo.style.visibility = 'visible';
+
+    // Update pagination controls
+    updatePagination(totalPages);
+  }
+
+  function updatePagination(totalPages) {
+    const paginationContainer = document.getElementById('pagination-controls');
+    paginationContainer.innerHTML = '';
+
+    if (totalPages <= 1) return;
+
+    // Previous button
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = `<a class="page-link" href="#" onclick="goToPage(${currentPage - 1}); return false;" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>`;
+    paginationContainer.appendChild(prevLi);
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      const li = document.createElement('li');
+      li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+      li.innerHTML = `<a class="page-link" href="#" onclick="goToPage(${i}); return false;">${i}</a>`;
+      paginationContainer.appendChild(li);
+    }
+
+    // Next button
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextLi.innerHTML = `<a class="page-link" href="#" onclick="goToPage(${currentPage + 1}); return false;" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>`;
+    paginationContainer.appendChild(nextLi);
+  }
+
+  function goToPage(page) {
+    currentPage = page;
+    updateDisplay();
+    // Scroll to top of research list
+    document.getElementById('research-list').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function filterItems(type, event) {
+    currentFilter = type;
+    currentPage = 1; // Reset to first page when filtering
+
+    // Update button states
+    document.querySelectorAll('.filter-buttons .btn').forEach(btn => {
+      btn.classList.remove('btn-primary');
+      btn.classList.add('btn-outline-primary');
+    });
+
+    if (event && event.currentTarget) {
+      event.currentTarget.classList.remove('btn-outline-primary');
+      event.currentTarget.classList.add('btn-primary');
+    }
+
+    updateDisplay();
+  }
+
+  function sortItems(order) {
+    currentSort = order;
+    currentPage = 1; // Reset to first page when sorting
+    updateDisplay();
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    updateDisplay();
+    document.getElementById('search-input').addEventListener('input', function() {
+      currentSearch = this.value.toLowerCase().trim();
+      currentPage = 1;
+      updateDisplay();
+    });
+  });
+</script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>300)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
+</body>
+</html>

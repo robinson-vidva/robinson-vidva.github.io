@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyVivarium: Streamlining Lab Animal Colony Management - Robinson Vidva</title>
+  <meta name="description" content="MyVivarium is an open-source, cloud-based application for managing research animal colonies with IoT-based environmental monitoring. Published in CSBJ 2025.">
+  <meta name="keywords" content="MyVivarium, lab animal management, vivarium, colony management, open source, IoT, environmental monitoring, research tools, LIMS, QR code, PHP, cloud application">
+  <meta name="author" content="Robinson Vidva">
+  <meta property="article:published_time" content="2025-01-25">
+  <meta property="article:modified_time" content="2026-02-08">
+  <meta property="article:author" content="Robinson Vidva">
+  <meta property="article:section" content="Research Tools">
+  <meta property="article:tag" content="MyVivarium">
+  <meta property="article:tag" content="lab animal management">
+  <meta property="article:tag" content="open source">
+  <meta property="article:tag" content="IoT">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/Preview.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/Preview.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/Preview.png">
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:title" content="MyVivarium: Streamlining Lab Animal Colony Management">
+  <meta property="og:description" content="MyVivarium is an open-source, cloud-based application for managing research animal colonies with IoT environmental monitoring. Deploy for ~$6/month with QR code cage cards, automated reminders, and real-time ambient sensing.">
+  <meta property="og:image" content="https://robinsonvidva.com/images/Preview.png">
+  <link rel="canonical" href="https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html">
+  <meta property="og:url" content="https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MyVivarium: Streamlining Lab Animal Colony Management">
+  <meta name="twitter:description" content="MyVivarium: open-source lab animal colony management with IoT environmental monitoring. Deploy for ~$6/month. Published in CSBJ.">
+  <meta name="twitter:image" content="https://robinsonvidva.com/images/Preview.png">
+
+  <link rel="alternate" type="application/rss+xml" title="Robinson Vidva - Articles" href="https://robinsonvidva.com/feed.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="../style.css?v=7" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5FRPNE4J9N');
+  </script>
+
+  <!-- BreadcrumbList Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://robinsonvidva.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://robinsonvidva.com/articles.html"},
+      {"@type": "ListItem", "position": 3, "name": "MyVivarium: Streamlining Lab Animal Colony Management"}
+    ]
+  }
+  </script>
+
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "MyVivarium: Streamlining Lab Animal Colony Management with Open-Source Innovation",
+    "alternativeHeadline": "An open-source cloud-based application for managing research animal colonies with IoT environmental monitoring",
+    "author": {
+      "@type": "Person",
+      "name": "Robinson Vidva",
+      "url": "https://robinsonvidva.com",
+      "jobTitle": "Computational Biologist",
+      "sameAs": [
+        "https://orcid.org/0000-0002-2604-5448",
+        "https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en",
+        "https://www.linkedin.com/in/robinson-vidva/"
+      ]
+    },
+    "datePublished": "2025-01-25",
+    "dateModified": "2026-02-08",
+    "publisher": {
+      "@type": "Person",
+      "name": "Robinson Vidva"
+    },
+    "description": "An open-source, cloud-based application for managing research animal colonies with IoT-based environmental monitoring.",
+    "keywords": ["MyVivarium", "lab animal management", "vivarium", "colony management", "open source", "IoT", "environmental monitoring", "research tools"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html"
+    },
+    "image": "https://robinsonvidva.com/images/Preview.png",
+    "inLanguage": "en",
+    "about": [
+      {"@type": "Thing", "name": "Laboratory animal management"},
+      {"@type": "Thing", "name": "Internet of Things"},
+      {"@type": "Thing", "name": "Open-source software"}
+    ],
+    "citation": {
+      "@type": "ScholarlyArticle",
+      "name": "MyVivarium: A cloud-based lab animal colony management application with real-time ambient sensing",
+      "url": "https://doi.org/10.1016/j.csbj.2025.01.025",
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Computational and Structural Biotechnology Journal"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+      <img src="../images/Original.png" alt="Robinson Vidva" class="navbar-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../cv.html">CV</a></li>
+        <li class="nav-item"><a class="nav-link" href="../research.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="../certifications.html">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../articles.html">Articles</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="bg-secondary text-white text-center py-5">
+  <div class="container">
+    <div class="mb-2">
+      <a href="../articles.html" class="btn btn-outline-light btn-sm"><i class="fas fa-arrow-left me-2" aria-hidden="true"></i> Back to Articles</a>
+    </div>
+    <h1 class="display-4">MyVivarium: Streamlining Lab Animal Colony Management</h1>
+    <p class="lead">Open-Source Innovation for Research Efficiency</p>
+    <div class="mt-3">
+      <span class="badge bg-light text-dark">Tools</span>
+      <span class="text-white-50 ms-3"><i class="far fa-calendar" aria-hidden="true"></i> January 25, 2025</span>
+      <span class="text-white-50 ms-3"><i class="far fa-clock" aria-hidden="true"></i> 5 min read</span>
+      <span class="text-white-50 ms-3 view-count" id="article-views"><i class="far fa-eye" aria-hidden="true"></i> <span class="view-number">—</span> views</span>
+    </div>
+  </div>
+</header>
+
+<article class="container my-5">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+
+      <section class="mb-5">
+        <p class="lead">Research labs face ongoing challenges in managing animal colonies. Outdated paper systems and spreadsheets hinder efficiency and accuracy, while commercial management solutions are often expensive and lack support, and open-source options often limit usability.</p>
+
+        <p>MyVivarium addresses these issues as a cloud-based, open-source application launched in 2025, delivering an accessible and affordable way to manage research animal colonies.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Core Functionality and Design Philosophy</h2>
+        <p>MyVivarium enhances accuracy and efficiency by tracking animals in a centralized database, facilitating breeding and holding cage workflows, and utilizing QR code cage cards to link physical cages to digital records. This enables quick mobile updates, reduces errors, and brings modern technology to day-to-day colony management.</p>
+
+        <p>Features include user access control, automated task reminders, and strain management with RRID support. These tools standardize operations and support integration.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>IoT Integration for Environmental Monitoring</h2>
+        <p>MyVivarium utilizes real-time IoT-based environmental monitoring, leveraging affordable hardware to track temperature, humidity, light, and activity. This provides data on factors affecting animal well-being and breeding.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Open-Source Architecture and Deployment</h2>
+        <p>MyVivarium is built on PHP and can be deployed on cloud hosting for around $6 per month. Its LGPL-licensed code and documentation are available on GitHub for transparency and customization.</p>
+
+        <p>Most labs can deploy MyVivarium in a matter of hours using the provided scripts and guides. Custom integration may take longer, but thorough documentation supports a smooth setup.</p>
+
+        <p>Support is available through GitHub for reporting issues and requesting features. The modular architecture enables troubleshooting and customization.</p>
+
+        <p>Multiple research facilities have validated MyVivarium's reliability and scalability across platforms.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Data Security and System Integration</h2>
+        <p>Data security includes SSL/TLS encryption, secure password hashing, and role-based access controls. Each facility maintains its own instance for compliance.</p>
+
+        <p>MyVivarium's design allows integration with existing lab systems via APIs and standard database structures. Its open-source code and documentation support modifications.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Conclusion</h2>
+        <p>MyVivarium provides a robust, open-source solution for laboratory animal colony management, combining ease of deployment, real-time environmental monitoring, and cost-effectiveness. The platform is immediately available for implementation, with demonstration access at <a href="https://demo.myvivarium.online" target="_blank">demo.myvivarium.online</a> and complete source code at <a href="https://github.com/myvivarium/MyVivarium" target="_blank">github.com/myvivarium</a>.</p>
+      </section>
+
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            <h3 class="h5"><i class="fas fa-link me-2" aria-hidden="true"></i> Resources</h3>
+            <ul class="mb-0">
+              <li><strong>Demo:</strong> <a href="https://demo.myvivarium.online" target="_blank">demo.myvivarium.online <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/myvivarium/MyVivarium" target="_blank">github.com/myvivarium <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li><strong>Article DOI:</strong> <a href="https://doi.org/10.1016/j.csbj.2025.01.025" target="_blank">10.1016/j.csbj.2025.01.025 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cite this article -->
+      <section class="mb-5">
+        <div class="card" style="border-color: var(--border-color);">
+          <div class="card-body" style="font-size: 0.9rem;">
+            <h4 class="h6 mb-2"><i class="fas fa-quote-left me-2" aria-hidden="true" style="color: var(--primary-accent);"></i> Cite this article</h4>
+            <p class="mb-2" style="color: var(--light-text); line-height: 1.6;">Vidva, R., Raza, M. A., Prabhakaran, J., Sheikh, A., Sharp, A., Ott, H., Moore, A., Fleisher, C., Netherton, H., Goldstein, E., Pitychoutis, P. M., Nguyen, T. V., &amp; Sathyanesan, A. (2025). MyVivarium: A cloud-based lab animal colony management application with realtime ambient sensing. <em>Computational and Structural Biotechnology Journal, 27</em>, 612&ndash;623. <a href="https://doi.org/10.1016/j.csbj.2025.01.025" target="_blank">doi:10.1016/j.csbj.2025.01.025</a></p>
+            <button class="btn btn-sm btn-outline-secondary" onclick="navigator.clipboard.writeText('Vidva, R., Raza, M. A., Prabhakaran, J., Sheikh, A., Sharp, A., Ott, H., Moore, A., Fleisher, C., Netherton, H., Goldstein, E., Pitychoutis, P. M., Nguyen, T. V., & Sathyanesan, A. (2025). MyVivarium: A cloud-based lab animal colony management application with realtime ambient sensing. Computational and Structural Biotechnology Journal, 27, 612-623. https://doi.org/10.1016/j.csbj.2025.01.025'); this.innerHTML='<i class=\'fas fa-check me-1\'></i> Copied!'; setTimeout(() => this.innerHTML='<i class=\'fas fa-copy me-1\'></i> Copy citation', 2000);">
+              <i class="fas fa-copy me-1" aria-hidden="true"></i> Copy citation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Navigation -->
+      <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top">
+        <a href="../articles.html" class="btn btn-outline-primary">
+          <i class="fas fa-arrow-left me-2" aria-hidden="true"></i> Back to All Articles
+        </a>
+        <div class="text-end">
+          <small class="text-muted">Share this article:</small><br>
+          <a href="https://twitter.com/intent/tweet?text=MyVivarium: Streamlining Lab Animal Colony Management&url=https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html" target="_blank" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Share on X">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html" target="_blank" class="btn btn-sm btn-outline-secondary ms-1" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer class="text-center py-4">
+  <div class="container">
+    <div class="social-links mb-3">
+      <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" title="LinkedIn" aria-label="Visit Robinson Vidva on LinkedIn" class="social-icon">
+        <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/robinson-vidva" target="_blank" title="GitHub" aria-label="Visit Robinson Vidva on GitHub" class="social-icon">
+        <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" title="Google Scholar" aria-label="View Robinson Vidva on Google Scholar" class="social-icon">
+        <i class="fab fa-google-scholar fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" title="ORCID" aria-label="View Robinson Vidva ORCID profile" class="social-icon">
+        <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+    <p class="mb-1">Email: <a href="mailto:hello@robinsonvidva.com">hello@robinsonvidva.com</a></p>
+    <p class="mb-0">&copy; 2025-2026 Robinson Vidva. All rights reserved. | <a href="../terms.html" style="color: inherit;">Terms & Privacy</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+fetch('../views.json?v=' + Date.now()).then(r => r.json()).then(data => {
+  const path = location.pathname.replace(/\/$/, '') || '/';
+  const views = data.pages[path];
+  if (views > 0) document.querySelector('#article-views .view-number').textContent = views.toLocaleString();
+}).catch(() => {});
+</script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>300)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
+</body>
+</html>
