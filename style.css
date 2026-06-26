@@ -1136,6 +1136,145 @@ section p em {
   }
 }
 
+/* =========================================================
+   Polish & UX Enhancements
+   ========================================================= */
+
+/* Smooth in-page scrolling (disabled for reduced-motion users) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reading progress bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(to right, var(--primary-accent), var(--light-accent));
+  z-index: 1040;
+  will-change: width;
+  pointer-events: none;
+}
+
+/* Clearer keyboard focus across interactive elements */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.form-select:focus-visible,
+.search-input:focus-visible {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Navbar gains a deeper shadow once the page is scrolled */
+.navbar.sticky-top {
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar.sticky-top.scrolled {
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+}
+
+/* Subtle dot-grid texture + layered depth on hero headers */
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+header > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero entrance animation (motion-safe) */
+@media (prefers-reduced-motion: no-preference) {
+  header h1 {
+    animation: heroFade 0.7s ease both;
+  }
+
+  header .lead {
+    animation: heroFade 0.7s ease 0.08s both;
+  }
+
+  header .hero-buttons,
+  header .mt-3,
+  header .mb-2 {
+    animation: heroFade 0.7s ease 0.16s both;
+  }
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Scroll reveal — only applied when JS is active and motion is allowed,
+   so the page stays fully visible without JS or with reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .js-enhanced .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+  }
+
+  .js-enhanced .reveal.reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Micro-interactions */
+.focus-tag {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.focus-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.28);
+}
+
+.metric-item {
+  transition: transform 0.2s ease;
+}
+
+.metric-item:hover {
+  transform: translateY(-3px);
+}
+
+.metric-item:hover .metric-number {
+  color: var(--secondary-accent);
+}
+
+.recent-pub {
+  border-radius: 0 8px 8px 0;
+}
+
+.recent-pub:hover {
+  background-color: var(--subtle-bg);
+}
+
 @media (max-width: 768px) {
   /* Hide embedded PDF on mobile - most mobile browsers (especially Safari) can't render it well */
   .pdf-viewer-wrapper {
