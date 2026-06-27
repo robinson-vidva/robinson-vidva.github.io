@@ -81,10 +81,8 @@
     <div class="col-lg-7">
       <section class="mb-4">
         <h2>Send a message</h2>
-        <!-- SETUP: create a free form at https://formspree.io and replace
-             the action URL below with your endpoint (e.g. https://formspree.io/f/abcdwxyz).
-             Until then the form falls back to opening your email client. -->
-        <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST" novalidate>
+        <!-- Submissions are handled by Formspree (https://formspree.io) via AJAX. -->
+        <form id="contact-form" action="https://formspree.io/f/xqevqnkb" method="POST" novalidate>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="mb-3">
             <label for="cf-name" class="form-label">Name</label>
@@ -96,7 +94,7 @@
           </div>
           <div class="mb-3">
             <label for="cf-subject" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="cf-subject" name="subject">
+            <input type="text" class="form-control" id="cf-subject" name="_subject">
           </div>
           <div class="mb-3">
             <label for="cf-message" class="form-label">Message</label>
