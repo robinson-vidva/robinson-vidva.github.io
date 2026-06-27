@@ -44,6 +44,9 @@
     gtag('js', new Date());
     gtag('config', 'G-5FRPNE4J9N');
   </script>
+
+  <!-- Cloudflare Turnstile (spam/bot protection for the contact form) -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -100,6 +103,7 @@
             <label for="cf-message" class="form-label">Message</label>
             <textarea class="form-control" id="cf-message" name="message" rows="6" required></textarea>
           </div>
+          <div class="cf-turnstile mb-3" data-sitekey="0x4AAAAAADruzhUzi2tfAPBx"></div>
           <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2" aria-hidden="true"></i> Send message</button>
           <p id="cf-status" class="mt-3 mb-0" role="status" aria-live="polite"></p>
         </form>
@@ -210,9 +214,11 @@
         status.textContent = 'Something went wrong. Please email hello@robinsonvidva.com.';
         status.className = 'mt-3 mb-0 text-danger';
       }
+      if (window.turnstile) window.turnstile.reset();
     }).catch(function () {
       status.textContent = 'Something went wrong. Please email hello@robinsonvidva.com.';
       status.className = 'mt-3 mb-0 text-danger';
+      if (window.turnstile) window.turnstile.reset();
     });
   });
 })();
