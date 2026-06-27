@@ -1275,6 +1275,121 @@ header > .container {
   background-color: var(--subtle-bg);
 }
 
+/* =========================================================
+   Aesthetic refinement pass (v9)
+   Keeps the existing palette & page structure — improves
+   placement, hierarchy, and overall professionalism.
+   ========================================================= */
+
+/* Roomier, calmer content container on larger screens */
+@media (min-width: 992px) {
+  body > .container,
+  div.container.my-4 {
+    padding: 2.5rem 3rem;
+  }
+}
+
+/* Cleaner section headings: a subtle rule with a short accent bar
+   (replaces the older gradient border-image) */
+section h2 {
+  position: relative;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  border-image: none;
+  padding-bottom: 0.65rem;
+  margin-bottom: 1.75rem;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 52px;
+  height: 3px;
+  background-color: var(--primary-accent);
+  border-radius: 2px;
+}
+
+/* Buttons: crisper and more deliberate */
+.btn-primary,
+.btn-outline-primary {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.95rem;
+  border-radius: 7px;
+}
+
+/* Research toolbar: lighter and cleaner */
+.sort-controls {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+/* Filter buttons styled as a connected segmented control */
+.sort-controls .filter-buttons {
+  gap: 0;
+  background-color: var(--subtle-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  padding: 3px;
+}
+
+.filter-buttons .btn {
+  margin: 0;
+  border: none !important;
+  border-radius: 7px !important;
+  background-color: transparent;
+  color: var(--light-text);
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.filter-buttons .btn.btn-outline-primary:hover {
+  background-color: rgba(15, 23, 42, 0.04);
+  color: var(--primary-accent);
+}
+
+.filter-buttons .btn.btn-primary {
+  background-color: var(--card-bg);
+  color: var(--primary-accent);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Research items: clearer typographic hierarchy (CSS only — markup
+   and the filter/sort/paginate behavior are unchanged) */
+#research-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.research-item {
+  padding: 1.1rem 1.25rem;
+}
+
+.research-item strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--secondary-dark);
+  margin: 0.4rem 0 0.45rem;
+  line-height: 1.45;
+}
+
+/* Slightly more refined badges */
+.badge,
+.badge-publication,
+.badge-presentation,
+.badge-patent,
+.badge-preprint {
+  border-radius: 5px;
+  letter-spacing: 0.01em;
+}
+
 @media (max-width: 768px) {
   /* Hide embedded PDF on mobile - most mobile browsers (especially Safari) can't render it well */
   .pdf-viewer-wrapper {
