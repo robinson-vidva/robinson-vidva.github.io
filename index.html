@@ -32,10 +32,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="style.css?v=10" rel="stylesheet">
+  <link href="style.css?v=11" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
@@ -206,64 +206,75 @@
       </div>
     </section>
 
-    <!-- Articles -->
+    <!-- Featured Tools -->
     <section class="mb-5">
-      <h2>Articles</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card h-100" style="border-color: var(--border-color);">
-            <div class="card-body">
-              <div class="mb-2">
-                <span class="badge badge-publication">Drug Discovery</span>
-                <small class="text-muted ms-2">Feb 2026</small>
-              </div>
-              <h5 class="card-title" style="font-size: 1.05rem;"><a href="articles/drug-repositioning-computational-approaches.html" style="color: var(--secondary-dark); text-decoration: none;">Drug Repositioning Through Computational Modeling</a></h5>
-              <p class="card-text" style="font-size: 0.92rem; color: var(--light-text);">How computational modeling enables drug repositioning &mdash; from autoimmune disease to oncology to integrating natural compounds to enhance cancer therapy.</p>
-              <a href="articles/drug-repositioning-computational-approaches.html" class="btn btn-sm btn-outline-primary">Read article <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
-            </div>
+      <h2>Featured Tools</h2>
+      <p class="section-intro">Free, browser-based tools I built for computational biology &mdash; open and use them right now.</p>
+      <div class="tool-grid">
+
+        <article class="tool-card">
+          <div class="tool-card-head">
+            <span class="tool-name">DrugInteract</span>
+            <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100" style="border-color: var(--border-color);">
-            <div class="card-body">
-              <div class="mb-2">
-                <span class="badge badge-publication">Tools</span>
-                <small class="text-muted ms-2">Jan 2025</small>
-              </div>
-              <h5 class="card-title" style="font-size: 1.05rem;"><a href="articles/myvivarium-lab-animal-management.html" style="color: var(--secondary-dark); text-decoration: none;">MyVivarium: Streamlining Lab Animal Colony Management</a></h5>
-              <p class="card-text" style="font-size: 0.92rem; color: var(--light-text);">An open-source, cloud-based application for managing research animal colonies with IoT-based environmental monitoring.</p>
-              <a href="articles/myvivarium-lab-animal-management.html" class="btn btn-sm btn-outline-primary">Read article <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
-            </div>
+          <p class="tool-desc">Educational drug-interaction reference that checks what each drug's FDA label says about another. Fully client-side.</p>
+          <div class="tool-tags"><span class="tool-tag">openFDA</span><span class="tool-tag">RxNorm</span></div>
+          <div class="tool-actions">
+            <a class="btn btn-sm btn-primary" href="https://robinsonvidva.com/DrugInteract/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Open</a>
+            <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/DrugInteract" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
           </div>
-        </div>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-card-head">
+            <span class="tool-name">enrichlite</span>
+            <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+          </div>
+          <p class="tool-desc">Gene-set over-representation analysis for human and mouse that runs entirely in the browser. GO, Hallmark, Reactome.</p>
+          <div class="tool-tags"><span class="tool-tag">GO</span><span class="tool-tag">Reactome</span></div>
+          <div class="tool-actions">
+            <a class="btn btn-sm btn-primary" href="https://robinsonvidva.com/enrichlite/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Open</a>
+            <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/enrichlite" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+          </div>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-card-head">
+            <span class="tool-name">drugtargets</span>
+            <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+          </div>
+          <p class="tool-desc">Drug-target exploration and repurposing-hypothesis tool built on Open Targets and openFDA.</p>
+          <div class="tool-tags"><span class="tool-tag">Open Targets</span><span class="tool-tag">openFDA</span></div>
+          <div class="tool-actions">
+            <a class="btn btn-sm btn-primary" href="https://drugtargets.robinsonvidva.com" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Open</a>
+            <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/drugtargets" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+          </div>
+        </article>
+
       </div>
       <div class="text-end mt-3">
-        <a href="articles.html" class="btn btn-sm btn-outline-primary">View all articles <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+        <a href="tools.html" class="btn btn-sm btn-outline-primary">View all tools <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
       </div>
     </section>
 
-    <!-- Recent publications highlight -->
+    <!-- Latest -->
     <section class="mb-5">
-      <h2>Recent Work</h2>
+      <h2>Latest</h2>
       <div class="recent-pub">
-        <span class="badge badge-publication">2025</span>
+        <span class="badge badge-publication">Publication &middot; 2025</span>
         <strong>Intrinsic Gestational Timing Governs Human Cerebellar Development After Preterm Birth.</strong>
-        <span class="text-muted">Sanidas, G., ..., <span class="author-highlight">Vidva, R.</span>, ..., Kratimenos, P.</span>
-        <a href="https://doi.org/10.1101/2025.09.01.673244" target="_blank" class="ms-1"><i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a>
+        <span class="text-muted">Sanidas, G., &hellip;, <span class="author-highlight">Vidva, R.</span>, &hellip;, Kratimenos, P.</span>
+        <a href="https://doi.org/10.1101/2025.09.01.673244" target="_blank" rel="noopener" class="ms-1" aria-label="View publication"><i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a>
       </div>
       <div class="recent-pub">
-        <span class="badge badge-publication">2025</span>
-        <strong>MyVivarium: A cloud-based lab animal colony management application with real-time ambient sensing.</strong>
-        <span class="text-muted"><span class="author-highlight">Vidva, R.</span>, Raza, M.A., et al.</span>
-        <a href="https://doi.org/10.1016/j.csbj.2025.01.025" target="_blank" class="ms-1"><i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a>
+        <span class="badge badge-publication">Article &middot; Feb 2026</span>
+        <strong>Drug Repositioning Through Computational Modeling.</strong>
+        <span class="text-muted">How computational modeling enables drug repositioning across disease areas.</span>
+        <a href="articles/drug-repositioning-computational-approaches.html" class="ms-1">Read &rarr;</a>
       </div>
-      <div class="recent-pub">
-        <span class="badge badge-presentation">2025</span>
-        <strong>Early postnatal rehabilitation mitigates motor, growth, and social deficits in perinatal brain injury.</strong>
-        <span class="text-muted">Simonti, G., <span class="author-highlight">Vidva, R.</span>, et al. Society for Neuroscience, San Diego.</span>
-      </div>
-      <div class="text-end mt-3">
-        <a href="research.html" class="btn btn-sm btn-outline-primary">View all publications <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+      <div class="latest-links mt-3">
+        <a href="research.html">All research</a>
+        <a href="articles.html">All articles</a>
       </div>
     </section>
   </div>

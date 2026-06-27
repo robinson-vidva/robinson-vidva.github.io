@@ -1638,3 +1638,17 @@ section h2::after {
   .download-card-actions { width: 100%; }
   .download-card-actions .btn { flex: 1 1 auto; }
 }
+
+/* Home: intro line under a section heading + compact "Latest" links */
+.section-intro {
+  color: var(--light-text);
+  margin-top: -0.85rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.98rem;
+}
+.latest-links {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
