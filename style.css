@@ -1652,3 +1652,31 @@ section h2::after {
   font-size: 0.92rem;
   font-weight: 600;
 }
+
+/* =========================================================
+   Research toolbar layout (v12)
+   ========================================================= */
+.sort-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+/* Segmented filter stays content-width on desktop, scrolls on small screens */
+.sort-controls .filter-buttons {
+  align-self: flex-start;
+  max-width: 100%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+.filter-buttons .btn { white-space: nowrap; }
+.sort-controls .toolbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.sort-controls .toolbar-tools .search-input {
+  flex: 1 1 240px;
+  max-width: 460px;
+}
+.sort-controls .toolbar-tools .sort-select { margin-left: auto; }

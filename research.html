@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="style.css?v=11" rel="stylesheet">
+  <link href="style.css?v=12" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
@@ -98,22 +98,21 @@
 <div class="container my-4">
   <section class="mb-5">
     <div class="sort-controls">
-      <div class="toolbar-row">
-        <div class="filter-buttons">
-          <button class="btn btn-primary btn-sm" onclick="filterItems('all', event)">All</button>
-          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('publication', event)">Publications</button>
-          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation', event)">Presentations</button>
-          <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent', event)">Patents</button>
-        </div>
-        <div class="d-flex align-items-center gap-3 flex-wrap">
-          <input type="text" class="search-input" id="search-input" placeholder="Search by keyword..." aria-label="Search publications">
-          <div class="sort-select">
-            <label for="sort-order">Sort:</label>
-            <select class="form-select form-select-sm" id="sort-order" onchange="sortItems(this.value)">
-              <option value="newest">Newest First</option>
-              <option value="oldest">Oldest First</option>
-            </select>
-          </div>
+      <div class="filter-buttons" role="group" aria-label="Filter by type">
+        <button class="btn btn-primary btn-sm" onclick="filterItems('all', event)">All</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('preprint', event)">Preprints</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('publication', event)">Publications</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation', event)">Presentations</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent', event)">Patents</button>
+      </div>
+      <div class="toolbar-tools">
+        <input type="text" class="search-input" id="search-input" placeholder="Search by keyword, author, or year…" aria-label="Search publications">
+        <div class="sort-select">
+          <label for="sort-order">Sort</label>
+          <select class="form-select form-select-sm" id="sort-order" onchange="sortItems(this.value)">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
         </div>
       </div>
     </div>
@@ -134,14 +133,12 @@
       </li>
 
       <!-- 2025 Publications -->
-      <li class="research-item" data-type="publication" data-year="2025" data-date="2025-09-02">
-        <span class="badge badge-publication">Publication</span>
-        <span class="tag-secondary">Preprint</span>
+      <li class="research-item" data-type="preprint" data-year="2025" data-date="2025-09-02">
+        <span class="badge badge-preprint">Preprint</span>
         <strong>Intrinsic Gestational Timing Governs Human Cerebellar Development After Preterm Birth.</strong> September 2, 2025. Sanidas, G., Simonti, G., Ghaemmaghami, J., Woyshner, K., <span class="author-highlight">Vidva, R.</span>, Wolff, N., Triantafyllou, M., Lowe, C., Vij, A., Sahlin Pettersen, H., Chandereng, T., Koutroulis, I., Stein-O'Brien, G., Sidiropoulos, D. N., Gallo, V. and Kratimenos, P. <a href="https://doi.org/10.1101/2025.09.01.673244" target="_blank">doi:10.1101/2025.09.01.673244</a>
       </li>
-      <li class="research-item" data-type="publication" data-year="2025" data-date="2025-12-16">
-        <span class="badge badge-publication">Publication</span>
-        <span class="tag-secondary">Preprint</span>
+      <li class="research-item" data-type="preprint" data-year="2025" data-date="2025-12-16">
+        <span class="badge badge-preprint">Preprint</span>
         <strong>Prematurity Insults Remodel Cerebellar Development and Behavior.</strong> December 16, 2025. Sanidas, G., Simonti, G., Ghaemmaghami, J., Woyshner, K., Wolff, N., Byrd, C., Triantafyllou, M., Lowe, C., Salisbury, H., Goldstein, E., Sathyanesan, A., <span class="author-highlight">Vidva, R.</span>, Koutroulis, I., Stein-O'Brien, G., Sidiropoulos, D. N., Gallo, V. and Kratimenos, P. <a href="https://doi.org/10.1101/2025.07.22.664624" target="_blank">doi:10.1101/2025.07.22.664624</a>
       </li>
       <li class="research-item" data-type="publication" data-year="2025" data-date="2025-04-21">
@@ -327,6 +324,12 @@
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+
+    // Reorder the DOM to reflect the current sort order
+    const listEl = document.querySelector('#research-list ul');
+    if (listEl) {
+      filteredItems.forEach(item => listEl.appendChild(item));
+    }
 
     // Hide all items first
     allItems.forEach(item => item.classList.add('hidden'));
