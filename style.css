@@ -1742,3 +1742,36 @@ footer { border-top: 3px solid var(--primary-accent); }
   color: #fff;
 }
 .pagination .page-link:hover { background-color: var(--subtle-bg); }
+
+/* =========================================================
+   Typography consistency (v14)
+   Unify body copy size and line spacing so paragraphs and
+   lists read the same everywhere. Headings/components keep
+   their scale; only prose rhythm is harmonized.
+   ========================================================= */
+
+/* One consistent reading size + line-height for all body copy */
+p,
+li,
+ul li,
+ol li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Lead paragraphs: larger but tighter, consistent across pages */
+.lead { line-height: 1.6; }
+.lead-text { font-size: 1.12rem; line-height: 1.7; }
+
+/* Keep dense reference lists readable but consistent with prose */
+.research-item { line-height: 1.7; }
+.recent-pub { line-height: 1.7; }
+
+/* Headings: one consistent tight line-height */
+h1, h2, h3, h4, h5, h6 { line-height: 1.3; }
+
+/* Mobile: keep the same proportions (body already steps to 16px) */
+@media (max-width: 768px) {
+  p, li, ul li, ol li { font-size: 1rem; line-height: 1.65; }
+  .lead-text { font-size: 1.05rem; }
+}
