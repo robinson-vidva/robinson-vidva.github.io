@@ -1680,3 +1680,65 @@ section h2::after {
   max-width: 460px;
 }
 .sort-controls .toolbar-tools .sort-select { margin-left: auto; }
+
+/* =========================================================
+   Design polish (v13)
+   Softer layered shadows, refined hero & headings, nicer
+   links/selection, footer accent — palette unchanged.
+   ========================================================= */
+
+/* Teal text selection */
+::selection { background: rgba(8, 145, 178, 0.18); }
+
+/* Comfortable underline spacing on hover links */
+a { text-underline-offset: 0.16em; }
+
+/* Softer, more layered elevation on all card surfaces */
+.card,
+.tool-card,
+.highlight-card,
+.stat-card,
+.download-card {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* Hero refinements: legible title, gentle inner depth, crisp edge */
+header h1 { text-shadow: 0 1px 3px rgba(15, 23, 42, 0.18); }
+header { box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08); }
+
+/* Section heading accent: subtle gradient instead of flat bar */
+section h2::after {
+  background: linear-gradient(90deg, var(--primary-accent), var(--light-accent));
+}
+
+/* Tool cards get a quiet teal top edge on hover for a bit more life */
+.tool-card { position: relative; overflow: hidden; }
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--light-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.tool-card:hover::before { transform: scaleX(1); }
+
+/* Buttons settle on click */
+.btn:active { transform: translateY(0) !important; box-shadow: none !important; }
+
+/* Footer gets a thin accent edge to separate it cleanly */
+footer { border-top: 3px solid var(--primary-accent); }
+
+/* Pagination buttons match the teal theme */
+.pagination .page-link {
+  color: var(--primary-accent);
+  border-color: var(--border-color);
+}
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: #fff;
+}
+.pagination .page-link:hover { background-color: var(--subtle-bg); }
