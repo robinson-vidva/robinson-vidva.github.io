@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robinson Vidva - Contact</title>
+  <meta name="description" content="Get in touch with Robinson Vidva — computational biologist — for collaborations, tool feedback, consulting, or research questions.">
+  <meta name="keywords" content="Robinson Vidva, contact, collaboration, computational biology, consulting">
+  <meta name="author" content="Robinson Vidva">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Preview.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/Preview.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/Preview.png">
+
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:title" content="Robinson Vidva - Contact">
+  <meta property="og:description" content="Get in touch with Robinson Vidva for collaborations, tool feedback, consulting, or research questions.">
+  <meta property="og:image" content="https://robinsonvidva.com/images/Preview.png">
+  <link rel="canonical" href="https://robinsonvidva.com/contact.html">
+  <meta property="og:url" content="https://robinsonvidva.com/contact.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robinson Vidva - Contact">
+  <meta name="twitter:description" content="Get in touch with Robinson Vidva for collaborations, tool feedback, consulting, or research questions.">
+  <meta name="twitter:image" content="https://robinsonvidva.com/images/Preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="style.css?v=10" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FRPNE4J9N');
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/Original.png" alt="Robinson Vidva" class="navbar-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+        <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="bg-secondary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Contact</h1>
+    <p class="lead">Collaborations, tool feedback, consulting, or a research question</p>
+  </div>
+</header>
+
+<main class="container my-4" id="main">
+  <div class="row g-4">
+
+    <div class="col-lg-7">
+      <section class="mb-4">
+        <h2>Send a message</h2>
+        <!-- SETUP: create a free form at https://formspree.io and replace
+             the action URL below with your endpoint (e.g. https://formspree.io/f/abcdwxyz).
+             Until then the form falls back to opening your email client. -->
+        <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST" novalidate>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="mb-3">
+            <label for="cf-name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="cf-name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="cf-email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="cf-email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="cf-subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="cf-subject" name="subject">
+          </div>
+          <div class="mb-3">
+            <label for="cf-message" class="form-label">Message</label>
+            <textarea class="form-control" id="cf-message" name="message" rows="6" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2" aria-hidden="true"></i> Send message</button>
+          <p id="cf-status" class="mt-3 mb-0" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+
+    <div class="col-lg-5">
+      <section class="mb-4">
+        <h2>Reach me directly</h2>
+        <div class="contact-method">
+          <span class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+          <div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:hello@robinsonvidva.com">hello@robinsonvidva.com</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <span class="contact-icon"><i class="fab fa-linkedin" aria-hidden="true"></i></span>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" rel="noopener">in/robinson-vidva</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <span class="contact-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <a href="https://github.com/robinson-vidva" target="_blank" rel="noopener">@robinson-vidva</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <span class="contact-icon"><i class="fab fa-google-scholar" aria-hidden="true"></i></span>
+          <div>
+            <div class="contact-label">Google Scholar</div>
+            <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" rel="noopener">Profile</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <span class="contact-icon"><i class="fab fa-orcid" aria-hidden="true"></i></span>
+          <div>
+            <div class="contact-label">ORCID</div>
+            <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" rel="noopener">0000-0002-2604-5448</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</main>
+<footer class="text-center py-4">
+  <div class="container">
+    <div class="social-links mb-3">
+      <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" rel="noopener" title="LinkedIn" aria-label="Visit Robinson Vidva on LinkedIn" class="social-icon"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+      <a href="https://github.com/robinson-vidva" target="_blank" rel="noopener" title="GitHub" aria-label="Visit Robinson Vidva on GitHub" class="social-icon"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+      <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="View Robinson Vidva on Google Scholar" class="social-icon"><i class="fab fa-google-scholar fa-2x" aria-hidden="true"></i></a>
+      <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" rel="noopener" title="ORCID" aria-label="View Robinson Vidva ORCID profile" class="social-icon"><i class="fab fa-orcid fa-2x" aria-hidden="true"></i></a>
+    </div>
+    <p class="mb-1">Email: <a href="mailto:hello@robinsonvidva.com">hello@robinsonvidva.com</a></p>
+    <p class="mb-0">&copy; 2025-2026 Robinson Vidva. All rights reserved. | <a href="terms.html" style="color: inherit;">Terms &amp; Privacy</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('cf-status');
+  if (!form) return;
+  var configured = form.action.indexOf('REPLACE_WITH_FORM_ID') === -1;
+
+  form.addEventListener('submit', function (e) {
+    // If Formspree isn't configured yet, fall back to a mailto draft.
+    if (!configured) {
+      e.preventDefault();
+      var name = encodeURIComponent(document.getElementById('cf-name').value || '');
+      var email = encodeURIComponent(document.getElementById('cf-email').value || '');
+      var subject = encodeURIComponent(document.getElementById('cf-subject').value || 'Website enquiry');
+      var message = encodeURIComponent((document.getElementById('cf-message').value || '') + '\n\n— ' + decodeURIComponent(name) + ' (' + decodeURIComponent(email) + ')');
+      window.location.href = 'mailto:hello@robinsonvidva.com?subject=' + subject + '&body=' + message;
+      return;
+    }
+    // Configured: submit to Formspree via fetch for a smooth inline result.
+    e.preventDefault();
+    status.textContent = 'Sending…';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) {
+      if (r.ok) {
+        form.reset();
+        status.textContent = 'Thanks — your message has been sent.';
+        status.className = 'mt-3 mb-0 text-success';
+      } else {
+        status.textContent = 'Something went wrong. Please email hello@robinsonvidva.com.';
+        status.className = 'mt-3 mb-0 text-danger';
+      }
+    }).catch(function () {
+      status.textContent = 'Something went wrong. Please email hello@robinsonvidva.com.';
+      status.className = 'mt-3 mb-0 text-danger';
+    });
+  });
+})();
+</script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>300)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
+<script defer src="scripts/enhance.js"></script>
+</body>
+</html>

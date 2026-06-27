@@ -1414,3 +1414,227 @@ section h2::after {
     gap: 0.5rem;
   }
 }
+
+/* =========================================================
+   Restructure additions (v10)
+   New pages (Tools, Projects, Contact), CV download card,
+   accessibility skip link, and sticky-nav anchor offset.
+   ========================================================= */
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 2000;
+  background: var(--primary-accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Offset anchored sections so headings aren't hidden under the
+   sticky navbar when navigating to #fragments (fixes the
+   "top of the section is cut off" behavior). */
+:where(section, h1, h2, h3, [id], :target) {
+  scroll-margin-top: 90px;
+}
+
+/* Keep very wide screens comfortable to read */
+@media (min-width: 1400px) {
+  body > .container,
+  div.container.my-4,
+  main.container.my-4 {
+    max-width: 1140px;
+  }
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+/* ---- CV download card ---- */
+.download-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background-color: var(--subtle-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+.download-card-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+}
+.download-card-body { flex: 1 1 200px; }
+.download-card-body p { color: var(--light-text); font-size: 0.95rem; }
+.download-card-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* ---- Tools page ---- */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.tool-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-accent);
+  box-shadow: 0 8px 22px rgba(8, 145, 178, 0.12);
+}
+.tool-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.tool-name {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--secondary-dark);
+}
+.tool-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.tool-status i { font-size: 0.5rem; }
+.tool-status.live { color: #059669; }
+.tool-status.wip { color: #d97706; }
+.tool-status.code { color: #64748b; }
+.tool-desc {
+  color: var(--light-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+  flex: 1 1 auto;
+}
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+.tool-tag {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  background-color: var(--subtle-bg);
+  color: var(--light-text);
+  border: 1px solid var(--border-color);
+}
+.tool-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.callout {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--subtle-bg);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-accent);
+  border-radius: 8px;
+  color: var(--light-text);
+}
+.callout i { font-size: 1.25rem; color: var(--secondary-dark); }
+
+/* ---- Projects timeline extras ---- */
+.project-period {
+  display: inline-block;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--primary-accent);
+  margin-bottom: 0.35rem;
+}
+.timeline-item h3 { margin-top: 0; }
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.5rem;
+}
+.focus-chip {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  background-color: var(--subtle-bg);
+  color: var(--secondary-dark);
+  border: 1px solid var(--border-color);
+}
+.project-links { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.92rem; font-weight: 500; }
+
+/* ---- Contact page ---- */
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.contact-method:last-child { border-bottom: none; }
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+}
+.contact-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--light-text);
+  font-weight: 600;
+}
+.form-control:focus {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 0.2rem rgba(8, 145, 178, 0.15);
+}
+
+@media (max-width: 768px) {
+  :where(section, h1, h2, h3, [id], :target) { scroll-margin-top: 70px; }
+  .download-card-actions { width: 100%; }
+  .download-card-actions .btn { flex: 1 1 auto; }
+}

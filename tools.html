@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robinson Vidva - Tools</title>
+  <meta name="description" content="Free, open-source and browser-based tools built by Robinson Vidva for computational biology, drug discovery, and behavioral neuroscience — including drug-interaction and gene-set analysis tools, drug-target exploration, and lab management platforms.">
+  <meta name="keywords" content="Robinson Vidva, tools, open source, bioinformatics tools, drug interaction, gene set enrichment, drug target, openFDA, Open Targets, MyVivarium, computational biology software">
+  <meta name="author" content="Robinson Vidva">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Preview.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/Preview.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/Preview.png">
+
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:title" content="Robinson Vidva - Tools">
+  <meta property="og:description" content="Free, open-source and browser-based tools for computational biology, drug discovery, and behavioral neuroscience.">
+  <meta property="og:image" content="https://robinsonvidva.com/images/Preview.png">
+  <link rel="canonical" href="https://robinsonvidva.com/tools.html">
+  <meta property="og:url" content="https://robinsonvidva.com/tools.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robinson Vidva - Tools">
+  <meta name="twitter:description" content="Free, open-source and browser-based tools for computational biology, drug discovery, and behavioral neuroscience.">
+  <meta name="twitter:image" content="https://robinsonvidva.com/images/Preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="style.css?v=10" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5FRPNE4J9N');
+  </script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Tools by Robinson Vidva",
+    "url": "https://robinsonvidva.com/tools.html",
+    "author": { "@type": "Person", "name": "Robinson Vidva", "url": "https://robinsonvidva.com" }
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/Original.png" alt="Robinson Vidva" class="navbar-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+        <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tools.html">Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="bg-secondary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Tools</h1>
+    <p class="lead">Free, open-source software I build for science &mdash; many run entirely in your browser</p>
+  </div>
+</header>
+
+<main class="container my-4" id="main">
+
+  <section class="mb-5">
+    <p class="lead-text">I build small, focused tools that make computational biology and drug-discovery workflows easier and more accessible. The ones below are free to use; several run completely client-side (no data leaves your browser), and the source is on GitHub.</p>
+  </section>
+
+  <section class="mb-5">
+    <h2>Use in your browser</h2>
+    <div class="tool-grid">
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">DrugInteract</span>
+          <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+        </div>
+        <p class="tool-desc">Educational drug-interaction reference that checks what each drug's FDA label says about another. Fully client-side &mdash; no backend, no data collection.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">JavaScript</span><span class="tool-tag">openFDA</span><span class="tool-tag">RxNorm</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-primary" href="https://robinsonvidva.com/DrugInteract/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Open</a>
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/DrugInteract" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">enrichlite</span>
+          <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+        </div>
+        <p class="tool-desc">Gene-set over-representation analysis (ORA) for human and mouse that runs entirely in the browser. Supports GO, Hallmark, and Reactome gene sets.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">JavaScript</span><span class="tool-tag">GO</span><span class="tool-tag">Reactome</span><span class="tool-tag">Hallmark</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-primary" href="https://robinsonvidva.com/enrichlite/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Open</a>
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/enrichlite" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">drugtargets</span>
+          <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+        </div>
+        <p class="tool-desc">Drug-target exploration and repurposing-hypothesis tool: Boolean gene queries, drug-to-targets lookup, and target-overlap similarity, built on Open Targets and openFDA.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">TypeScript</span><span class="tool-tag">Open Targets</span><span class="tool-tag">openFDA</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-primary" href="https://drugtargets.robinsonvidva.com" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Open</a>
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/drugtargets" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">kineneo-demo</span>
+          <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+        </div>
+        <p class="tool-desc">Live skeleton-overlay demo using MediaPipe Pose &mdash; real-time human pose estimation in the browser, a building block for behavioral analysis.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">JavaScript</span><span class="tool-tag">MediaPipe</span><span class="tool-tag">Pose</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-primary" href="https://robinsonvidva.com/kineneo-demo/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Open</a>
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/kineneo-demo" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2>Platforms</h2>
+    <div class="tool-grid">
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">MyVivarium</span>
+          <span class="tool-status live"><i class="fas fa-circle" aria-hidden="true"></i> Live demo</span>
+        </div>
+        <p class="tool-desc">Open-source, cloud-based platform for managing research animal colonies, with QR-code cage cards and real-time IoT environmental monitoring. Published in <em>CSBJ</em> (2025).</p>
+        <div class="tool-tags">
+          <span class="tool-tag">PHP</span><span class="tool-tag">MySQL</span><span class="tool-tag">IoT</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-primary" href="https://demo2.myvivarium.online" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square me-1" aria-hidden="true"></i> Demo</a>
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/myvivarium/MyVivarium" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+          <a class="btn btn-sm btn-outline-primary" href="articles/myvivarium-lab-animal-management.html"><i class="fas fa-book-open me-1" aria-hidden="true"></i> Article</a>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">SciGenda</span>
+          <span class="tool-status wip"><i class="fas fa-circle" aria-hidden="true"></i> In development</span>
+        </div>
+        <p class="tool-desc">Open-source, web-based lab-management platform for planning, scheduling, and tracking scientific experiments &mdash; per mouse, per project, per researcher.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Web</span><span class="tool-tag">Lab management</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/SciGenda" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2>Pipelines &amp; research code</h2>
+    <div class="tool-grid">
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">behaviarium</span>
+          <span class="tool-status code"><i class="fas fa-circle" aria-hidden="true"></i> Open source</span>
+        </div>
+        <p class="tool-desc">End-to-end workflow orchestrating OpenCV, DeepLabCut, and B-SOiD for mouse three-chamber behavior analysis, with cross-platform Windows GPU pose estimation.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Python</span><span class="tool-tag">DeepLabCut</span><span class="tool-tag">B-SOiD</span><span class="tool-tag">OpenCV</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/behaviarium" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">istoflow</span>
+          <span class="tool-status code"><i class="fas fa-circle" aria-hidden="true"></i> Open source</span>
+        </div>
+        <p class="tool-desc">Reproducible pipeline for registering 2D mouse-brain histology to a reference atlas.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Python</span><span class="tool-tag">Histology</span><span class="tool-tag">Atlas</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/istoflow" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-name">citelas</span>
+          <span class="tool-status wip"><i class="fas fa-circle" aria-hidden="true"></i> In development</span>
+        </div>
+        <p class="tool-desc">Multi-source citation aggregation and analysis &mdash; pulls and reconciles publication metrics across providers.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Python</span><span class="tool-tag">Citations</span>
+        </div>
+        <div class="tool-actions">
+          <a class="btn btn-sm btn-outline-primary" href="https://github.com/robinson-vidva/citelas" target="_blank" rel="noopener"><i class="fab fa-github me-1" aria-hidden="true"></i> Code</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <div class="callout">
+      <i class="fab fa-github" aria-hidden="true"></i>
+      <span>More experiments and works-in-progress live on my <a href="https://github.com/robinson-vidva" target="_blank" rel="noopener">GitHub profile</a>.</span>
+    </div>
+  </section>
+
+</main>
+<footer class="text-center py-4">
+  <div class="container">
+    <div class="social-links mb-3">
+      <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" rel="noopener" title="LinkedIn" aria-label="Visit Robinson Vidva on LinkedIn" class="social-icon"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+      <a href="https://github.com/robinson-vidva" target="_blank" rel="noopener" title="GitHub" aria-label="Visit Robinson Vidva on GitHub" class="social-icon"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+      <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="View Robinson Vidva on Google Scholar" class="social-icon"><i class="fab fa-google-scholar fa-2x" aria-hidden="true"></i></a>
+      <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" rel="noopener" title="ORCID" aria-label="View Robinson Vidva ORCID profile" class="social-icon"><i class="fab fa-orcid fa-2x" aria-hidden="true"></i></a>
+    </div>
+    <p class="mb-1">Email: <a href="mailto:hello@robinsonvidva.com">hello@robinsonvidva.com</a></p>
+    <p class="mb-0">&copy; 2025-2026 Robinson Vidva. All rights reserved. | <a href="terms.html" style="color: inherit;">Terms &amp; Privacy</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>300)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
+<script defer src="scripts/enhance.js"></script>
+</body>
+</html>
