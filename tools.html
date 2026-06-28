@@ -31,6 +31,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -45,14 +47,81 @@
     gtag('config', 'G-5FRPNE4J9N');
   </script>
 
-  <!-- Schema.org Structured Data -->
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://robinsonvidva.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://robinsonvidva.com/tools.html"}
+    ]
+  }
+  </script>
+
+  <!-- Tools collection with per-tool SoftwareApplication data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Tools by Robinson Vidva",
     "url": "https://robinsonvidva.com/tools.html",
-    "author": { "@type": "Person", "name": "Robinson Vidva", "url": "https://robinsonvidva.com" }
+    "author": {"@type": "Person", "name": "Robinson Vidva", "url": "https://robinsonvidva.com"},
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "item": {
+          "@type": "SoftwareApplication",
+          "name": "DrugInteract",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web browser",
+          "url": "https://robinsonvidva.com/DrugInteract/",
+          "description": "Educational drug-interaction reference that checks what each drug's FDA label says about another. Runs entirely client-side.",
+          "author": {"@type": "Person", "name": "Robinson Vidva"},
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+        }},
+        {"@type": "ListItem", "position": 2, "item": {
+          "@type": "SoftwareApplication",
+          "name": "enrichlite",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web browser",
+          "url": "https://robinsonvidva.com/enrichlite/",
+          "description": "Gene-set over-representation analysis (ORA) for human and mouse that runs entirely in the browser. Supports GO, Hallmark, and Reactome.",
+          "author": {"@type": "Person", "name": "Robinson Vidva"},
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+        }},
+        {"@type": "ListItem", "position": 3, "item": {
+          "@type": "SoftwareApplication",
+          "name": "drugtargets",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web browser",
+          "url": "https://drugtargets.robinsonvidva.com",
+          "description": "Drug-target exploration and repurposing-hypothesis tool built on Open Targets and openFDA.",
+          "author": {"@type": "Person", "name": "Robinson Vidva"},
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+        }},
+        {"@type": "ListItem", "position": 4, "item": {
+          "@type": "SoftwareApplication",
+          "name": "kineneo-demo",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Web browser",
+          "url": "https://robinsonvidva.com/kineneo-demo/",
+          "description": "Live skeleton-overlay demo using MediaPipe Pose for real-time human pose estimation in the browser.",
+          "author": {"@type": "Person", "name": "Robinson Vidva"},
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+        }},
+        {"@type": "ListItem", "position": 5, "item": {
+          "@type": "SoftwareApplication",
+          "name": "MyVivarium",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web browser",
+          "url": "https://demo2.myvivarium.online",
+          "description": "Open-source, cloud-based platform for managing research animal colonies with QR-code cage cards and real-time IoT environmental monitoring.",
+          "author": {"@type": "Person", "name": "Robinson Vidva"},
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+        }}
+      ]
+    }
   }
   </script>
 </head>
