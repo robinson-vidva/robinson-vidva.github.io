@@ -1,0 +1,14 @@
+{
+  "name": "Robinson Vidva — Computational Biologist",
+  "short_name": "R. Vidva",
+  "description": "Computational biologist building open tools for research, drug discovery, and neuroscience.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
