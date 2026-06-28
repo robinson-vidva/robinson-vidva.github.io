@@ -1787,3 +1787,12 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.3; }
 @media (max-width: 768px) {
   .intro p { font-size: 1.05rem; line-height: 1.7; }
 }
+
+/* Align navbar & hero content with the page content column on large screens
+   so the logo/menu sit above the content card instead of at the screen edges */
+@media (min-width: 1400px) {
+  .navbar > .container,
+  header > .container {
+    max-width: 1140px;
+  }
+}
