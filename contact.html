@@ -147,7 +147,7 @@
 
     <div class="col-lg-5">
       <section class="mb-4">
-        <h2>Reach me directly</h2>
+        <h2>Reach out directly</h2>
         <div class="contact-method">
           <span class="contact-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></span>
           <div>
@@ -259,6 +259,8 @@
     if (!nameEl.value.trim()) { return invalid('Please enter your name.', nameEl); }
     if (!emailRe.test(emailEl.value.trim())) { return invalid('Please enter a valid email address.', emailEl); }
     if (msgEl.value.trim().length < 20) { return invalid('Your message should be at least 20 characters.', msgEl); }
+    var tsEl = form.querySelector('[name="cf-turnstile-response"]');
+    if (!tsEl || !tsEl.value) { return invalid('Please complete the verification challenge below.', null); }
 
     status.textContent = 'Sending…';
     status.className = 'mt-3 mb-0';
