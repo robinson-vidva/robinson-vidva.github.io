@@ -84,14 +84,6 @@ p, li {
   transform: scale(1.05);
 }
 
-/* Better navbar container spacing on desktop */
-@media (min-width: 992px) {
-  .navbar .container-fluid {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
 .nav-link {
   font-weight: 500;
   font-size: 1.05rem;
@@ -258,7 +250,7 @@ body > .container, div.container.my-4 {
   margin-bottom: 2rem;
 }
 
-header .container, nav .container-fluid, .stats-bar .container {
+header .container {
   background-color: transparent !important;
   box-shadow: none !important;
   border-radius: 0 !important;
@@ -531,32 +523,6 @@ section p em {
   border-radius: 8px;
 }
 
-/* Stats Bar */
-.stats-bar {
-  background-color: var(--secondary-dark);
-  padding: 1.5rem 0;
-  border-bottom: 3px solid var(--primary-accent);
-}
-
-.stats-item {
-  padding: 0.75rem 0.5rem;
-}
-
-.stats-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--light-accent);
-  line-height: 1.2;
-}
-
-.stats-label {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 500;
-}
-
 /* Research Focus Tags */
 .research-focus-tags {
   display: flex;
@@ -730,16 +696,6 @@ section p em {
   text-decoration: underline;
 }
 
-/* Page nav buttons */
-.page-nav-buttons {
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
 /* Certification Provider Icons - see .cert-provider below in Certification Cards section */
 
 /* Education Collapse Toggle */
@@ -821,14 +777,6 @@ section p em {
     margin: 0 !important;
   }
 
-  .stats-number {
-    font-size: 1.5rem;
-  }
-
-  .stats-label {
-    font-size: 0.75rem;
-  }
-
   .focus-tag {
     font-size: 0.8rem;
     padding: 0.35rem 0.8rem;
@@ -893,50 +841,6 @@ section p em {
     margin-left: 0;
   }
 
-  /* Page nav buttons - stack on mobile */
-  .page-nav-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .page-nav-buttons .btn {
-    width: 100%;
-    max-width: 280px;
-    margin: 0 !important;
-  }
-}
-
-/* Stats Banner */
-.stat-card {
-  background-color: var(--subtle-bg);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(8, 145, 178, 0.15);
-  border-color: var(--primary-accent);
-}
-
-.text-primary-accent {
-  color: var(--primary-accent);
-}
-
-.stat-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--secondary-dark);
-  line-height: 1.2;
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  color: var(--light-text);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 /* Card Icons */
@@ -1060,24 +964,6 @@ section p em {
 /* Sticky navbar shadow on scroll */
 .navbar.sticky-top {
   z-index: 1030;
-}
-
-/* PDF Viewer Styles */
-.pdf-container {
-  margin-top: 1rem;
-}
-
-.pdf-viewer-wrapper {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: var(--subtle-bg);
-}
-
-.pdf-viewer {
-  width: 100%;
-  height: 800px;
-  border: none;
 }
 
 /* Back to Top Button */
@@ -1390,31 +1276,6 @@ section h2::after {
   letter-spacing: 0.01em;
 }
 
-@media (max-width: 768px) {
-  /* Hide embedded PDF on mobile - most mobile browsers (especially Safari) can't render it well */
-  .pdf-viewer-wrapper {
-    display: none !important;
-  }
-
-  .pdf-container .btn {
-    display: block;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto 0.75rem auto;
-  }
-
-  .pdf-container .btn.ms-2 {
-    margin-left: auto !important;
-  }
-
-  .pdf-container #pdf-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-}
-
 /* =========================================================
    Restructure additions (v10)
    New pages (Tools, Projects, Contact), CV download card,
@@ -1697,7 +1558,6 @@ a { text-underline-offset: 0.16em; }
 .card,
 .tool-card,
 .highlight-card,
-.stat-card,
 .download-card {
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 18px rgba(15, 23, 42, 0.06);
 }

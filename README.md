@@ -24,7 +24,7 @@ Personal site for Robinson Vidva — computational biologist with 18+ years of e
 - **[enrichlite](https://robinsonvidva.com/enrichlite/)** — in-browser gene-set over-representation analysis (GO, Hallmark, Reactome).
 - **[drugtargets](https://drugtargets.robinsonvidva.com)** — drug-target exploration & repurposing (Open Targets + openFDA).
 - **[kineneo-demo](https://robinsonvidva.com/kineneo-demo/)** — live MediaPipe pose skeleton overlay.
-- **[MyVivarium](https://demo2.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025).
+- **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); a v2 redesign is in development.
 
 ## Articles
 
