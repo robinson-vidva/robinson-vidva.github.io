@@ -1,20 +1,20 @@
 {
-  "lastUpdated": "2026-06-28T20:43:19Z",
-  "totalViews": 1758,
+  "lastUpdated": "2026-06-29T09:50:04Z",
+  "totalViews": 1821,
   "pages": {
-    "/research.html": 219,
-    "/cv.html": 166,
-    "/articles.html": 137,
+    "/research.html": 230,
+    "/cv.html": 170,
+    "/articles.html": 142,
     "/articles/drug-repositioning-computational-approaches.html": 83,
     "/resume.html": 82,
     "/certifications.html": 74,
+    "/projects.html": 40,
     "/articles/myvivarium-lab-animal-management.html": 31,
-    "/projects.html": 25,
-    "/contact.html": 19,
-    "/tools.html": 14,
+    "/contact.html": 23,
+    "/tools.html": 19,
     "/terms.html": 10,
     "/cv": 2,
-    "/": 896,
-    "/index.html": 896
+    "/": 915,
+    "/index.html": 915
   }
 }
