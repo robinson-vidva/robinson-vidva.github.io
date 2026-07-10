@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-07-08T07:30:30Z",
-  "totalViews": 1902,
+  "lastUpdated": "2026-07-10T08:25:19Z",
+  "totalViews": 1916,
   "pages": {
-    "/research.html": 237,
-    "/cv.html": 177,
+    "/research.html": 238,
+    "/cv.html": 178,
     "/articles.html": 145,
     "/articles/drug-repositioning-computational-approaches.html": 83,
     "/resume.html": 82,
@@ -11,10 +11,11 @@
     "/projects.html": 49,
     "/articles/myvivarium-lab-animal-management.html": 32,
     "/contact.html": 28,
-    "/tools.html": 23,
+    "/tools.html": 25,
     "/terms.html": 10,
     "/cv": 2,
-    "/": 960,
-    "/index.html": 960
+    "/neokibe": 1,
+    "/": 969,
+    "/index.html": 969
   }
 }
