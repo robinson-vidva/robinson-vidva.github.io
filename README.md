@@ -23,7 +23,8 @@ Personal site for Robinson Vidva — computational biologist with 18+ years of e
 - **[DrugInteract](https://robinsonvidva.com/DrugInteract/)** — educational drug-interaction reference (FDA labels), client-side.
 - **[enrichlite](https://robinsonvidva.com/enrichlite/)** — in-browser gene-set over-representation analysis (GO, Hallmark, Reactome).
 - **[drugtargets](https://drugtargets.robinsonvidva.com)** — drug-target exploration & repurposing (Open Targets + openFDA).
-- **[kineneo-demo](https://robinsonvidva.com/kineneo-demo/)** — live MediaPipe pose skeleton overlay.
+- **[neokine](https://robinsonvidva.com/neokine/)** — client-side MediaPipe pose visualization with simple kinematics (angles, velocity, asymmetry).
+- **[neokine-labs](https://robinsonvidva.com/neokine-labs/)** — experimental MediaPipe Holistic pose/face playground.
 - **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); a v2 redesign is in development.
 
 ## Articles
