@@ -94,7 +94,7 @@
 
   function setupCountUp() {
     if (reduceMotion || !hasIO) return;
-    var nums = document.querySelectorAll('.metric-number, .stat-number, .stats-number');
+    var nums = document.querySelectorAll('.stat-number, .stats-number');
     if (!nums.length) return;
 
     var io = new IntersectionObserver(function (entries) {
