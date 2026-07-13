@@ -857,6 +857,12 @@ section p em {
   margin-bottom: 2rem;
 }
 
+.cert-group ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
 .cert-provider {
   display: flex;
   align-items: center;
