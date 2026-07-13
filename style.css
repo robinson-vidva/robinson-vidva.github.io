@@ -863,6 +863,24 @@ section p em {
   margin: 0;
 }
 
+/* Certifications as clean rows, not boxed cards */
+.cert-group ul li {
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0;
+  transition: none;
+}
+.cert-group ul li:last-child { border-bottom: none; }
+.cert-group ul li:hover {
+  background: none;
+  transform: none;
+  box-shadow: none;
+  border-left: none;
+}
+
 .cert-provider {
   display: flex;
   align-items: center;
