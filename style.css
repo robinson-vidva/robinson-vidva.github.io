@@ -853,6 +853,33 @@ section p em {
 }
 
 /* Certification Cards */
+/* CV two-column sticky rail */
+.cv-rail {
+  position: sticky;
+  top: 88px;
+  background: var(--subtle-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.4rem 1.35rem;
+}
+.cv-rail-title { font-weight: 700; color: var(--secondary-dark); font-size: 1.05rem; line-height: 1.3; margin-bottom: 0.3rem; }
+.cv-rail-loc { color: var(--light-text); font-size: 0.9rem; margin-bottom: 1.1rem; }
+.cv-rail-loc i { color: var(--primary-accent); margin-right: 0.3rem; }
+.cv-rail-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem 0.4rem; margin-bottom: 1.2rem; text-align: center; }
+.cv-rail-stats b { display: block; font-size: 1.3rem; font-weight: 700; color: var(--primary-accent); line-height: 1; }
+.cv-rail-stats span { font-size: 0.68rem; color: var(--light-text); text-transform: uppercase; letter-spacing: 0.04em; }
+.cv-rail-dl { width: 100%; margin-bottom: 1.2rem; }
+.cv-rail-links { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; font-size: 0.9rem; }
+.cv-rail-links a { color: var(--secondary-dark); display: flex; align-items: center; gap: 0.6rem; }
+.cv-rail-links a:hover { color: var(--primary-accent); text-decoration: none; }
+.cv-rail-links i { width: 17px; text-align: center; color: var(--primary-accent); }
+.cv-rail-nav { display: flex; flex-direction: column; border-top: 1px solid var(--border-color); padding-top: 0.85rem; }
+.cv-rail-nav a { color: var(--light-text); font-size: 0.9rem; font-weight: 500; padding: 0.3rem 0; transition: color 0.15s ease, padding-left 0.15s ease; }
+.cv-rail-nav a:hover { color: var(--primary-accent); text-decoration: none; padding-left: 5px; }
+@media (max-width: 991px) {
+  .cv-rail { position: static; margin-bottom: 0.5rem; }
+}
+
 .cert-group {
   margin-bottom: 2rem;
 }
