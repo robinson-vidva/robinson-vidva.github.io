@@ -158,8 +158,6 @@ section h2 {
   font-weight: 700;
   margin-bottom: 1.75rem;
   padding-bottom: 0.6rem;
-  border-bottom: 3px solid;
-  border-image: linear-gradient(to right, var(--primary-accent), var(--border-color)) 1;
 }
 
 section h3 {
