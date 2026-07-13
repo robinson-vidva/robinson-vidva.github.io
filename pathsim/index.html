@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pathsim — signaling pathway simulator</title>
+<meta name="description" content="pathsim: an interactive, in-browser simulator of canonical cell-signaling models — the MAPK/ERK cascade with negative feedback and zero-order ultrasensitivity. Tune parameters and a drug dose and watch the kinetics update live. Educational; runs entirely client-side.">
+<meta name="author" content="Robinson Vidva">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://robinsonvidva.com/pathsim/">
+<meta property="og:title" content="pathsim — signaling pathway simulator">
+<meta property="og:description" content="Interactive, in-browser simulation of canonical cell-signaling models (MAPK cascade, ultrasensitive switch). Tune parameters and drug dose; watch the kinetics live.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://robinsonvidva.com/pathsim/">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary-dark:#0f172a; --secondary-dark:#1e293b; --primary-accent:#0891b2;
+    --secondary-accent:#0369a1; --light-accent:#06b6d4; --subtle-bg:#f1f5f9;
+    --card-bg:#ffffff; --border-color:#e2e8f0; --dark-text:#1e293b;
+    --light-text:#64748b; --light-gray:#f8fafc;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:'DM Sans','Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--sans);color:var(--dark-text);background:var(--light-gray);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--primary-accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .topbar{background:var(--primary-dark);color:#fff;padding:.55rem 0}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 1.1rem}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .topbar a{color:#cbd5e1;font-size:.9rem;font-weight:500}
+  .topbar a:hover{color:#fff;text-decoration:none}
+  .topbar .brand{color:#fff;font-weight:700;letter-spacing:-.01em}
+  .topbar .brand span{color:var(--light-accent)}
+  header.hero{background:var(--secondary-dark);color:#fff;padding:2.1rem 0 1.9rem}
+  header.hero h1{margin:0 0 .35rem;font-size:1.9rem;font-weight:700;letter-spacing:-.02em}
+  header.hero h1 .mono{font-family:var(--mono);color:var(--light-accent);font-weight:600}
+  header.hero p{margin:0;color:#cbd5e1;max-width:60ch;font-size:1.02rem}
+  main{padding:1.6rem 0 3rem}
+  .layout{display:grid;grid-template-columns:340px 1fr;gap:1.4rem;align-items:start}
+  @media(max-width:880px){.layout{grid-template-columns:1fr}}
+  .card{background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1.2rem 1.25rem}
+  .card h2{margin:.1rem 0 1rem;font-size:1.12rem;font-weight:700}
+  .card h3{margin:1.4rem 0 .5rem;font-size:.82rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.06em;color:var(--light-text)}
+  .controls{position:sticky;top:1rem}
+  .model-select{width:100%;padding:.6rem .7rem;border:1px solid var(--border-color);border-radius:9px;
+    font-family:var(--sans);font-size:.98rem;color:var(--dark-text);background:var(--light-gray);cursor:pointer}
+  .field{margin:.95rem 0}
+  .field label{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;
+    font-weight:600;margin-bottom:.3rem}
+  .field label .val{font-family:var(--mono);color:var(--primary-accent);font-weight:600;font-size:.86rem}
+  .field .hint{font-size:.78rem;color:var(--light-text);margin:.2rem 0 0}
+  input[type=range]{width:100%;accent-color:var(--primary-accent);cursor:pointer;height:1.2rem}
+  input[type=range].drug{accent-color:#b45309}
+  .field.drug label{color:#b45309}
+  .field.drug label .val{color:#b45309}
+  .btnrow{display:flex;gap:.55rem;margin-top:1.1rem}
+  button.act{flex:1;padding:.55rem;border:1px solid var(--border-color);background:var(--light-gray);
+    border-radius:9px;font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--dark-text);cursor:pointer}
+  button.act:hover{background:var(--subtle-bg);border-color:var(--primary-accent);color:var(--primary-accent)}
+  .plots{display:grid;gap:1.2rem}
+  .plot-card h2{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+  .plot-card .sub{font-size:.82rem;font-weight:500;color:var(--light-text)}
+  canvas{width:100%;height:auto;display:block}
+  .plotnote{font-size:.82rem;color:var(--light-text);margin:.6rem 0 0}
+  .readouts{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:.8rem;padding-top:.85rem;
+    border-top:1px solid var(--border-color)}
+  .readout b{display:block;font-family:var(--mono);font-size:1.15rem;color:var(--primary-accent);line-height:1.1}
+  .readout span{font-size:.74rem;color:var(--light-text);text-transform:uppercase;letter-spacing:.04em}
+  .about{margin-top:1.4rem}
+  .about h2{font-size:1.12rem}
+  .about p{font-size:.95rem;color:#334155}
+  .about .cite{font-size:.86rem;color:var(--light-text)}
+  details{margin-top:.8rem;border-top:1px solid var(--border-color);padding-top:.7rem}
+  summary{cursor:pointer;font-weight:600;font-size:.92rem;color:var(--secondary-dark)}
+  details .eqn{font-family:var(--mono);font-size:.82rem;background:var(--light-gray);border:1px solid var(--border-color);
+    border-radius:9px;padding:.8rem .9rem;overflow-x:auto;white-space:pre;color:#334155;margin:.7rem 0 0}
+  .disclaimer{font-size:.83rem;color:var(--light-text);background:var(--subtle-bg);
+    border:1px solid var(--border-color);border-radius:9px;padding:.75rem .9rem;margin-top:1rem}
+  footer{border-top:1px solid var(--border-color);padding:1.4rem 0;color:var(--light-text);font-size:.86rem}
+  footer a{font-weight:500}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="../index.html">robinson<span>·</span>vidva</a>
+  <nav><a href="../tools.html">← All tools</a> &nbsp;·&nbsp; <a href="https://github.com/robinson-vidva" target="_blank" rel="noopener">GitHub</a></nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <h1><span class="mono">pathsim</span> — signaling pathway simulator</h1>
+  <p>Interactive simulations of canonical cell-signaling models. Move a parameter or a drug dose and the kinetics recompute live. Everything runs in your browser — no data leaves the page.</p>
+</div></header>
+
+<main><div class="wrap">
+  <div class="layout">
+
+    <!-- CONTROLS -->
+    <div class="card controls">
+      <h2>Controls</h2>
+      <select id="model" class="model-select" aria-label="Model">
+        <option value="mapk">MAPK / ERK cascade — negative feedback</option>
+        <option value="gk">Ultrasensitive switch — zero-order</option>
+      </select>
+
+      <div id="controls-mapk">
+        <h3>Pathway parameters</h3>
+        <div class="field">
+          <label for="mV1">Stimulus (Raf activation) <span class="val" id="mV1v"></span></label>
+          <input type="range" id="mV1" min="0" max="5" step="0.05" value="2.5">
+          <p class="hint">Strength of the upstream input driving the cascade.</p>
+        </div>
+        <div class="field">
+          <label for="mKi"><span>Feedback constant K<sub>i</sub></span> <span class="val" id="mKiv"></span></label>
+          <input type="range" id="mKi" min="1" max="60" step="0.5" value="9">
+          <p class="hint">Active ERK inhibits the top of the cascade. Lower K<sub>i</sub> = stronger negative feedback.</p>
+        </div>
+        <div class="field">
+          <label for="mN">Feedback cooperativity n <span class="val" id="mNv"></span></label>
+          <input type="range" id="mN" min="1" max="4" step="1" value="1">
+        </div>
+        <h3>Drug</h3>
+        <div class="field drug">
+          <label for="mInh">MEK inhibitor <span class="val" id="mInhv"></span></label>
+          <input type="range" class="drug" id="mInh" min="0" max="100" step="1" value="0">
+          <p class="hint">Reduces MEK's ability to phosphorylate ERK (e.g. a trametinib-like inhibitor).</p>
+        </div>
+        <h3>Simulation</h3>
+        <div class="field">
+          <label for="mDur">Duration (s) <span class="val" id="mDurv"></span></label>
+          <input type="range" id="mDur" min="2000" max="18000" step="500" value="9000">
+        </div>
+      </div>
+
+      <div id="controls-gk" style="display:none">
+        <h3>Pathway parameters</h3>
+        <div class="field">
+          <label for="gS">Signal (kinase input) <span class="val" id="gSv"></span></label>
+          <input type="range" id="gS" min="0" max="3" step="0.02" value="1.2">
+          <p class="hint">Ratio of kinase to phosphatase activity driving the target on.</p>
+        </div>
+        <div class="field">
+          <label for="gKm"><span>Saturation K<sub>m</sub></span> <span class="val" id="gKmv"></span></label>
+          <input type="range" id="gKm" min="-2.3" max="0" step="0.02" value="-1.3">
+          <p class="hint">Enzymes near saturation (low K<sub>m</sub>) give a sharp, switch-like response; high K<sub>m</sub> gives a gradual one.</p>
+        </div>
+        <h3>Drug</h3>
+        <div class="field drug">
+          <label for="gInh">Kinase inhibitor <span class="val" id="gInhv"></span></label>
+          <input type="range" class="drug" id="gInh" min="0" max="100" step="1" value="0">
+          <p class="hint">Reduces the activating kinase's activity — watch how little it takes to flip the switch off.</p>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <button class="act" id="reset">Reset</button>
+        <button class="act" id="example">Load a demo</button>
+      </div>
+    </div>
+
+    <!-- PLOTS -->
+    <div class="plots">
+      <div class="card plot-card">
+        <h2>Time course <span class="sub" id="tc-sub"></span></h2>
+        <canvas id="tc" width="760" height="380" role="img" aria-label="Time-course plot"></canvas>
+        <div class="readouts" id="readouts"></div>
+        <p class="plotnote" id="tc-note"></p>
+      </div>
+
+      <div class="card plot-card">
+        <h2>Response curve <span class="sub" id="rc-sub"></span></h2>
+        <canvas id="rc" width="760" height="330" role="img" aria-label="Response curve plot"></canvas>
+        <p class="plotnote" id="rc-note"></p>
+      </div>
+
+      <div class="card about">
+        <h2 id="about-title"></h2>
+        <p id="about-body"></p>
+        <p class="cite" id="about-cite"></p>
+        <details>
+          <summary>Model equations &amp; method</summary>
+          <div class="eqn" id="about-eqn"></div>
+          <p class="cite" style="margin-top:.7rem">Integrated with a fixed-step 4th-order Runge–Kutta scheme. Concentrations are conserved by construction; species are held non-negative.</p>
+        </details>
+        <div class="disclaimer">
+          These are <strong>canonical, illustrative models</strong> from the systems-biology literature, using published parameter sets. They demonstrate qualitative behaviour (ultrasensitivity, feedback oscillations, emergent drug response) — they are <strong>not</strong> calibrated to any specific cell line or patient and are for educational use only.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></main>
+
+<footer><div class="wrap">
+  Built by <a href="../index.html">Robinson Vidva</a> · open-source on <a href="https://github.com/robinson-vidva" target="_blank" rel="noopener">GitHub</a> · runs entirely client-side.
+</div></footer>
+
+<script>
+"use strict";
+// ---------- numerics ----------
+function rk4Step(f, t, y, dt, p, hi){
+  const clamp = hi==null ? (v=>v) : (v=>v.map(x=>x<0?0:(x>hi?hi:x)));
+  const k1=f(t,y,p);
+  const k2=f(t+dt/2, clamp(y.map((v,j)=>v+dt/2*k1[j])), p);
+  const k3=f(t+dt/2, clamp(y.map((v,j)=>v+dt/2*k2[j])), p);
+  const k4=f(t+dt,   clamp(y.map((v,j)=>v+dt*k3[j])),   p);
+  return clamp(y.map((v,j)=>v+dt/6*(k1[j]+2*k2[j]+2*k3[j]+k4[j])));
+}
+// integrate, return {t:[],Y:[[]...]} sampled to ~maxPts points
+function integrate(f, y0, t1, dt, p, hi, maxPts){
+  const n=Math.round(t1/dt), every=Math.max(1,Math.floor(n/(maxPts||600)));
+  let y=y0.slice(), t=0; const T=[0], Y=[y.slice()];
+  for(let i=0;i<n;i++){ y=rk4Step(f,t,y,dt,p,hi); t+=dt;
+    if((i+1)%every===0){ T.push(t); Y.push(y.slice()); } }
+  return {T,Y};
+}
+function steady(f,y0,t1,dt,p,hi){ let y=y0.slice(),t=0; const n=Math.round(t1/dt);
+  for(let i=0;i<n;i++){ y=rk4Step(f,t,y,dt,p,hi); t+=dt; } return y; }
+
+// ---------- Model A: MAPK cascade (Kholodenko 2000) ----------
+function mapk(t,y,p){
+  const MKKK=y[0],MKKKp=y[1],MKK=y[2],MKKp=y[3],MKKpp=y[4],MAPK=y[5],MAPKp=y[6],MAPKpp=y[7];
+  const g=1-p.inh;
+  const v1=p.V1*MKKK/((1+Math.pow(MAPKpp/p.Ki,p.n))*(10+MKKK));
+  const v2=0.25*MKKKp/(8+MKKKp);
+  const v3=0.025*MKKKp*MKK/(15+MKK);
+  const v4=0.025*MKKKp*MKKp/(15+MKKp);
+  const v5=0.75*MKKpp/(15+MKKpp);
+  const v6=0.75*MKKp/(15+MKKp);
+  const v7=g*0.025*MKKpp*MAPK/(15+MAPK);
+  const v8=g*0.025*MKKpp*MAPKp/(15+MAPKp);
+  const v9=0.5*MAPKpp/(15+MAPKpp);
+  const v10=0.5*MAPKp/(15+MAPKp);
+  return [v2-v1, v1-v2, v6-v3, v3+v5-v4-v6, v4-v5, v10-v7, v7+v9-v8-v10, v8-v9];
+}
+const MAPK_Y0=[100,0,300,0,0,300,0,0];
+
+// ---------- Model B: Goldbeter-Koshland (1981) ----------
+function gk(t,y,p){
+  const Wp=y[0], W=1-Wp;
+  const vk=(1-p.inh)*p.S*W/(p.Km+W);
+  const vp=Wp/(p.Km+Wp);
+  return [vk-vp];
+}
+
+// ---------- plotting ----------
+function setupCanvas(cv,h){
+  const dpr=window.devicePixelRatio||1;
+  const w=cv.clientWidth||cv.parentElement.clientWidth-2;
+  cv.width=w*dpr; cv.height=h*dpr; cv.style.height=h+'px';
+  const ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
+  return {ctx,w,h};
+}
+function niceRange(min,max){ if(min===max){max=min+1;} const pad=(max-min)*0.06; return [min-pad*0.4,max+pad]; }
+function drawPlot(cv,series,o){
+  const H=o.height||360; const {ctx,w,h}=setupCanvas(cv,H);
+  ctx.clearRect(0,0,w,h);
+  const L=52,R=o.legend===false?16:150,Tp=14,B=42;
+  const px0=L,px1=w-R,py0=Tp,py1=h-B;
+  let xmin=o.xmin,xmax=o.xmax,ymin=o.ymin,ymax=o.ymax;
+  if(xmin==null){xmin=Infinity;xmax=-Infinity;series.forEach(s=>s.data.forEach(d=>{if(d[0]<xmin)xmin=d[0];if(d[0]>xmax)xmax=d[0];}));}
+  if(ymin==null){ymin=Infinity;ymax=-Infinity;series.forEach(s=>s.data.forEach(d=>{if(d[1]<ymin)ymin=d[1];if(d[1]>ymax)ymax=d[1];}));const r=niceRange(ymin,ymax);ymin=Math.min(0,r[0]);ymax=r[1];}
+  const X=x=>px0+(x-xmin)/(xmax-xmin)*(px1-px0);
+  const Y=y=>py1-(y-ymin)/(ymax-ymin)*(py1-py0);
+  // grid + ticks
+  ctx.strokeStyle='#eef2f6';ctx.fillStyle='#94a3b8';ctx.lineWidth=1;
+  ctx.font='11px '+getComputedStyle(document.body).fontFamily;ctx.textAlign='center';ctx.textBaseline='top';
+  for(let i=0;i<=5;i++){const x=xmin+(xmax-xmin)*i/5,xp=X(x);
+    ctx.beginPath();ctx.moveTo(xp,py0);ctx.lineTo(xp,py1);ctx.stroke();
+    ctx.fillText(fmt(x),xp,py1+6);}
+  ctx.textAlign='right';ctx.textBaseline='middle';
+  for(let i=0;i<=5;i++){const y=ymin+(ymax-ymin)*i/5,yp=Y(y);
+    ctx.beginPath();ctx.moveTo(px0,yp);ctx.lineTo(px1,yp);ctx.stroke();
+    ctx.fillText(fmt(y),px0-7,yp);}
+  // axis frame
+  ctx.strokeStyle='#cbd5e1';ctx.beginPath();ctx.moveTo(px0,py0);ctx.lineTo(px0,py1);ctx.lineTo(px1,py1);ctx.stroke();
+  // labels
+  ctx.fillStyle='#475569';ctx.font='12px '+getComputedStyle(document.body).fontFamily;
+  ctx.textAlign='center';ctx.textBaseline='alphabetic';
+  ctx.fillText(o.xlabel||'',(px0+px1)/2,h-6);
+  ctx.save();ctx.translate(14,(py0+py1)/2);ctx.rotate(-Math.PI/2);ctx.textBaseline='top';ctx.fillText(o.ylabel||'',0,0);ctx.restore();
+  // series
+  series.forEach(s=>{
+    ctx.strokeStyle=s.color;ctx.lineWidth=s.width||2.2;
+    ctx.setLineDash(s.dash||[]);ctx.beginPath();
+    s.data.forEach((d,i)=>{const xp=X(d[0]),yp=Y(d[1]);i?ctx.lineTo(xp,yp):ctx.moveTo(xp,yp);});
+    ctx.stroke();ctx.setLineDash([]);
+    if(s.marker){ctx.fillStyle=s.color;s.data.forEach(d=>{ctx.beginPath();ctx.arc(X(d[0]),Y(d[1]),2.6,0,7);ctx.fill();});}
+  });
+  // legend
+  if(o.legend!==false){
+    ctx.textAlign='left';ctx.textBaseline='middle';ctx.font='12px '+getComputedStyle(document.body).fontFamily;
+    series.forEach((s,i)=>{const ly=py0+8+i*20;
+      ctx.strokeStyle=s.color;ctx.lineWidth=2.6;ctx.setLineDash(s.dash||[]);
+      ctx.beginPath();ctx.moveTo(px1+12,ly);ctx.lineTo(px1+30,ly);ctx.stroke();ctx.setLineDash([]);
+      ctx.fillStyle='#334155';ctx.fillText(s.name,px1+35,ly);});
+  }
+  // marker line (e.g. current signal)
+  if(o.vline!=null){ctx.strokeStyle='#b45309';ctx.setLineDash([4,4]);ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.moveTo(X(o.vline),py0);ctx.lineTo(X(o.vline),py1);ctx.stroke();ctx.setLineDash([]);}
+}
+function fmt(v){const a=Math.abs(v);
+  if(a>=1000)return (v/1000).toFixed(a>=10000?0:1)+'k';
+  if(a>=10||a===0)return v.toFixed(0);
+  if(a>=1)return v.toFixed(1);
+  return v.toFixed(2);}
+
+// ---------- model registry ----------
+const MODELS={
+  mapk:{
+    title:'MAPK / ERK cascade with negative feedback',
+    body:'A three-tier kinase cascade (Raf → MEK → ERK), where each layer is a Michaelis–Menten phospho/dephospho cycle. Active ERK feeds back to inhibit the top of the cascade. Because the individual steps are near saturation, the cascade is ultrasensitive, and the delayed negative feedback can turn steady signalling into sustained oscillations. A MEK inhibitor throttles the MEK→ERK step, collapsing the output — the mechanistic basis of how a targeted drug shuts a pathway down.',
+    cite:'Model: Kholodenko, B. N. (2000). Negative feedback and ultrasensitivity can bring about oscillations in the MAPK cascades. Eur. J. Biochem. 267, 1583–1588.',
+    eqn:'d[Raf]/dt   =  v2 − v1\nd[Raf*]/dt  =  v1 − v2\nd[MEK]/dt   =  v6 − v3\nd[MEK-P]/dt =  v3 + v5 − v4 − v6\nd[MEK-PP]/dt=  v4 − v5\nd[ERK]/dt   = v10 − v7\nd[ERK-P]/dt =  v7 + v9 − v8 − v10\nd[ERK-PP]/dt=  v8 − v9\n\nv1 = V1·Raf / ((1+(ERK-PP/Ki)^n)·(10+Raf))   ← negative feedback\nv7,v8 scaled by (1 − MEK-inhibitor)          ← drug'
+  },
+  gk:{
+    title:'Zero-order ultrasensitivity (Goldbeter–Koshland switch)',
+    body:'A single protein toggled between an inactive and active (phosphorylated) form by an opposing kinase and phosphatase. When both enzymes operate near saturation (low Km), the steady-state response to the signal becomes extremely steep — a molecular switch — even though no cooperative binding is involved. The response curve panel makes this vivid: lower Km sharpens the sigmoid. A kinase inhibitor shifts the switch, and near the threshold a small dose flips the output from on to off.',
+    cite:'Model: Goldbeter, A. & Koshland, D. E. (1981). An amplified sensitivity arising from covalent modification in biological systems. PNAS 78, 6840–6844.',
+    eqn:'d[W*]/dt = v_kinase − v_phosphatase\n\nv_kinase      = (1 − inhibitor)·S·(1−W*) / (Km + (1−W*))\nv_phosphatase =                  W*      / (Km + W*)\n\nW* = active (phosphorylated) fraction,  S = kinase/phosphatase activity ratio'
+  }
+};
+
+// ---------- UI wiring ----------
+const $=id=>document.getElementById(id);
+let raf=null;
+function schedule(){ if(raf)return; raf=requestAnimationFrame(()=>{raf=null;render();}); }
+
+function currentModel(){return $('model').value;}
+function syncLabels(){
+  $('mV1v').textContent=(+$('mV1').value).toFixed(2);
+  $('mKiv').textContent=(+$('mKi').value).toFixed(1);
+  $('mNv').textContent=$('mN').value;
+  $('mInhv').textContent=$('mInh').value+'%';
+  $('mDurv').textContent=(+$('mDur').value).toLocaleString();
+  $('gSv').textContent=(+$('gS').value).toFixed(2);
+  $('gKmv').textContent=Math.pow(10,+$('gKm').value).toFixed(3);
+  $('gInhv').textContent=$('gInh').value+'%';
+}
+
+function render(){
+  syncLabels();
+  const m=currentModel();
+  $('controls-mapk').style.display=m==='mapk'?'':'none';
+  $('controls-gk').style.display=m==='gk'?'':'none';
+  $('about-title').textContent=MODELS[m].title;
+  $('about-body').textContent=MODELS[m].body;
+  $('about-cite').textContent=MODELS[m].cite;
+  $('about-eqn').textContent=MODELS[m].eqn;
+  if(m==='mapk')renderMapk(); else renderGk();
+}
+
+function renderMapk(){
+  const p={V1:+$('mV1').value,Ki:+$('mKi').value,n:+$('mN').value,inh:+$('mInh').value/100};
+  const dur=+$('mDur').value;
+  const sol=integrate(mapk,MAPK_Y0,dur,1,p,null,600);
+  const raf=sol.T.map((t,i)=>[t,sol.Y[i][1]]);
+  const mek=sol.T.map((t,i)=>[t,sol.Y[i][4]]);
+  const erk=sol.T.map((t,i)=>[t,sol.Y[i][7]]);
+  $('tc-sub').textContent='active kinase (nM) vs. time';
+  drawPlot($('tc'),[
+    {name:'Raf*',color:'#94a3b8',data:raf,width:1.8},
+    {name:'MEK-PP',color:'#0369a1',data:mek,width:1.8},
+    {name:'ERK-PP',color:'#0891b2',data:erk,width:2.6}
+  ],{xlabel:'time (s)',ylabel:'active kinase (nM)',height:380});
+  // readouts on ERK-PP in last third
+  const tail=erk.filter(d=>d[0]>=dur*0.6).map(d=>d[1]);
+  const mn=Math.min(...tail),mx=Math.max(...tail),mean=tail.reduce((a,b)=>a+b,0)/tail.length;
+  const osc=(mx-mn)>8;
+  $('readouts').innerHTML=
+    ro((mean).toFixed(0),'mean ERK-PP (nM)')+
+    ro(osc?(mx-mn).toFixed(0):'—','oscillation amplitude')+
+    ro(osc?'Oscillating':'Steady state','regime');
+  $('tc-note').textContent=osc
+    ?'The pathway is oscillating: delayed negative feedback keeps overshooting. Try raising Kᵢ (weaker feedback) or n to change the rhythm.'
+    :'Steady signalling. Lower Kᵢ (stronger feedback) or raise cooperativity n to push the cascade into sustained oscillations.';
+  // response curve: sweep MEK inhibitor -> time-averaged ERK-PP
+  const pts=[];
+  for(let d=0;d<=100;d+=5){
+    const pp=Object.assign({},p,{inh:d/100});
+    const s=integrate(mapk,MAPK_Y0,dur,1,pp,null,400);
+    const t2=s.T.map((t,i)=>[t,s.Y[i][7]]).filter(x=>x[0]>=dur*0.6).map(x=>x[1]);
+    pts.push([d, t2.reduce((a,b)=>a+b,0)/t2.length]);
+  }
+  $('rc-sub').textContent='mean active ERK vs. MEK-inhibitor dose';
+  drawPlot($('rc'),[{name:'ERK-PP',color:'#b45309',data:pts,width:2.6,marker:true}],
+    {xlabel:'MEK inhibitor (%)',ylabel:'mean ERK-PP (nM)',height:330,legend:false,ymin:0,
+     vline:+$('mInh').value});
+  $('rc-note').textContent='Emergent dose–response: increasing MEK inhibition drives active ERK toward zero. The curve can be non-monotonic near the oscillatory regime — a genuine feature of feedback pharmacology, not a numerical artefact.';
+}
+
+function renderGk(){
+  const S=+$('gS').value, Km=Math.pow(10,+$('gKm').value), inh=+$('gInh').value/100;
+  // time course
+  const sol=integrate(gk,[0.001],40,0.02,{S,Km,inh},1,600);
+  const wp=sol.T.map((t,i)=>[t,sol.Y[i][0]]);
+  $('tc-sub').textContent='active fraction vs. time';
+  drawPlot($('tc'),[{name:'W* (active)',color:'#0891b2',data:wp,width:2.6}],
+    {xlabel:'time (a.u.)',ylabel:'active fraction',height:380,ymin:0,ymax:1,legend:false});
+  const ssv=steady(gk,[0.001],80,0.02,{S,Km,inh},1)[0];
+  $('readouts').innerHTML=
+    ro((ssv*100).toFixed(1)+'%','steady active fraction')+
+    ro(ssv>0.5?'ON':'OFF','switch state');
+  $('tc-note').textContent='The target relaxes to its steady active fraction. Near the threshold, tiny changes in signal or drug swing it between fully on and fully off.';
+  // response curve: sweep signal -> steady W*, for current Km and for a hyperbolic reference
+  const cur=[],ref=[];
+  for(let i=0;i<=60;i++){ const s=i/20; // 0..3
+    cur.push([s, steady(gk,[0.001],200,0.05,{S:s,Km,inh},1)[0]]);
+    ref.push([s, steady(gk,[0.001],200,0.05,{S:s,Km:1,inh:0},1)[0]]);
+  }
+  $('rc-sub').textContent='steady active fraction vs. signal';
+  drawPlot($('rc'),[
+    {name:'current',color:'#0891b2',data:cur,width:2.8},
+    {name:'hyperbolic (Km=1)',color:'#cbd5e1',data:ref,width:1.8,dash:[5,4]}
+  ],{xlabel:'signal S',ylabel:'active fraction',height:330,ymin:0,ymax:1,xmin:0,xmax:3,vline:S});
+  $('rc-note').textContent='Lowering Km sharpens the curve into a switch (zero-order ultrasensitivity); the dashed line is the gentle hyperbolic response for reference. The orange marker is the current signal.';
+}
+function ro(v,l){return '<div class="readout"><b>'+v+'</b><span>'+l+'</span></div>';}
+
+// events
+['mV1','mKi','mN','mInh','mDur','gS','gKm','gInh'].forEach(id=>$(id).addEventListener('input',schedule));
+$('model').addEventListener('change',render);
+$('reset').addEventListener('click',()=>{
+  $('mV1').value=2.5;$('mKi').value=9;$('mN').value=1;$('mInh').value=0;$('mDur').value=9000;
+  $('gS').value=1.2;$('gKm').value=-1.3;$('gInh').value=0;render();
+});
+$('example').addEventListener('click',()=>{
+  if(currentModel()==='mapk'){$('mKi').value=9;$('mN').value=2;$('mV1').value=2.5;$('mInh').value=0;}
+  else{$('gKm').value=-2;$('gS').value=1.2;$('gInh').value=0;}
+  render();
+});
+window.addEventListener('resize',schedule);
+render();
+</script>
+</body>
+</html>
