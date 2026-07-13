@@ -527,33 +527,40 @@ section p em {
 }
 .focus-line strong { color: var(--secondary-dark); font-weight: 600; }
 
-/* Compact metrics — quiet inline row */
+/* Metrics — prominent stat band */
 .metrics-row {
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  gap: 1.5rem 1.75rem;
-  padding: 0.25rem 0 1.25rem;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding: 1.5rem 1.75rem;
   flex-wrap: wrap;
+  background: var(--subtle-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
 }
 
 .metric-item {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
 }
 
 .metric-number {
-  font-size: 1.1rem;
+  font-size: 2.1rem;
   font-weight: 700;
-  color: var(--secondary-dark);
-  line-height: 1.2;
+  color: var(--primary-accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .metric-label {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--light-text);
-  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
 }
 
 .metric-divider {
@@ -726,12 +733,13 @@ section p em {
     margin: 0 !important;
   }
 
-  .metric-item {
-    gap: 0.35rem;
+  .metrics-row {
+    gap: 1rem 2rem;
+    padding: 1.25rem 1rem;
   }
 
   .metric-number {
-    font-size: 1.05rem;
+    font-size: 1.7rem;
   }
 
   .recent-pub {
