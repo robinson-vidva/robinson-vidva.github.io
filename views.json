@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-16T07:23:47Z",
-  "totalViews": 2029,
+  "lastUpdated": "2026-07-17T07:19:19Z",
+  "totalViews": 2039,
   "pages": {
     "/research.html": 247,
     "/cv.html": 205,
@@ -14,8 +14,14 @@
     "/contact.html": 29,
     "/terms.html": 10,
     "/cv": 2,
+    "/kineneo-demo/": 2,
+    "/kineneo-demo/contact.html": 1,
+    "/kineneo-demo/index.html": 1,
+    "/kineneo-demo/research.html": 1,
+    "/kineneo-demo/terms.html": 1,
+    "/kineneo-demo/tools.html": 1,
     "/neokibe": 1,
-    "/": 1015,
-    "/index.html": 1015
+    "/": 1018,
+    "/index.html": 1018
   }
 }
