@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /cv-build/
 
 Sitemap: https://robinsonvidva.com/sitemap.xml
