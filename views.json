@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-12T06:16:25Z",
-  "totalViews": 2142,
+  "lastUpdated": "2026-08-13T06:18:29Z",
+  "totalViews": 2146,
   "pages": {
     "/research.html": 253,
     "/cv.html": 210,
@@ -8,8 +8,8 @@
     "/articles/drug-repositioning-computational-approaches.html": 84,
     "/resume.html": 82,
     "/certifications.html": 74,
-    "/projects.html": 58,
-    "/tools.html": 48,
+    "/projects.html": 59,
+    "/tools.html": 49,
     "/articles/myvivarium-lab-animal-management.html": 43,
     "/contact.html": 30,
     "/terms.html": 10,
@@ -21,7 +21,7 @@
     "/kineneo-demo/terms.html": 1,
     "/kineneo-demo/tools.html": 1,
     "/neokibe": 1,
-    "/": 1084,
-    "/index.html": 1084
+    "/": 1086,
+    "/index.html": 1086
   }
 }
