@@ -502,13 +502,6 @@ section p em {
 }
 
 /* Hero Section Enhancements */
-.hero-subtitle {
-  font-size: 1rem;
-  opacity: 0.85;
-  margin-top: 0.25rem;
-  margin-bottom: 0;
-}
-
 .hero-buttons .btn {
   font-weight: 500;
   padding: 0.5rem 1.25rem;
@@ -524,46 +517,6 @@ section p em {
   max-width: 44rem;
 }
 .focus-line strong { color: var(--secondary-dark); font-weight: 600; }
-
-/* Metrics — prominent stat band */
-.metrics-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem 3rem;
-  padding: 1.5rem 1.75rem;
-  flex-wrap: wrap;
-  background: var(--subtle-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 14px;
-}
-
-.metric-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.1rem;
-}
-
-.metric-number {
-  font-size: 2.1rem;
-  font-weight: 700;
-  color: var(--primary-accent);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.metric-label {
-  font-size: 0.75rem;
-  color: var(--light-text);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  font-weight: 600;
-}
-
-.metric-divider {
-  display: none;
-}
 
 /* Lead text - slightly larger first paragraph */
 .lead-text {
@@ -713,10 +666,6 @@ section p em {
     font-size: 1.1rem;
   }
 
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-
   /* Hero buttons - stack vertically with proper spacing on mobile */
   .hero-buttons {
     display: flex;
@@ -729,15 +678,6 @@ section p em {
     width: 100%;
     max-width: 280px;
     margin: 0 !important;
-  }
-
-  .metrics-row {
-    gap: 1rem 2rem;
-    padding: 1.25rem 1rem;
-  }
-
-  .metric-number {
-    font-size: 1.7rem;
   }
 
   .recent-pub {
