@@ -109,11 +109,31 @@
     Array.prototype.forEach.call(nums, function (n) { io.observe(n); });
   }
 
+  /* ---------- View counts (from views.json, updated daily from GA) ---------- */
+  function setupViews() {
+    var pageEls = document.querySelectorAll('.page-views');
+    var totalEl = document.getElementById('total-site-views');
+    if (!pageEls.length && !totalEl) return;
+    fetch('/views.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(function (data) {
+      if (totalEl && data.totalViews > 0) totalEl.textContent = data.totalViews.toLocaleString();
+      var pages = data.pages || {};
+      Array.prototype.forEach.call(pageEls, function (el) {
+        var p = el.getAttribute('data-path') || window.location.pathname;
+        var v = pages[p];
+        if (v === undefined && p === '/') v = pages['/index.html'];
+        if (v === undefined && p.charAt(p.length - 1) === '/') v = pages[p + 'index.html'];
+        if (v === undefined && p.indexOf('.') === -1) v = pages[p + '.html'];
+        if (v > 0) el.textContent = v.toLocaleString();
+      });
+    }).catch(function () {});
+  }
+
   /* ---------- Init ---------- */
   function init() {
     document.body.appendChild(bar);
     setupReveal();
     setupCountUp();
+    setupViews();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     updateBar();
