@@ -222,22 +222,6 @@ a:hover {
   box-shadow: 0 4px 12px rgba(8, 145, 178, 0.2);
 }
 
-/* List Groups */
-.list-group-item {
-  border-left: 3px solid var(--border-color);
-  border-right: none;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--card-bg);
-  transition: all 0.3s ease;
-}
-
-.list-group-item:hover {
-  border-left-color: var(--primary-accent);
-  background-color: var(--subtle-bg);
-  transform: translateX(4px);
-}
-
 /* Container */
 body > .container, div.container.my-4 {
   background-color: var(--card-bg);
@@ -384,14 +368,6 @@ ul li strong {
   border: 1px solid var(--border-color);
 }
 
-.sort-controls .toolbar-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
 .sort-controls .filter-buttons {
   display: flex;
   align-items: center;
@@ -416,12 +392,6 @@ ul li strong {
 .sort-controls .form-select-sm {
   width: auto;
   min-width: 140px;
-}
-
-.sort-controls h5 {
-  color: var(--secondary-dark);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
 /* Skills Section - Circular Chip Layout */
@@ -611,8 +581,6 @@ section p em {
   text-decoration: underline;
 }
 
-/* Certification Provider Icons - see .cert-provider below in Certification Cards section */
-
 /* Education Collapse Toggle */
 .btn-outline-secondary {
   font-size: 0.85rem;
@@ -722,11 +690,6 @@ section p em {
 
 }
 
-/* Card Icons */
-.card-icon {
-  color: var(--primary-accent);
-}
-
 /* Work Experience Timeline */
 .timeline-section {
   position: relative;
@@ -792,12 +755,6 @@ section p em {
 
 .curriculum-toggle[aria-expanded="true"] i {
   transform: rotate(180deg);
-}
-
-.curriculum-content {
-  border-left: 3px solid var(--border-color);
-  padding-left: 1rem;
-  margin-top: 0.5rem;
 }
 
 /* Certification Cards */
@@ -1487,7 +1444,6 @@ a { text-underline-offset: 0.16em; }
 /* Softer, more layered elevation on all card surfaces */
 .card,
 .tool-card,
-.highlight-card,
 .download-card {
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 18px rgba(15, 23, 42, 0.06);
 }
