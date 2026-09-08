@@ -26,7 +26,6 @@ Personal site for Robinson Vidva — biomedical data scientist with 18 years in 
 - **[neokine](https://robinsonvidva.com/neokine/)** — client-side MediaPipe pose visualization with simple kinematics (angles, velocity, asymmetry).
 - **[neokine-labs](https://robinsonvidva.com/neokine-labs/)** — experimental MediaPipe Holistic pose/face playground.
 - **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); a v2 redesign is in development.
-- **[pathsim](https://robinsonvidva.com/pathsim/)** — in-browser signaling-pathway ODE simulator (work in progress).
 
 ## Articles
 
