@@ -1,6 +1,6 @@
 # robinsonvidva.com
 
-Personal site for Robinson Vidva — computational biologist with 18+ years of experience in bioinformatics, multi-omics data analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Beyond the portfolio, the site is a hub for the free, open-source computational-biology tools he builds.
+Personal site for Robinson Vidva — biomedical data scientist with 18 years in computational biology, multi-omics analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Beyond the portfolio, the site is a hub for free, open-source computational-biology tools.
 
 **Live site:** [robinsonvidva.com](https://robinsonvidva.com)
 
@@ -26,6 +26,7 @@ Personal site for Robinson Vidva — computational biologist with 18+ years of e
 - **[neokine](https://robinsonvidva.com/neokine/)** — client-side MediaPipe pose visualization with simple kinematics (angles, velocity, asymmetry).
 - **[neokine-labs](https://robinsonvidva.com/neokine-labs/)** — experimental MediaPipe Holistic pose/face playground.
 - **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); a v2 redesign is in development.
+- **[pathsim](https://robinsonvidva.com/pathsim/)** — in-browser signaling-pathway ODE simulator (work in progress).
 
 ## Articles
 
