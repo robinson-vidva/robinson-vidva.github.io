@@ -174,16 +174,39 @@ section h4, section h5 {
   margin-bottom: 0.75rem;
 }
 
-/* Links */
+/* Links: text links use the darker teal (5.9:1 on white, WCAG AA);
+   buttons, nav, and badges keep the primary accent. */
 a {
-  color: var(--primary-accent);
+  color: var(--secondary-accent);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--secondary-accent);
+  color: var(--secondary-dark);
   text-decoration: underline;
+}
+
+/* Links inside running text carry a light underline so they do not rely on colour alone */
+main p a:not(.btn):not(.tool-link),
+main li a:not(.btn):not(.tool-link),
+article p a:not(.btn),
+article li a:not(.btn),
+.callout a,
+.recent-pub a,
+.project-period a,
+.timeline-item h3 a,
+.contact-method a,
+.card-body a,
+footer p a {
+  text-decoration: underline;
+  text-decoration-color: rgba(3, 105, 161, 0.4);
+  text-decoration-thickness: 1px;
+}
+
+main p a:hover, main li a:hover, article p a:hover, article li a:hover,
+.callout a:hover, .recent-pub a:hover, .project-period a:hover, .timeline-item h3 a:hover, .contact-method a:hover, .card-body a:hover, footer p a:hover {
+  text-decoration-color: currentColor;
 }
 
 /* Buttons */
@@ -733,7 +756,7 @@ section p em {
 /* Education Collapsible */
 .curriculum-toggle {
   cursor: pointer;
-  color: var(--primary-accent);
+  color: var(--secondary-accent);
   font-size: 0.95rem;
   font-weight: 500;
   display: inline-flex;
@@ -746,7 +769,7 @@ section p em {
 }
 
 .curriculum-toggle:hover {
-  color: var(--secondary-accent);
+  color: var(--secondary-dark);
 }
 
 .curriculum-toggle i {
@@ -1276,7 +1299,7 @@ section h2::after {
 .tool-link {
   font-size: 0.86rem;
   font-weight: 600;
-  color: var(--primary-accent);
+  color: var(--secondary-accent);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
