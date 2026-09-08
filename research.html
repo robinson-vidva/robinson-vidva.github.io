@@ -86,7 +86,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
-        <li class="nav-item"><a class="nav-link active" href="research.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="research.html">Research</a></li>
         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
         <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
@@ -105,11 +105,11 @@
   <section class="mb-5">
     <div class="sort-controls">
       <div class="filter-buttons" role="group" aria-label="Filter by type">
-        <button class="btn btn-primary btn-sm" onclick="filterItems('all', event)">All</button>
-        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('preprint', event)">Preprints</button>
-        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('publication', event)">Publications</button>
-        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('presentation', event)">Presentations</button>
-        <button class="btn btn-outline-primary btn-sm" onclick="filterItems('patent', event)">Patents</button>
+        <button class="btn btn-primary btn-sm" aria-pressed="true" onclick="filterItems('all', event)">All</button>
+        <button class="btn btn-outline-primary btn-sm" aria-pressed="false" onclick="filterItems('preprint', event)">Preprints</button>
+        <button class="btn btn-outline-primary btn-sm" aria-pressed="false" onclick="filterItems('publication', event)">Publications</button>
+        <button class="btn btn-outline-primary btn-sm" aria-pressed="false" onclick="filterItems('presentation', event)">Presentations</button>
+        <button class="btn btn-outline-primary btn-sm" aria-pressed="false" onclick="filterItems('patent', event)">Patents</button>
       </div>
       <div class="toolbar-tools">
         <input type="text" class="search-input" id="search-input" placeholder="Search by keyword, author, or year…" aria-label="Search publications">
@@ -402,11 +402,13 @@
     document.querySelectorAll('.filter-buttons .btn').forEach(btn => {
       btn.classList.remove('btn-primary');
       btn.classList.add('btn-outline-primary');
+      btn.setAttribute('aria-pressed', 'false');
     });
 
     if (event && event.currentTarget) {
       event.currentTarget.classList.remove('btn-outline-primary');
       event.currentTarget.classList.add('btn-primary');
+      event.currentTarget.setAttribute('aria-pressed', 'true');
     }
 
     updateDisplay();
