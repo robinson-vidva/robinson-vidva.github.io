@@ -195,7 +195,7 @@
           <p class="cite" style="margin-top:.7rem">Integrated with a fixed-step 4th-order Runge–Kutta scheme. Concentrations are conserved by construction; species are held non-negative.</p>
         </details>
         <div class="disclaimer">
-          These are <strong>canonical, illustrative models</strong> from the systems-biology literature, using published parameter sets. They demonstrate qualitative behaviour (ultrasensitivity, feedback oscillations, emergent drug response) — they are <strong>not</strong> calibrated to any specific cell line or patient and are for educational use only.
+          These are <strong>canonical, illustrative models</strong> from the systems-biology literature, using published parameter sets. They demonstrate qualitative behavior (ultrasensitivity, feedback oscillations, emergent drug response) — they are <strong>not</strong> calibrated to any specific cell line or patient and are for educational use only.
         </div>
       </div>
     </div>
@@ -321,13 +321,13 @@ function fmt(v){const a=Math.abs(v);
 const MODELS={
   mapk:{
     title:'MAPK / ERK cascade with negative feedback',
-    body:'A three-tier kinase cascade (Raf → MEK → ERK), where each layer is a Michaelis–Menten phospho/dephospho cycle. Active ERK feeds back to inhibit the top of the cascade. Because the individual steps are near saturation, the cascade is ultrasensitive, and the delayed negative feedback can turn steady signalling into sustained oscillations. A MEK inhibitor throttles the MEK→ERK step, collapsing the output — the mechanistic basis of how a targeted drug shuts a pathway down.',
+    body:'A three-tier kinase cascade (Raf → MEK → ERK), where each layer is a Michaelis–Menten phospho/dephospho cycle. Active ERK feeds back to inhibit the top of the cascade. Because the individual steps are near saturation, the cascade is ultrasensitive, and the delayed negative feedback can turn steady signaling into sustained oscillations. A MEK inhibitor throttles the MEK→ERK step, collapsing the output — the mechanistic basis of how a targeted drug shuts a pathway down.',
     cite:'Model: Kholodenko, B. N. (2000). Negative feedback and ultrasensitivity can bring about oscillations in the MAPK cascades. Eur. J. Biochem. 267, 1583–1588.',
     eqn:'d[Raf]/dt   =  v2 − v1\nd[Raf*]/dt  =  v1 − v2\nd[MEK]/dt   =  v6 − v3\nd[MEK-P]/dt =  v3 + v5 − v4 − v6\nd[MEK-PP]/dt=  v4 − v5\nd[ERK]/dt   = v10 − v7\nd[ERK-P]/dt =  v7 + v9 − v8 − v10\nd[ERK-PP]/dt=  v8 − v9\n\nv1 = V1·Raf / ((1+(ERK-PP/Ki)^n)·(10+Raf))   ← negative feedback\nv7,v8 scaled by (1 − MEK-inhibitor)          ← drug'
   },
   gk:{
     title:'Zero-order ultrasensitivity (Goldbeter–Koshland switch)',
-    body:'A single protein toggled between an inactive and active (phosphorylated) form by an opposing kinase and phosphatase. When both enzymes operate near saturation (low Km), the steady-state response to the signal becomes extremely steep — a molecular switch — even though no cooperative binding is involved. The response curve panel makes this vivid: lower Km sharpens the sigmoid. A kinase inhibitor shifts the switch, and near the threshold a small dose flips the output from on to off.',
+    body:'A single protein toggled between an inactive and active (phosphorylated) form by an opposing kinase and phosphatase. When both enzymes operate near saturation (low Km), the steady-state response to the signal becomes extremely steep — a molecular switch — even though no cooperative binding is involved. The response-curve panel shows this directly: lower Km sharpens the sigmoid. A kinase inhibitor shifts the switch, and near the threshold a small dose flips the output from on to off.',
     cite:'Model: Goldbeter, A. & Koshland, D. E. (1981). An amplified sensitivity arising from covalent modification in biological systems. PNAS 78, 6840–6844.',
     eqn:'d[W*]/dt = v_kinase − v_phosphatase\n\nv_kinase      = (1 − inhibitor)·S·(1−W*) / (Km + (1−W*))\nv_phosphatase =                  W*      / (Km + W*)\n\nW* = active (phosphorylated) fraction,  S = kinase/phosphatase activity ratio'
   }
@@ -385,7 +385,7 @@ function renderMapk(){
     ro(osc?'Oscillating':'Steady state','regime');
   $('tc-note').textContent=osc
     ?'The pathway is oscillating: delayed negative feedback keeps overshooting. Try raising Kᵢ (weaker feedback) or n to change the rhythm.'
-    :'Steady signalling. Lower Kᵢ (stronger feedback) or raise cooperativity n to push the cascade into sustained oscillations.';
+    :'Steady signaling. Lower Kᵢ (stronger feedback) or raise cooperativity n to push the cascade into sustained oscillations.';
   // response curve: sweep MEK inhibitor -> time-averaged ERK-PP
   const pts=[];
   for(let d=0;d<=100;d+=5){
@@ -398,7 +398,7 @@ function renderMapk(){
   drawPlot($('rc'),[{name:'ERK-PP',color:'#b45309',data:pts,width:2.6,marker:true}],
     {xlabel:'MEK inhibitor (%)',ylabel:'mean ERK-PP (nM)',height:330,legend:false,ymin:0,
      vline:+$('mInh').value});
-  $('rc-note').textContent='Emergent dose–response: increasing MEK inhibition drives active ERK toward zero. The curve can be non-monotonic near the oscillatory regime — a genuine feature of feedback pharmacology, not a numerical artefact.';
+  $('rc-note').textContent='Emergent dose–response: increasing MEK inhibition drives active ERK toward zero. The curve can be non-monotonic near the oscillatory regime — a genuine feature of feedback pharmacology, not a numerical artifact.';
 }
 
 function renderGk(){
