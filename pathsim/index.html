@@ -42,6 +42,7 @@
   header.hero h1{margin:0 0 .35rem;font-size:1.9rem;font-weight:700;letter-spacing:-.02em}
   header.hero h1 .mono{font-family:var(--mono);color:var(--light-accent);font-weight:600}
   header.hero p{margin:0;color:#cbd5e1;max-width:60ch;font-size:1.02rem}
+  .wip{display:inline-block;vertical-align:middle;margin-left:.6rem;padding:.15rem .55rem;border:1px solid #64748b;border-radius:6px;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#cbd5e1}
   main{padding:1.6rem 0 3rem}
   .layout{display:grid;grid-template-columns:340px 1fr;gap:1.4rem;align-items:start}
   @media(max-width:880px){.layout{grid-template-columns:1fr}}
@@ -95,7 +96,7 @@
 </div></div>
 
 <header class="hero"><div class="wrap">
-  <h1><span class="mono">pathsim</span> — signaling pathway simulator</h1>
+  <h1><span class="mono">pathsim</span> — signaling pathway simulator <span class="wip">Work in progress</span></h1>
   <p>Interactive simulations of canonical cell-signaling models. Move a parameter or a drug dose and the kinetics recompute live. Everything runs in your browser — no data leaves the page.</p>
 </div></header>
 
@@ -266,7 +267,7 @@ function drawPlot(cv,series,o){
   const px0=L,px1=w-R,py0=Tp,py1=h-B;
   let xmin=o.xmin,xmax=o.xmax,ymin=o.ymin,ymax=o.ymax;
   if(xmin==null){xmin=Infinity;xmax=-Infinity;series.forEach(s=>s.data.forEach(d=>{if(d[0]<xmin)xmin=d[0];if(d[0]>xmax)xmax=d[0];}));}
-  if(ymin==null){ymin=Infinity;ymax=-Infinity;series.forEach(s=>s.data.forEach(d=>{if(d[1]<ymin)ymin=d[1];if(d[1]>ymax)ymax=d[1];}));const r=niceRange(ymin,ymax);ymin=Math.min(0,r[0]);ymax=r[1];}
+  if(ymin==null||ymax==null){let lo=Infinity,hi=-Infinity;series.forEach(s=>s.data.forEach(d=>{if(d[1]<lo)lo=d[1];if(d[1]>hi)hi=d[1];}));const r=niceRange(lo,hi);if(ymin==null)ymin=Math.min(0,r[0]);if(ymax==null)ymax=r[1];}
   const X=x=>px0+(x-xmin)/(xmax-xmin)*(px1-px0);
   const Y=y=>py1-(y-ymin)/(ymax-ymin)*(py1-py0);
   // grid + ticks
