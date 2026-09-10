@@ -151,7 +151,7 @@
       <span class="badge bg-light text-dark">Methods</span>
       <span class="badge bg-light text-dark">Tools</span>
       <span class="text-white-50 ms-3"><i class="far fa-calendar" aria-hidden="true"></i> September 10, 2026</span>
-      <span class="text-white-50 ms-3"><i class="far fa-clock" aria-hidden="true"></i> 7 min read</span>
+      <span class="text-white-50 ms-3"><i class="far fa-clock" aria-hidden="true"></i> 4 min read</span>
       <span class="text-white-50 ms-3 view-count" id="article-views"><i class="far fa-eye" aria-hidden="true"></i> <span class="view-number">&mdash;</span> views</span>
     </div>
   </div>
@@ -163,80 +163,62 @@
     <div class="col-lg-8 mx-auto">
 
       <section class="mb-5">
-        <p class="lead">Most omics experiments end with a list of genes: the ones that changed after a treatment, the ones mutated in a tumor, the hits from a screen. A list of 300 gene symbols is hard to reason about. Over-representation analysis (ORA) turns it into a shorter list of biological themes by asking one question of every known gene set: does this list contain more of the set's genes than chance would predict?</p>
-
-        <p>That is the whole method. It is simple, widely used, and easy to misuse. This article covers the three inputs, the test itself, the correction for multiple testing, why different gene-set collections disagree, and the mistakes that appear most often in published work. It ends with a walk-through in <a href="https://robinsonvidva.com/enrichlite/" target="_blank" rel="noopener">enrichlite</a>, a free tool that runs the analysis entirely in the browser.</p>
+        <p class="lead">Most omics experiments end with a list of genes: the ones that changed after a treatment, the ones mutated in a tumor, the hits from a screen. Over-representation analysis (ORA) turns that list into a shorter list of themes by asking one question of every known gene set: does the list contain more of the set's genes than chance would predict?</p>
+        <p>That is the whole method. It is simple, widely used, and easy to misuse. Here is what the numbers mean, where analyses go wrong, and how to run one in the browser with <a href="https://robinsonvidva.com/enrichlite/" target="_blank" rel="noopener">enrichlite</a>.</p>
       </section>
 
       <section class="mb-5">
         <h2>Three inputs</h2>
-        <p>Every ORA has three inputs, and the result depends on all of them.</p>
         <ul>
-          <li><strong>The gene list.</strong> The genes of interest, usually defined by a cutoff such as adjusted p below 0.05 and fold change above 2. The cutoff is a choice, and a different cutoff gives a different list.</li>
-          <li><strong>The gene sets.</strong> Named groups of genes that share something: a Gene Ontology term, a Reactome pathway, an MSigDB Hallmark. Each set is tested on its own.</li>
-          <li><strong>The background.</strong> Every gene that could have ended up in the list. For an RNA-seq experiment that is the set of genes that were measured and expressed, not the whole genome. For a targeted panel it is the genes on the panel.</li>
+          <li><strong>The gene list.</strong> Usually defined by a cutoff, such as adjusted p below 0.05 and fold change above 2. A different cutoff gives a different list.</li>
+          <li><strong>The gene sets.</strong> Named groups of genes: a Gene Ontology term, a Reactome pathway, an MSigDB Hallmark. Each set is tested on its own.</li>
+          <li><strong>The background.</strong> Every gene that could have ended up in the list. For RNA-seq that is the genes measured and expressed, not the whole genome. For a targeted panel it is the genes on the panel.</li>
         </ul>
-        <p>The background is the input people forget, and it is the one that changes results the most. If an experiment measured 12,000 expressed genes but the test assumes a background of 20,000, every gene set that happens to be rich in expressed genes looks enriched, whether or not it has anything to do with the treatment <sup><a href="#ref-1">[1]</a>, <a href="#ref-2">[2]</a></sup>. A survey of 186 published enrichment analyses found that 95 percent of the ORA studies either used an inappropriate background or did not say which background they used <sup><a href="#ref-1">[1]</a></sup>.</p>
+        <p>The background is the input people forget, and the one that changes results the most. Assume 20,000 genes when the experiment measured 12,000, and every set rich in expressed genes looks enriched whatever the treatment did. In a survey of 186 published analyses, 95 percent of ORA studies used an inappropriate background or did not say which one they used <sup><a href="#ref-1">[1]</a></sup>.</p>
       </section>
 
       <section class="mb-5">
         <h2>The test, with numbers</h2>
-        <p>ORA uses the hypergeometric test, which is the same thing as a one-sided Fisher's exact test. The picture is an urn. The background is 18,000 genes. One gene set, say "mitotic cell cycle", contains 200 of them, about 1.1 percent. Draw 100 genes at random and about 1.1 of them will be in the set. The experiment produced a list of 100 genes, and 12 of them are in the set. The test gives the probability of drawing 12 or more by chance: about one in a billion (p = 1.1 &times; 10<sup>&minus;9</sup>). The fold enrichment is 12 divided by 1.1, roughly 11.</p>
-
-        <p>Now change only the background. Suppose the experiment measured 8,000 genes, so the honest background is 8,000, and the set still has 200 members. The expected count rises to 2.5, the fold enrichment drops to about 5, and the p-value rises to 6.5 &times; 10<sup>&minus;6</sup>. Still significant, but a thousand times less so, and for smaller overlaps the same shift moves a term across the significance line. Three genes from the set in a list of 100 gives p = 0.10 against the 18,000 background: not significant, and easy to mistake for a finding if the background had been set too large.</p>
-
-        <p>Two things follow. The p-value is not a measure of biology; it measures surprise given the background. And fold enrichment together with the overlap count is often more informative than the p-value alone. A set with 3 of its 8 genes in the list has a high fold enrichment and a fragile p-value. A set with 40 of its 1,500 genes in the list can have a tiny p-value and a fold enrichment of 1.5.</p>
+        <p>ORA uses the hypergeometric test, the same thing as a one-sided Fisher's exact test. Picture an urn of 18,000 background genes. A set called "mitotic cell cycle" holds 200 of them, about 1.1 percent. Draw 100 genes at random and about 1.1 will be in the set. The experiment's list of 100 genes contains 12 from the set. The probability of 12 or more by chance is about one in a billion (p = 1.1 &times; 10<sup>&minus;9</sup>), and the fold enrichment is 12 divided by 1.1, roughly 11.</p>
+        <p>Now change only the background to 8,000, the honest number if that is what the experiment measured. The expected count becomes 2.5, the fold enrichment about 5, and the p-value 6.5 &times; 10<sup>&minus;6</sup>: a thousand times weaker from the same data. Smaller overlaps cross the significance line entirely on this choice alone.</p>
+        <p>So the p-value measures surprise given the background, not biology. Read it together with the overlap and the fold enrichment: 3 of 8 genes is a high fold with a fragile p-value; 40 of 1,500 can be a tiny p-value with a fold of 1.5.</p>
       </section>
 
       <section class="mb-5">
         <h2>Multiple testing</h2>
-        <p>GO biological process alone has thousands of terms of testable size, so a single ORA run performs thousands of tests. At p below 0.05, about 5 percent of unrelated sets pass by chance, which is dozens of false terms. The fix is a multiple-testing correction, and there are two standard choices.</p>
-        <ul>
-          <li><strong>Benjamini&ndash;Hochberg false discovery rate (FDR).</strong> Among the terms called significant at FDR 0.05, about 5 percent are expected to be false <sup><a href="#ref-3">[3]</a></sup>. This is the usual default.</li>
-          <li><strong>Bonferroni.</strong> Divides the threshold by the number of tests. It controls the chance of even one false positive, so it is much stricter and returns a shorter list. Use it when each reported term will be defended on its own.</li>
-        </ul>
-        <p>Either way, the number of tests matters. Testing GO, Reactome, and Hallmark together as one family means correcting across all of them at once, which is why enrichlite runs one collection at a time.</p>
+        <p>One run tests thousands of sets, so at p below 0.05 dozens pass by chance. Benjamini&ndash;Hochberg FDR is the usual correction: among terms called significant at FDR 0.05, about 5 percent are expected to be false <sup><a href="#ref-2">[2]</a></sup>. Bonferroni divides the threshold by the number of tests and is much stricter; use it when each reported term will be defended on its own. The size of the family matters, which is why enrichlite tests one collection at a time.</p>
       </section>
 
       <section class="mb-5">
         <h2>Why GO, Reactome, and Hallmark disagree</h2>
-        <p>The three collections are built differently, so the same list gives different answers. That is expected, not a contradiction.</p>
-        <ul>
-          <li><strong>Gene Ontology</strong> <sup><a href="#ref-4">[4]</a></sup> is a hierarchy: three namespaces (biological process, molecular function, cellular component), tens of thousands of terms, and a parent term contains every gene of its children. A list enriched for "mitotic spindle assembly checkpoint" will also light up "mitotic cell cycle", "cell cycle", and "cell cycle process". That is one signal reported several times. Many GO annotations are also inferred electronically (evidence code IEA) rather than curated from experiments; including them enlarges most sets.</li>
-          <li><strong>Reactome</strong> <sup><a href="#ref-5">[5]</a></sup> is a curated collection of human pathways with explicit reactions. Its sets are smaller and more specific, and mouse pathways are projected from the human ones by orthology.</li>
-          <li><strong>Hallmark</strong> <sup><a href="#ref-6">[6]</a></sup> is 50 sets from MSigDB, each refined from many source sets to describe one process with coherent expression. It is compact and readable, and the collection most likely to return a short, interpretable list, at the cost of coverage.</li>
-        </ul>
-        <p>With 50 tests instead of several thousand, the FDR correction is also far lighter for Hallmark. A term at FDR 0.03 in Hallmark and the same biology at FDR 0.2 in GO is the same signal under different corrections.</p>
+        <p>They are built differently, so the same list gives different answers. Gene Ontology <sup><a href="#ref-3">[3]</a></sup> is a hierarchy in which a parent term contains every gene of its children, so one signal is reported several times ("spindle assembly checkpoint", "mitotic cell cycle", "cell cycle"), and many of its annotations are inferred electronically rather than curated. Reactome <sup><a href="#ref-4">[4]</a></sup> is a curated set of human pathways with smaller, more specific sets. Hallmark <sup><a href="#ref-5">[5]</a></sup> is 50 refined sets built for readability; with 50 tests instead of thousands, its FDR correction is also far lighter. A term at FDR 0.03 in Hallmark and FDR 0.2 in GO can be the same biology under different corrections.</p>
       </section>
 
       <section class="mb-5">
         <h2>Mistakes that keep appearing</h2>
         <ul>
-          <li><strong>A whole-genome background for a filtered experiment.</strong> Covered above. It is the most common error and the largest.</li>
-          <li><strong>No correction, or raw p-values reported as if corrected.</strong> The same survey found this in 43 percent of analyses <sup><a href="#ref-1">[1]</a></sup>.</li>
-          <li><strong>Reading the top term as the answer.</strong> The top term is the most surprising overlap, not the most important biology. Look at the overlapping genes and at how many terms share them.</li>
-          <li><strong>Treating enrichment as mechanism.</strong> "Cell cycle enriched" means the list contains more cell-cycle genes than expected. It does not say the cells are dividing, or in which direction expression moved. Running ORA on a combined up-and-down list also mixes opposite effects into one result.</li>
-          <li><strong>Symbol problems.</strong> Aliases, retired symbols, and mouse lists run against human sets all silently shrink the overlap. Check how many of the input genes were recognized.</li>
+          <li><strong>A whole-genome background for a filtered experiment.</strong> The most common error and the largest.</li>
+          <li><strong>No correction, or raw p-values reported as corrected.</strong> Found in 43 percent of analyses in the same survey <sup><a href="#ref-1">[1]</a></sup>.</li>
+          <li><strong>Treating enrichment as mechanism.</strong> "Cell cycle enriched" means the list holds more cell-cycle genes than expected, not that the cells are dividing, and not in which direction expression moved.</li>
           <li><strong>Not reporting the setup.</strong> Tool, version, collection, background, correction, threshold. Without them the result cannot be reproduced.</li>
         </ul>
       </section>
 
       <section class="mb-5">
         <h2>Running it in the browser</h2>
-        <p>enrichlite does the analysis described above and nothing else. The gene sets are packaged with the page, the test runs in the browser, and no gene list is sent anywhere, which matters for unpublished or clinical data. Sets between 5 and 500 genes are tested.</p>
+        <p>enrichlite does this analysis and nothing else. The gene sets ship with the page, the test runs in the browser, and no gene list leaves the machine, which matters for unpublished or clinical data.</p>
         <ol>
-          <li>Paste gene symbols, separated by spaces, commas, or new lines. "Load example" inserts 19 mitotic genes (CDK1, CCNB1, PLK1, AURKA and others) for a first run.</li>
-          <li>Pick the species, human or mouse; symbols are matched within the species. Pick one collection: GO biological process, molecular function, or cellular component, Reactome, or Hallmark. For GO, choose whether to include electronic (IEA) annotations.</li>
-          <li>Pick the background: "Annotated in collection" (every gene with at least one annotation in that collection), "All protein-coding", or a custom list pasted from the experiment. The custom list is the right choice for real data.</li>
-          <li>Choose BH-FDR or Bonferroni and the threshold, then run.</li>
+          <li>Paste gene symbols. "Load example" inserts 19 mitotic genes for a first run.</li>
+          <li>Pick the species (human or mouse) and one collection: GO biological process, molecular function, or cellular component, Reactome, or Hallmark.</li>
+          <li>Pick the background: "Annotated in collection", "All protein-coding", or a custom list pasted from the experiment. The custom list is the right choice for real data.</li>
+          <li>Choose BH-FDR or Bonferroni and a threshold, then run.</li>
         </ol>
-        <p>The table reports, per term, the set size, the overlap, fold enrichment, raw p, FDR, Bonferroni, and the overlapping genes. Two things are worth trying on the example list. First, switch the background from "Annotated in collection" to "All protein-coding" and watch every p-value move; that is the background effect from the worked example. Second, turn on "Collapse redundant", which groups terms that are significant because of the same query genes and shows one representative per group; on GO it turns a dozen nested cell-cycle terms into one row.</p>
-        <p>"Copy methods" produces a methods paragraph with the tool, collection, background size, number of genes mapped, correction, threshold, and data versions, ready for a manuscript. The table exports to CSV or JSON and the chart to SVG or PNG.</p>
+        <p>The table gives set size, overlap, fold enrichment, raw p, FDR, Bonferroni, and the overlapping genes. Switch the background on the example list and watch every p-value move. Turn on "Collapse redundant" to fold nested GO terms into one row. "Copy methods" writes a methods paragraph with the background size, genes mapped, correction, threshold, and data versions, ready for a manuscript.</p>
       </section>
 
       <section class="mb-5">
         <h2>When ORA is the wrong tool</h2>
-        <p>ORA needs a discrete list, which means a cutoff. If the experiment produced a ranked measurement for every gene, such as a fold change or test statistic across the whole transcriptome, a rank-based method like GSEA uses all of it without a threshold and can detect a set whose genes shift modestly but consistently <sup><a href="#ref-7">[7]</a></sup>. ORA is the right choice when the list itself is the object: mutated genes, screen hits, a curated panel, or a differential-expression result with a defensible threshold. For a longer treatment of both families of methods, see <sup><a href="#ref-8">[8]</a></sup> and <sup><a href="#ref-9">[9]</a></sup>.</p>
+        <p>ORA needs a discrete list, which means a cutoff. If every gene has a ranked measurement across the whole transcriptome, a rank-based method such as GSEA uses all of it without a threshold and can find sets whose genes shift modestly but consistently <sup><a href="#ref-6">[6]</a></sup>. ORA fits when the list itself is the object: mutated genes, screen hits, a curated panel, or a differential-expression result with a defensible threshold.</p>
       </section>
 
       <section class="mb-5">
@@ -254,14 +236,11 @@
           <div class="card-body" style="font-size: 0.92rem;">
             <ol class="mb-0" style="padding-left: 1.2rem;">
               <li id="ref-1" class="mb-2">Wijesooriya, K., Jadaan, S. A., Perera, K. L., Kaur, T., &amp; Ziemann, M. (2022). Urgent need for consistent standards in functional enrichment analysis. <em>PLoS Computational Biology, 18</em>(3), e1009935. <a href="https://doi.org/10.1371/journal.pcbi.1009935" target="_blank" rel="noopener">doi:10.1371/journal.pcbi.1009935 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-2" class="mb-2">Timmons, J. A., Szkop, K. J., &amp; Gallagher, I. J. (2015). Multiple sources of bias confound functional enrichment analysis of global -omics data. <em>Genome Biology, 16</em>, 186. <a href="https://doi.org/10.1186/s13059-015-0761-7" target="_blank" rel="noopener">doi:10.1186/s13059-015-0761-7 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-3" class="mb-2">Benjamini, Y., &amp; Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. <em>Journal of the Royal Statistical Society: Series B, 57</em>(1), 289&ndash;300. <a href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x" target="_blank" rel="noopener">doi:10.1111/j.2517-6161.1995.tb02031.x <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-4" class="mb-2">Gene Ontology Consortium. (2023). The Gene Ontology knowledgebase in 2023. <em>Genetics, 224</em>(1), iyad031. <a href="https://doi.org/10.1093/genetics/iyad031" target="_blank" rel="noopener">doi:10.1093/genetics/iyad031 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-5" class="mb-2">Milacic, M., Beavers, D., Conley, P., et al. (2024). The Reactome Pathway Knowledgebase 2024. <em>Nucleic Acids Research, 52</em>(D1), D672&ndash;D678. <a href="https://doi.org/10.1093/nar/gkad1025" target="_blank" rel="noopener">doi:10.1093/nar/gkad1025 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-6" class="mb-2">Liberzon, A., Birger, C., Thorvaldsd&oacute;ttir, H., Ghandi, M., Mesirov, J. P., &amp; Tamayo, P. (2015). The Molecular Signatures Database (MSigDB) hallmark gene set collection. <em>Cell Systems, 1</em>(6), 417&ndash;425. <a href="https://doi.org/10.1016/j.cels.2015.12.004" target="_blank" rel="noopener">doi:10.1016/j.cels.2015.12.004 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-7" class="mb-2">Subramanian, A., Tamayo, P., Mootha, V. K., et al. (2005). Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. <em>Proceedings of the National Academy of Sciences, 102</em>(43), 15545&ndash;15550. <a href="https://doi.org/10.1073/pnas.0506580102" target="_blank" rel="noopener">doi:10.1073/pnas.0506580102 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-8" class="mb-2">Huang, D. W., Sherman, B. T., &amp; Lempicki, R. A. (2009). Bioinformatics enrichment tools: paths toward the comprehensive functional analysis of large gene lists. <em>Nucleic Acids Research, 37</em>(1), 1&ndash;13. <a href="https://doi.org/10.1093/nar/gkn923" target="_blank" rel="noopener">doi:10.1093/nar/gkn923 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-9" class="mb-2">Khatri, P., Sirota, M., &amp; Butte, A. J. (2012). Ten years of pathway analysis: current approaches and outstanding challenges. <em>PLoS Computational Biology, 8</em>(2), e1002375. <a href="https://doi.org/10.1371/journal.pcbi.1002375" target="_blank" rel="noopener">doi:10.1371/journal.pcbi.1002375 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-2" class="mb-2">Benjamini, Y., &amp; Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. <em>Journal of the Royal Statistical Society: Series B, 57</em>(1), 289&ndash;300. <a href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x" target="_blank" rel="noopener">doi:10.1111/j.2517-6161.1995.tb02031.x <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-3" class="mb-2">Gene Ontology Consortium. (2023). The Gene Ontology knowledgebase in 2023. <em>Genetics, 224</em>(1), iyad031. <a href="https://doi.org/10.1093/genetics/iyad031" target="_blank" rel="noopener">doi:10.1093/genetics/iyad031 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-4" class="mb-2">Milacic, M., Beavers, D., Conley, P., et al. (2024). The Reactome Pathway Knowledgebase 2024. <em>Nucleic Acids Research, 52</em>(D1), D672&ndash;D678. <a href="https://doi.org/10.1093/nar/gkad1025" target="_blank" rel="noopener">doi:10.1093/nar/gkad1025 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-5" class="mb-2">Liberzon, A., Birger, C., Thorvaldsd&oacute;ttir, H., Ghandi, M., Mesirov, J. P., &amp; Tamayo, P. (2015). The Molecular Signatures Database (MSigDB) hallmark gene set collection. <em>Cell Systems, 1</em>(6), 417&ndash;425. <a href="https://doi.org/10.1016/j.cels.2015.12.004" target="_blank" rel="noopener">doi:10.1016/j.cels.2015.12.004 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-6" class="mb-2">Subramanian, A., Tamayo, P., Mootha, V. K., et al. (2005). Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. <em>Proceedings of the National Academy of Sciences, 102</em>(43), 15545&ndash;15550. <a href="https://doi.org/10.1073/pnas.0506580102" target="_blank" rel="noopener">doi:10.1073/pnas.0506580102 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
             </ol>
           </div>
         </div>
