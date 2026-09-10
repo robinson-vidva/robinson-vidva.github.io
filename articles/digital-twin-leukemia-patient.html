@@ -29,7 +29,7 @@
 
   <!-- Open Graph / Social Media Preview -->
   <meta property="og:title" content="What a digital twin of a leukemia patient actually is | Robinson Vidva">
-  <meta property="og:description" content="How a leukemia genome becomes a simulation, how a drug is tested in it, and what a 93 percent match with the dish does and does not mean.">
+  <meta property="og:description" content="How a patient-specific pathway model of a leukemia cell is built from the tumor genome, how a drug is simulated in it, and how the predictions compared with measured drug sensitivity in the Beat AML cohort.">
   <meta property="og:image" content="https://robinsonvidva.com/images/og-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -40,7 +40,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="What a digital twin of a leukemia patient actually is | Robinson Vidva">
-  <meta name="twitter:description" content="How a leukemia genome becomes a simulation, how a drug is tested in it, and what a 93 percent match with the dish does and does not mean.">
+  <meta name="twitter:description" content="How a patient-specific pathway model of a leukemia cell is built from the tumor genome, how a drug is simulated in it, and how the predictions compared with measured drug sensitivity in the Beat AML cohort.">
   <meta name="twitter:image" content="https://robinsonvidva.com/images/og-preview.png">
 
   <link rel="alternate" type="application/rss+xml" title="Articles | Robinson Vidva" href="https://robinsonvidva.com/feed.xml">
@@ -83,7 +83,7 @@
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     "headline": "What a digital twin of a leukemia patient actually is",
-    "alternativeHeadline": "How a genome becomes a simulation, and what a 93 percent match does and does not mean",
+    "alternativeHeadline": "Building a patient-specific pathway model from a tumor genome and testing it against measured drug response",
     "author": {
       "@type": "Person",
       "name": "Robinson Vidva",
@@ -150,7 +150,7 @@
       <a href="../articles.html" class="btn btn-outline-light btn-sm"><i class="fas fa-arrow-left me-2" aria-hidden="true"></i> Back to Articles</a>
     </div>
     <h1 class="display-4">What a digital twin of a leukemia patient actually is</h1>
-    <p class="lead">How a genome becomes a simulation, and what a 93 percent match does and does not mean</p>
+    <p class="lead">Building a patient-specific pathway model from a tumor genome and testing it against measured drug response</p>
     <div class="mt-3">
       <span class="badge bg-light text-dark">Research</span>
       <span class="badge bg-light text-dark">Precision Medicine</span>
@@ -167,48 +167,48 @@
     <div class="col-lg-8 mx-auto">
 
       <section class="mb-5">
-        <p class="lead">"Digital twin" gets used for almost anything with a patient's data in it. In the Beat AML modeling work it meant one specific thing: a network model of a patient's leukemia cells, built from the tumor genome, in which a drug can be tried before the patient ever receives it. This is what went in, what came out, and how the predictions were checked.</p>
+        <p class="lead">Acute myeloid leukemia (AML) is genetically heterogeneous. Two patients with the same diagnosis can carry different combinations of mutations, and a drug that works for one may fail for the other. Sequencing a patient's leukemia is now routine, but a list of mutations does not by itself say which drug to use. One way to bridge that gap is to build a mechanistic model of the leukemia cell from the mutation list and to simulate treatment in the model. In the Beat AML modeling studies this patient-specific model was called a digital twin. The term needs a precise definition, because it is used elsewhere for anything from a spreadsheet of patient records to a whole-body physiological simulation.</p>
 
         <div class="alert alert-secondary mt-4" role="note" style="font-size:0.9rem;">
-          <strong>Note:</strong> This article describes published research methods. It is not medical advice, and the drug discussed (JQ1) is a research compound, not an approved treatment.
+          <strong>Note:</strong> This article describes published research methods. It is not medical advice. JQ1, the compound discussed, is a research tool and not an approved treatment.
         </div>
       </section>
 
       <section class="mb-5">
-        <h2>From a genome to a network</h2>
-        <p>The input is the list of somatic mutations and copy-number changes found in the patient's leukemia sample. Each one is translated into what it does to a protein: a loss of function, a gain, an amplification, a deletion. Those changes are then applied to a model of the cell's signaling and metabolic pathways, assembled from the literature as thousands of curated relationships between proteins, metabolites, and genes.</p>
-        <p>Solving the model gives a steady-state activity level for every node in the network. The result is a patient-specific map of which pathways are pushed up and which are pushed down by that particular set of mutations <sup><a href="#ref-1">[1]</a></sup>. That map is the twin. It is not a picture of the patient. It is a set of predicted pathway activities for the tumor cell.</p>
+        <h2>Building the model</h2>
+        <p>The starting point is a generic model of a myeloid cell: a network of several thousand proteins, metabolites, and genes connected by the reactions and regulatory relationships described in the literature. Receptor and kinase signaling, transcriptional control, cell-cycle progression, apoptosis, DNA damage response, and central metabolism are all represented. Each relationship is written as an equation, so that the activity of one node depends on the activities of the nodes that regulate it. Solving the whole system gives a steady state, a level for every node in an unmutated, untreated cell.</p>
+        <p>A patient's twin is made by editing this generic model with the patient's genomic findings. Each somatic mutation or copy-number change is entered as its known functional consequence rather than as a label. A FLT3 internal tandem duplication is represented as a constitutively active receptor tyrosine kinase. A truncating mutation in TP53 is represented as loss of p53 transcriptional activity. A deletion of 7q lowers the expression of the genes in that region. When the model is solved again with these changes in place, it reaches a new steady state. The difference between the two states is the patient-specific protein network map: which pathways are more active and which are less active than in a normal myeloid cell, as a consequence of that patient's mutations <sup><a href="#ref-1">[1]</a></sup>.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Trying a drug in it</h2>
-        <p>A drug is represented by its targets and how strongly it inhibits each of them. Simulating a BET inhibitor such as JQ1 means turning down BRD4 in the model and solving it again. The many readouts that change, proliferation, survival, and other leukemia-relevant outputs, are combined into one number, a disease inhibition score. If the score crosses a threshold, the patient is predicted to respond <sup><a href="#ref-1">[1]</a></sup>.</p>
-        <p>Because the simulation is cheap, the same twin can be run against many drugs and combinations. That is the practical point: a genome takes days to sequence, a living sample is needed for a laboratory sensitivity test, but a model can be queried as often as wanted.</p>
+        <h2>Simulating treatment</h2>
+        <p>A drug enters the model through its targets. JQ1, the BET inhibitor used in the study, blocks the bromodomain proteins BRD2, BRD3, and BRD4, and through BRD4 reduces transcription of MYC and other BRD4-dependent genes. Simulating JQ1 therefore means lowering BET activity in the patient's model by an amount that corresponds to the dose, and solving again. The effect is read from a set of nodes that define the leukemia phenotype, chiefly markers of proliferation and cell survival. The changes in those markers are combined into a single disease inhibition score, and a score above a preset threshold classifies the patient as a predicted responder <sup><a href="#ref-1">[1]</a></sup>.</p>
+        <p>Because a simulation costs only computing time, the same twin can be run against many drugs and combinations, which is the main practical reason for building one. A laboratory sensitivity assay needs viable cells from the patient and can test only the drugs on the plate.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Checking it against the dish</h2>
-        <p>The Beat AML program sequenced 672 samples from 562 patients and, for the same samples, measured how the leukemia cells responded to a panel of drugs in the laboratory <sup><a href="#ref-2">[2]</a></sup>. That makes it a rare place to test a prediction: the genome and the measured response exist for the same patient.</p>
-        <p>One hundred Beat AML patients were selected at random. For each, a twin was built from the genome alone and JQ1 was simulated. The predicted response was then compared with the measured ex vivo sensitivity. The two agreed in 93 percent of patients. Sensitivity was 97.7 percent and specificity 64.3 percent <sup><a href="#ref-1">[1]</a></sup>.</p>
-        <p>Those two numbers say different things, and the second matters as much as the first. Nearly every patient whose cells responded in the dish was called a responder by the model. But about a third of patients whose cells did not respond were also called responders. The model errs toward predicting response. For a screening tool that is a tolerable direction of error; for choosing a single treatment it is not, and it is why the specificity is reported alongside the headline figure.</p>
-        <p>The twins also produced something a yes-or-no answer cannot: patterns. Samples with a deletion of 7q or loss of chromosome 7, gain of chromosome 8, a deletion of 5q, or mutations that dysregulate the ERK pathway responded to JQ1 both in the model and in the dish <sup><a href="#ref-1">[1]</a></sup>. That is a testable hypothesis about who to enrol in a BET-inhibitor trial, which is more useful than a hundred individual predictions.</p>
+        <h2>Validation against measured drug sensitivity</h2>
+        <p>The Beat AML program made the approach testable. It collected 672 samples from 562 AML patients, sequenced them (whole exome and RNA), and measured ex vivo sensitivity to a panel of drugs on the same samples <sup><a href="#ref-2">[2]</a></sup>. Genome and drug response are therefore available for each patient.</p>
+        <p>One hundred patients were selected at random from the cohort. A twin was built for each from the sequencing data, JQ1 was simulated, and the prediction was recorded without reference to the sensitivity data. Comparison with the measured ex vivo IC50 gave agreement in 93 of 100 patients. Sensitivity was 97.7 percent and specificity 64.3 percent <sup><a href="#ref-1">[1]</a></sup>.</p>
+        <p>The two figures should be read separately. A sensitivity of 97.7 percent means that almost every sample that responded in the assay was predicted to respond. A specificity of 64.3 percent means that about a third of the samples that did not respond were also predicted to respond. The model overcalls response. For prioritizing patients for a trial that bias is acceptable; for selecting a single drug for a single patient it is not.</p>
+        <p>Grouping the results by genotype gave a second output. Samples with del(7q) or monosomy 7, trisomy 8, del(5q), or mutations that activate the ERK pathway responded to JQ1 in both the model and the assay <sup><a href="#ref-1">[1]</a></sup>. That is a specific, testable hypothesis about which patients a BET-inhibitor trial should enroll, and it came from the model's mechanism rather than from a statistical association alone.</p>
       </section>
 
       <section class="mb-5">
-        <h2>A harder test</h2>
-        <p>Matching a laboratory assay is one thing; matching what happened to the patient is another. In a prospective pilot study, the same modeling platform was given genomic data from 50 patients with myelodysplastic syndrome or AML, blinded to the treatment each patient was actually prescribed, and asked to predict the response. Across 61 patient-treatment pairs the prediction was correct in 55, an accuracy of 90 percent, with sensitivity of 94 percent and specificity of 88 percent. Laboratory measurements of the predicted pathway activations agreed in 17 of 19 samples <sup><a href="#ref-3">[3]</a></sup>.</p>
-        <p>The same approach was extended, drug by drug, to venetoclax, CDK4/6 inhibitors, dasatinib, and BET inhibitors in combination with palbociclib or sorafenib, each time checked against Beat AML sensitivity data <sup><a href="#ref-4">[4]</a>, <a href="#ref-5">[5]</a></sup>, and, in a separate line of work, the same kind of model was combined across cell types to predict the cytokine output of inflamed tissue and a tumor microenvironment <sup><a href="#ref-6">[6]</a></sup>.</p>
+        <h2>A prospective test</h2>
+        <p>Ex vivo sensitivity is a laboratory surrogate for clinical response. The same platform was also tested prospectively, in a pilot study of patients with myelodysplastic syndrome or AML (NCT02435550). Predictions were generated from genomic data for 50 evaluable patients while blinded to the treatment each patient received. Of 61 patient-treatment pairs, 55 were predicted correctly, an accuracy of 90 percent, with sensitivity of 94 percent and specificity of 88 percent. Laboratory measurement of the predicted pathway activation agreed in 17 of 19 samples <sup><a href="#ref-3">[3]</a></sup>.</p>
+        <p>In further Beat AML analyses the same modeling approach was applied to venetoclax, CDK4/6 inhibitors, dasatinib, and BET inhibitors combined with palbociclib or sorafenib <sup><a href="#ref-4">[4]</a>, <a href="#ref-5">[5]</a></sup>. In a separate line of work, models of single cell types were combined to predict the cytokine profiles of inflamed tissue and of a multiple myeloma microenvironment, and checked against co-culture measurements <sup><a href="#ref-6">[6]</a></sup>.</p>
       </section>
 
       <section class="mb-5">
-        <h2>What a twin cannot do</h2>
+        <h2>Limitations</h2>
         <ul>
-          <li><strong>It knows only what the curated network knows.</strong> A mutation with no characterized effect on a protein contributes nothing to the model.</li>
-          <li><strong>It was built from DNA.</strong> The Beat AML study used mutations and copy number, not expression. Two patients with the same mutations get the same twin.</li>
-          <li><strong>The dish is not the patient.</strong> Ex vivo sensitivity is a laboratory proxy. The prospective study is the closer test, and it covered 50 patients.</li>
-          <li><strong>Specificity of 64 percent means false positives.</strong> A predicted response is a reason to test, not a reason to treat.</li>
+          <li>The model contains only the biology that has been curated into it. A variant of unknown functional effect cannot be represented and is ignored.</li>
+          <li>The input was DNA only: mutations and copy number. Expression data were not used, so two patients with identical mutation lists receive identical twins.</li>
+          <li>A specificity of 64 percent in the ex vivo comparison means that a predicted response is a reason to test a drug, not a reason to prescribe it.</li>
+          <li>The prospective study enrolled 50 patients. Larger, controlled studies are needed before such predictions can guide treatment.</li>
         </ul>
-        <p>Read with those limits in mind, the result is still a clear one. A model built from a genome, with no access to the measured response, agreed with the laboratory in 93 percent of cases and with clinical outcome in 90 percent. That is what a digital twin of a leukemia patient is: a pathway model of the tumor cell, accurate enough to rank drugs and to say which genomic groups are worth a trial, and not more than that.</p>
+        <p>Within those limits the definition is clear. A digital twin in this sense is a patient-specific steady-state model of leukemia-cell signaling, built from the tumor genome, that can be perturbed with a drug. Against measured drug sensitivity it agreed 93 percent of the time, and against clinical response in a small prospective study 90 percent. It is a tool for ranking candidate drugs and for identifying genomic groups likely to respond, and that is how it should be used.</p>
       </section>
 
       <section class="mb-5">
