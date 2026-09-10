@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://challenges.cloudflare.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <title>What a digital twin of a leukemia patient actually is | Robinson Vidva</title>
-  <meta name="description" content="How a patient-specific network model is built from a leukemia genome, how a drug is tested in it, how the predictions were checked against ex vivo drug sensitivity in the Beat AML cohort, and what the accuracy figures do and do not mean.">
-  <meta name="keywords" content="digital twin, acute myeloid leukemia, AML, Beat AML, computational biology modeling, BET inhibitor, JQ1, drug response prediction, precision medicine, systems biology">
+  <title>Digital twins in medicine, with a leukemia example | Robinson Vidva</title>
+  <meta name="description" content="What a digital twin means in medicine, with examples from cardiology, diabetes, and immunology, and a worked example from acute myeloid leukemia: a pathway model built from each patient's genome, a BET inhibitor simulated in it, and the predictions compared with measured drug sensitivity.">
+  <meta name="keywords" content="digital twin, in silico medicine, patient-specific model, acute myeloid leukemia, Beat AML, BET inhibitor, JQ1, drug response prediction, precision medicine, systems biology">
   <meta name="author" content="Robinson Vidva">
   <meta property="article:published_time" content="2025-04-15">
   <meta property="article:modified_time" content="2025-04-15">
@@ -28,8 +28,8 @@
   <meta name="theme-color" content="#0f172a">
 
   <!-- Open Graph / Social Media Preview -->
-  <meta property="og:title" content="What a digital twin of a leukemia patient actually is | Robinson Vidva">
-  <meta property="og:description" content="How a patient-specific pathway model of a leukemia cell is built from the tumor genome, how a drug is simulated in it, and how the predictions compared with measured drug sensitivity in the Beat AML cohort.">
+  <meta property="og:title" content="Digital twins in medicine, with a leukemia example | Robinson Vidva">
+  <meta property="og:description" content="What a digital twin is in medicine, and a worked example: a pathway model built from each of 100 leukemia genomes, a BET inhibitor simulated in it, and the result read as a four-quadrant plot.">
   <meta property="og:image" content="https://robinsonvidva.com/images/og-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -39,8 +39,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="What a digital twin of a leukemia patient actually is | Robinson Vidva">
-  <meta name="twitter:description" content="How a patient-specific pathway model of a leukemia cell is built from the tumor genome, how a drug is simulated in it, and how the predictions compared with measured drug sensitivity in the Beat AML cohort.">
+  <meta name="twitter:title" content="Digital twins in medicine, with a leukemia example | Robinson Vidva">
+  <meta name="twitter:description" content="What a digital twin is in medicine, and a worked example: a pathway model built from each of 100 leukemia genomes, a BET inhibitor simulated in it, and the result read as a four-quadrant plot.">
   <meta name="twitter:image" content="https://robinsonvidva.com/images/og-preview.png">
 
   <link rel="alternate" type="application/rss+xml" title="Articles | Robinson Vidva" href="https://robinsonvidva.com/feed.xml">
@@ -72,7 +72,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://robinsonvidva.com/"},
       {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://robinsonvidva.com/articles.html"},
-      {"@type": "ListItem", "position": 3, "name": "What a digital twin of a leukemia patient actually is"}
+      {"@type": "ListItem", "position": 3, "name": "Digital twins in medicine, with a leukemia example"}
     ]
   }
   </script>
@@ -82,8 +82,8 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "What a digital twin of a leukemia patient actually is",
-    "alternativeHeadline": "Building a patient-specific pathway model from a tumor genome and testing it against measured drug response",
+    "headline": "Digital twins in medicine, with a leukemia example",
+    "alternativeHeadline": "What a digital twin is, how one was built for 100 AML patients, and what it showed about a BET inhibitor",
     "author": {
       "@type": "Person",
       "name": "Robinson Vidva",
@@ -101,7 +101,7 @@
       "@type": "Person",
       "name": "Robinson Vidva"
     },
-    "description": "How a patient-specific network model is built from a leukemia genome, how a drug is tested in it, how the predictions were checked against ex vivo drug sensitivity in the Beat AML cohort, and what the accuracy figures mean.",
+    "description": "What a digital twin means in medicine, with examples from cardiology, diabetes, and immunology, and a worked example from acute myeloid leukemia: a pathway model built from each patient's genome, a BET inhibitor simulated in it, and the predictions compared with measured drug sensitivity.",
     "keywords": ["digital twin", "acute myeloid leukemia", "Beat AML", "computational biology modeling", "BET inhibitor", "drug response prediction", "precision medicine"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -149,8 +149,8 @@
     <div class="mb-2">
       <a href="../articles.html" class="btn btn-outline-light btn-sm"><i class="fas fa-arrow-left me-2" aria-hidden="true"></i> Back to Articles</a>
     </div>
-    <h1 class="display-4">What a digital twin of a leukemia patient actually is</h1>
-    <p class="lead">Building a patient-specific pathway model from a tumor genome and testing it against measured drug response</p>
+    <h1 class="display-4">Digital twins in medicine, with a leukemia example</h1>
+    <p class="lead">What a digital twin is, how one was built for 100 AML patients, and what it showed about a BET inhibitor</p>
     <div class="mt-3">
       <span class="badge bg-light text-dark">Research</span>
       <span class="badge bg-light text-dark">Precision Medicine</span>
@@ -167,48 +167,80 @@
     <div class="col-lg-8 mx-auto">
 
       <section class="mb-5">
-        <p class="lead">Acute myeloid leukemia (AML) is genetically heterogeneous. Two patients with the same diagnosis can carry different combinations of mutations, and a drug that works for one may fail for the other. Sequencing a patient's leukemia is now routine, but a list of mutations does not by itself say which drug to use. One way to bridge that gap is to build a mechanistic model of the leukemia cell from the mutation list and to simulate treatment in the model. In the Beat AML modeling studies this patient-specific model was called a digital twin. The term needs a precise definition, because it is used elsewhere for anything from a spreadsheet of patient records to a whole-body physiological simulation.</p>
+        <p class="lead">The term digital twin comes from engineering, where it means a simulation of a physical object that is kept in step with the object's own measurements, so that a change can be tried on the model before it is made to the real thing. In medicine the object is a patient, or one organ or cell type of a patient, and the change is a treatment. The idea is old; the data to build such models for individual patients is recent.</p>
 
         <div class="alert alert-secondary mt-4" role="note" style="font-size:0.9rem;">
-          <strong>Note:</strong> This article describes published research methods. It is not medical advice. JQ1, the compound discussed, is a research tool and not an approved treatment.
+          <strong>Note:</strong> This article describes published research. It is not medical advice. JQ1, the compound in the example, is a research tool and not an approved treatment.
         </div>
       </section>
 
       <section class="mb-5">
-        <h2>Building the model</h2>
-        <p>The starting point is a generic model of a myeloid cell: a network of several thousand proteins, metabolites, and genes connected by the reactions and regulatory relationships described in the literature. Receptor and kinase signaling, transcriptional control, cell-cycle progression, apoptosis, DNA damage response, and central metabolism are all represented. Each relationship is written as an equation, so that the activity of one node depends on the activities of the nodes that regulate it. Solving the whole system gives a steady state, a level for every node in an unmutated, untreated cell.</p>
-        <p>A patient's twin is made by editing this generic model with the patient's genomic findings. Each somatic mutation or copy-number change is entered as its known functional consequence rather than as a label. A FLT3 internal tandem duplication is represented as a constitutively active receptor tyrosine kinase. A truncating mutation in TP53 is represented as loss of p53 transcriptional activity. A deletion of 7q lowers the expression of the genes in that region. When the model is solved again with these changes in place, it reaches a new steady state. The difference between the two states is the patient-specific protein network map: which pathways are more active and which are less active than in a normal myeloid cell, as a consequence of that patient's mutations <sup><a href="#ref-1">[1]</a></sup>.</p>
+        <h2>Digital twins in medicine</h2>
+        <p>Several fields have working examples. In cardiology, models of a patient's heart built from imaging and electrical recordings are used to plan ablation and device therapy <sup><a href="#ref-1">[1]</a></sup>. In type 1 diabetes, a simulator of 300 virtual patients spanning the measured variability of glucose metabolism was accepted by the FDA in 2008 as a substitute for animal trials when testing closed-loop insulin controllers <sup><a href="#ref-2">[2]</a></sup>. In immunology, models of the immune response to viral infection are being built to test interventions per patient <sup><a href="#ref-3">[3]</a></sup>. In systems medicine, network models of individual patients are treated computationally with thousands of drugs to rank candidates <sup><a href="#ref-4">[4]</a></sup>. A 2024 scoping review maps the current landscape across specialties <sup><a href="#ref-5">[5]</a></sup>.</p>
+        <p>What the examples share is a set of four parts: a mechanistic model of the biology; measurements from the individual patient that set the model's parameters; an intervention that can be simulated; and a measured outcome to compare the simulation against. Without the fourth part a twin is a hypothesis, not a tool.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Simulating treatment</h2>
-        <p>A drug enters the model through its targets. JQ1, the BET inhibitor used in the study, blocks the bromodomain proteins BRD2, BRD3, and BRD4, and through BRD4 reduces transcription of MYC and other BRD4-dependent genes. Simulating JQ1 therefore means lowering BET activity in the patient's model by an amount that corresponds to the dose, and solving again. The effect is read from a set of nodes that define the leukemia phenotype, chiefly markers of proliferation and cell survival. The changes in those markers are combined into a single disease inhibition score, and a score above a preset threshold classifies the patient as a predicted responder <sup><a href="#ref-1">[1]</a></sup>.</p>
-        <p>Because a simulation costs only computing time, the same twin can be run against many drugs and combinations, which is the main practical reason for building one. A laboratory sensitivity assay needs viable cells from the patient and can test only the drugs on the plate.</p>
+        <h2>A twin of a leukemia cell</h2>
+        <p>The Beat AML study of a BET inhibitor is a complete example with all four parts <sup><a href="#ref-6">[6]</a></sup>. The model is a network of the signaling, metabolic, epigenetic, and transcriptional pathways of a cancer cell, written as ordinary differential equations and assembled from published experimental data: about 112 pathways, over 75,000 reactions, and 3,300 cancer-relevant genes. The patient measurements are conventional cytogenetics and whole-exome sequencing from 100 patients in the Beat AML cohort. Each finding is entered into the network as its functional consequence. A variant is called deleterious when more than five prediction algorithms from dbNSFP agree; a deleterious variant in an oncogene is entered as a gain of function and one in a tumor suppressor as a loss. Genes in a deleted chromosome segment are knocked down, genes in an amplified segment are over-expressed. Solving the network with these changes in place gives the patient's steady state: a map of which pathways are more or less active than in a non-malignant baseline.</p>
+        <p>The intervention is JQ1, entered as inhibition of its targets BRD2, BRD3, and BRD4, with the downstream consequences taken from the literature, chiefly reduced transcription of MYC and other BRD4-dependent genes. The drug is applied across a range of doses and its effect is summarized as a disease inhibition score (DIS): the percentage reduction in a proliferation index (the active CDK4-cyclin D1, CDK2-cyclin E, CDK2-cyclin A, and CDK1-cyclin B1 complexes) combined with the reduction in a viability index (survival markers AKT1, BCL2, MCL1, BIRC5, BIRC2, and XIAP relative to caspases, PUMA, and cleaved PARP). The measured outcome is the ex vivo sensitivity of the same patient's cells to JQ1, reported as an IC50 from a three-day assay.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Validation against measured drug sensitivity</h2>
-        <p>The Beat AML program made the approach testable. It collected 672 samples from 562 AML patients, sequenced them (whole exome and RNA), and measured ex vivo sensitivity to a panel of drugs on the same samples <sup><a href="#ref-2">[2]</a></sup>. Genome and drug response are therefore available for each patient.</p>
-        <p>One hundred patients were selected at random from the cohort. A twin was built for each from the sequencing data, JQ1 was simulated, and the prediction was recorded without reference to the sensitivity data. Comparison with the measured ex vivo IC50 gave agreement in 93 of 100 patients. Sensitivity was 97.7 percent and specificity 64.3 percent <sup><a href="#ref-1">[1]</a></sup>.</p>
-        <p>The two figures should be read separately. A sensitivity of 97.7 percent means that almost every sample that responded in the assay was predicted to respond. A specificity of 64.3 percent means that about a third of the samples that did not respond were also predicted to respond. The model overcalls response. For prioritizing patients for a trial that bias is acceptable; for selecting a single drug for a single patient it is not.</p>
-        <p>Grouping the results by genotype gave a second output. Samples with del(7q) or monosomy 7, trisomy 8, del(5q), or mutations that activate the ERK pathway responded to JQ1 in both the model and the assay <sup><a href="#ref-1">[1]</a></sup>. That is a specific, testable hypothesis about which patients a BET-inhibitor trial should enroll, and it came from the model's mechanism rather than from a statistical association alone.</p>
+        <h2>Reading the result as four quadrants</h2>
+        <p>Each patient is one point on a plot of predicted DIS against measured IC50. Two thresholds divide the plot. On the measured axis, an IC50 below 2.7 micromolar counts as sensitive; the value is the peak plasma concentration of JQ1 from pharmacokinetic studies, so it separates concentrations a patient could reach from those a patient could not. On the predicted axis, a DIS of 30 percent or more counts as a predicted responder. The thresholds give four quadrants.</p>
+        <figure class="my-4 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" style="max-width:100%;height:auto" role="img" aria-label="Schematic of the four-quadrant plot: predicted disease inhibition score against measured IC50, with counts of 84 predicted and observed sensitive, 5 observed sensitive but predicted resistant, 2 predicted sensitive but observed resistant, and 9 predicted and observed resistant.">
+            <rect x="80" y="20" width="420" height="300" fill="#f8fafc" stroke="#cbd5e1"/>
+            <rect x="80" y="20" width="252" height="180" fill="#0891b2" fill-opacity="0.12"/>
+            <rect x="332" y="200" width="168" height="120" fill="#0891b2" fill-opacity="0.12"/>
+            <rect x="80" y="200" width="252" height="120" fill="#b45309" fill-opacity="0.12"/>
+            <rect x="332" y="20" width="168" height="180" fill="#b45309" fill-opacity="0.12"/>
+            <line x1="332" y1="20" x2="332" y2="320" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <line x1="80" y1="200" x2="500" y2="200" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <g font-family="DM Sans, sans-serif" fill="#1e293b" text-anchor="middle">
+              <text x="206" y="90" font-size="30" font-weight="700">84</text>
+              <text x="206" y="114" font-size="13">predicted sensitive</text>
+              <text x="206" y="131" font-size="13">observed sensitive</text>
+              <text x="416" y="90" font-size="30" font-weight="700">2</text>
+              <text x="416" y="114" font-size="13">predicted sensitive</text>
+              <text x="416" y="131" font-size="13">observed resistant</text>
+              <text x="206" y="250" font-size="30" font-weight="700">5</text>
+              <text x="206" y="274" font-size="13">predicted resistant</text>
+              <text x="206" y="291" font-size="13">observed sensitive</text>
+              <text x="416" y="250" font-size="30" font-weight="700">9</text>
+              <text x="416" y="274" font-size="13">predicted resistant</text>
+              <text x="416" y="291" font-size="13">observed resistant</text>
+            </g>
+            <g font-family="DM Sans, sans-serif" fill="#475569" font-size="12">
+              <text x="290" y="352" text-anchor="middle">measured ex vivo IC50 (log scale)</text>
+              <text x="332" y="336" text-anchor="middle" font-size="11">2.7 &#181;M (JQ1 Cmax)</text>
+              <text x="86" y="336" text-anchor="start" font-size="11">sensitive</text>
+              <text x="494" y="336" text-anchor="end" font-size="11">resistant</text>
+              <text transform="translate(28,170) rotate(-90)" text-anchor="middle">predicted disease inhibition score</text>
+              <text x="74" y="204" text-anchor="end" font-size="11">30%</text>
+            </g>
+            <g font-family="DM Sans, sans-serif" font-size="12" fill="#475569">
+              <rect x="130" y="380" width="14" height="14" fill="#0891b2" fill-opacity="0.35" stroke="#0891b2"/>
+              <text x="152" y="392">prediction matched measurement (93 of 100)</text>
+              <rect x="410" y="380" width="14" height="14" fill="#b45309" fill-opacity="0.35" stroke="#b45309"/>
+              <text x="432" y="392">mismatch (7 of 100)</text>
+            </g>
+          </svg>
+          <figcaption class="text-muted mt-2" style="font-size:0.85rem;"><em>Figure 1. The four quadrants of the Beat AML JQ1 comparison, with patient counts from the paper. Schematic; individual points are not shown.</em></figcaption>
+        </figure>
+        <p>Of the 100 patients, 89 were sensitive in the assay and 11 resistant. The model placed 84 of the 89 in the sensitive quadrant and 9 of the 11 in the resistant one, for 93 matches. The seven mismatches split unevenly: five sensitive samples were predicted resistant, and two resistant samples were predicted sensitive. From the table, sensitivity was 94.4 percent and specificity 81.8 percent; the positive predictive value was 97.7 percent and the negative predictive value 64.3 percent <sup><a href="#ref-6">[6]</a></sup>. Two cautions apply when reading these. The cohort was heavily weighted toward sensitivity, so the small resistant group carries most of the information about whether the model can tell the two apart. And the negative predictive value is the weakest figure: when the model called a sample resistant it was right about two times in three.</p>
       </section>
 
       <section class="mb-5">
-        <h2>A prospective test</h2>
-        <p>Ex vivo sensitivity is a laboratory surrogate for clinical response. The same platform was also tested prospectively, in a pilot study of patients with myelodysplastic syndrome or AML (NCT02435550). Predictions were generated from genomic data for 50 evaluable patients while blinded to the treatment each patient received. Of 61 patient-treatment pairs, 55 were predicted correctly, an accuracy of 90 percent, with sensitivity of 94 percent and specificity of 88 percent. Laboratory measurement of the predicted pathway activation agreed in 17 of 19 samples <sup><a href="#ref-3">[3]</a></sup>.</p>
-        <p>In further Beat AML analyses the same modeling approach was applied to venetoclax, CDK4/6 inhibitors, dasatinib, and BET inhibitors combined with palbociclib or sorafenib <sup><a href="#ref-4">[4]</a>, <a href="#ref-5">[5]</a></sup>. In a separate line of work, models of single cell types were combined to predict the cytokine profiles of inflamed tissue and of a multiple myeloma microenvironment, and checked against co-culture measurements <sup><a href="#ref-6">[6]</a></sup>.</p>
+        <h2>What the twin showed about the drug</h2>
+        <p>The number that validates a twin is the agreement rate. The result that makes it useful is the mechanism, because the network can be read back to see why each patient landed where it did. JQ1 acts on the BET proteins that hold chromatin open at oncogene promoters; blocking BRD4 lowers MYC transcription. The responder profiles in the paper show the routes into that mechanism. One profile carried gains in BRD2 and BRD4 themselves, a loss of DUSP6 that leaves ERK active and MYC high, and a loss of MTHFR that affects chromatin methylation. Another carried a loss of NPM1, which normally restrains BRD4; losing it releases the BRD4-dependent transcriptional program that JQ1 then shuts off. The resistant profiles show the routes around it. One had lost EP300, the acetylase that recruits BRD4 to chromatin, so there was less BRD4 activity for JQ1 to remove, together with an amplified AMPK subunit that promotes a survival response to the drug. Another carried a gain in FGFR4, a receptor kinase that keeps a parallel growth pathway running regardless of BET inhibition <sup><a href="#ref-6">[6]</a></sup>.</p>
+        <p>Grouped across the cohort, the same picture held. Mutations that deregulate the ERK pathway (NRAS in 23 patients, DUSP6 in 9, KRAS in 7, NF1 in 6) sat predominantly in the responder group, and every patient with del(7q) or monosomy 7, trisomy 8, or del(5q) responded in both the model and the assay. Trisomy 8 fits the mechanism directly, since MYC is on chromosome 8 <sup><a href="#ref-6">[6]</a></sup>. These are hypotheses for a trial's inclusion criteria, arrived at by reading the model rather than by fitting the outcome.</p>
       </section>
 
       <section class="mb-5">
-        <h2>Limitations</h2>
-        <ul>
-          <li>The model contains only the biology that has been curated into it. A variant of unknown functional effect cannot be represented and is ignored.</li>
-          <li>The input was DNA only: mutations and copy number. Expression data were not used, so two patients with identical mutation lists receive identical twins.</li>
-          <li>A specificity of 64 percent in the ex vivo comparison means that a predicted response is a reason to test a drug, not a reason to prescribe it.</li>
-          <li>The prospective study enrolled 50 patients. Larger, controlled studies are needed before such predictions can guide treatment.</li>
-        </ul>
-        <p>Within those limits the definition is clear. A digital twin in this sense is a patient-specific steady-state model of leukemia-cell signaling, built from the tumor genome, that can be perturbed with a drug. Against measured drug sensitivity it agreed 93 percent of the time, and against clinical response in a small prospective study 90 percent. It is a tool for ranking candidate drugs and for identifying genomic groups likely to respond, and that is how it should be used.</p>
+        <h2>Where the twin stops</h2>
+        <p>A twin of this kind contains only the biology curated into it; a variant with no known functional effect contributes nothing, and the paper attributes its false predictions to that and to incomplete genomic data. The input was DNA alone, so two patients with the same mutation list receive the same twin. The measured outcome was a laboratory assay, not clinical response; the same platform was later tested prospectively in 50 patients with AML or myelodysplastic syndrome, predicting the response to the prescribed treatment correctly in 55 of 61 cases <sup><a href="#ref-7">[7]</a></sup>. Within those limits the leukemia example does what the engineering definition asks: a model set from one patient's measurements, an intervention tried in the model, and a measured outcome that the model was checked against.</p>
       </section>
 
       <section class="mb-5">
@@ -225,12 +257,13 @@
           </div>
           <div class="card-body" style="font-size: 0.92rem;">
             <ol class="mb-0" style="padding-left: 1.2rem;">
-              <li id="ref-1" class="mb-2">Drusbosky, L. M., <strong>Vidva, R.</strong>, Gera, S., Lakshminarayana, A. V., Shyamasundar, V. P., Agrawal, A. K., Talawdekar, A., Abbasi, T., Vali, S., Tognon, C. E., Kurtz, S. E., Tyner, J. W., McWeeney, S. K., Druker, B. J., &amp; Cogle, C. R. (2019). Predicting response to BET inhibitors using computational modeling: A BEAT AML project study. <em>Leukemia Research, 77</em>, 42&ndash;50. <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank" rel="noopener">doi:10.1016/j.leukres.2018.11.010 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-2" class="mb-2">Tyner, J. W., Tognon, C. E., Bottomly, D., et al. (2018). Functional genomic landscape of acute myeloid leukaemia. <em>Nature, 562</em>(7728), 526&ndash;531. <a href="https://doi.org/10.1038/s41586-018-0623-z" target="_blank" rel="noopener">doi:10.1038/s41586-018-0623-z <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-3" class="mb-2">Drusbosky, L. M., Singh, N. K., Hawkins, K. E., et al. (2019). A genomics-informed computational biology platform prospectively predicts treatment responses in AML and MDS patients. <em>Blood Advances, 3</em>(12), 1837&ndash;1847. <a href="https://doi.org/10.1182/bloodadvances.2018028316" target="_blank" rel="noopener">doi:10.1182/bloodadvances.2018028316 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-4" class="mb-2">Drusbosky, L., Abbasi, T., Vali, S., Radhakrishnan, S., Kumar Singh, N., Usmani, S., Parashar, D., <strong>Vidva, R.</strong>, Druker, B. J., Tognon, C. E., Lo, P., Tyner, J. W., &amp; Cogle, C. R. (2016). A genomic signature predicting venetoclax treatment response in AML identified by protein network mapping and validated by ex vivo drug sensitivity testing: A Beat AML project study. <em>Blood, 128</em>(22), 1713. <a href="https://doi.org/10.1182/blood.V128.22.1713.1713" target="_blank" rel="noopener">doi:10.1182/blood.V128.22.1713.1713 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-5" class="mb-2">Tyner, J. W., Druker, B. J., Kurtz, S. E., Tognon, C. E., Drusbosky, L. M., <strong>Vidva, R.</strong>, et al. (2018). Predicting response to BET inhibitor in combination with palbociclib/sorafenib using a computational model and its validation: A Beat AML project study. <em>Blood, 132</em>(Suppl 1), 1540. <a href="https://doi.org/10.1182/blood-2018-99-115284" target="_blank" rel="noopener">doi:10.1182/blood-2018-99-115284 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
-              <li id="ref-6" class="mb-2">Fischer, C. L., Bates, A. M., Lanzel, E. A., Guthmiller, J. M., Johnson, G. K., Singh, N. K., Kumar, A., <strong>Vidva, R.</strong>, Abbasi, T., Vali, S., Xie, X. J., Zeng, E., &amp; Brogden, K. A. (2019). Computational models accurately predict multi-cell biomarker profiles in inflammation and cancer. <em>Scientific Reports, 9</em>, 10877. <a href="https://doi.org/10.1038/s41598-019-47381-4" target="_blank" rel="noopener">doi:10.1038/s41598-019-47381-4 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-1" class="mb-2">Corral-Acero, J., Margara, F., Marciniak, M., et al. (2020). The 'Digital Twin' to enable the vision of precision cardiology. <em>European Heart Journal, 41</em>(48), 4556&ndash;4564. <a href="https://doi.org/10.1093/eurheartj/ehaa159" target="_blank" rel="noopener">doi:10.1093/eurheartj/ehaa159 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-2" class="mb-2">Kovatchev, B. P., Breton, M., Dalla Man, C., &amp; Cobelli, C. (2009). In silico preclinical trials: a proof of concept in closed-loop control of type 1 diabetes. <em>Journal of Diabetes Science and Technology, 3</em>(1), 44&ndash;55. <a href="https://doi.org/10.1177/193229680900300106" target="_blank" rel="noopener">doi:10.1177/193229680900300106 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-3" class="mb-2">Laubenbacher, R., Sluka, J. P., &amp; Glazier, J. A. (2021). Using digital twins in viral infection. <em>Science, 371</em>(6534), 1105&ndash;1106. <a href="https://doi.org/10.1126/science.abf3370" target="_blank" rel="noopener">doi:10.1126/science.abf3370 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-4" class="mb-2">Bj&ouml;rnsson, B., Borrebaeck, C., Elander, N., et al. (2020). Digital twins to personalize medicine. <em>Genome Medicine, 12</em>, 4. <a href="https://doi.org/10.1186/s13073-019-0701-3" target="_blank" rel="noopener">doi:10.1186/s13073-019-0701-3 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-5" class="mb-2">Katsoulakis, E., Wang, Q., Wu, H., et al. (2024). Digital twins for health: a scoping review. <em>npj Digital Medicine, 7</em>, 77. <a href="https://doi.org/10.1038/s41746-024-01073-0" target="_blank" rel="noopener">doi:10.1038/s41746-024-01073-0 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-6" class="mb-2">Drusbosky, L. M., <strong>Vidva, R.</strong>, Gera, S., Lakshminarayana, A. V., Shyamasundar, V. P., Agrawal, A. K., Talawdekar, A., Abbasi, T., Vali, S., Tognon, C. E., Kurtz, S. E., Tyner, J. W., McWeeney, S. K., Druker, B. J., &amp; Cogle, C. R. (2019). Predicting response to BET inhibitors using computational modeling: A BEAT AML project study. <em>Leukemia Research, 77</em>, 42&ndash;50. <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank" rel="noopener">doi:10.1016/j.leukres.2018.11.010 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-7" class="mb-2">Drusbosky, L. M., Singh, N. K., Hawkins, K. E., et al. (2019). A genomics-informed computational biology platform prospectively predicts treatment responses in AML and MDS patients. <em>Blood Advances, 3</em>(12), 1837&ndash;1847. <a href="https://doi.org/10.1182/bloodadvances.2018028316" target="_blank" rel="noopener">doi:10.1182/bloodadvances.2018028316 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
             </ol>
             <p class="mt-3 mb-0 text-muted" style="font-size: 0.88rem;"><a href="../research.html">View all publications, presentations &amp; patents <i class="fas fa-arrow-right fa-xs" aria-hidden="true"></i></a></p>
           </div>
@@ -242,8 +275,8 @@
         <div class="card" style="border-color: var(--border-color);">
           <div class="card-body" style="font-size: 0.9rem;">
             <h4 class="h6 mb-2"><i class="fas fa-quote-left me-2" aria-hidden="true" style="color: var(--primary-accent);"></i> Cite this article</h4>
-            <p class="mb-2" style="color: var(--light-text); line-height: 1.6;">Vidva, R. (2025). What a digital twin of a leukemia patient actually is. <em>Robinson Vidva</em>. <a href="https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html">https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html</a></p>
-            <button class="btn btn-sm btn-outline-secondary" onclick="navigator.clipboard.writeText('Vidva, R. (2025). What a digital twin of a leukemia patient actually is. Robinson Vidva. https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html'); this.innerHTML='<i class=\'fas fa-check me-1\'></i> Copied!'; setTimeout(() => this.innerHTML='<i class=\'fas fa-copy me-1\'></i> Copy citation', 2000);">
+            <p class="mb-2" style="color: var(--light-text); line-height: 1.6;">Vidva, R. (2025). Digital twins in medicine, with a leukemia example. <em>Robinson Vidva</em>. <a href="https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html">https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html</a></p>
+            <button class="btn btn-sm btn-outline-secondary" onclick="navigator.clipboard.writeText('Vidva, R. (2025). Digital twins in medicine, with a leukemia example. Robinson Vidva. https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html'); this.innerHTML='<i class=\'fas fa-check me-1\'></i> Copied!'; setTimeout(() => this.innerHTML='<i class=\'fas fa-copy me-1\'></i> Copy citation', 2000);">
               <i class="fas fa-copy me-1" aria-hidden="true"></i> Copy citation
             </button>
           </div>
@@ -257,7 +290,7 @@
         </a>
         <div class="text-end">
           <small class="text-muted">Share this article:</small><br>
-          <a href="https://twitter.com/intent/tweet?text=What%20a%20digital%20twin%20of%20a%20leukemia%20patient%20actually%20is&url=https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Share on X">
+          <a href="https://twitter.com/intent/tweet?text=Digital%20twins%20in%20medicine%2C%20with%20a%20leukemia%20example&url=https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Share on X">
             <i class="fab fa-x-twitter" aria-hidden="true"></i>
           </a>
           <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary ms-1" aria-label="Share on LinkedIn">
