@@ -31,6 +31,7 @@ Personal site for Robinson Vidva — biomedical data scientist with 18 years in 
 
 - **[Over-representation analysis: what the numbers mean](https://robinsonvidva.com/articles/gene-set-over-representation-analysis.html)** — a plain guide to gene-set enrichment tests and how to run one in the browser with enrichlite.
 - **[Drug Repositioning Through Computational Modeling](https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html)** — how computational modeling enables drug repositioning from autoimmune disease to oncology to natural-compound integration for enhanced cancer therapy.
+- **[Digital twins in medicine, with a leukemia example](https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html)** — what a digital twin is, and a worked example from the Beat AML BET-inhibitor study.
 - **[MyVivarium: Streamlining Lab Animal Colony Management](https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html)** — an open-source, cloud-based application for managing research animal colonies with IoT-based environmental monitoring. Published in *Computational and Structural Biotechnology Journal*.
 
 ## Tech Stack
