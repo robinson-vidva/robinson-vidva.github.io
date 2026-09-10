@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://challenges.cloudflare.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <title>What a digital twin of a leukemia patient actually is | Robinson Vidva</title>
+  <meta name="description" content="How a patient-specific network model is built from a leukemia genome, how a drug is tested in it, how the predictions were checked against ex vivo drug sensitivity in the Beat AML cohort, and what the accuracy figures do and do not mean.">
+  <meta name="keywords" content="digital twin, acute myeloid leukemia, AML, Beat AML, computational biology modeling, BET inhibitor, JQ1, drug response prediction, precision medicine, systems biology">
+  <meta name="author" content="Robinson Vidva">
+  <meta property="article:published_time" content="2025-04-15">
+  <meta property="article:modified_time" content="2025-04-15">
+  <meta property="article:author" content="Robinson Vidva">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="digital twin">
+  <meta property="article:tag" content="acute myeloid leukemia">
+  <meta property="article:tag" content="precision medicine">
+  <meta property="article:tag" content="computational modeling">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:title" content="What a digital twin of a leukemia patient actually is | Robinson Vidva">
+  <meta property="og:description" content="How a leukemia genome becomes a simulation, how a drug is tested in it, and what a 93 percent match with the dish does and does not mean.">
+  <meta property="og:image" content="https://robinsonvidva.com/images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html">
+  <meta property="og:url" content="https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What a digital twin of a leukemia patient actually is | Robinson Vidva">
+  <meta name="twitter:description" content="How a leukemia genome becomes a simulation, how a drug is tested in it, and what a 93 percent match with the dish does and does not mean.">
+  <meta name="twitter:image" content="https://robinsonvidva.com/images/og-preview.png">
+
+  <link rel="alternate" type="application/rss+xml" title="Articles | Robinson Vidva" href="https://robinsonvidva.com/feed.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+  <link href="../style.css?v=33" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FRPNE4J9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5FRPNE4J9N');
+  </script>
+
+  <!-- BreadcrumbList Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://robinsonvidva.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://robinsonvidva.com/articles.html"},
+      {"@type": "ListItem", "position": 3, "name": "What a digital twin of a leukemia patient actually is"}
+    ]
+  }
+  </script>
+
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "What a digital twin of a leukemia patient actually is",
+    "alternativeHeadline": "How a genome becomes a simulation, and what a 93 percent match does and does not mean",
+    "author": {
+      "@type": "Person",
+      "name": "Robinson Vidva",
+      "url": "https://robinsonvidva.com",
+      "jobTitle": "Biomedical Data Scientist",
+      "sameAs": [
+        "https://orcid.org/0000-0002-2604-5448",
+        "https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en",
+        "https://www.linkedin.com/in/robinson-vidva/"
+      ]
+    },
+    "datePublished": "2025-04-15",
+    "dateModified": "2025-04-15",
+    "publisher": {
+      "@type": "Person",
+      "name": "Robinson Vidva"
+    },
+    "description": "How a patient-specific network model is built from a leukemia genome, how a drug is tested in it, how the predictions were checked against ex vivo drug sensitivity in the Beat AML cohort, and what the accuracy figures mean.",
+    "keywords": ["digital twin", "acute myeloid leukemia", "Beat AML", "computational biology modeling", "BET inhibitor", "drug response prediction", "precision medicine"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html"
+    },
+    "image": "https://robinsonvidva.com/images/og-preview.png",
+    "inLanguage": "en",
+    "about": [
+      {"@type": "Thing", "name": "Acute myeloid leukemia"},
+      {"@type": "Thing", "name": "Computational biology"},
+      {"@type": "Thing", "name": "Precision medicine"}
+    ],
+    "citation": [
+      {"@type": "ScholarlyArticle", "name": "Predicting response to BET inhibitors using computational modeling: A BEAT AML project study", "url": "https://doi.org/10.1016/j.leukres.2018.11.010"},
+      {"@type": "ScholarlyArticle", "name": "A genomics-informed computational biology platform prospectively predicts treatment responses in AML and MDS patients", "url": "https://doi.org/10.1182/bloodadvances.2018028316"}
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+      <img src="../images/Original.png" alt="Robinson Vidva" width="360" height="120" class="navbar-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../tools.html">Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="../research.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../articles.html">Articles</a></li>
+        <li class="nav-item"><a class="nav-link" href="../cv.html">CV</a></li>
+        <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="bg-secondary text-white text-center py-5">
+  <div class="container">
+    <div class="mb-2">
+      <a href="../articles.html" class="btn btn-outline-light btn-sm"><i class="fas fa-arrow-left me-2" aria-hidden="true"></i> Back to Articles</a>
+    </div>
+    <h1 class="display-4">What a digital twin of a leukemia patient actually is</h1>
+    <p class="lead">How a genome becomes a simulation, and what a 93 percent match does and does not mean</p>
+    <div class="mt-3">
+      <span class="badge bg-light text-dark">Research</span>
+      <span class="badge bg-light text-dark">Precision Medicine</span>
+      <span class="text-white-50 ms-3"><i class="far fa-calendar" aria-hidden="true"></i> April 15, 2025</span>
+      <span class="text-white-50 ms-3"><i class="far fa-clock" aria-hidden="true"></i> 5 min read</span>
+      <span class="text-white-50 ms-3 view-count" id="article-views"><i class="far fa-eye" aria-hidden="true"></i> <span class="view-number">&mdash;</span> views</span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="container my-4">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+
+      <section class="mb-5">
+        <p class="lead">"Digital twin" gets used for almost anything with a patient's data in it. In the Beat AML modeling work it meant one specific thing: a network model of a patient's leukemia cells, built from the tumor genome, in which a drug can be tried before the patient ever receives it. This is what went in, what came out, and how the predictions were checked.</p>
+
+        <div class="alert alert-secondary mt-4" role="note" style="font-size:0.9rem;">
+          <strong>Note:</strong> This article describes published research methods. It is not medical advice, and the drug discussed (JQ1) is a research compound, not an approved treatment.
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2>From a genome to a network</h2>
+        <p>The input is the list of somatic mutations and copy-number changes found in the patient's leukemia sample. Each one is translated into what it does to a protein: a loss of function, a gain, an amplification, a deletion. Those changes are then applied to a model of the cell's signaling and metabolic pathways, assembled from the literature as thousands of curated relationships between proteins, metabolites, and genes.</p>
+        <p>Solving the model gives a steady-state activity level for every node in the network. The result is a patient-specific map of which pathways are pushed up and which are pushed down by that particular set of mutations <sup><a href="#ref-1">[1]</a></sup>. That map is the twin. It is not a picture of the patient. It is a set of predicted pathway activities for the tumor cell.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Trying a drug in it</h2>
+        <p>A drug is represented by its targets and how strongly it inhibits each of them. Simulating a BET inhibitor such as JQ1 means turning down BRD4 in the model and solving it again. The many readouts that change, proliferation, survival, and other leukemia-relevant outputs, are combined into one number, a disease inhibition score. If the score crosses a threshold, the patient is predicted to respond <sup><a href="#ref-1">[1]</a></sup>.</p>
+        <p>Because the simulation is cheap, the same twin can be run against many drugs and combinations. That is the practical point: a genome takes days to sequence, a living sample is needed for a laboratory sensitivity test, but a model can be queried as often as wanted.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Checking it against the dish</h2>
+        <p>The Beat AML program sequenced 672 samples from 562 patients and, for the same samples, measured how the leukemia cells responded to a panel of drugs in the laboratory <sup><a href="#ref-2">[2]</a></sup>. That makes it a rare place to test a prediction: the genome and the measured response exist for the same patient.</p>
+        <p>One hundred Beat AML patients were selected at random. For each, a twin was built from the genome alone and JQ1 was simulated. The predicted response was then compared with the measured ex vivo sensitivity. The two agreed in 93 percent of patients. Sensitivity was 97.7 percent and specificity 64.3 percent <sup><a href="#ref-1">[1]</a></sup>.</p>
+        <p>Those two numbers say different things, and the second matters as much as the first. Nearly every patient whose cells responded in the dish was called a responder by the model. But about a third of patients whose cells did not respond were also called responders. The model errs toward predicting response. For a screening tool that is a tolerable direction of error; for choosing a single treatment it is not, and it is why the specificity is reported alongside the headline figure.</p>
+        <p>The twins also produced something a yes-or-no answer cannot: patterns. Samples with a deletion of 7q or loss of chromosome 7, gain of chromosome 8, a deletion of 5q, or mutations that dysregulate the ERK pathway responded to JQ1 both in the model and in the dish <sup><a href="#ref-1">[1]</a></sup>. That is a testable hypothesis about who to enrol in a BET-inhibitor trial, which is more useful than a hundred individual predictions.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>A harder test</h2>
+        <p>Matching a laboratory assay is one thing; matching what happened to the patient is another. In a prospective pilot study, the same modeling platform was given genomic data from 50 patients with myelodysplastic syndrome or AML, blinded to the treatment each patient was actually prescribed, and asked to predict the response. Across 61 patient-treatment pairs the prediction was correct in 55, an accuracy of 90 percent, with sensitivity of 94 percent and specificity of 88 percent. Laboratory measurements of the predicted pathway activations agreed in 17 of 19 samples <sup><a href="#ref-3">[3]</a></sup>.</p>
+        <p>The same approach was extended, drug by drug, to venetoclax, CDK4/6 inhibitors, dasatinib, and BET inhibitors in combination with palbociclib or sorafenib, each time checked against Beat AML sensitivity data <sup><a href="#ref-4">[4]</a>, <a href="#ref-5">[5]</a></sup>, and, in a separate line of work, the same kind of model was combined across cell types to predict the cytokine output of inflamed tissue and a tumor microenvironment <sup><a href="#ref-6">[6]</a></sup>.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>What a twin cannot do</h2>
+        <ul>
+          <li><strong>It knows only what the curated network knows.</strong> A mutation with no characterized effect on a protein contributes nothing to the model.</li>
+          <li><strong>It was built from DNA.</strong> The Beat AML study used mutations and copy number, not expression. Two patients with the same mutations get the same twin.</li>
+          <li><strong>The dish is not the patient.</strong> Ex vivo sensitivity is a laboratory proxy. The prospective study is the closer test, and it covered 50 patients.</li>
+          <li><strong>Specificity of 64 percent means false positives.</strong> A predicted response is a reason to test, not a reason to treat.</li>
+        </ul>
+        <p>Read with those limits in mind, the result is still a clear one. A model built from a genome, with no access to the measured response, agreed with the laboratory in 93 percent of cases and with clinical outcome in 90 percent. That is what a digital twin of a leukemia patient is: a pathway model of the tumor cell, accurate enough to rank drugs and to say which genomic groups are worth a trial, and not more than that.</p>
+      </section>
+
+      <section class="mb-5">
+        <div class="callout">
+          <i class="fas fa-flask" aria-hidden="true"></i>
+          <span>The Beat AML modeling papers and abstracts are listed on the <a href="../research.html">Research</a> page, and the project is summarized on <a href="../projects.html">Projects</a>.</span>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <div class="card border-primary">
+          <div class="card-header bg-primary text-white">
+            <h3 class="h5 mb-0"><i class="fas fa-book me-2" aria-hidden="true"></i> References</h3>
+          </div>
+          <div class="card-body" style="font-size: 0.92rem;">
+            <ol class="mb-0" style="padding-left: 1.2rem;">
+              <li id="ref-1" class="mb-2">Drusbosky, L. M., <strong>Vidva, R.</strong>, Gera, S., Lakshminarayana, A. V., Shyamasundar, V. P., Agrawal, A. K., Talawdekar, A., Abbasi, T., Vali, S., Tognon, C. E., Kurtz, S. E., Tyner, J. W., McWeeney, S. K., Druker, B. J., &amp; Cogle, C. R. (2019). Predicting response to BET inhibitors using computational modeling: A BEAT AML project study. <em>Leukemia Research, 77</em>, 42&ndash;50. <a href="https://doi.org/10.1016/j.leukres.2018.11.010" target="_blank" rel="noopener">doi:10.1016/j.leukres.2018.11.010 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-2" class="mb-2">Tyner, J. W., Tognon, C. E., Bottomly, D., et al. (2018). Functional genomic landscape of acute myeloid leukaemia. <em>Nature, 562</em>(7728), 526&ndash;531. <a href="https://doi.org/10.1038/s41586-018-0623-z" target="_blank" rel="noopener">doi:10.1038/s41586-018-0623-z <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-3" class="mb-2">Drusbosky, L. M., Singh, N. K., Hawkins, K. E., et al. (2019). A genomics-informed computational biology platform prospectively predicts treatment responses in AML and MDS patients. <em>Blood Advances, 3</em>(12), 1837&ndash;1847. <a href="https://doi.org/10.1182/bloodadvances.2018028316" target="_blank" rel="noopener">doi:10.1182/bloodadvances.2018028316 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-4" class="mb-2">Drusbosky, L., Abbasi, T., Vali, S., Radhakrishnan, S., Kumar Singh, N., Usmani, S., Parashar, D., <strong>Vidva, R.</strong>, Druker, B. J., Tognon, C. E., Lo, P., Tyner, J. W., &amp; Cogle, C. R. (2016). A genomic signature predicting venetoclax treatment response in AML identified by protein network mapping and validated by ex vivo drug sensitivity testing: A Beat AML project study. <em>Blood, 128</em>(22), 1713. <a href="https://doi.org/10.1182/blood.V128.22.1713.1713" target="_blank" rel="noopener">doi:10.1182/blood.V128.22.1713.1713 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-5" class="mb-2">Tyner, J. W., Druker, B. J., Kurtz, S. E., Tognon, C. E., Drusbosky, L. M., <strong>Vidva, R.</strong>, et al. (2018). Predicting response to BET inhibitor in combination with palbociclib/sorafenib using a computational model and its validation: A Beat AML project study. <em>Blood, 132</em>(Suppl 1), 1540. <a href="https://doi.org/10.1182/blood-2018-99-115284" target="_blank" rel="noopener">doi:10.1182/blood-2018-99-115284 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+              <li id="ref-6" class="mb-2">Fischer, C. L., Bates, A. M., Lanzel, E. A., Guthmiller, J. M., Johnson, G. K., Singh, N. K., Kumar, A., <strong>Vidva, R.</strong>, Abbasi, T., Vali, S., Xie, X. J., Zeng, E., &amp; Brogden, K. A. (2019). Computational models accurately predict multi-cell biomarker profiles in inflammation and cancer. <em>Scientific Reports, 9</em>, 10877. <a href="https://doi.org/10.1038/s41598-019-47381-4" target="_blank" rel="noopener">doi:10.1038/s41598-019-47381-4 <i class="fas fa-external-link-alt fa-xs" aria-hidden="true"></i></a></li>
+            </ol>
+            <p class="mt-3 mb-0 text-muted" style="font-size: 0.88rem;"><a href="../research.html">View all publications, presentations &amp; patents <i class="fas fa-arrow-right fa-xs" aria-hidden="true"></i></a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cite this article -->
+      <section class="mb-5">
+        <div class="card" style="border-color: var(--border-color);">
+          <div class="card-body" style="font-size: 0.9rem;">
+            <h4 class="h6 mb-2"><i class="fas fa-quote-left me-2" aria-hidden="true" style="color: var(--primary-accent);"></i> Cite this article</h4>
+            <p class="mb-2" style="color: var(--light-text); line-height: 1.6;">Vidva, R. (2025). What a digital twin of a leukemia patient actually is. <em>Robinson Vidva</em>. <a href="https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html">https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html</a></p>
+            <button class="btn btn-sm btn-outline-secondary" onclick="navigator.clipboard.writeText('Vidva, R. (2025). What a digital twin of a leukemia patient actually is. Robinson Vidva. https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html'); this.innerHTML='<i class=\'fas fa-check me-1\'></i> Copied!'; setTimeout(() => this.innerHTML='<i class=\'fas fa-copy me-1\'></i> Copy citation', 2000);">
+              <i class="fas fa-copy me-1" aria-hidden="true"></i> Copy citation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Navigation -->
+      <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top">
+        <a href="../articles.html" class="btn btn-outline-primary">
+          <i class="fas fa-arrow-left me-2" aria-hidden="true"></i> Back to All Articles
+        </a>
+        <div class="text-end">
+          <small class="text-muted">Share this article:</small><br>
+          <a href="https://twitter.com/intent/tweet?text=What%20a%20digital%20twin%20of%20a%20leukemia%20patient%20actually%20is&url=https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Share on X">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary ms-1" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="text-center py-4">
+  <div class="container">
+    <div class="social-links mb-3">
+      <a href="https://www.linkedin.com/in/robinson-vidva/" target="_blank" rel="noopener" title="LinkedIn" aria-label="Visit Robinson Vidva on LinkedIn" class="social-icon">
+        <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/robinson-vidva" target="_blank" rel="noopener" title="GitHub" aria-label="Visit Robinson Vidva on GitHub" class="social-icon">
+        <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="View Robinson Vidva on Google Scholar" class="social-icon">
+        <i class="fab fa-google-scholar fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://orcid.org/0000-0002-2604-5448" target="_blank" rel="noopener" title="ORCID" aria-label="View Robinson Vidva ORCID profile" class="social-icon">
+        <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.researchgate.net/profile/Robinson-Vidva" target="_blank" rel="noopener" title="ResearchGate" aria-label="View Robinson Vidva on ResearchGate" class="social-icon"><i class="fab fa-researchgate fa-2x" aria-hidden="true"></i></a>
+    </div>
+    <p class="mb-1">Email: <a href="mailto:hello@robinsonvidva.com">hello@robinsonvidva.com</a></p>
+    <p class="mb-1 site-views-footer"><i class="far fa-eye" aria-hidden="true"></i> <span class="page-views">&mdash;</span> views on this page &middot; <span id="total-site-views">&mdash;</span> site total</p>
+    <p class="mb-0">&copy; 2024-2026 Robinson Vidva. All rights reserved. | <a href="../terms.html" style="color: inherit;">Terms & Privacy</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>300)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
+<script defer src="../scripts/enhance.js?v=3"></script>
+</body>
+</html>
