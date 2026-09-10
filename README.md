@@ -29,6 +29,7 @@ Personal site for Robinson Vidva — biomedical data scientist with 18 years in 
 
 ## Articles
 
+- **[Over-representation analysis: what the numbers mean](https://robinsonvidva.com/articles/gene-set-over-representation-analysis.html)** — a plain guide to gene-set enrichment tests and how to run one in the browser with enrichlite.
 - **[Drug Repositioning Through Computational Modeling](https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html)** — how computational modeling enables drug repositioning from autoimmune disease to oncology to natural-compound integration for enhanced cancer therapy.
 - **[MyVivarium: Streamlining Lab Animal Colony Management](https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html)** — an open-source, cloud-based application for managing research animal colonies with IoT-based environmental monitoring. Published in *Computational and Structural Biotechnology Journal*.
 

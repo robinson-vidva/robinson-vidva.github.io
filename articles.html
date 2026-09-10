@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://challenges.cloudflare.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
   <title>Articles | Robinson Vidva</title>
-  <meta name="description" content="Articles by Robinson Vidva on computational drug repositioning and MyVivarium, an open-source lab animal colony management platform.">
+  <meta name="description" content="Articles by Robinson Vidva on gene-set over-representation analysis, computational drug repositioning, and MyVivarium, an open-source lab animal colony management platform.">
   <meta name="keywords" content="Robinson Vidva, articles, drug repositioning, computational biology, MyVivarium, lab animal management, drug discovery, precision medicine">
   <meta name="author" content="Robinson Vidva">
 
@@ -79,12 +79,18 @@
         {
           "@type": "ListItem",
           "position": 1,
+          "url": "https://robinsonvidva.com/articles/gene-set-over-representation-analysis.html",
+          "name": "Over-representation analysis: what the numbers mean"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
           "url": "https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html",
           "name": "Drug Repositioning Through Computational Modeling"
         },
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": 3,
           "url": "https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html",
           "name": "MyVivarium: Streamlining Lab Animal Colony Management"
         }
@@ -125,6 +131,20 @@
 <main class="container my-4" id="main">
   <section class="mb-5" id="articles-list">
     <h2>Published articles</h2>
+
+    <!-- Article 3: Over-representation analysis -->
+    <div class="article-item" data-category="methods" data-date="2026-09-10">
+      <div class="article-meta">
+        <span class="badge badge-publication">Methods</span>
+        <span class="text-muted"><i class="far fa-calendar" aria-hidden="true"></i> September 10, 2026</span>
+        <span class="text-muted ms-2 view-count" data-path="/articles/gene-set-over-representation-analysis.html"><i class="far fa-eye" aria-hidden="true"></i> <span class="view-number">&mdash;</span> views</span>
+      </div>
+      <h3><a href="articles/gene-set-over-representation-analysis.html">Over-representation analysis: what the numbers mean</a></h3>
+      <p>What a gene-set enrichment result says and does not say: the three inputs, the test with worked numbers, multiple-testing correction, why GO, Reactome, and Hallmark disagree, and how to run it in the browser.</p>
+      <a href="articles/gene-set-over-representation-analysis.html" class="curriculum-toggle" style="border:none; background:none;">
+        Read full article <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i>
+      </a>
+    </div>
 
     <!-- Article 2: Drug Repositioning -->
     <div class="article-item" data-category="drug-discovery" data-date="2026-02-01">
