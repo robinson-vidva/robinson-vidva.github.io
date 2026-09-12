@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-09-11T09:24:48Z",
-  "totalViews": 2384,
+  "lastUpdated": "2026-09-12T09:05:40Z",
+  "totalViews": 2392,
   "pages": {
     "/research.html": 268,
     "/cv.html": 247,
-    "/articles.html": 173,
+    "/articles.html": 176,
     "/articles/drug-repositioning-computational-approaches.html": 87,
     "/resume.html": 82,
     "/projects.html": 77,
@@ -14,16 +14,16 @@
     "/contact.html": 42,
     "/terms.html": 13,
     "/kineneo-demo/": 3,
+    "/articles/gene-set-over-representation-analysis.html": 2,
     "/cv": 2,
     "/kineneo-demo/index.html": 2,
-    "/articles/gene-set-over-representation-analysis.html": 1,
     "/contact": 1,
     "/kineneo-demo/contact.html": 1,
     "/kineneo-demo/research.html": 1,
     "/kineneo-demo/terms.html": 1,
     "/kineneo-demo/tools.html": 1,
     "/neokibe": 1,
-    "/": 1186,
-    "/index.html": 1186
+    "/": 1190,
+    "/index.html": 1190
   }
 }
