@@ -1,5 +1,13 @@
 # CV PDF build source
 
+> **As of 2026-09-12 the published PDF (`documents/Robinson_Vidva_CV.pdf`) is generated from the
+> Career Hub CV builder (`Career Hub/09_Backup/scripts/build_cv.py`, run with `DEID=1`), which
+> produces the de-identified public version of the same CV used for applications: no phone number,
+> no personal email (hello@robinsonvidva.com only), location "Washington, DC area", references
+> "available on request". Copy the resulting PDF into `documents/` and bump the `?v=` cache-buster
+> in `cv.html`. The `cv_source.html` + `build.js` pipeline below is retained for reference only and
+> is no longer the authoritative source.
+
 This folder holds the source that generates `documents/Robinson_Vidva_CV.pdf`.
 
 It lives on `main` alongside the site but is **not linked anywhere** — it does not appear
