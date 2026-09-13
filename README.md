@@ -1,6 +1,6 @@
 # robinsonvidva.com
 
-Personal site for Robinson Vidva — biomedical data scientist with 18 years in computational biology, multi-omics analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Beyond the portfolio, the site is a hub for free, open-source computational-biology tools.
+Personal site for Robinson Vidva — biomedical data scientist with 16+ years in computational biology, multi-omics analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Beyond the portfolio, the site is a hub for free, open-source computational-biology tools.
 
 **Live site:** [robinsonvidva.com](https://robinsonvidva.com)
 
