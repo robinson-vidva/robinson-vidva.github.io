@@ -25,7 +25,7 @@ Personal site for Robinson Vidva — biomedical data scientist with 16+ years in
 - **[drugtargets](https://drugtargets.robinsonvidva.com)** — drug-target exploration & repurposing (Open Targets + openFDA).
 - **[neokine](https://robinsonvidva.com/neokine/)** — client-side MediaPipe pose visualization with simple kinematics (angles, velocity, asymmetry).
 - **[neokine-labs](https://robinsonvidva.com/neokine-labs/)** — experimental MediaPipe Holistic pose/face playground.
-- **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); a v2 redesign is in development.
+- **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); version 2 is complete and in staged deployment at the University of Dayton (2026).
 
 ## Articles
 
@@ -58,7 +58,9 @@ Personal site for Robinson Vidva — biomedical data scientist with 16+ years in
 ├── terms.html              # Terms of use & privacy policy
 ├── 404.html                # Custom error page
 ├── articles/               # Individual article pages
+│   ├── digital-twin-leukemia-patient.html
 │   ├── drug-repositioning-computational-approaches.html
+│   ├── gene-set-over-representation-analysis.html
 │   └── myvivarium-lab-animal-management.html
 ├── scripts/
 │   ├── enhance.js          # Progress bar, scroll-reveal, count-up
