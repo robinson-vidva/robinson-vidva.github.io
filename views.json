@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-09-17T09:52:56Z",
-  "totalViews": 2453,
+  "lastUpdated": "2026-09-18T09:28:15Z",
+  "totalViews": 2460,
   "pages": {
-    "/research.html": 274,
+    "/research.html": 275,
     "/cv.html": 258,
-    "/articles.html": 179,
+    "/articles.html": 180,
     "/articles/drug-repositioning-computational-approaches.html": 87,
-    "/projects.html": 84,
+    "/projects.html": 85,
     "/resume.html": 82,
-    "/tools.html": 81,
+    "/tools.html": 82,
     "/certifications.html": 74,
     "/articles/myvivarium-lab-animal-management.html": 46,
     "/contact.html": 43,
     "/terms.html": 13,
-    "/articles/gene-set-over-representation-analysis.html": 4,
+    "/articles/gene-set-over-representation-analysis.html": 5,
     "/kineneo-demo/": 3,
     "/cv": 2,
     "/kineneo-demo/index.html": 2,
@@ -23,7 +23,7 @@
     "/kineneo-demo/terms.html": 1,
     "/kineneo-demo/tools.html": 1,
     "/neokibe": 1,
-    "/": 1215,
-    "/index.html": 1215
+    "/": 1217,
+    "/index.html": 1217
   }
 }
