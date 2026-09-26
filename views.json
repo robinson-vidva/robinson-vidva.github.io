@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-09-25T10:03:27Z",
-  "totalViews": 2515,
+  "lastUpdated": "2026-09-26T09:44:50Z",
+  "totalViews": 2520,
   "pages": {
-    "/research.html": 281,
-    "/cv.html": 262,
+    "/research.html": 282,
+    "/cv.html": 263,
     "/articles.html": 183,
     "/articles/drug-repositioning-computational-approaches.html": 88,
     "/projects.html": 88,
-    "/tools.html": 86,
+    "/tools.html": 87,
     "/resume.html": 82,
     "/certifications.html": 74,
     "/contact.html": 47,
@@ -24,7 +24,7 @@
     "/kineneo-demo/tools.html": 1,
     "/neokibe": 1,
     "/pathsim/": 1,
-    "/": 1242,
-    "/index.html": 1242
+    "/": 1244,
+    "/index.html": 1244
   }
 }
