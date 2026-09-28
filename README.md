@@ -37,9 +37,9 @@ Personal site for Robinson Vidva — biomedical data scientist with 16+ years in
 ## Tech Stack
 
 - HTML5, CSS3, vanilla JavaScript (no build step)
-- [Bootstrap 5.3](https://getbootstrap.com/)
-- [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) (Google Fonts)
-- [Font Awesome 6](https://fontawesome.com/)
+- [Bootstrap 5.3](https://getbootstrap.com/) (jsDelivr, pinned with SRI)
+- [Source Serif 4](https://github.com/adobe-fonts/source-serif) (self-hosted woff2 in `fonts/`)
+- [Font Awesome 6](https://fontawesome.com/) (cdnjs, pinned with SRI)
 - [Formspree](https://formspree.io/) (contact form) + [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) (bot protection)
 - GitHub Pages with custom domain
 - Google Analytics (gtag.js); per-page view counts written to `views.json` by a GitHub Action
@@ -62,6 +62,7 @@ Personal site for Robinson Vidva — biomedical data scientist with 16+ years in
 │   ├── drug-repositioning-computational-approaches.html
 │   ├── gene-set-over-representation-analysis.html
 │   └── myvivarium-lab-animal-management.html
+├── fonts/                  # Source Serif 4 woff2 (latin, latin-ext; upright, italic)
 ├── scripts/
 │   ├── enhance.js          # Page view counts from views.json
 │   └── fetch_ga_views.py   # GA → views.json (run by GitHub Action)
