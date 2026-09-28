@@ -38,7 +38,7 @@ Personal site for Robinson Vidva — biomedical data scientist with 16+ years in
 
 - HTML5, CSS3, vanilla JavaScript (no build step)
 - [Bootstrap 5.3](https://getbootstrap.com/)
-- [DM Sans](https://fonts.google.com/specimen/DM+Sans) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (Google Fonts)
+- [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) (Google Fonts)
 - [Font Awesome 6](https://fontawesome.com/)
 - [Formspree](https://formspree.io/) (contact form) + [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) (bot protection)
 - GitHub Pages with custom domain
@@ -63,7 +63,7 @@ Personal site for Robinson Vidva — biomedical data scientist with 16+ years in
 │   ├── gene-set-over-representation-analysis.html
 │   └── myvivarium-lab-animal-management.html
 ├── scripts/
-│   ├── enhance.js          # Progress bar, scroll-reveal, count-up
+│   ├── enhance.js          # Page view counts from views.json
 │   └── fetch_ga_views.py   # GA → views.json (run by GitHub Action)
 ├── style.css               # Site-wide stylesheet
 ├── images/                 # Logo, favicons, PWA icons
