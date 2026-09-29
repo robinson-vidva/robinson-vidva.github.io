@@ -847,10 +847,6 @@ p, li, .research-item, .recent-pub, .tool-desc, .article-meta, .job-meta, .proje
 .project-period { font-size: 0.95rem; }
 .contact-label, .tool-status { font-size: 0.9rem; }
 
-/* Footer colophon */
-.colophon { font-size: 0.82rem; opacity: 0.8; margin: 0.75rem auto 0.5rem; max-width: 40rem; }
-footer .colophon { color: var(--paper) !important; }
-
 /* =========================================================
    Articles index: a dated list, date column on the left
    ========================================================= */
