@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-10-02T10:56:44Z",
-  "totalViews": 2590,
+  "lastUpdated": "2026-10-03T10:16:02Z",
+  "totalViews": 2595,
   "pages": {
     "/research.html": 289,
-    "/cv.html": 267,
+    "/cv.html": 268,
     "/articles.html": 190,
     "/tools.html": 96,
     "/projects.html": 93,
@@ -12,7 +12,7 @@
     "/certifications.html": 74,
     "/contact.html": 49,
     "/articles/myvivarium-lab-animal-management.html": 46,
-    "/articles/gene-set-over-representation-analysis.html": 14,
+    "/articles/gene-set-over-representation-analysis.html": 15,
     "/terms.html": 13,
     "/kineneo-demo/": 4,
     "/cv": 2,
@@ -25,7 +25,8 @@
     "/kineneo-demo/tools.html": 1,
     "/neokibe": 1,
     "/pathsim/": 1,
-    "/": 1273,
-    "/index.html": 1273
+    "/tools": 1,
+    "/": 1275,
+    "/index.html": 1275
   }
 }
