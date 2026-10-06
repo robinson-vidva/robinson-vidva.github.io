@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-10-05T12:07:11Z",
-  "totalViews": 2596,
+  "lastUpdated": "2026-10-06T11:51:24Z",
+  "totalViews": 2602,
   "pages": {
-    "/research.html": 289,
+    "/research.html": 290,
     "/cv.html": 268,
     "/articles.html": 190,
-    "/tools.html": 96,
-    "/projects.html": 93,
-    "/articles/drug-repositioning-computational-approaches.html": 88,
+    "/tools.html": 97,
+    "/projects.html": 94,
+    "/articles/drug-repositioning-computational-approaches.html": 89,
     "/resume.html": 82,
     "/certifications.html": 74,
     "/contact.html": 49,
@@ -26,7 +26,7 @@
     "/neokibe": 1,
     "/pathsim/": 1,
     "/tools": 1,
-    "/": 1275,
-    "/index.html": 1275
+    "/": 1277,
+    "/index.html": 1277
   }
 }
