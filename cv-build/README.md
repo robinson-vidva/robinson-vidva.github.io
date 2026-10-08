@@ -4,8 +4,8 @@
 > CV Word document that is the source of truth for applications
 > (`Career Hub/01_Master/CV/Robinson Vidva - CV.docx`). `Career Hub/09_Backup/scripts/deid_cv.py` strips the
 > phone number, swaps the personal email for hello@robinsonvidva.com, sets the location to
-> "Washington, DC area" and replaces the references with "Available on request"; LibreOffice converts the
-> result to PDF. `make_docs.py --publish` in the Career Hub copies both public PDFs here, bumps the `?v=`
+> "Washington, DC area" and replaces the references with "Available on request"; Microsoft Word exports the
+> PDF (Quartz producer). `make_docs.py --publish` in the Career Hub copies both public PDFs here, bumps the `?v=`
 > cache-busters in `cv.html`, commits and pushes. The earlier `build_cv.py` builder (2026-09-12) and the
 > `cv_source.html` + `build.js` pipeline below are retained for reference only.
 
