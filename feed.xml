@@ -23,7 +23,7 @@
       <link>https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html</link>
       <guid>https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html</guid>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <description>Exploring how computational modeling and network-based methods accelerate the discovery of new therapeutic uses for existing drugs — from cancer combination therapies to inflammatory disease treatment.</description>
+      <description>A practitioner’s account of using pathway models to find new uses for existing drugs in rheumatoid arthritis and cancer: what the models predicted, how they were checked, and where they fell short.</description>
       <category>Drug Discovery</category>
       <category>Computational Biology</category>
     </item>
@@ -39,11 +39,11 @@
     </item>
 
     <item>
-      <title>MyVivarium: Streamlining Lab Animal Colony Management</title>
+      <title>MyVivarium: Lab Animal Colony Management</title>
       <link>https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html</link>
       <guid>https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html</guid>
       <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
-      <description>An open-source, cloud-based application for managing research animal colonies with IoT-based environmental monitoring. Published in Computational and Structural Biotechnology Journal.</description>
+      <description>Why I built an open-source colony system for small labs, what it does at the rack, and what changed in version 2. Published in Computational and Structural Biotechnology Journal, 2025.</description>
       <category>Research Tools</category>
       <category>Open Source</category>
     </item>

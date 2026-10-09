@@ -971,16 +971,6 @@ p, li, .research-item, .recent-pub, .tool-desc, .article-meta, .job-meta, .proje
 }
 .article-page article section h3 { font-size: 1.2rem; margin-top: 1.75rem; }
 
-/* Drop cap on the opening paragraph */
-.article-page article .col-lg-8 > section:first-of-type > p:first-of-type::first-letter {
-  float: left;
-  font-size: 3.9em;
-  line-height: 0.82;
-  padding: 0.09em 0.1em 0 0;
-  font-weight: 700;
-  color: var(--navy);
-}
-
 /* Figures and notes */
 .article-page article figure { margin: 2rem 0; }
 .article-page article figcaption,
