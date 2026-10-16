@@ -1,6 +1,6 @@
 # robinsonvidva.com
 
-Personal site for Robinson Vidva — biomedical data scientist with 16+ years in computational biology, multi-omics analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Beyond the portfolio, the site is a hub for free, open-source computational-biology tools.
+Personal site for Robinson Vidva — computational biologist with 16+ years in systems biology modeling, multi-omics analysis, neuroscience, immunology, immuno-oncology, and drug discovery. Beyond the portfolio, the site is a hub for free, open-source computational-biology tools.
 
 **Live site:** [robinsonvidva.com](https://robinsonvidva.com)
 
@@ -25,7 +25,7 @@ Personal site for Robinson Vidva — biomedical data scientist with 16+ years in
 - **[drugtargets](https://drugtargets.robinsonvidva.com)** — drug-target exploration & repurposing (Open Targets + openFDA).
 - **[neokine](https://robinsonvidva.com/neokine/)** — client-side MediaPipe pose visualization with simple kinematics (angles, velocity, asymmetry).
 - **[neokine-labs](https://robinsonvidva.com/neokine-labs/)** — experimental MediaPipe Holistic pose/face playground.
-- **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); version 2 is complete and in staged deployment at the University of Dayton (2026).
+- **[MyVivarium](https://demo.myvivarium.online)** — open-source vivarium colony management with IoT sensing (CSBJ 2025); version 2 is complete and being deployed at the University of Dayton (2026).
 
 ## Articles
 
