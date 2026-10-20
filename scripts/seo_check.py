@@ -6,8 +6,11 @@ Usage:
   python3 scripts/seo_check.py cv.html    # one or more pages
   python3 scripts/seo_check.py --strict   # exit 1 if any check is BAD
   python3 scripts/seo_check.py --summary  # one line per page
+  python3 scripts/seo_check.py --readability  # readability on every page, not only articles
 
 Focus keyphrase = first entry of <meta name="keywords"> on the page.
+Readability (Flesch, sentence and paragraph length, passive voice,
+transition words, subheadings) runs on articles; --strict ignores it.
 """
 import json
 import re
@@ -35,6 +38,7 @@ class Page(HTMLParser):
         self.images = []
         self.links = []
         self.paragraphs = []
+        self.blocks = []
         self.words = []
         self._stack = []
         self._skip = 0
@@ -69,8 +73,8 @@ class Page(HTMLParser):
         if tag == "h1" or re.fullmatch(r"h[2-6]", tag):
             self._text_target = tag
             self._buf = []
-        elif tag == "p":
-            self._text_target = "p"
+        elif tag in ("p", "li"):
+            self._text_target = tag
             self._buf = []
         elif tag == "img":
             self.images.append(a)
@@ -90,11 +94,14 @@ class Page(HTMLParser):
             self._text_target = None
         elif self._text_target and tag == self._text_target:
             text = clean("".join(self._buf))
-            if tag == "p":
+            if tag in ("p", "li"):
                 if text:
-                    self.paragraphs.append(text)
+                    if tag == "p":
+                        self.paragraphs.append(text)
+                    self.blocks.append((tag, text))
             else:
                 self.headings.append((int(tag[1]), text))
+                self.blocks.append((tag, text))
             self._text_target = None
 
     def handle_data(self, data):
@@ -134,7 +141,7 @@ def parse(path):
     return p
 
 
-def check(path, page, site_titles, site_descs):
+def check(path, page, site_titles, site_descs, force_readability=False):
     rel = path.relative_to(ROOT).as_posix()
     is_article = rel.startswith("articles/")
     r = []
@@ -256,7 +263,132 @@ def check(path, page, site_titles, site_descs):
                 add(OK, "Keyphrase density", f"{hits} uses, {dens:.1f}%; aim for 0.5-3%")
     else:
         add(OK, "Focus keyphrase", "none; add <meta name=\"keywords\"> with the keyphrase first")
-    return rel, r
+    rd = readability(page) if (is_article or force_readability) else []
+    return rel, r, rd
+
+
+TRANSITIONS = [
+    "accordingly", "additionally", "after", "afterward", "again", "all in all", "also", "although",
+    "altogether", "another", "as a result", "as an illustration", "as long as", "as soon as", "as well as",
+    "at last", "at least", "because", "before", "besides", "but", "by contrast", "certainly", "consequently",
+    "conversely", "despite", "earlier", "equally", "even if", "even so", "even though", "eventually",
+    "finally", "first", "firstly", "for example", "for instance", "for this reason", "further", "furthermore",
+    "hence", "however", "in addition", "in brief", "in conclusion", "in contrast", "in fact", "in other words",
+    "in particular", "in short", "in summary", "in the end", "in the meantime", "indeed", "instead", "last",
+    "lastly", "later", "likewise", "meanwhile", "moreover", "namely", "nevertheless", "next", "nonetheless",
+    "notably", "now", "on the contrary", "on the other hand", "once", "otherwise", "overall", "particularly",
+    "previously", "rather", "second", "secondly", "similarly", "since", "so", "so that", "specifically", "still",
+    "subsequently", "then", "thereafter", "therefore", "third", "thus", "to begin with", "to sum up", "unless",
+    "until", "whereas", "while", "yet",
+]
+PASSIVE_AUX = {"is", "are", "was", "were", "be", "been", "being", "get", "gets", "got"}
+IRREGULAR_PARTICIPLES = {
+    "built", "made", "done", "found", "given", "known", "seen", "shown", "taken", "written", "run", "set",
+    "put", "read", "held", "kept", "left", "lost", "met", "sent", "told", "thought", "understood", "chosen",
+    "drawn", "driven", "grown", "hidden", "led", "spent", "spread", "split", "won", "begun", "brought", "bought",
+    "caught", "cut", "fed", "felt", "fit", "hit", "hurt", "laid", "paid", "said", "sold", "sought", "taught",
+}
+
+
+def sentences(text):
+    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"'(])", text)
+    return [p.strip() for p in parts if len(re.findall(r"[A-Za-z]", p)) > 1]
+
+
+def syllables(word):
+    w = re.sub(r"[^a-z]", "", word.lower())
+    if not w:
+        return 0
+    if len(w) <= 3:
+        return 1
+    w = re.sub(r"(?:[^laeiouy]es|ed|[^laeiouy]e)$", "", w)
+    w = re.sub(r"^y", "", w)
+    return max(1, len(re.findall(r"[aeiouy]{1,2}", w)))
+
+
+def is_passive(sentence):
+    toks = re.findall(r"[A-Za-z']+", sentence.lower())
+    for i, t in enumerate(toks[:-1]):
+        if t in PASSIVE_AUX:
+            nxt = toks[i + 1]
+            if nxt.endswith("ly") and i + 2 < len(toks):
+                nxt = toks[i + 2]
+            if (nxt.endswith("ed") and len(nxt) > 3) or nxt in IRREGULAR_PARTICIPLES:
+                return True
+    return False
+
+
+END_SECTIONS = re.compile(r"^(references|cite this article|further reading|bibliography|notes)$", re.I)
+
+
+def readability(page):
+    r = []
+    blocks = []
+    for k, t in page.blocks:
+        if k.startswith("h") and END_SECTIONS.match(t.strip()):
+            break
+        blocks.append((k, t))
+    prose = [t for k, t in blocks if k in ("p", "li")]
+    text = " ".join(prose)
+    sents = sentences(text)
+    words = re.findall(r"[A-Za-z][A-Za-z'\-]*", text)
+    if len(sents) < 5 or len(words) < 100:
+        return [(OK, "Readability", "not enough prose to score")]
+
+    syl = sum(syllables(w) for w in words)
+    flesch = 206.835 - 1.015 * (len(words) / len(sents)) - 84.6 * (syl / len(words))
+    if flesch >= 60:
+        r.append((GOOD, "Flesch reading ease", f"{flesch:.0f}, plain English"))
+    elif flesch >= 50:
+        r.append((OK, "Flesch reading ease", f"{flesch:.0f}, fairly difficult"))
+    else:
+        r.append((BAD, "Flesch reading ease", f"{flesch:.0f}, difficult; shorter sentences and words help"))
+
+    long_s = [s for s in sents if len(re.findall(r"[A-Za-z0-9'\-]+", s)) > 20]
+    pct = 100 * len(long_s) / len(sents)
+    status = GOOD if pct <= 25 else OK if pct <= 30 else BAD
+    r.append((status, "Sentence length", f"{pct:.0f}% of {len(sents)} sentences over 20 words; aim under 25%"))
+
+    long_p = [t for t in prose if len(re.findall(r"[A-Za-z0-9'\-]+", t)) > 150]
+    worst = max((len(re.findall(r"[A-Za-z0-9'\-]+", t)) for t in prose), default=0)
+    if not long_p:
+        r.append((GOOD, "Paragraph length", f"longest {worst} words"))
+    elif worst <= 200:
+        r.append((OK, "Paragraph length", f"{len(long_p)} over 150 words; longest {worst}"))
+    else:
+        r.append((BAD, "Paragraph length", f"{len(long_p)} over 150 words; longest {worst}"))
+
+    passive = sum(1 for s in sents if is_passive(s))
+    pct = 100 * passive / len(sents)
+    status = GOOD if pct <= 10 else OK if pct <= 15 else BAD
+    r.append((status, "Passive voice", f"{pct:.0f}% of sentences; aim under 10%"))
+
+    pat = re.compile(r"\b(" + "|".join(re.escape(t) for t in sorted(TRANSITIONS, key=len, reverse=True)) + r")\b")
+    with_t = sum(1 for s in sents if pat.search(s.lower()))
+    pct = 100 * with_t / len(sents)
+    status = GOOD if pct >= 30 else OK if pct >= 20 else BAD
+    r.append((status, "Transition words", f"{pct:.0f}% of sentences; aim for 30%+"))
+
+    run_max, run, prev = 0, 0, None
+    for s in sents:
+        first = re.findall(r"[A-Za-z']+", s.lower())[:1]
+        first = first[0] if first else None
+        run = run + 1 if first and first == prev else 1
+        prev = first
+        run_max = max(run_max, run)
+    r.append((GOOD if run_max < 3 else OK, "Consecutive sentences", f"up to {run_max} in a row start with the same word"))
+
+    gap, worst_gap = 0, 0
+    for k, t in blocks:
+        if k.startswith("h"):
+            worst_gap = max(worst_gap, gap)
+            gap = 0
+        else:
+            gap += len(re.findall(r"[A-Za-z0-9'\-]+", t))
+    worst_gap = max(worst_gap, gap)
+    status = GOOD if worst_gap <= 250 else OK if worst_gap <= 300 else BAD
+    r.append((status, "Subheading distribution", f"longest stretch without a subheading: {worst_gap} words"))
+    return r
 
 
 def pages_to_check(args):
@@ -270,6 +402,7 @@ def main():
     argv = sys.argv[1:]
     strict = "--strict" in argv
     summary = "--summary" in argv
+    force_rd = "--readability" in argv
     args = [a for a in argv if not a.startswith("--")]
     parsed = []
     for f in pages_to_check(args):
@@ -285,20 +418,30 @@ def main():
         descs[dd] = descs.get(dd, 0) + 1
 
     any_bad = False
+    def verdict(results):
+        c = {s: sum(1 for st, _, _ in results if st == s) for s in (GOOD, OK, BAD)}
+        return (BAD if c[BAD] else OK if c[OK] else GOOD), c
+
     for f, p in parsed:
-        rel, results = check(f, p, titles, descs)
-        counts = {s: sum(1 for st, _, _ in results if st == s) for s in (GOOD, OK, BAD)}
-        any_bad |= counts[BAD] > 0
-        verdict = BAD if counts[BAD] else (OK if counts[OK] else GOOD)
-        line = f"{rel}: {verdict}  good={counts[GOOD]} ok={counts[OK]} bad={counts[BAD]}"
+        rel, seo, rd = check(f, p, titles, descs, force_rd)
+        v, c = verdict(seo)
+        any_bad |= c[BAD] > 0
+        line = f"{rel}: SEO {v} (good={c[GOOD]} ok={c[OK]} bad={c[BAD]})"
+        if rd:
+            rv, rc = verdict(rd)
+            line += f"  Readability {rv} (good={rc[GOOD]} ok={rc[OK]} bad={rc[BAD]})"
         if summary:
             print(line)
             continue
         print("=" * len(line))
         print(line)
         print("=" * len(line))
-        for st, name, detail in results:
+        for st, name, detail in seo:
             print(f"  [{st:<4}] {name}" + (f": {detail}" if detail else ""))
+        if rd:
+            print("  -- Readability --")
+            for st, name, detail in rd:
+                print(f"  [{st:<4}] {name}" + (f": {detail}" if detail else ""))
         print()
     sys.exit(1 if strict and any_bad else 0)
 
