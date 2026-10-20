@@ -1,0 +1,438 @@
+{
+  "site": {
+    "url": "https://robinsonvidva.com",
+    "name": "Robinson Vidva",
+    "description": "Computational biologist: multi-omics, immuno-oncology, drug discovery, neurodevelopment, and free open-source research tools.",
+    "language": "en"
+  },
+  "person": {
+    "name": "Robinson Vidva",
+    "jobTitle": "Computational Biologist",
+    "email": "hello@robinsonvidva.com",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Children's National Hospital"
+    },
+    "knowsAbout": [
+      "Computational biology",
+      "Bioinformatics",
+      "Systems biology modeling",
+      "Multi-omics analysis",
+      "Drug discovery",
+      "Drug repositioning",
+      "Immuno-oncology",
+      "Neurodevelopment",
+      "Precision medicine"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/robinson-vidva/",
+      "https://github.com/robinson-vidva",
+      "https://scholar.google.com/citations?user=xSxXsdAAAAAJ&hl=en",
+      "https://www.researchgate.net/profile/Robinson-Vidva",
+      "https://orcid.org/0000-0002-2604-5448",
+      "https://robinsonvidva.academia.edu/"
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Western Governors University"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Sikkim Manipal University"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Bharathidasan University"
+      }
+    ]
+  },
+  "pages": {
+    "index.html": {
+      "type": "WebPage",
+      "breadcrumb": [],
+      "about": "person"
+    },
+    "cv.html": {
+      "type": "ProfilePage",
+      "breadcrumb": [
+        "Curriculum Vitae"
+      ],
+      "mainEntity": "person"
+    },
+    "research.html": {
+      "type": "WebPage",
+      "breadcrumb": [
+        "Research"
+      ],
+      "about": "person"
+    },
+    "projects.html": {
+      "type": "WebPage",
+      "breadcrumb": [
+        "Projects"
+      ]
+    },
+    "tools.html": {
+      "type": "CollectionPage",
+      "breadcrumb": [
+        "Tools"
+      ],
+      "itemList": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "DrugInteract",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Web browser",
+            "url": "https://robinsonvidva.com/DrugInteract/",
+            "description": "Educational drug-interaction reference that checks what each drug's FDA label says about another. Runs entirely client-side.",
+            "author": {
+              "@id": "https://robinsonvidva.com/#person"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "enrichlite",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Web browser",
+            "url": "https://robinsonvidva.com/enrichlite/",
+            "description": "Gene-set over-representation analysis (ORA) for human and mouse that runs entirely in the browser. Supports GO, Hallmark, and Reactome.",
+            "author": {
+              "@id": "https://robinsonvidva.com/#person"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "drugtargets",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Web browser",
+            "url": "https://drugtargets.robinsonvidva.com",
+            "description": "Drug-target exploration and repurposing-hypothesis tool built on Open Targets and openFDA.",
+            "author": {
+              "@id": "https://robinsonvidva.com/#person"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "neokine",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Web browser",
+            "url": "https://robinsonvidva.com/neokine/",
+            "description": "Client-side pose visualization that draws a MediaPipe skeleton and plots simple kinematics over an image, video, or webcam. Runs entirely in the browser; not a diagnostic tool.",
+            "author": {
+              "@id": "https://robinsonvidva.com/#person"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "neokine-labs",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Web browser",
+            "url": "https://robinsonvidva.com/neokine-labs/",
+            "description": "Experimental playground in the neokine family with live MediaPipe Holistic pose and face tracking and exploratory behavior heuristics. In-browser and experimental; not a diagnostic tool.",
+            "author": {
+              "@id": "https://robinsonvidva.com/#person"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "MyVivarium",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web browser",
+            "url": "https://demo.myvivarium.online",
+            "description": "Open-source, cloud-based platform for managing research animal colonies with QR-code cage cards and real-time IoT environmental monitoring.",
+            "author": {
+              "@id": "https://robinsonvidva.com/#person"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        }
+      ]
+    },
+    "articles.html": {
+      "type": "CollectionPage",
+      "breadcrumb": [
+        "Articles"
+      ],
+      "itemList": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://robinsonvidva.com/articles/gene-set-over-representation-analysis.html",
+          "name": "Over-representation analysis: what the numbers mean"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://robinsonvidva.com/articles/drug-repositioning-computational-approaches.html",
+          "name": "Drug Repositioning Through Computational Modeling"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://robinsonvidva.com/articles/digital-twin-leukemia-patient.html",
+          "name": "Digital twins in medicine, with a leukemia example"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://robinsonvidva.com/articles/myvivarium-lab-animal-management.html",
+          "name": "MyVivarium: Lab Animal Colony Management"
+        }
+      ]
+    },
+    "contact.html": {
+      "type": "ContactPage",
+      "breadcrumb": [
+        "Contact"
+      ],
+      "mainEntity": "person"
+    },
+    "terms.html": {
+      "type": "WebPage",
+      "breadcrumb": [
+        "Terms & Privacy"
+      ]
+    },
+    "articles/digital-twin-leukemia-patient.html": {
+      "type": "WebPage",
+      "breadcrumb": [
+        "Articles",
+        "Digital twins in medicine, with a leukemia example"
+      ],
+      "article": {
+        "@type": "ScholarlyArticle",
+        "headline": "Digital twins in medicine, with a leukemia example",
+        "alternativeHeadline": "What a digital twin is, how one was built for 100 AML patients, and what it showed about a BET inhibitor",
+        "datePublished": "2025-04-15",
+        "dateModified": "2025-04-15",
+        "keywords": [
+          "digital twin",
+          "acute myeloid leukemia",
+          "Beat AML",
+          "computational biology modeling",
+          "BET inhibitor",
+          "drug response prediction",
+          "precision medicine"
+        ],
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Acute myeloid leukemia"
+          },
+          {
+            "@type": "Thing",
+            "name": "Computational biology"
+          },
+          {
+            "@type": "Thing",
+            "name": "Precision medicine"
+          }
+        ],
+        "citation": [
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Predicting response to BET inhibitors using computational modeling: A BEAT AML project study",
+            "url": "https://doi.org/10.1016/j.leukres.2018.11.010"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "A genomics-informed computational biology platform prospectively predicts treatment responses in AML and MDS patients",
+            "url": "https://doi.org/10.1182/bloodadvances.2018028316"
+          }
+        ]
+      }
+    },
+    "articles/drug-repositioning-computational-approaches.html": {
+      "type": "WebPage",
+      "breadcrumb": [
+        "Articles",
+        "Drug Repositioning Through Computational Modeling"
+      ],
+      "article": {
+        "@type": "ScholarlyArticle",
+        "headline": "Drug Repositioning Through Computational Modeling",
+        "alternativeHeadline": "How computational modeling accelerates drug repurposing from autoimmune disease to oncology",
+        "datePublished": "2026-02-01",
+        "dateModified": "2026-10-09",
+        "keywords": [
+          "drug repositioning",
+          "drug repurposing",
+          "computational biology",
+          "predictive modeling",
+          "systems biology",
+          "rheumatoid arthritis",
+          "cancer",
+          "AML",
+          "precision medicine",
+          "pathway analysis",
+          "combination therapy"
+        ],
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Drug repositioning"
+          },
+          {
+            "@type": "Thing",
+            "name": "Computational biology"
+          },
+          {
+            "@type": "Thing",
+            "name": "Precision medicine"
+          }
+        ],
+        "citation": [
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Predicting response to BET inhibitors using computational modeling: A BEAT AML project study",
+            "url": "https://doi.org/10.1016/j.leukres.2018.11.010"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Computational Models Accurately Predict Multi-Cell Biomarker Profiles in Inflammation and Cancer",
+            "url": "https://doi.org/10.1038/s41598-019-47381-4"
+          }
+        ]
+      }
+    },
+    "articles/gene-set-over-representation-analysis.html": {
+      "type": "WebPage",
+      "breadcrumb": [
+        "Articles",
+        "Over-representation analysis: what the numbers mean"
+      ],
+      "article": {
+        "@type": "Article",
+        "headline": "Over-representation analysis: what the numbers mean",
+        "alternativeHeadline": "A plain guide to gene-set enrichment tests, and how to run one in the browser",
+        "datePublished": "2026-09-10",
+        "dateModified": "2026-09-10",
+        "keywords": [
+          "over-representation analysis",
+          "gene set enrichment",
+          "hypergeometric test",
+          "background gene list",
+          "false discovery rate",
+          "Gene Ontology",
+          "Reactome",
+          "MSigDB Hallmark",
+          "enrichlite"
+        ],
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Gene set enrichment analysis"
+          },
+          {
+            "@type": "Thing",
+            "name": "Bioinformatics"
+          },
+          {
+            "@type": "Thing",
+            "name": "Statistics"
+          }
+        ]
+      }
+    },
+    "articles/myvivarium-lab-animal-management.html": {
+      "type": "WebPage",
+      "breadcrumb": [
+        "Articles",
+        "MyVivarium: Lab Animal Colony Management"
+      ],
+      "article": {
+        "@type": "ScholarlyArticle",
+        "headline": "MyVivarium: Lab Animal Colony Management",
+        "alternativeHeadline": "An open-source cloud-based application for managing research animal colonies with IoT environmental monitoring",
+        "datePublished": "2025-01-25",
+        "dateModified": "2026-10-09",
+        "keywords": [
+          "MyVivarium",
+          "lab animal management",
+          "vivarium",
+          "colony management",
+          "open source",
+          "IoT",
+          "environmental monitoring",
+          "research tools"
+        ],
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Laboratory animal management"
+          },
+          {
+            "@type": "Thing",
+            "name": "Internet of Things"
+          },
+          {
+            "@type": "Thing",
+            "name": "Open-source software"
+          }
+        ],
+        "citation": {
+          "@type": "ScholarlyArticle",
+          "name": "MyVivarium: A cloud-based lab animal colony management application with real-time ambient sensing",
+          "url": "https://doi.org/10.1016/j.csbj.2025.01.025",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Computational and Structural Biotechnology Journal"
+          }
+        }
+      }
+    }
+  }
+}
