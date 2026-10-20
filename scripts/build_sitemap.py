@@ -4,6 +4,7 @@
 Usage: python3 scripts/build_sitemap.py
 """
 import subprocess
+from datetime import date
 from pathlib import Path
 
 SITE = "https://robinsonvidva.com"
@@ -31,6 +32,12 @@ EXTERNAL = [
 
 
 def git_lastmod(path):
+    dirty = subprocess.run(
+        ["git", "status", "--porcelain", "--", path],
+        cwd=ROOT, capture_output=True, text=True, check=True,
+    ).stdout.strip()
+    if dirty:
+        return date.today().isoformat()
     out = subprocess.run(
         ["git", "log", "-1", "--format=%ad", "--date=short", "--", path],
         cwd=ROOT, capture_output=True, text=True, check=True,
