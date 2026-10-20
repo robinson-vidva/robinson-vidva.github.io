@@ -8,7 +8,8 @@ Usage:
   python3 scripts/seo_check.py --summary  # one line per page
   python3 scripts/seo_check.py --readability  # readability on every page, not only articles
 
-Focus keyphrase = first entry of <meta name="keywords"> on the page.
+Focus keyphrase = scripts/seo_keyphrases.json entry for the page, else the
+first entry of <meta name="keywords">.
 Readability (Flesch, sentence and paragraph length, passive voice,
 transition words, subheadings) runs on articles; --strict ignores it.
 """
@@ -22,6 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://robinsonvidva.com"
 SKIP_TAGS = {"script", "style", "noscript", "template", "nav", "footer", "svg"}
 SKIP_FILES = {"404.html"}
+KEYPHRASES = ROOT / "scripts" / "seo_keyphrases.json"
 
 GOOD, OK, BAD = "GOOD", "OK", "BAD"
 
@@ -141,7 +143,14 @@ def parse(path):
     return p
 
 
-def check(path, page, site_titles, site_descs, force_readability=False):
+def keyphrase_for(rel, page, table):
+    if rel in table:
+        return table[rel].strip(), "seo_keyphrases.json"
+    kw = page.meta.get("keywords", "").split(",")[0].strip()
+    return kw, "meta keywords"
+
+
+def check(path, page, site_titles, site_descs, force_readability=False, keyphrases=None, site_kw=None):
     rel = path.relative_to(ROOT).as_posix()
     is_article = rel.startswith("articles/")
     r = []
@@ -243,9 +252,15 @@ def check(path, page, site_titles, site_descs, force_readability=False):
     add(GOOD if page.lang else BAD, "Language attribute", page.lang or "missing")
     add(GOOD if "viewport" in page.meta else BAD, "Viewport meta", "present" if "viewport" in page.meta else "missing")
 
-    kw = page.meta.get("keywords", "").split(",")[0].strip()
+    kw, source = keyphrase_for(rel, page, keyphrases or {})
     if kw:
-        add(GOOD, "Focus keyphrase", kw)
+        add(GOOD, "Focus keyphrase", f"{kw} (from {source})")
+        nwords = len(norm(kw).split())
+        add(GOOD if nwords <= 4 else OK, "Keyphrase length", f"{nwords} words; aim for 4 or fewer")
+        if site_kw and site_kw.get(norm(kw).strip(), 0) > 1:
+            add(BAD, "Keyphrase unique", "same keyphrase on another page")
+        else:
+            add(GOOD, "Keyphrase unique", "not used on another page")
         add(GOOD if contains(t, kw) else BAD, "Keyphrase in title", "")
         add(GOOD if contains(d, kw) else OK, "Keyphrase in description", "")
         add(GOOD if h1s and contains(h1s[0], kw) else OK, "Keyphrase in H1", "")
@@ -262,7 +277,7 @@ def check(path, page, site_titles, site_descs, force_readability=False):
             else:
                 add(OK, "Keyphrase density", f"{hits} uses, {dens:.1f}%; aim for 0.5-3%")
     else:
-        add(OK, "Focus keyphrase", "none; add <meta name=\"keywords\"> with the keyphrase first")
+        add(OK, "Focus keyphrase", "none; add the page to scripts/seo_keyphrases.json")
     rd = readability(page) if (is_article or force_readability) else []
     return rel, r, rd
 
@@ -411,11 +426,15 @@ def main():
             print(f"skip {f.relative_to(ROOT).as_posix()} (noindex)")
             continue
         parsed.append((f, p))
-    titles, descs = {}, {}
-    for _, p in parsed:
+    keyphrases = json.loads(KEYPHRASES.read_text(encoding="utf-8")) if KEYPHRASES.exists() else {}
+    titles, descs, site_kw = {}, {}, {}
+    for f, p in parsed:
         titles[p.title] = titles.get(p.title, 0) + 1
         dd = p.meta.get("description")
         descs[dd] = descs.get(dd, 0) + 1
+        kw, _ = keyphrase_for(f.relative_to(ROOT).as_posix(), p, keyphrases)
+        if kw:
+            site_kw[norm(kw).strip()] = site_kw.get(norm(kw).strip(), 0) + 1
 
     any_bad = False
     def verdict(results):
@@ -423,7 +442,7 @@ def main():
         return (BAD if c[BAD] else OK if c[OK] else GOOD), c
 
     for f, p in parsed:
-        rel, seo, rd = check(f, p, titles, descs, force_rd)
+        rel, seo, rd = check(f, p, titles, descs, force_rd, keyphrases, site_kw)
         v, c = verdict(seo)
         any_bad |= c[BAD] > 0
         line = f"{rel}: SEO {v} (good={c[GOOD]} ok={c[OK]} bad={c[BAD]})"
