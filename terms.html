@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' data: https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://challenges.cloudflare.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' data: https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://challenges.cloudflare.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
   <title>Terms & Privacy | Robinson Vidva</title>
   <meta name="description" content="Terms of use, privacy policy, and intellectual property notices for Robinson Vidva's personal academic portfolio website.">
   <link rel="canonical" href="https://robinsonvidva.com/terms.html">
@@ -161,12 +161,20 @@
     ]
   }
   </script>
-  <link href="style.css?v=38" rel="stylesheet">
+  <link href="style.css?v=39" rel="stylesheet">
 
   <!-- Google tag (gtag.js), fetched after the page has finished loading -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500,
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+    });
+    gtag('consent', 'default', {
+      analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
     gtag('js', new Date());
     gtag('config', 'G-5FRPNE4J9N');
     window.addEventListener('load', function () {
@@ -176,6 +184,7 @@
       document.head.appendChild(s);
     });
   </script>
+  <script defer src="scripts/consent.js?v=1"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -224,8 +233,8 @@
     </ul>
     <p>No personally identifiable information is intentionally collected or stored. Google Analytics data is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You may opt out of Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
 
-    <h3 class="h5 mt-4">Cookies</h3>
-    <p>This site uses cookies for Google Analytics and, on the contact form only, for Cloudflare Turnstile bot protection. No cookies are used for advertising, user tracking across sites, or personalization. Most browsers allow you to disable cookies through their settings.</p>
+    <h3 class="h5 mt-4" id="cookies">Cookies</h3>
+    <p>This site uses cookies for Google Analytics and, on the contact form only, for Cloudflare Turnstile bot protection. Visitors in the European Economic Area, the United Kingdom, and Switzerland are asked before any analytics cookie is set; until they accept, visits are counted without cookies. No cookies are used for advertising, user tracking across sites, or personalization. Most browsers allow you to disable cookies through their settings. <a href="#cookies" data-consent-reset>Change your cookie choice</a>.</p>
 
     <h3 class="h5 mt-4">Contact Form</h3>
     <p>The <a href="contact.html">contact form</a> is processed by <strong>Formspree</strong> (Formspree, Inc.), a third-party form-handling service. When you submit the form, the details you provide &mdash; your name, email address, subject, and message &mdash; are transmitted to Formspree and forwarded to the site owner by email. This information is used solely to read and respond to your message; it is not sold, shared, or used for marketing. Formspree's handling of submitted data is governed by <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Formspree's Privacy Policy</a>. If you prefer not to use the form, you can email <a href="mailto:hello@robinsonvidva.com">hello@robinsonvidva.com</a> directly.</p>
