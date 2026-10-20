@@ -1,14 +1,14 @@
 {
-  "index.html": "computational biologist",
-  "cv.html": "computational biologist CV",
-  "research.html": "computational biology publications",
-  "projects.html": "computational biology projects",
-  "tools.html": "free bioinformatics tools",
-  "articles.html": "computational biology articles",
+  "index.html": "Robinson Vidva",
+  "cv.html": "Robinson Vidva curriculum vitae",
+  "research.html": "Robinson Vidva research publications",
+  "projects.html": "Robinson Vidva projects",
+  "tools.html": "Robinson Vidva tools",
+  "articles.html": "Robinson Vidva articles",
   "contact.html": "contact Robinson Vidva",
-  "terms.html": "privacy policy",
-  "articles/digital-twin-leukemia-patient.html": "digital twin",
-  "articles/drug-repositioning-computational-approaches.html": "drug repositioning",
-  "articles/gene-set-over-representation-analysis.html": "over-representation analysis",
-  "articles/myvivarium-lab-animal-management.html": "lab animal colony management"
+  "terms.html": "Robinson Vidva terms privacy",
+  "articles/digital-twin-leukemia-patient.html": "digital twin leukemia",
+  "articles/drug-repositioning-computational-approaches.html": "computational drug repositioning",
+  "articles/gene-set-over-representation-analysis.html": "over-representation analysis hypergeometric test",
+  "articles/myvivarium-lab-animal-management.html": "lab animal colony management software"
 }
