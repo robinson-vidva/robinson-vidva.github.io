@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-22T09:53:30Z",
-  "totalViews": 2962,
+  "lastUpdated": "2026-10-23T09:47:26Z",
+  "totalViews": 2964,
   "pages": {
     "/research.html": 323,
     "/cv.html": 307,
@@ -16,9 +16,9 @@
     "/terms.html": 21,
     "/articles/digital-twin-leukemia-patient.html": 11,
     "/kineneo-demo/": 6,
+    "/tools": 3,
     "/cv": 2,
     "/kineneo-demo/index.html": 2,
-    "/tools": 2,
     "/contact": 1,
     "/kineneo-demo/contact.html": 1,
     "/kineneo-demo/research.html": 1,
@@ -27,7 +27,7 @@
     "/neokibe": 1,
     "/pathsim": 1,
     "/pathsim/": 1,
-    "/": 1405,
-    "/index.html": 1405
+    "/": 1406,
+    "/index.html": 1406
   }
 }
