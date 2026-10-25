@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-10-24T09:20:40Z",
-  "totalViews": 2974,
+  "lastUpdated": "2026-10-25T09:37:48Z",
+  "totalViews": 2978,
   "pages": {
     "/research.html": 324,
-    "/cv.html": 308,
+    "/cv.html": 309,
     "/articles.html": 216,
     "/tools.html": 128,
     "/projects.html": 120,
     "/articles/drug-repositioning-computational-approaches.html": 101,
     "/resume.html": 82,
     "/certifications.html": 74,
-    "/contact.html": 65,
+    "/contact.html": 66,
     "/articles/myvivarium-lab-animal-management.html": 57,
     "/articles/gene-set-over-representation-analysis.html": 36,
     "/terms.html": 21,
@@ -27,7 +27,7 @@
     "/neokibe": 1,
     "/pathsim": 1,
     "/pathsim/": 1,
-    "/": 1410,
-    "/index.html": 1410
+    "/": 1412,
+    "/index.html": 1412
   }
 }
