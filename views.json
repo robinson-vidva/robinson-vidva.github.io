@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-10-29T11:21:28Z",
-  "totalViews": 2993,
+  "lastUpdated": "2026-10-30T11:13:39Z",
+  "totalViews": 3012,
   "pages": {
-    "/research.html": 326,
+    "/research.html": 329,
     "/cv.html": 311,
-    "/articles.html": 217,
-    "/tools.html": 129,
-    "/projects.html": 121,
-    "/articles/drug-repositioning-computational-approaches.html": 101,
+    "/articles.html": 219,
+    "/tools.html": 130,
+    "/projects.html": 125,
+    "/articles/drug-repositioning-computational-approaches.html": 102,
     "/resume.html": 82,
     "/certifications.html": 74,
     "/contact.html": 67,
@@ -16,7 +16,7 @@
     "/terms.html": 21,
     "/articles/digital-twin-leukemia-patient.html": 11,
     "/kineneo-demo/": 6,
-    "/tools": 4,
+    "/tools": 5,
     "/cv": 2,
     "/kineneo-demo/index.html": 2,
     "/contact": 1,
@@ -27,7 +27,7 @@
     "/neokibe": 1,
     "/pathsim": 1,
     "/pathsim/": 1,
-    "/": 1416,
-    "/index.html": 1416
+    "/": 1423,
+    "/index.html": 1423
   }
 }
