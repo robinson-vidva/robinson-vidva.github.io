@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T12:58:12Z",
-  "totalViews": 3033,
+  "lastUpdated": "2026-11-06T12:45:55Z",
+  "totalViews": 3037,
   "pages": {
     "/research.html": 331,
     "/cv.html": 312,
@@ -11,8 +11,8 @@
     "/resume.html": 82,
     "/certifications.html": 74,
     "/contact.html": 67,
-    "/articles/myvivarium-lab-animal-management.html": 57,
-    "/articles/gene-set-over-representation-analysis.html": 41,
+    "/articles/myvivarium-lab-animal-management.html": 58,
+    "/articles/gene-set-over-representation-analysis.html": 42,
     "/terms.html": 21,
     "/articles/digital-twin-leukemia-patient.html": 11,
     "/kineneo-demo/": 6,
@@ -27,7 +27,7 @@
     "/neokibe": 1,
     "/pathsim": 1,
     "/pathsim/": 1,
-    "/": 1434,
-    "/index.html": 1434
+    "/": 1436,
+    "/index.html": 1436
   }
 }
