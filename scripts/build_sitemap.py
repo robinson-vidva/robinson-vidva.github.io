@@ -18,6 +18,7 @@ PAGES = [
     ("projects.html", "monthly", "0.8"),
     ("tools.html", "monthly", "0.8"),
     ("articles.html", "weekly", "0.8"),
+    ("about.html", "monthly", "0.7"),
     ("contact.html", "yearly", "0.6"),
     ("terms.html", "yearly", "0.3"),
 ]

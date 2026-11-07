@@ -8,13 +8,14 @@ Personal site for Robinson Vidva — computational biologist with 16+ years in s
 
 | Page | Description |
 |------|-------------|
-| [Home](https://robinsonvidva.com/) | Overview, research highlights, featured tools, and latest work |
-| [CV](https://robinsonvidva.com/cv.html) | Work experience, education, skills, certifications, and CV PDF |
-| [Research](https://robinsonvidva.com/research.html) | Publications, preprints, presentations, and patents (filter/search/sort) |
+| [Home](https://robinsonvidva.com/) | A turning globe of every area, paper, talk, patent, project, tool and article, plus the latest work |
+| [Tools & Demos](https://robinsonvidva.com/tools.html) | Free, open-source tools, many run entirely in the browser |
+| [Research](https://robinsonvidva.com/research.html) | Publications, preprints, presentations, and patents (filter by type and area, search, sort) |
 | [Projects](https://robinsonvidva.com/projects.html) | Chronological tour of major projects and what they produced |
-| [Tools](https://robinsonvidva.com/tools.html) | Free, open-source tools — many run entirely in the browser |
 | [Articles](https://robinsonvidva.com/articles.html) | Long-form articles on computational biology topics |
-| [Contact](https://robinsonvidva.com/contact.html) | Contact form (Formspree + Cloudflare Turnstile) and profiles |
+| [About](https://robinsonvidva.com/about.html) | What the site is for, selected work, education, contact details, CV and resume PDFs |
+| [Contact](https://robinsonvidva.com/contact.html) | Contact form (Formspree + Cloudflare Turnstile) and profiles, linked from About and the footer |
+| [CV](https://robinsonvidva.com/cv.html) | Full CV as a web page with certifications, linked from About; not in the menu |
 
 > Certifications were merged into the CV page; `certifications.html` now redirects to `cv.html#certifications`.
 
@@ -36,8 +37,8 @@ Personal site for Robinson Vidva — computational biologist with 16+ years in s
 
 ## Tech Stack
 
-- HTML5, CSS3, vanilla JavaScript (no build step)
-- [Bootstrap 5.3](https://getbootstrap.com/) (jsDelivr, pinned with SRI)
+- HTML5, CSS3, vanilla JavaScript (no build step, no CSS framework)
+- Home page globe: `scripts/globe.js` draws `scripts/globe-data.js` as SVG; edit the data file to add or move an item
 - [Source Serif 4](https://github.com/adobe-fonts/source-serif) (self-hosted woff2 in `fonts/`)
 - [Font Awesome 6](https://fontawesome.com/) (cdnjs, pinned with SRI)
 - [Formspree](https://formspree.io/) (contact form) + [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) (bot protection)
@@ -48,6 +49,7 @@ Personal site for Robinson Vidva — computational biologist with 16+ years in s
 
 ```
 ├── index.html              # Home page
+├── about.html              # What the site is for, selected work, contact, CV PDFs
 ├── cv.html                 # CV + certifications
 ├── research.html           # Publications, preprints, presentations, patents
 ├── projects.html           # Project timeline
@@ -64,6 +66,10 @@ Personal site for Robinson Vidva — computational biologist with 16+ years in s
 │   └── myvivarium-lab-animal-management.html
 ├── fonts/                  # Source Serif 4 woff2 (latin, latin-ext; upright, italic)
 ├── scripts/
+│   ├── site.js             # Menu toggle and show/hide sections
+│   ├── globe.js            # Home page globe (SVG, no library)
+│   ├── globe-data.js       # Areas, methods and items shown on the globe
+│   ├── research.js         # Research page filters, search, sort, paging
 │   ├── enhance.js          # Page view counts from views.json
 │   └── fetch_ga_views.py   # GA → views.json (run by GitHub Action)
 ├── style.css               # Site-wide stylesheet

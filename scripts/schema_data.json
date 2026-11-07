@@ -433,6 +433,13 @@
           }
         }
       }
+    },
+    "about.html": {
+      "type": "ProfilePage",
+      "breadcrumb": [
+        "About"
+      ],
+      "mainEntity": "person"
     }
   }
 }
